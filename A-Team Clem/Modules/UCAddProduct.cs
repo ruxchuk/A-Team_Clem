@@ -54,6 +54,7 @@ namespace A_Team_Clem.Modules
             }
             readData();
             int productID = conDB.addProduct();
+            Debug.WriteLine(productID);
             if (productID == 0)
             {
                 MessageBox.Show("ชื่อสินค้า \"" + nameTH.Text + "\" มีการเพิ่มเข้ามาแล้ว\nกรุณาตรวจสอบ");
@@ -61,6 +62,8 @@ namespace A_Team_Clem.Modules
             else
             {
                 fRMMain.showAddCustomerClem();
+                fRMMain.addCustomerCustomerClem.productName.Text = nameTH.Text;
+                fRMMain.addCustomerCustomerClem.productName.Focus();
             }
         }
     }

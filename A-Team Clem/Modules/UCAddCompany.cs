@@ -60,6 +60,8 @@ namespace A_Team_Clem.Modules
             else
             {
                 fRMMain.showAddCustomerClem();
+                fRMMain.addCustomerCustomerClem.companyName.Text = nameTH.Text;
+                fRMMain.addCustomerCustomerClem.companyName.Focus();
             }
         }
     }

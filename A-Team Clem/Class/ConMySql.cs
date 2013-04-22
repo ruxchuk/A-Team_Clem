@@ -319,8 +319,8 @@ namespace A_Team_Clem
         //get รายการสินค้า
         public List<string>[] getProduct(int productID = 0)
         {
-            List<string>[] list = new List<string>[6];
-            for (int i = 0; i < 6; i++)
+            List<string>[] list = new List<string>[7];
+            for (int i = 0; i < 7; i++)
             {
                 list[i] = new List<string>();
             }
@@ -466,6 +466,7 @@ namespace A_Team_Clem
                 }
                 catch
                 {
+                    CloseConnection();
                     return false;
                 }
             }
@@ -496,12 +497,13 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        customerID = int.Parse(dataReader["id"] + "");
+                        customerID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
                 }
                 catch
                 {
+                    CloseConnection();
                     return customerID;
                 }
             }
@@ -533,12 +535,13 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        companyID = int.Parse(dataReader["id"] + "");
+                        companyID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
                 }
                 catch
                 {
+                    CloseConnection();
                     return companyID;
                 }
             }
@@ -571,12 +574,13 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        employeeID = int.Parse(dataReader["id"] + "");
+                        employeeID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
                 }
                 catch
                 {
+                    CloseConnection();
                     return employeeID;
                 }
             }
@@ -607,12 +611,13 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        productID = int.Parse(dataReader["id"] + "");
+                        productID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
                 }
                 catch
                 {
+                    CloseConnection();
                     return productID;
                 }
             }
@@ -641,12 +646,13 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        productTypeID = int.Parse(dataReader["id"] + "");
+                        productTypeID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
                 }
                 catch
                 {
+                    CloseConnection();
                     return productTypeID;
                 }
             }

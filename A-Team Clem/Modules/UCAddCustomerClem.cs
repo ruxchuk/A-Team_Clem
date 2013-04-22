@@ -54,40 +54,54 @@ namespace A_Team_Clem.Modules
         {
             listCustomer = null;
             listCustomer = conDB.getCustomer();
-            cmbCustomerName.Properties.Items.AddRange(listCustomer[1]);
-            textEditCustomerReceiveProduct.Properties.Items.AddRange(listCustomer[1]);
+            if (listPorductType != null)
+            {
+                cmbCustomerName.Properties.Items.AddRange(listCustomer[1]);
+                textEditCustomerReceiveProduct.Properties.Items.AddRange(listCustomer[1]);
+            }
         }
 
         private void getProductType()
         {
             listPorductType = null;
             listPorductType = conDB.getProductType();
-            productType.Properties.Items.AddRange(listPorductType[1]);
+            if (listPorductType != null)
+            {
+                productType.Properties.Items.AddRange(listPorductType[1]);
+            }
         }
 
         private void getCompany()
         {
             listCompany = null;
             listCompany = conDB.getCompany();
-            companyName.Properties.Items.AddRange(listCompany[1]);
+            if (listCompany != null)
+            {
+                companyName.Properties.Items.AddRange(listCompany[1]);
+            }
         }
 
         private void getEmployee()
         {
             listEmployee = null;
             listEmployee = conDB.getEmployee();
-            employeeReceiveClem.Properties.Items.AddRange(listEmployee[1]);
-            employeeClem.Properties.Items.AddRange(listEmployee[1]);
-            employeeReceiveProduct.Properties.Items.AddRange(listEmployee[1]);
-            employeeReturn.Properties.Items.AddRange(listEmployee[1]);
+            if (listEmployee != null)
+            {
+                employeeReceiveClem.Properties.Items.AddRange(listEmployee[1]);
+                employeeClem.Properties.Items.AddRange(listEmployee[1]);
+                employeeReceiveProduct.Properties.Items.AddRange(listEmployee[1]);
+                employeeReturn.Properties.Items.AddRange(listEmployee[1]);
+            }
         }
 
         private void getProduct()
         {
             listProduct = null;
             listProduct = conDB.getProduct();
-            productName.Properties.Items.AddRange(listProduct[1]);
-
+            if (listProduct != null)
+            {
+                productName.Properties.Items.AddRange(listProduct[1]);
+            }
         }
 
         public bool validateForm()

@@ -21,15 +21,15 @@ namespace A_Team_Clem
             conDB = new ConMySql();
         }
 
-        private Modules.UCAddCustomerClem addCustomerCustomerClem;
-        private Modules.UCReportCustomerClem customerReport;
-        private Modules.UCAddEmployeeClem addEmployeeClem;
-        private Modules.UCReportEmployeeClem employeeReport;
-        private Modules.UCAddProduct addProduct;
-        private Modules.UCAddCompany addCompany;
-        private Modules.UCAddEmployee addEmployee;
-        private Modules.UCAddCustomer addCustomer;
-        private Modules.UCAddProductType addProductType;
+        public Modules.UCAddCustomerClem addCustomerCustomerClem;
+        public Modules.UCReportCustomerClem customerReport;
+        public Modules.UCAddEmployeeClem addEmployeeClem;
+        public Modules.UCReportEmployeeClem employeeReport;
+        public Modules.UCAddProduct addProduct;
+        public Modules.UCAddCompany addCompany;
+        public Modules.UCAddEmployee addEmployee;
+        public Modules.UCAddCustomer addCustomer;
+        public Modules.UCAddProductType addProductType;
 
         private string pathFolderSave = @"Files\save";
         private string skinFileName = "skin.txt";

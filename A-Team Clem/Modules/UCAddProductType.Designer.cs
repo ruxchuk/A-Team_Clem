@@ -34,7 +34,7 @@
             this.nameEng = new DevExpress.XtraEditors.TextEdit();
             this.nameTH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButtonAddClem = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -49,7 +49,7 @@
             this.groupControl1.Controls.Add(this.nameEng);
             this.groupControl1.Controls.Add(this.nameTH);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.simpleButtonAddClem);
+            this.groupControl1.Controls.Add(this.buttonAdd);
             this.groupControl1.Location = new System.Drawing.Point(3, 54);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(416, 188);
@@ -102,15 +102,16 @@
             this.labelControl5.TabIndex = 1075;
             this.labelControl5.Text = "ชื่อ Eng";
             // 
-            // simpleButtonAddClem
+            // buttonAdd
             // 
-            this.simpleButtonAddClem.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButtonAddClem.Appearance.Options.UseFont = true;
-            this.simpleButtonAddClem.Location = new System.Drawing.Point(342, 150);
-            this.simpleButtonAddClem.Name = "simpleButtonAddClem";
-            this.simpleButtonAddClem.Size = new System.Drawing.Size(69, 33);
-            this.simpleButtonAddClem.TabIndex = 6;
-            this.simpleButtonAddClem.Text = "เพิ่ม";
+            this.buttonAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Appearance.Options.UseFont = true;
+            this.buttonAdd.Location = new System.Drawing.Point(342, 150);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(69, 33);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "เพิ่ม";
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelControlPage
             // 
@@ -148,7 +149,7 @@
         private DevExpress.XtraEditors.TextEdit nameEng;
         private DevExpress.XtraEditors.TextEdit nameTH;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonAddClem;
+        private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.LabelControl labelControlPage;
     }
 }
