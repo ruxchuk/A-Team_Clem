@@ -14,12 +14,12 @@ namespace A_Team_Clem.Modules
         public UCAddCompany(FRMMain mFRM)
         {
             InitializeComponent();
-            mainForm = mFRM;
+            fRMMain = mFRM;
             conDB = new ConMySql();
             convertDT = new ConvertDateTime();
         }
 
-        private FRMMain mainForm;
+        private FRMMain fRMMain;
         private ConMySql conDB;
         private ConvertDateTime convertDT;
 
@@ -51,9 +51,16 @@ namespace A_Team_Clem.Modules
             {
                 return;
             }
+            readData();
             int companyID = conDB.addCompany();
-
-            mainForm.showAddCustomer();
+            if (companyID == 0)
+            {
+                MessageBox.Show("ชื่อบริษัท \"" + nameTH.Text + "\" มีการเพิ่มเข้ามาแล้ว\nกรุณาตรวจสอบ");
+            }
+            else
+            {
+                fRMMain.showAddCustomerClem();
+            }
         }
     }
 }

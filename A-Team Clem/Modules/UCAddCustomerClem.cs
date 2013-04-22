@@ -35,15 +35,24 @@ namespace A_Team_Clem.Modules
             mainForm = mFRM;
             conDB = new ConMySql();
             convertDT = new ConvertDateTime();
-            getCustomer();
 
             //set รูปแบบวันที่
             dtProductEndDate.Properties.DisplayFormat.FormatString = mainForm.formatDate;
             dtProductEndDate.Properties.Mask.EditMask = mainForm.formatDate;
         }
 
+        public void loadAllListData()
+        {
+            getCustomer();
+            getProductType(); 
+            getCompany(); 
+            getEmployee();
+            getProduct();
+        }
+
         private void getCustomer()
         {
+            listCustomer = null;
             listCustomer = conDB.getCustomer();
             cmbCustomerName.Properties.Items.AddRange(listCustomer[1]);
             textEditCustomerReceiveProduct.Properties.Items.AddRange(listCustomer[1]);
@@ -51,18 +60,21 @@ namespace A_Team_Clem.Modules
 
         private void getProductType()
         {
+            listPorductType = null;
             listPorductType = conDB.getProductType();
             productType.Properties.Items.AddRange(listPorductType[1]);
         }
 
         private void getCompany()
         {
+            listCompany = null;
             listCompany = conDB.getCompany();
             companyName.Properties.Items.AddRange(listCompany[1]);
         }
 
         private void getEmployee()
         {
+            listEmployee = null;
             listEmployee = conDB.getEmployee();
             employeeReceiveClem.Properties.Items.AddRange(listEmployee[1]);
             employeeClem.Properties.Items.AddRange(listEmployee[1]);
@@ -72,7 +84,9 @@ namespace A_Team_Clem.Modules
 
         private void getProduct()
         {
+            listProduct = null;
             listProduct = conDB.getProduct();
+            productName.Properties.Items.AddRange(listProduct[1]);
 
         }
 
@@ -246,6 +260,20 @@ namespace A_Team_Clem.Modules
         private void imgAddEmployee_Click(object sender, EventArgs e)
         {
             mainForm.showAddEmployee();
+        }
+
+        private void cmbCustomerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCustomerName.SelectedIndex != -1)
+            {
+                richTextBoxAddress.Text = listCustomer[3][cmbCustomerName.SelectedIndex];
+                textEditCustomerClem.Text = listCustomer[1][cmbCustomerName.SelectedIndex];
+                textEditPhone.Text = listCustomer[4][cmbCustomerName.SelectedIndex];
+            }
+            else
+            {
+
+            }
         }
     }
 }

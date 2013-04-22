@@ -40,7 +40,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButtonAddClem = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).BeginInit();
@@ -127,7 +127,7 @@
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.simpleButtonAddClem);
+            this.groupControl1.Controls.Add(this.buttonAdd);
             this.groupControl1.Location = new System.Drawing.Point(3, 54);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(540, 247);
@@ -157,7 +157,7 @@
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.labelControl4.Location = new System.Drawing.Point(278, 93);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(38, 19);
+            this.labelControl4.Size = new System.Drawing.Size(37, 19);
             this.labelControl4.TabIndex = 1075;
             this.labelControl4.Text = "email";
             // 
@@ -170,16 +170,16 @@
             this.labelControl3.TabIndex = 1075;
             this.labelControl3.Text = "เบอร์โทร";
             // 
-            // simpleButtonAddClem
+            // buttonAdd
             // 
-            this.simpleButtonAddClem.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButtonAddClem.Appearance.Options.UseFont = true;
-            this.simpleButtonAddClem.Location = new System.Drawing.Point(460, 207);
-            this.simpleButtonAddClem.Name = "simpleButtonAddClem";
-            this.simpleButtonAddClem.Size = new System.Drawing.Size(69, 33);
-            this.simpleButtonAddClem.TabIndex = 6;
-            this.simpleButtonAddClem.Text = "เพิ่ม";
-            this.simpleButtonAddClem.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
+            this.buttonAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Appearance.Options.UseFont = true;
+            this.buttonAdd.Location = new System.Drawing.Point(460, 207);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(69, 33);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "เพิ่ม";
+            this.buttonAdd.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
             // labelControlPage
             // 
@@ -226,7 +226,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonAddClem;
+        private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.LabelControl labelControlPage;
     }
 }

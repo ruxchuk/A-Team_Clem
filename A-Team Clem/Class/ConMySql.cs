@@ -127,7 +127,6 @@ namespace A_Team_Clem
             dataBaseName = readFile.dataBaseName;
             string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
                    dataBaseName + ";" + "UID=" + userName + ";" + "PASSWORD=" + password + ";Charset=utf8;";
-            Debug.WriteLine(connectionString);
             connection = new MySqlConnection(connectionString);
             CheckConnect();
             CloseConnection();
@@ -235,7 +234,7 @@ namespace A_Team_Clem
                 }
                 catch
                 {
-                    return list;
+                    return null;
                 }
             }
             CloseConnection();
@@ -274,7 +273,7 @@ namespace A_Team_Clem
                 }
                 catch
                 {
-                    return list;
+                    return null;
                 }
             }
             CloseConnection();
@@ -310,7 +309,7 @@ namespace A_Team_Clem
                 }
                 catch
                 {
-                    return list;
+                    return null;
                 }
             }
             CloseConnection();
@@ -348,7 +347,7 @@ namespace A_Team_Clem
                 }
                 catch
                 {
-                    return list;
+                    return null;
                 }
             }
             CloseConnection();
@@ -388,7 +387,7 @@ namespace A_Team_Clem
                 }
                 catch
                 {
-                    return list;
+                    return null;
                 }
             }
             CloseConnection();

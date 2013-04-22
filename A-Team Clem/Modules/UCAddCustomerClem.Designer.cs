@@ -51,6 +51,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditCustomerReceiveProduct = new DevExpress.XtraEditors.MRUEdit();
             this.employeeReturn = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -107,7 +108,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEditPhone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditCustomerReceiveProduct = new DevExpress.XtraEditors.MRUEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -127,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerReceiveProduct.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReturn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -155,7 +156,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerReceiveProduct.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControlPage
@@ -428,6 +428,23 @@
             this.labelControl29.Size = new System.Drawing.Size(139, 19);
             this.labelControl29.TabIndex = 1026;
             this.labelControl29.Text = "7. พนักงาน-ผู้คืนของ";
+            // 
+            // textEditCustomerReceiveProduct
+            // 
+            this.textEditCustomerReceiveProduct.AllowDrop = true;
+            this.textEditCustomerReceiveProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textEditCustomerReceiveProduct.Location = new System.Drawing.Point(199, 28);
+            this.textEditCustomerReceiveProduct.Name = "textEditCustomerReceiveProduct";
+            this.textEditCustomerReceiveProduct.Properties.AllowRemoveMRUItems = false;
+            this.textEditCustomerReceiveProduct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textEditCustomerReceiveProduct.Properties.Appearance.Options.UseFont = true;
+            this.textEditCustomerReceiveProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.textEditCustomerReceiveProduct.Properties.CaseSensitiveSearch = true;
+            this.textEditCustomerReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.textEditCustomerReceiveProduct.Properties.Sorted = true;
+            this.textEditCustomerReceiveProduct.Size = new System.Drawing.Size(170, 26);
+            this.textEditCustomerReceiveProduct.TabIndex = 20;
             // 
             // employeeReturn
             // 
@@ -1069,6 +1086,7 @@
             this.cmbCustomerName.Properties.Sorted = true;
             this.cmbCustomerName.Size = new System.Drawing.Size(188, 26);
             this.cmbCustomerName.TabIndex = 1;
+            this.cmbCustomerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
             // 
             // richTextBoxAddress
             // 
@@ -1120,23 +1138,6 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
-            // textEditCustomerReceiveProduct
-            // 
-            this.textEditCustomerReceiveProduct.AllowDrop = true;
-            this.textEditCustomerReceiveProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditCustomerReceiveProduct.Location = new System.Drawing.Point(199, 28);
-            this.textEditCustomerReceiveProduct.Name = "textEditCustomerReceiveProduct";
-            this.textEditCustomerReceiveProduct.Properties.AllowRemoveMRUItems = false;
-            this.textEditCustomerReceiveProduct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditCustomerReceiveProduct.Properties.Appearance.Options.UseFont = true;
-            this.textEditCustomerReceiveProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEditCustomerReceiveProduct.Properties.CaseSensitiveSearch = true;
-            this.textEditCustomerReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.textEditCustomerReceiveProduct.Properties.Sorted = true;
-            this.textEditCustomerReceiveProduct.Size = new System.Drawing.Size(170, 26);
-            this.textEditCustomerReceiveProduct.TabIndex = 20;
-            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1169,6 +1170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerReceiveProduct.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReturn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
@@ -1202,7 +1204,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerReceiveProduct.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

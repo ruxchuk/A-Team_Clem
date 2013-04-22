@@ -128,6 +128,7 @@ namespace A_Team_Clem
 
         public void showAddCustomerClem()
         {
+            addCustomerCustomerClem.loadAllListData();
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCustomerCustomerClem);
         }

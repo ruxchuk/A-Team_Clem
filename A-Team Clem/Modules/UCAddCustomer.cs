@@ -20,7 +20,6 @@ namespace A_Team_Clem.Modules
             // TODO: Complete member initialization
             this.fRMMain = fRMMain;
             InitializeComponent();
-            fRMMain = fRMMain;
             conDB = new ConMySql();
             convertDT = new ConvertDateTime();
         }
@@ -38,13 +37,13 @@ namespace A_Team_Clem.Modules
 
         private void readData()
         {
-            conDB.company_name_th = nameTH.Text;
-            conDB.company_name_en = nameEng.Text;
-            conDB.company_adddress = address.Text;
-            conDB.company_phone = phone.Text;
-            conDB.company_email = email.Text;
-            conDB.company_date_create = convertDT.convert(DateTime.Now);
-            conDB.company_date_stamp = convertDT.convert(DateTime.Now);
+            conDB.name_th = nameTH.Text;
+            conDB.name_en = nameEng.Text;
+            conDB.address = address.Text;
+            conDB.phone = phone.Text;
+            conDB.email = email.Text;
+            conDB.customer_date_create = convertDT.convert(DateTime.Now);
+            conDB.customer_date_stamp = convertDT.convert(DateTime.Now);
         }
 
         private void simpleButtonAddClem_Click(object sender, EventArgs e)
@@ -53,9 +52,10 @@ namespace A_Team_Clem.Modules
             {
                 return;
             }
-            int companyID = conDB.addCompany();
+            readData();
+            int companyID = conDB.addCustomer();
 
-            fRMMain.showAddCustomer();
+            fRMMain.showAddCustomerClem();
         }
     }
 }
