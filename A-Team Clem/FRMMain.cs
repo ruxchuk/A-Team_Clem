@@ -23,7 +23,7 @@ namespace A_Team_Clem
 
         private Modules.UCAddCustomerClem addCustomerCustomerClem;
         private Modules.UCReportCustomerClem customerReport;
-        private Modules.UCAddEmployeeClem employee;
+        private Modules.UCAddEmployeeClem addEmployeeClem;
         private Modules.UCReportEmployeeClem employeeReport;
         private Modules.UCAddProduct addProduct;
         private Modules.UCAddCompany addCompany;
@@ -44,7 +44,7 @@ namespace A_Team_Clem
         {
             addCustomerCustomerClem = new Modules.UCAddCustomerClem(this) { Dock = DockStyle.Fill };
             customerReport = new Modules.UCReportCustomerClem() { Dock = DockStyle.Fill };
-            employee = new Modules.UCAddEmployeeClem() { Dock = DockStyle.Fill };
+            addEmployeeClem = new Modules.UCAddEmployeeClem() { Dock = DockStyle.Fill };
             employeeReport = new Modules.UCReportEmployeeClem() { Dock = DockStyle.Fill };
             addProduct = new Modules.UCAddProduct(this) { Dock = DockStyle.Fill };
             addCompany = new Modules.UCAddCompany(this) { Dock = DockStyle.Fill };
@@ -95,7 +95,7 @@ namespace A_Team_Clem
         private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             panelShowUserControl.Controls.Clear();
-            panelShowUserControl.Controls.Add(employee);
+            panelShowUserControl.Controls.Add(addEmployeeClem);
         }
 
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -160,6 +160,31 @@ namespace A_Team_Clem
         {
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addEmployee);
+        }
+
+        private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            showAddCustomer();
+        }
+
+        private void navBarItem7_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            showAddCompany();
+        }
+
+        private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            showAddEmployee();
+        }
+
+        private void navBarItem11_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            showAddProduct();
+        }
+
+        private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            showAddProductType();
         }
     }
 }

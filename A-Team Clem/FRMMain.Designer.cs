@@ -207,6 +207,7 @@
             // 
             this.navBarItem5.Caption = "เพิ่มชื่อลูกค้า";
             this.navBarItem5.Name = "navBarItem5";
+            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // navBarItem6
             // 
@@ -227,6 +228,7 @@
             // 
             this.navBarItem7.Caption = "เพิ่มบริษัท";
             this.navBarItem7.Name = "navBarItem7";
+            this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
             // 
             // navBarItem8
             // 
@@ -247,6 +249,7 @@
             // 
             this.navBarItem9.Caption = "เพิ่มพนักงาน";
             this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarItem10
             // 
@@ -266,6 +269,7 @@
             // 
             this.navBarItem11.Caption = "เพิ่มสินค้า";
             this.navBarItem11.Name = "navBarItem11";
+            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
             // 
             // navBarItem12
             // 
@@ -285,6 +289,7 @@
             // 
             this.navBarItem13.Caption = "เพิ่มประเภทสินค้า";
             this.navBarItem13.Name = "navBarItem13";
+            this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked);
             // 
             // navBarItem14
             // 
