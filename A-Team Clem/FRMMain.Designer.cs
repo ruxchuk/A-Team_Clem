@@ -70,6 +70,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::A_Team_Clem.WaitForm2), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelShowUserControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -507,6 +508,7 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupProductType;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
 
 
     }

@@ -56,8 +56,10 @@
             this.employeeReturn = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.status = new System.Windows.Forms.ComboBox();
             this.clear = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddClem = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panelWarranty = new System.Windows.Forms.Panel();
             this.textEditChargebacks = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
@@ -109,8 +111,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.status = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -514,6 +514,21 @@
             this.groupControl3.TabIndex = 107;
             this.groupControl3.Text = "ข้อมูลการซ่อม";
             // 
+            // status
+            // 
+            this.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
+            "",
+            "รับเคลม",
+            "ส่งเคลม",
+            "สำเร็จ"});
+            this.status.Location = new System.Drawing.Point(138, 35);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(184, 27);
+            this.status.TabIndex = 1079;
+            // 
             // clear
             // 
             this.clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -537,6 +552,17 @@
             this.simpleButtonAddClem.TabIndex = 27;
             this.simpleButtonAddClem.Text = "เพิ่มรายการเคลม";
             this.simpleButtonAddClem.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl7.Location = new System.Drawing.Point(55, 35);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(9, 19);
+            this.labelControl7.TabIndex = 1070;
+            this.labelControl7.Text = "*";
             // 
             // panelWarranty
             // 
@@ -1148,40 +1174,13 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl7.Location = new System.Drawing.Point(55, 35);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(9, 19);
-            this.labelControl7.TabIndex = 1070;
-            this.labelControl7.Text = "*";
-            // 
-            // status
-            // 
-            this.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status.FormattingEnabled = true;
-            this.status.Items.AddRange(new object[] {
-            "",
-            "รับของ",
-            "รับเคลม",
-            "ส่งเคลม",
-            "สำเร็จ"});
-            this.status.Location = new System.Drawing.Point(138, 35);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(184, 27);
-            this.status.TabIndex = 1079;
-            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControlPage);
-            this.MinimumSize = new System.Drawing.Size(1010, 550);
+            this.MinimumSize = new System.Drawing.Size(1062, 562);
             this.Name = "UCAddCustomerClem";
             this.Size = new System.Drawing.Size(1062, 562);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

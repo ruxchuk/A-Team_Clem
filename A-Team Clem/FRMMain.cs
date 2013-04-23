@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.IO;
 using System.Diagnostics;
+using A_Team_Clem.Modules;
 
 namespace A_Team_Clem
 {
@@ -18,11 +19,14 @@ namespace A_Team_Clem
             InitializeComponent();
             strPathSkin = pathFolderSave + "\\" + skinFileName;
 
+            splashScreenManager1.ShowWaitForm();
+            splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดโปรแกรม");
+            splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
             conDB = new ConMySql();
         }
 
         public Modules.UCAddCustomerClem addCustomerCustomerClem;
-        public Modules.UCReportCustomerClem customerReport;
+        //public Modules.UCReportCustomerClem customerReport;
         public Modules.UCAddEmployeeClem addEmployeeClem;
         public Modules.UCReportEmployeeClem employeeReport;
         public Modules.UCAddProduct addProduct;
@@ -30,6 +34,7 @@ namespace A_Team_Clem
         public Modules.UCAddEmployee addEmployee;
         public Modules.UCAddCustomer addCustomer;
         public Modules.UCAddProductType addProductType;
+
 
         private string pathFolderSave = @"Files\save";
         private string skinFileName = "skin.txt";
@@ -43,7 +48,6 @@ namespace A_Team_Clem
         private void FRMMain_Load(object sender, EventArgs e)
         {
             addCustomerCustomerClem = new Modules.UCAddCustomerClem(this) { Dock = DockStyle.Fill };
-            customerReport = new Modules.UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             addEmployeeClem = new Modules.UCAddEmployeeClem() { Dock = DockStyle.Fill };
             employeeReport = new Modules.UCReportEmployeeClem() { Dock = DockStyle.Fill };
             addProduct = new Modules.UCAddProduct(this) { Dock = DockStyle.Fill };
@@ -54,6 +58,8 @@ namespace A_Team_Clem
         
             loadSkin();
             showAddCustomerClem();
+
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void loadSkin()
@@ -135,9 +141,16 @@ namespace A_Team_Clem
 
         public void showCustomerClemReport()
         {
+            splashScreenManager1.ShowWaitForm();
+            splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดรายงาน");
+            splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
+
             panelShowUserControl.Controls.Clear();
+
+            UCReportCustomerClem customerReport = new UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             panelShowUserControl.Controls.Add(customerReport);
             customerReport.customerName.Focus();
+            splashScreenManager1.CloseWaitForm();
         }
 
         public void showAddCustomer()

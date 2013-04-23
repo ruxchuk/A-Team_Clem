@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCReportCustomerClem));
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.imgSearch = new System.Windows.Forms.PictureBox();
+            this.imgClear = new System.Windows.Forms.PictureBox();
             this.status = new System.Windows.Forms.ComboBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.productName = new DevExpress.XtraEditors.MRUEdit();
@@ -40,21 +42,19 @@
             this.serial = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
-            this.imgClear = new System.Windows.Forms.PictureBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.imgSearch = new System.Windows.Forms.PictureBox();
             this.customerName = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -74,6 +74,8 @@
             // 
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.imgSearch);
+            this.groupControl1.Controls.Add(this.imgClear);
             this.groupControl1.Controls.Add(this.status);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.productName);
@@ -83,9 +85,7 @@
             this.groupControl1.Controls.Add(this.serial);
             this.groupControl1.Controls.Add(this.labelControl11);
             this.groupControl1.Controls.Add(this.phone);
-            this.groupControl1.Controls.Add(this.imgClear);
             this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.imgSearch);
             this.groupControl1.Controls.Add(this.customerName);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(3, 60);
@@ -94,15 +94,47 @@
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "ค้นหารายการ";
             // 
+            // imgSearch
+            // 
+            this.imgSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgSearch.BackgroundImage")));
+            this.imgSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgSearch.Location = new System.Drawing.Point(986, 56);
+            this.imgSearch.Name = "imgSearch";
+            this.imgSearch.Size = new System.Drawing.Size(40, 40);
+            this.imgSearch.TabIndex = 1072;
+            this.imgSearch.TabStop = false;
+            this.imgSearch.Tag = "ค้นหา";
+            this.imgSearch.Click += new System.EventHandler(this.imgSearch_Click);
+            this.imgSearch.MouseLeave += new System.EventHandler(this.imgSearch_MouseLeave);
+            this.imgSearch.MouseHover += new System.EventHandler(this.imgSearch_MouseHover);
+            // 
+            // imgClear
+            // 
+            this.imgClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgClear.BackgroundImage")));
+            this.imgClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgClear.Location = new System.Drawing.Point(934, 56);
+            this.imgClear.Name = "imgClear";
+            this.imgClear.Size = new System.Drawing.Size(40, 40);
+            this.imgClear.TabIndex = 1072;
+            this.imgClear.TabStop = false;
+            this.imgClear.Tag = "Clear";
+            this.imgClear.Click += new System.EventHandler(this.imgClear_Click);
+            this.imgClear.MouseLeave += new System.EventHandler(this.imgClear_MouseLeave);
+            this.imgClear.MouseHover += new System.EventHandler(this.imgClear_MouseHover);
+            // 
             // status
             // 
+            this.status.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.status.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.status.FormattingEnabled = true;
             this.status.Items.AddRange(new object[] {
             "",
-            "รับของ",
             "รับเคลม",
             "ส่งเคลม",
             "สำเร็จ"});
@@ -200,20 +232,6 @@
             this.phone.Size = new System.Drawing.Size(188, 26);
             this.phone.TabIndex = 1068;
             // 
-            // imgClear
-            // 
-            this.imgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgClear.BackgroundImage")));
-            this.imgClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgClear.Location = new System.Drawing.Point(924, 56);
-            this.imgClear.Name = "imgClear";
-            this.imgClear.Size = new System.Drawing.Size(52, 40);
-            this.imgClear.TabIndex = 1072;
-            this.imgClear.TabStop = false;
-            this.imgClear.Tag = "Clear";
-            this.imgClear.MouseLeave += new System.EventHandler(this.imgClear_MouseLeave);
-            this.imgClear.MouseHover += new System.EventHandler(this.imgClear_MouseHover);
-            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -223,19 +241,6 @@
             this.labelControl3.Size = new System.Drawing.Size(58, 19);
             this.labelControl3.TabIndex = 1069;
             this.labelControl3.Text = "เบอร์โทร";
-            // 
-            // imgSearch
-            // 
-            this.imgSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgSearch.BackgroundImage")));
-            this.imgSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSearch.Location = new System.Drawing.Point(977, 56);
-            this.imgSearch.Name = "imgSearch";
-            this.imgSearch.Size = new System.Drawing.Size(52, 40);
-            this.imgSearch.TabIndex = 1072;
-            this.imgSearch.TabStop = false;
-            this.imgSearch.Tag = "ค้นหา";
-            this.imgSearch.Click += new System.EventHandler(this.imgSearch_Click);
             // 
             // customerName
             // 
@@ -298,12 +303,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

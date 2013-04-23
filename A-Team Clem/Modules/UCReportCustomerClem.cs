@@ -28,6 +28,10 @@ namespace A_Team_Clem.Modules
         private ConvertDateTime convertDT;
         private string strPathLayout = @"Files\save\UCReportCustomerClem.xml";
         private Stream saveDefaultLayout;
+        private int sizeX = 47;
+        private int sizeY = 45;
+        private int curSizeX = 40;
+        private int curSizeY = 40;
 
         public void readData()
         {
@@ -37,6 +41,16 @@ namespace A_Team_Clem.Modules
             conDB.product_name_th = productName.Text;
             conDB.in_document_number_string = inDocumentNumber.Text;
             conDB.status = status.Text;
+        }
+
+        private void clearData()
+        {
+            customerName.Text = "";
+            phone.Text = "";
+            serial.Text = "";
+            productName.Text = "";
+            inDocumentNumber.Text = "";
+            status.SelectedIndex = -1;
         }
 
         private void setGridView()
@@ -125,19 +139,39 @@ namespace A_Team_Clem.Modules
 
         public void getListClem()
         {
+            //splashScreenManager1.ShowWaitForm();
+            //splashScreenManager1.SetWaitFormCaption("กำลังทำการค้นหา");
+            //splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
+
             readData();
             DataSet list = conDB.getListClem(fRMMain.addCustomerCustomerClem.clemType);
             gridControl1.DataSource = list.Tables["get_list_clem"];
             setGridView();
         }
 
+        #region set mouse
+        private void imgSearch_MouseHover(object sender, EventArgs e)
+        {
+
+            imgSearch.Size = new Size(sizeX, sizeY);
+        }
+
+        private void imgSearch_MouseLeave(object sender, EventArgs e)
+        {
+
+            imgSearch.Size = new Size(curSizeX, curSizeY);
+        }
+
         private void imgClear_MouseHover(object sender, EventArgs e)
         {
+            imgClear.Size = new Size(sizeX, sizeY);
         }
 
         private void imgClear_MouseLeave(object sender, EventArgs e)
         {
+            imgClear.Size = new Size(curSizeX, curSizeY);
         }
+        #endregion
 
         private void UCReportCustomerClem_Load(object sender, EventArgs e)
         {
@@ -146,7 +180,12 @@ namespace A_Team_Clem.Modules
 
         private void imgSearch_Click(object sender, EventArgs e)
         {
+            getListClem();
+        }
 
+        private void imgClear_Click(object sender, EventArgs e)
+        {
+            clearData();
         }
     }
 }
