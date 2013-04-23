@@ -27,5 +27,11 @@ namespace A_Team_Clem
             newYearString = d2.Year.ToString(); 
             return newYearString;
         }
+
+        public DateTime convertToDateTimeThai(DateTime dt)
+        {
+            dt = DateTime.Parse(dt.ToString("dddd dd MMMM yyyy", new CultureInfo("th-TH")));
+            return dt;
+        }
     }
 }

@@ -58,7 +58,6 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.clear = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddClem = new DevExpress.XtraEditors.SimpleButton();
-            this.status = new DevExpress.XtraEditors.MRUEdit();
             this.panelWarranty = new System.Windows.Forms.Panel();
             this.textEditChargebacks = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
@@ -110,6 +109,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.status = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -134,7 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeReturn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).BeginInit();
             this.panelWarranty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChargebacks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -493,9 +493,10 @@
             // groupControl3
             // 
             this.groupControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl3.Controls.Add(this.status);
             this.groupControl3.Controls.Add(this.clear);
             this.groupControl3.Controls.Add(this.simpleButtonAddClem);
-            this.groupControl3.Controls.Add(this.status);
+            this.groupControl3.Controls.Add(this.labelControl7);
             this.groupControl3.Controls.Add(this.panelWarranty);
             this.groupControl3.Controls.Add(this.detail);
             this.groupControl3.Controls.Add(this.labelControl6);
@@ -536,28 +537,6 @@
             this.simpleButtonAddClem.TabIndex = 27;
             this.simpleButtonAddClem.Text = "เพิ่มรายการเคลม";
             this.simpleButtonAddClem.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
-            // 
-            // status
-            // 
-            this.status.AllowDrop = true;
-            this.status.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.status.Location = new System.Drawing.Point(138, 28);
-            this.status.Name = "status";
-            this.status.Properties.AllowRemoveMRUItems = false;
-            this.status.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.status.Properties.Appearance.Options.UseFont = true;
-            this.status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.status.Properties.CaseSensitiveSearch = true;
-            this.status.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.status.Properties.Items.AddRange(new object[] {
-            "รับของ",
-            "รับเคลม",
-            "ส่งเคลม",
-            "สำเร็จ"});
-            this.status.Properties.Sorted = true;
-            this.status.Size = new System.Drawing.Size(188, 26);
-            this.status.TabIndex = 1;
             // 
             // panelWarranty
             // 
@@ -1169,6 +1148,33 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl7.Location = new System.Drawing.Point(55, 35);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(9, 19);
+            this.labelControl7.TabIndex = 1070;
+            this.labelControl7.Text = "*";
+            // 
+            // status
+            // 
+            this.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
+            "",
+            "รับของ",
+            "รับเคลม",
+            "ส่งเคลม",
+            "สำเร็จ"});
+            this.status.Location = new System.Drawing.Point(138, 35);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(184, 27);
+            this.status.TabIndex = 1079;
+            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1207,7 +1213,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).EndInit();
             this.panelWarranty.ResumeLayout(false);
             this.panelWarranty.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChargebacks.Properties)).EndInit();
@@ -1313,7 +1318,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         public DevExpress.XtraEditors.MRUEdit employeeReturn;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        public DevExpress.XtraEditors.MRUEdit status;
         public DevExpress.XtraEditors.MRUEdit productType;
         public DevExpress.XtraEditors.MRUEdit companyName;
         private System.Windows.Forms.PictureBox imgAddCustomer;
@@ -1324,6 +1328,8 @@
         public DevExpress.XtraEditors.MRUEdit customerReceiveProduct;
         private System.Windows.Forms.PictureBox imgAddCustomer2;
         private DevExpress.XtraEditors.SimpleButton clear;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private System.Windows.Forms.ComboBox status;
 
     }
 }

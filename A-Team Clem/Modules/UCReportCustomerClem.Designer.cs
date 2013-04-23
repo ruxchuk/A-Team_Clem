@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCReportCustomerClem));
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.status = new DevExpress.XtraEditors.MRUEdit();
+            this.status = new System.Windows.Forms.ComboBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.productName = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -47,11 +45,10 @@
             this.imgSearch = new System.Windows.Forms.PictureBox();
             this.customerName = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
@@ -59,6 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControlPage
@@ -70,24 +69,6 @@
             this.labelControlPage.Size = new System.Drawing.Size(314, 39);
             this.labelControlPage.TabIndex = 2;
             this.labelControlPage.Text = "รายงานใบรับเคลมสินค้า";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(3, 167);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1034, 340);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
             // 
             // groupControl1
             // 
@@ -115,25 +96,20 @@
             // 
             // status
             // 
-            this.status.AllowDrop = true;
-            this.status.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.status.Location = new System.Drawing.Point(718, 61);
-            this.status.Name = "status";
-            this.status.Properties.AllowRemoveMRUItems = false;
-            this.status.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.status.Properties.Appearance.Options.UseFont = true;
-            this.status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.status.Properties.CaseSensitiveSearch = true;
-            this.status.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.status.Properties.Items.AddRange(new object[] {
+            this.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.status.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
+            "",
             "รับของ",
             "รับเคลม",
             "ส่งเคลม",
             "สำเร็จ"});
-            this.status.Properties.Sorted = true;
-            this.status.Size = new System.Drawing.Size(169, 26);
-            this.status.TabIndex = 1091;
+            this.status.Location = new System.Drawing.Point(718, 60);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(169, 27);
+            this.status.TabIndex = 1093;
             // 
             // labelControl6
             // 
@@ -288,23 +264,40 @@
             this.labelControl1.TabIndex = 1071;
             this.labelControl1.Text = "ชื่อลูกค้า";
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Location = new System.Drawing.Point(3, 167);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1034, 337);
+            this.gridControl1.TabIndex = 5;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
             // UCReportCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControlPage);
             this.MinimumSize = new System.Drawing.Size(1040, 507);
             this.Name = "UCReportCustomerClem";
             this.Size = new System.Drawing.Size(1040, 507);
             this.Load += new System.EventHandler(this.UCReportCustomerClem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
@@ -312,6 +305,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,8 +315,6 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControlPage;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         public DevExpress.XtraEditors.MRUEdit customerName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -335,7 +328,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl18;
         public DevExpress.XtraEditors.MRUEdit productName;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        public DevExpress.XtraEditors.MRUEdit status;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.ComboBox status;
     }
 }

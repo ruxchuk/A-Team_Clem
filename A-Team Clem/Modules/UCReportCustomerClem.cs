@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using System.Diagnostics;
 using DevExpress.XtraGrid.Columns;
 using System.IO;
+using DevExpress.Utils;
 
 namespace A_Team_Clem.Modules
 {
@@ -38,8 +39,45 @@ namespace A_Team_Clem.Modules
             conDB.status = status.Text;
         }
 
-        private void setDataGrid()
+        private void setGridView()
         {
+            gridView1.Columns["id"].Caption = "ID ใบเคลม";
+            gridView1.Columns["customer_name_th"].Caption = "ชื่อลูกค้า";
+            gridView1.Columns["address"].Caption = "ที่อยู่";
+            gridView1.Columns["phone"].Caption = "เบอร์โทรศัพท์";
+            gridView1.Columns["serial"].Caption = "Serial";
+            gridView1.Columns["status"].Caption = "สถานะ";
+            gridView1.Columns["product_name"].Caption = "ชื่อสินค้า";
+            gridView1.Columns["company_name_th"].Caption = "บริษัท";
+            gridView1.Columns["product_type_name_th"].Caption = "ชนิดสินค้า";
+            gridView1.Columns["date_product"].Caption = "วันหมดอายุ";
+            gridView1.Columns["date_product"].DisplayFormat.FormatType = FormatType.DateTime;
+            gridView1.Columns["date_product"].DisplayFormat.FormatString = fRMMain.formatDate;
+            gridView1.Columns["in_document_number_str"].Caption = "เลขที่เอกสารภายใน";
+            gridView1.Columns["out_document_number"].Caption = "เลขที่เอกสารภายนอก";
+            gridView1.Columns["in_serial_clem"].Caption = "เลขที่เลขที่ใบรับเคลมภายใน";
+            gridView1.Columns["out_serial_clem"].Caption = "เลขที่เลขที่ใบรับเคลมภายนอก";
+            gridView1.Columns["customer_clem"].Caption = "1. ลูกค้า-ผู้ส่งเคลม";
+            gridView1.Columns["employee_receive_clem"].Caption = "2. พนักงาน-ผู้รับเคลม";
+            gridView1.Columns["employee_clem"].Caption = "3. พนักงาน-ผู้ส่งเคลม";
+            gridView1.Columns["company_receive_clem"].Caption = "4. บริษัท-ผู้รับเคลม";
+            gridView1.Columns["company_return"].Caption = "5. บริษัท-ผู้คืนของ";
+            gridView1.Columns["employee_receive_product"].Caption = "6. พนักงาน-ผู้รับของ";
+            gridView1.Columns["employee_return"].Caption = "7. พนักงาน-ผู้คืนของ";
+            gridView1.Columns["customer_receive_product"].Caption = "8.ลูกค้า-ผู้รับของ";
+            gridView1.Columns["warranty"].Caption = "การประกัน";
+            gridView1.Columns["chargebacks"].Caption = "เก็บเงินเพิ่ม";
+            gridView1.Columns["symptom"].Caption = "อาการเสีย";
+            gridView1.Columns["equipment"].Caption = "อุปกรณ์ที่ซ่อม";
+            gridView1.Columns["detail"].Caption = "อุปกรณ์ที่ซ่อม";
+            gridView1.Columns["date_create"].Caption = "วันที่ทำรายการ";
+            gridView1.Columns["date_create"].DisplayFormat.FormatType = FormatType.DateTime;
+            gridView1.Columns["date_create"].DisplayFormat.FormatString = fRMMain.formatDate;
+            gridView1.Columns["date_stamp"].Caption = "วันที่แก้ไข";
+            gridView1.Columns["date_stamp"].DisplayFormat.FormatType = FormatType.DateTime;
+            gridView1.Columns["date_stamp"].DisplayFormat.FormatString = fRMMain.formatDate;
+
+
             gridView1.OptionsView.ShowFooter = true;
             //gridView1.OptionsView.ShowGroupedColumns = true;
 
@@ -63,7 +101,7 @@ namespace A_Team_Clem.Modules
             AutoHeightHelper helper = new AutoHeightHelper(gridView1);
             helper.EnableColumnPanelAutoHeight();
 
-            saveLayout();
+            //saveLayout();
         }
 
         public void saveLayout()
@@ -90,7 +128,7 @@ namespace A_Team_Clem.Modules
             readData();
             DataSet list = conDB.getListClem(fRMMain.addCustomerCustomerClem.clemType);
             gridControl1.DataSource = list.Tables["get_list_clem"];
-            setDataGrid();
+            setGridView();
         }
 
         private void imgClear_MouseHover(object sender, EventArgs e)

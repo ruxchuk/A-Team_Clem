@@ -457,7 +457,6 @@
             this.Name = "FRMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMMain";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRMMain_FormClosing);
             this.Load += new System.EventHandler(this.FRMMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelShowUserControl)).EndInit();

@@ -154,10 +154,16 @@ namespace A_Team_Clem.Modules
                 dtProductEndDate.Select();
                 return false;
             }
-            else if (employeeReceiveClem.Text == "กรุณากรอกชื่อพนักงานที่รับเคลมสินค้า")
+            else if (employeeReceiveClem.Text == "")
             {
-                MessageBox.Show("");
+                MessageBox.Show("กรุณากรอกชื่อพนักงานที่รับเคลมสินค้า");
                 employeeReceiveClem.Select();
+                return false;
+            }
+            else if (status.Text == "")
+            {
+                MessageBox.Show("กรุณาสถานะ");
+                status.Select();
                 return false;
             }
             return true;
