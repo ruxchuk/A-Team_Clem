@@ -29,7 +29,7 @@ namespace A_Team_Clem.Modules
         {
             if (nameTH.Text == "")
             {
-                MessageBox.Show("กรุณากรอกชื่อสินค้า");
+                MessageBox.Show("กรุณากรอกชื่อชนิดสินค้า");
                 nameTH.Focus();
                 return false;
             }
@@ -55,11 +55,11 @@ namespace A_Team_Clem.Modules
             Debug.WriteLine(productID);
             if (productID == 0)
             {
-                MessageBox.Show("ชนินสินค้า \"" + nameTH.Text + "\" มีการเพิ่มเข้ามาแล้ว\nกรุณาตรวจสอบ");
+                MessageBox.Show("ชนิดสินค้า \"" + nameTH.Text + "\" มีการเพิ่มเข้ามาแล้ว\nกรุณาตรวจสอบ");
             }
             else
             {
-                fRMMain.showAddProductType();
+                fRMMain.showAddCustomerClem();
                 fRMMain.addCustomerCustomerClem.productType.Text = nameTH.Text;
                 fRMMain.addCustomerCustomerClem.productType.Focus();
             }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Diagnostics;
 
 namespace A_Team_Clem.Modules
 {
@@ -15,16 +16,25 @@ namespace A_Team_Clem.Modules
         private ConMySql conDB;
         private ConvertDateTime convertDT;
 
+        public UCAddEmployee(FRMMain fRMMain)
+        {
+            InitializeComponent();
+            // TODO: Complete member initialization
+            this.fRMMain = fRMMain;
+            conDB = new ConMySql();
+            convertDT = new ConvertDateTime();
+        }
+
         private bool validateForm()
         {
             if (nameTH.Text == "")
             {
-                MessageBox.Show("กรุณากรอกชื่อลูกค้า");
+                MessageBox.Show("กรุณากรอกชื่อพนักงาน");
                 return false;
             }
             else if (phone.Text == "")
             {
-                MessageBox.Show("กรุณากรอกเบอร์โทรลูกค้า");
+                MessageBox.Show("กรุณากรอกเบอร์พนักงานก่อน");
                 return false;
             }
             return true;
@@ -33,20 +43,14 @@ namespace A_Team_Clem.Modules
         private void readData()
         {
             //conDB.customer_id = 0;
-            conDB.name_th = nameTH.Text;
-            conDB.name_en = nameEng.Text;
-            conDB.address = richTextBoxAddress.Text;
-            conDB.phone = phone.Text;
-            conDB.email = email.Text;
-            conDB.customer_date_create = convertDT.convert(DateTime.Now);
-            conDB.customer_date_stamp = convertDT.convert(DateTime.Now);
-        }
-
-        public UCAddEmployee(FRMMain fRMMain)
-        {
-            InitializeComponent();
-            // TODO: Complete member initialization
-            this.fRMMain = fRMMain;
+            conDB.employee_name_th = nameTH.Text;
+            conDB.employee_name_en = nameEng.Text;
+            conDB.employee_nickname = nickname.Text;
+            conDB.employee_ddress = richTextBoxAddress.Text;
+            conDB.employee_phone = phone.Text;
+            conDB.employee_date_start = convertDT.convert(dtStart.DateTime);
+            conDB.employee_date_create = convertDT.convert(DateTime.Now);
+            conDB.employee_date_stamp = convertDT.convert(DateTime.Now);
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -56,15 +60,17 @@ namespace A_Team_Clem.Modules
                 return;
             }
             readData();
-
-            int resultID = conDB.addEmployee();
-            if (resultID != 0)
+            int employeeID = conDB.addEmployee();
+            Debug.WriteLine(employeeID);
+            if (employeeID == 0)
             {
-
+                MessageBox.Show("ชื่อพนักงาน \"" + nameTH.Text + "\" มีการเพิ่มเข้ามาแล้ว\nกรุณาตรวจสอบ");
             }
             else
             {
-                MessageBox.Show("การเพิ่มข้อมูลผิดพลาด");
+                fRMMain.showAddCustomerClem();
+                fRMMain.addCustomerCustomerClem.employeeReceiveClem.Text = nameTH.Text;
+                fRMMain.addCustomerCustomerClem.employeeReceiveClem.Focus();
             }
         }
     }

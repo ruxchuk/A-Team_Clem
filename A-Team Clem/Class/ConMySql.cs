@@ -637,7 +637,7 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("add_product", connection);
+                    MySqlCommand cmd = new MySqlCommand("add_product_type", connection);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@s_name_th", product_type_name_th);
                     cmd.Parameters.AddWithValue("@s_name_en", product_type_name_en);
