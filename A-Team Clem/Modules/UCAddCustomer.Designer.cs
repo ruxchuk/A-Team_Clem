@@ -43,6 +43,7 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
@@ -63,9 +64,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Controls.Add(this.cancel);
             this.groupControl1.Controls.Add(this.labelControl60);
             this.groupControl1.Controls.Add(this.labelControl59);
             this.groupControl1.Controls.Add(this.address);
@@ -212,12 +211,23 @@
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Appearance.Options.UseFont = true;
-            this.buttonAdd.Location = new System.Drawing.Point(460, 207);
+            this.buttonAdd.Location = new System.Drawing.Point(385, 209);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(69, 33);
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "เพิ่ม";
             this.buttonAdd.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel.Appearance.Options.UseFont = true;
+            this.cancel.Location = new System.Drawing.Point(460, 209);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(69, 33);
+            this.cancel.TabIndex = 1080;
+            this.cancel.Text = "ยกเลิก";
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // UCAddCustomer
             // 
@@ -256,5 +266,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.SimpleButton cancel;
     }
 }

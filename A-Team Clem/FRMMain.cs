@@ -82,7 +82,7 @@ namespace A_Team_Clem
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
+        {            
             showAddCustomerClem();
         }
 

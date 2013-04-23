@@ -36,6 +36,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
+            this.cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).BeginInit();
@@ -49,6 +50,7 @@
             this.groupControl1.Controls.Add(this.nameEng);
             this.groupControl1.Controls.Add(this.nameTH);
             this.groupControl1.Controls.Add(this.labelControl5);
+            this.groupControl1.Controls.Add(this.cancel);
             this.groupControl1.Controls.Add(this.buttonAdd);
             this.groupControl1.Location = new System.Drawing.Point(3, 54);
             this.groupControl1.Name = "groupControl1";
@@ -106,7 +108,7 @@
             // 
             this.buttonAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Appearance.Options.UseFont = true;
-            this.buttonAdd.Location = new System.Drawing.Point(342, 150);
+            this.buttonAdd.Location = new System.Drawing.Point(267, 150);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(69, 33);
             this.buttonAdd.TabIndex = 6;
@@ -122,6 +124,17 @@
             this.labelControlPage.Size = new System.Drawing.Size(230, 39);
             this.labelControlPage.TabIndex = 23;
             this.labelControlPage.Text = "เพิ่มประเภทสินค้า";
+            // 
+            // cancel
+            // 
+            this.cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel.Appearance.Options.UseFont = true;
+            this.cancel.Location = new System.Drawing.Point(342, 150);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(69, 33);
+            this.cancel.TabIndex = 6;
+            this.cancel.Text = "ยกเลิก";
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // UCAddProductType
             // 
@@ -151,5 +164,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.LabelControl labelControlPage;
+        private DevExpress.XtraEditors.SimpleButton cancel;
     }
 }

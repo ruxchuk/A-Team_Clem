@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dtStart = new DevExpress.XtraEditors.DateEdit();
             this.labelControl60 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
             this.richTextBoxAddress = new System.Windows.Forms.RichTextBox();
@@ -37,29 +38,30 @@
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.nameEng = new DevExpress.XtraEditors.TextEdit();
             this.nameTH = new DevExpress.XtraEditors.TextEdit();
+            this.nickname = new DevExpress.XtraEditors.TextEdit();
             this.email = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.add = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.dtStart = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.nickname = new DevExpress.XtraEditors.TextEdit();
+            this.cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.email.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nickname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.cancel);
             this.groupControl1.Controls.Add(this.dtStart);
             this.groupControl1.Controls.Add(this.labelControl60);
             this.groupControl1.Controls.Add(this.labelControl59);
@@ -82,6 +84,21 @@
             this.groupControl1.Size = new System.Drawing.Size(540, 282);
             this.groupControl1.TabIndex = 22;
             this.groupControl1.Text = "ข้อมูลพนักงาน";
+            // 
+            // dtStart
+            // 
+            this.dtStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtStart.EditValue = null;
+            this.dtStart.Location = new System.Drawing.Point(377, 143);
+            this.dtStart.Name = "dtStart";
+            this.dtStart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtStart.Properties.Appearance.Options.UseFont = true;
+            this.dtStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtStart.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dtStart.Size = new System.Drawing.Size(152, 26);
+            this.dtStart.TabIndex = 6;
             // 
             // labelControl60
             // 
@@ -109,7 +126,7 @@
             this.richTextBoxAddress.Location = new System.Drawing.Point(120, 146);
             this.richTextBoxAddress.Name = "richTextBoxAddress";
             this.richTextBoxAddress.Size = new System.Drawing.Size(152, 96);
-            this.richTextBoxAddress.TabIndex = 3;
+            this.richTextBoxAddress.TabIndex = 4;
             this.richTextBoxAddress.Text = "";
             // 
             // labelControl1
@@ -137,7 +154,7 @@
             this.phone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.phone.Properties.Appearance.Options.UseFont = true;
             this.phone.Size = new System.Drawing.Size(152, 26);
-            this.phone.TabIndex = 4;
+            this.phone.TabIndex = 2;
             // 
             // nameEng
             // 
@@ -146,7 +163,7 @@
             this.nameEng.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.nameEng.Properties.Appearance.Options.UseFont = true;
             this.nameEng.Size = new System.Drawing.Size(152, 26);
-            this.nameEng.TabIndex = 2;
+            this.nameEng.TabIndex = 3;
             // 
             // nameTH
             // 
@@ -156,6 +173,15 @@
             this.nameTH.Properties.Appearance.Options.UseFont = true;
             this.nameTH.Size = new System.Drawing.Size(152, 26);
             this.nameTH.TabIndex = 1;
+            // 
+            // nickname
+            // 
+            this.nickname.Location = new System.Drawing.Point(377, 198);
+            this.nickname.Name = "nickname";
+            this.nickname.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.nickname.Properties.Appearance.Options.UseFont = true;
+            this.nickname.Size = new System.Drawing.Size(152, 26);
+            this.nickname.TabIndex = 7;
             // 
             // email
             // 
@@ -174,6 +200,24 @@
             this.labelControl5.Size = new System.Drawing.Size(52, 19);
             this.labelControl5.TabIndex = 1075;
             this.labelControl5.Text = "ชื่อ Eng";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl7.Location = new System.Drawing.Point(292, 198);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(45, 19);
+            this.labelControl7.TabIndex = 1075;
+            this.labelControl7.Text = "ชื่อเล่น";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl6.Location = new System.Drawing.Point(292, 144);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(77, 19);
+            this.labelControl6.TabIndex = 1075;
+            this.labelControl6.Text = "วันที่เริ่มงาน";
             // 
             // labelControl4
             // 
@@ -197,7 +241,7 @@
             // 
             this.add.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add.Appearance.Options.UseFont = true;
-            this.add.Location = new System.Drawing.Point(466, 244);
+            this.add.Location = new System.Drawing.Point(391, 244);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(69, 33);
             this.add.TabIndex = 8;
@@ -214,47 +258,16 @@
             this.labelControlPage.TabIndex = 21;
             this.labelControlPage.Text = "เพิ่มพนักงาน";
             // 
-            // dtStart
+            // cancel
             // 
-            this.dtStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtStart.EditValue = null;
-            this.dtStart.Location = new System.Drawing.Point(377, 143);
-            this.dtStart.Name = "dtStart";
-            this.dtStart.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dtStart.Properties.Appearance.Options.UseFont = true;
-            this.dtStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtStart.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dtStart.Size = new System.Drawing.Size(152, 26);
-            this.dtStart.TabIndex = 6;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl6.Location = new System.Drawing.Point(292, 144);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(77, 19);
-            this.labelControl6.TabIndex = 1075;
-            this.labelControl6.Text = "วันที่เริ่มงาน";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl7.Location = new System.Drawing.Point(292, 198);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(45, 19);
-            this.labelControl7.TabIndex = 1075;
-            this.labelControl7.Text = "ชื่อเล่น";
-            // 
-            // nickname
-            // 
-            this.nickname.Location = new System.Drawing.Point(377, 198);
-            this.nickname.Name = "nickname";
-            this.nickname.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.nickname.Properties.Appearance.Options.UseFont = true;
-            this.nickname.Size = new System.Drawing.Size(152, 26);
-            this.nickname.TabIndex = 7;
+            this.cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel.Appearance.Options.UseFont = true;
+            this.cancel.Location = new System.Drawing.Point(466, 244);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(69, 33);
+            this.cancel.TabIndex = 1081;
+            this.cancel.Text = "ยกเลิก";
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // UCAddEmployee
             // 
@@ -267,13 +280,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.email.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtStart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nickname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.email.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +313,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit nickname;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.SimpleButton cancel;
     }
 }

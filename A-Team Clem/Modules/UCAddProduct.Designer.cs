@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.value = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.price = new DevExpress.XtraEditors.TextEdit();
@@ -36,21 +37,22 @@
             this.nameTH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.bottonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.value = new DevExpress.XtraEditors.MRUEdit();
+            this.cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.price.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.cancel);
             this.groupControl1.Controls.Add(this.value);
             this.groupControl1.Controls.Add(this.labelControl59);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -67,6 +69,27 @@
             this.groupControl1.Size = new System.Drawing.Size(522, 169);
             this.groupControl1.TabIndex = 22;
             this.groupControl1.Text = "ข้อมูลสินค้า";
+            // 
+            // value
+            // 
+            this.value.AllowDrop = true;
+            this.value.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.value.Location = new System.Drawing.Point(365, 84);
+            this.value.Name = "value";
+            this.value.Properties.AllowRemoveMRUItems = false;
+            this.value.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.value.Properties.Appearance.Options.UseFont = true;
+            this.value.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.value.Properties.CaseSensitiveSearch = true;
+            this.value.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.value.Properties.Items.AddRange(new object[] {
+            "กล่อง",
+            "ชิ้น",
+            "อัน"});
+            this.value.Properties.Sorted = true;
+            this.value.Size = new System.Drawing.Size(152, 26);
+            this.value.TabIndex = 1079;
             // 
             // labelControl59
             // 
@@ -133,6 +156,15 @@
             this.labelControl2.TabIndex = 1075;
             this.labelControl2.Text = "ราคา";
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl4.Location = new System.Drawing.Point(270, 91);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(75, 19);
+            this.labelControl4.TabIndex = 1075;
+            this.labelControl4.Text = "หน่วยสินค้า";
+            // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -146,7 +178,7 @@
             // 
             this.bottonAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bottonAdd.Appearance.Options.UseFont = true;
-            this.bottonAdd.Location = new System.Drawing.Point(448, 129);
+            this.bottonAdd.Location = new System.Drawing.Point(373, 131);
             this.bottonAdd.Name = "bottonAdd";
             this.bottonAdd.Size = new System.Drawing.Size(69, 33);
             this.bottonAdd.TabIndex = 4;
@@ -163,35 +195,16 @@
             this.labelControlPage.TabIndex = 21;
             this.labelControlPage.Text = "เพิ่มสินค้า";
             // 
-            // labelControl4
+            // cancel
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl4.Location = new System.Drawing.Point(270, 91);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(75, 19);
-            this.labelControl4.TabIndex = 1075;
-            this.labelControl4.Text = "หน่วยสินค้า";
-            // 
-            // value
-            // 
-            this.value.AllowDrop = true;
-            this.value.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.value.Location = new System.Drawing.Point(365, 84);
-            this.value.Name = "value";
-            this.value.Properties.AllowRemoveMRUItems = false;
-            this.value.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.value.Properties.Appearance.Options.UseFont = true;
-            this.value.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.value.Properties.CaseSensitiveSearch = true;
-            this.value.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.value.Properties.Items.AddRange(new object[] {
-            "กล่อง",
-            "ชิ้น",
-            "อัน"});
-            this.value.Properties.Sorted = true;
-            this.value.Size = new System.Drawing.Size(152, 26);
-            this.value.TabIndex = 1079;
+            this.cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel.Appearance.Options.UseFont = true;
+            this.cancel.Location = new System.Drawing.Point(448, 131);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(69, 33);
+            this.cancel.TabIndex = 1082;
+            this.cancel.Text = "ยกเลิก";
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // UCAddProduct
             // 
@@ -204,10 +217,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.price.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +241,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         public DevExpress.XtraEditors.MRUEdit value;
+        private DevExpress.XtraEditors.SimpleButton cancel;
     }
 }

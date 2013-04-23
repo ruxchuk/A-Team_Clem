@@ -6,6 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Diagnostics;
 
 namespace A_Team_Clem.Modules
 {
@@ -32,6 +33,12 @@ namespace A_Team_Clem.Modules
                 nameTH.Focus();
                 return false;
             }
+            if (phone.Text == "")
+            {
+                MessageBox.Show("กรุณากรอกเบอร์โทรลูกค้า");
+                phone.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -53,9 +60,24 @@ namespace A_Team_Clem.Modules
                 return;
             }
             readData();
-            int companyID = conDB.addCustomer();
+            int customerID = conDB.addCustomer();
+            Debug.WriteLine(customerID);
+            if (customerID == 0)
+            {
+                MessageBox.Show("ชื่อลูกค้า \"" + nameTH.Text + "\" มีการเพิ่มเข้ามาแล้ว\nกรุณาตรวจสอบ");
+            }
+            else
+            {
+                fRMMain.showAddCustomerClem();
+                fRMMain.addCustomerCustomerClem.cmbCustomerName.Text = nameTH.Text;
+                fRMMain.addCustomerCustomerClem.cmbCustomerName.Focus();
+            }
+        }
 
+        private void cancel_Click(object sender, EventArgs e)
+        {
             fRMMain.showAddCustomerClem();
+            fRMMain.addCustomerCustomerClem.cmbCustomerName.Focus();
         }
     }
 }

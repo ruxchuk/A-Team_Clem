@@ -66,5 +66,11 @@ namespace A_Team_Clem.Modules
                 fRMMain.addCustomerCustomerClem.productName.Focus();
             }
         }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            fRMMain.showAddCustomerClem();
+            fRMMain.addCustomerCustomerClem.productName.Focus();
+        }
     }
 }

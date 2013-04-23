@@ -108,6 +108,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEditPhone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.imgAddCustomer2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -156,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControlPage
@@ -412,6 +414,7 @@
             this.panelControl5.Appearance.Options.UseTextOptions = true;
             this.panelControl5.Controls.Add(this.labelControl29);
             this.panelControl5.Controls.Add(this.textEditCustomerReceiveProduct);
+            this.panelControl5.Controls.Add(this.imgAddCustomer2);
             this.panelControl5.Controls.Add(this.employeeReturn);
             this.panelControl5.Controls.Add(this.labelControl30);
             this.panelControl5.Location = new System.Drawing.Point(1, 217);
@@ -1138,6 +1141,19 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
+            // imgAddCustomer2
+            // 
+            this.imgAddCustomer2.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddCustomer2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddCustomer2.BackgroundImage")));
+            this.imgAddCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgAddCustomer2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAddCustomer2.Location = new System.Drawing.Point(179, 32);
+            this.imgAddCustomer2.Name = "imgAddCustomer2";
+            this.imgAddCustomer2.Size = new System.Drawing.Size(20, 16);
+            this.imgAddCustomer2.TabIndex = 1072;
+            this.imgAddCustomer2.TabStop = false;
+            this.imgAddCustomer2.Click += new System.EventHandler(this.imgAddCustomer_Click);
+            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1204,6 +1220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1290,6 +1307,7 @@
         private System.Windows.Forms.PictureBox imgAddProduct;
         private System.Windows.Forms.PictureBox imgAddEmployee;
         public DevExpress.XtraEditors.MRUEdit textEditCustomerReceiveProduct;
+        private System.Windows.Forms.PictureBox imgAddCustomer2;
 
     }
 }

@@ -19,6 +19,9 @@ namespace A_Team_Clem.Modules
         public int curCustomerID = 0;
         public int curEmployeeID = 0;
         private FRMMain mainForm;
+
+        public string clemType = "ใบรับเคลม";
+
         public List<string>[] listCustomer;
         public List<string>[] listPorductType;
         public List<string>[] listCompany;
@@ -39,15 +42,24 @@ namespace A_Team_Clem.Modules
             //set รูปแบบวันที่
             dtProductEndDate.Properties.DisplayFormat.FormatString = mainForm.formatDate;
             dtProductEndDate.Properties.Mask.EditMask = mainForm.formatDate;
+
+            Debug.WriteLine(conDB.getNewIDClemOfMonth(clemType));
+
+        }
+
+        public void loadInDocumentNumber()
+        {
+            textEditInDocumentNumber.Text = conDB.getNewIDClemOfMonth(clemType);
         }
 
         public void loadAllListData()
         {
-            getCustomer();
             getProductType(); 
             getCompany(); 
             getEmployee();
             getProduct();
+            loadInDocumentNumber();
+            getCustomer();
         }
 
         private void getCustomer()
@@ -193,7 +205,7 @@ namespace A_Team_Clem.Modules
             conDB.out_document_number = textEditOutDocumentNumber.Text;
             conDB.in_serial_clem = textEditInSerialClem.Text;
             conDB.out_serial_clem = textEditOutSerialClem.Text;
-            conDB.clem_type = "ใบรับเคลม";
+            conDB.clem_type = clemType;
             conDB.customer_clem = textEditCustomerClem.Text;
             conDB.employee_receive_clem = employeeReceiveClem.Text;
             conDB.employee_clem = employeeClem.Text;

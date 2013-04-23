@@ -23,6 +23,8 @@ namespace A_Team_Clem.Modules
             this.fRMMain = fRMMain;
             conDB = new ConMySql();
             convertDT = new ConvertDateTime();
+            dtStart.Properties.DisplayFormat.FormatString = fRMMain.formatDate;
+            dtStart.Properties.Mask.EditMask = fRMMain.formatDate;
         }
 
         private bool validateForm()
@@ -30,11 +32,13 @@ namespace A_Team_Clem.Modules
             if (nameTH.Text == "")
             {
                 MessageBox.Show("กรุณากรอกชื่อพนักงาน");
+                nameTH.Select();
                 return false;
             }
             else if (phone.Text == "")
             {
                 MessageBox.Show("กรุณากรอกเบอร์พนักงานก่อน");
+                phone.Select();
                 return false;
             }
             return true;
@@ -72,6 +76,12 @@ namespace A_Team_Clem.Modules
                 fRMMain.addCustomerCustomerClem.employeeReceiveClem.Text = nameTH.Text;
                 fRMMain.addCustomerCustomerClem.employeeReceiveClem.Focus();
             }
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            fRMMain.showAddCustomerClem();
+            fRMMain.addCustomerCustomerClem.employeeReceiveClem.Focus();
         }
     }
 }

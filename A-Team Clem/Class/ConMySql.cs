@@ -18,7 +18,9 @@ namespace A_Team_Clem
         public string server, dataBaseName, userName, password, port;
         public int CountAdd = 0;
         public string pathFileDB = @"Files\save\DB.txt";
-
+        public string formatIdNumber = "00000";
+        public string formatMonth = "00";
+        public ConvertDateTime convertDT;
         
         #region ประกาศค่า add clem
         public int product_type_id = 0;//,
@@ -107,6 +109,8 @@ namespace A_Team_Clem
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Initialize();
+
+            convertDT = new ConvertDateTime();
         }
 
         private void Initialize()
@@ -357,8 +361,8 @@ namespace A_Team_Clem
         //get รายชื่อพนักงาน
         public List<string>[] getEmployee(int employeeID = 0)
         {
-            List<string>[] list = new List<string>[5];
-            for (int i = 0; i < 5; i++)
+            List<string>[] list = new List<string>[9];
+            for (int i = 0; i < 9; i++)
             {
                 list[i] = new List<string>();
             }
@@ -394,16 +398,21 @@ namespace A_Team_Clem
             return list;
         }
 
-        public int getNewIDClemOfMonth(string clemType)
+        public string getNewIDClemOfMonth(string clemType)
         {
             int newIDOFMonth = 1;
+            string NewID = "00001";
+            string yearThaiNow = convertDT.convertToThaiYear(DateTime.Now);
+            char[] charYear = yearThaiNow.ToCharArray();
+            string newYear = charYear[2].ToString() + charYear[3].ToString();
+            string monthNow = DateTime.Now.Month.ToString(formatMonth);
             if (CheckConnect())
             {
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand("get_new_id_of_month", connection);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_employee_id", clemType);
+                    cmd.Parameters.AddWithValue("@s_clem_type", clemType);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
@@ -413,11 +422,14 @@ namespace A_Team_Clem
                 }
                 catch
                 {
-                    return newIDOFMonth;
+                    NewID = newYear + monthNow + newIDOFMonth.ToString(formatIdNumber);
+                    CloseConnection();
+                    return NewID;
                 }
             }
             CloseConnection();
-            return newIDOFMonth;
+            NewID = newYear + monthNow + newIDOFMonth.ToString(formatIdNumber);
+            return NewID;
         }
 
         #endregion
