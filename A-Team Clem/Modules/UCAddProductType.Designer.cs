@@ -56,7 +56,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(416, 188);
             this.groupControl1.TabIndex = 24;
-            this.groupControl1.Text = "ข้อมูลประเภทสินค้า";
+            this.groupControl1.Text = "ข้อมูลชนิดสินค้า";
             // 
             // labelControl59
             // 
@@ -73,9 +73,9 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.labelControl1.Location = new System.Drawing.Point(12, 42);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(108, 19);
+            this.labelControl1.Size = new System.Drawing.Size(88, 19);
             this.labelControl1.TabIndex = 1077;
-            this.labelControl1.Text = "ชื่อประเภทสินค้า";
+            this.labelControl1.Text = "ชื่อชนิดสินค้า";
             // 
             // nameEng
             // 
@@ -119,11 +119,11 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.Location = new System.Drawing.Point(96, 9);
+            this.labelControlPage.Location = new System.Drawing.Point(117, 9);
             this.labelControlPage.Name = "labelControlPage";
-            this.labelControlPage.Size = new System.Drawing.Size(230, 39);
+            this.labelControlPage.Size = new System.Drawing.Size(188, 39);
             this.labelControlPage.TabIndex = 23;
-            this.labelControlPage.Text = "เพิ่มประเภทสินค้า";
+            this.labelControlPage.Text = "เพิ่มชนิดสินค้า";
             // 
             // cancel
             // 
@@ -160,10 +160,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl59;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit nameEng;
-        private DevExpress.XtraEditors.TextEdit nameTH;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.LabelControl labelControlPage;
         private DevExpress.XtraEditors.SimpleButton cancel;
+        public DevExpress.XtraEditors.TextEdit nameTH;
     }
 }

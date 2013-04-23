@@ -261,11 +261,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit phone;
         private DevExpress.XtraEditors.TextEdit nameEng;
-        private DevExpress.XtraEditors.TextEdit nameTH;
         private DevExpress.XtraEditors.TextEdit email;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton cancel;
+        public DevExpress.XtraEditors.TextEdit nameTH;
     }
 }

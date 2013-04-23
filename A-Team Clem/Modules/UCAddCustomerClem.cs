@@ -49,7 +49,7 @@ namespace A_Team_Clem.Modules
 
         public void loadInDocumentNumber()
         {
-            textEditInDocumentNumber.Text = conDB.getNewIDClemOfMonth(clemType);
+            inDocumentNumber.Text = conDB.getNewIDDocumentNumber(clemType);
         }
 
         public void loadAllListData()
@@ -68,8 +68,8 @@ namespace A_Team_Clem.Modules
             listCustomer = conDB.getCustomer();
             if (listPorductType != null)
             {
-                cmbCustomerName.Properties.Items.AddRange(listCustomer[1]);
-                textEditCustomerReceiveProduct.Properties.Items.AddRange(listCustomer[1]);
+                customerName.Properties.Items.AddRange(listCustomer[1]);
+                customerReceiveProduct.Properties.Items.AddRange(listCustomer[1]);
             }
         }
 
@@ -118,38 +118,45 @@ namespace A_Team_Clem.Modules
 
         public bool validateForm()
         {
-            if (cmbCustomerName.Text == "")
+            if (customerName.Text == "")
             {
-                cmbCustomerName.Select();
+                MessageBox.Show("กรุณากรอกชื่อลูกค้า");
+                customerName.Select();
                 return false;
             }
-            else if (textEditPhone.Text == "")
+            else if (phone.Text == "")
             {
-                textEditPhone.Select();
+                MessageBox.Show("กรุณากรอกเบอร์โทรลูกค้า");
+                phone.Select();
                 return false;
             }
             else if (productName.Text == "")
             {
+                MessageBox.Show("กรุณากรอกชื่อสินค้า");
                 productName.Select();
                 return false;
             }
             else if (companyName.Text == "")
             {
+                MessageBox.Show("กรุณากรอกชื่อบริษัท");
                 companyName.Select();
                 return false;
             }
             else if (productType.Text == "")
             {
+                MessageBox.Show("กรุณากรอกชนิดสินค้า");
                 productType.Select();
                 return false;
             }
             else if (dtProductEndDate.Text == "")
             {
+                MessageBox.Show("กรุณากรอกวันที่สินค้าหมดอายุ");
                 dtProductEndDate.Select();
                 return false;
             }
-            else if (employeeReceiveClem.Text == "")
+            else if (employeeReceiveClem.Text == "กรุณากรอกชื่อพนักงานที่รับเคลมสินค้า")
             {
+                MessageBox.Show("");
                 employeeReceiveClem.Select();
                 return false;
             }
@@ -158,29 +165,53 @@ namespace A_Team_Clem.Modules
 
         private void readData()
         {
-            if (cmbCustomerName.SelectedIndex == -1)
+            if (customerName.SelectedIndex < 0)
             {
-                conDB.customer_id = 0;
+                conDB.name_th = customerName.Text;
+                conDB.name_en = "";
+                conDB.address = address.Text;
+                conDB.phone = phone.Text;
+                conDB.email = "";
+                conDB.customer_date_create = convertDT.convert(DateTime.Now);
+                conDB.customer_date_stamp = convertDT.convert(DateTime.Now);
+                conDB.customer_id = conDB.addCustomer();
             }
             else
             {
-                conDB.customer_id = int.Parse(listCustomer[0][cmbCustomerName.SelectedIndex]);
+                conDB.customer_id = int.Parse(listCustomer[0][customerName.SelectedIndex]);
             }
-            if (productType.SelectedIndex == -1)
+
+            if (productType.SelectedIndex < 0)
             {
-                conDB.product_type_id = 0;
+                conDB.product_type_name_th = productType.Text;
+                conDB.product_type_name_en = "";
+                conDB.product_type_date_create = convertDT.convert(DateTime.Now);
+                conDB.product_type_date_stamp = convertDT.convert(DateTime.Now);
             }
             else
             {
                 conDB.product_type_id = int.Parse(listPorductType[0][productType.SelectedIndex]);
             }
-            conDB.product_type_id = 0; //productType.SelectedText;
-            conDB.company_id = 0;// companyName.SelectedText;
+
+            if (companyName.SelectedIndex < 0)
+            {
+                conDB.company_name_th = companyName.Text;
+                conDB.company_name_en = "";
+                conDB.company_adddress = "";
+                conDB.company_phone = "";
+                conDB.company_email = "";
+                conDB.company_date_create = convertDT.convert(DateTime.Now);
+                conDB.company_date_stamp = convertDT.convert(DateTime.Now);
+            }
+            else
+            {
+                conDB.company_id = int.Parse(listCompany[0][companyName.SelectedIndex]);
+            }
 
             conDB.product_name = productName.Text;
             conDB.serial = serial.Text;
-            conDB.address = richTextBoxAddress.Text;
-            conDB.phone = textEditPhone.Text;
+            conDB.address = address.Text;
+            conDB.phone = phone.Text;
             conDB.status = status.Text;
             conDB.date_create = convertDT.convert(DateTime.Now);
             conDB.date_product = convertDT.convert(dtProductEndDate.DateTime);
@@ -195,25 +226,26 @@ namespace A_Team_Clem.Modules
                 conDB.warranty = "นอกประกัน";
                 conDB.chargebacks = double.Parse(textEditChargebacks.Text);
             }
-            conDB.symptom = richTextBoxSymptom.Text;
-            conDB.equipment = richTextBoxEquipment.Text;
-            conDB.detail = richTextBoxDetail.Text;
+            conDB.symptom = symptom.Text;
+            conDB.equipment = equipment.Text;
+            conDB.detail = detail.Text;
 
-            conDB.in_document_number_id = 0;//***
+            conDB.in_document_number_id = conDB.getNewIDClemOfMonth(clemType);
             conDB.in_document_number = convertDT.convert(DateTime.Now);
+            conDB.in_document_number_string = inDocumentNumber.Text;
 
-            conDB.out_document_number = textEditOutDocumentNumber.Text;
-            conDB.in_serial_clem = textEditInSerialClem.Text;
-            conDB.out_serial_clem = textEditOutSerialClem.Text;
+            conDB.out_document_number = outDocumentNumber.Text;
+            conDB.in_serial_clem = inSerialClem.Text;
+            conDB.out_serial_clem = outSerialClem.Text;
             conDB.clem_type = clemType;
-            conDB.customer_clem = textEditCustomerClem.Text;
+            conDB.customer_clem = customerClem.Text;
             conDB.employee_receive_clem = employeeReceiveClem.Text;
             conDB.employee_clem = employeeClem.Text;
-            conDB.company_receive_clem = textEditCompanyReceiveClem.Text;
-            conDB.company_return = textEditCompanyReturn.Text;
+            conDB.company_receive_clem = companyReceiveClem.Text;
+            conDB.company_return = companyReturn.Text;
             conDB.employee_receive_product = employeeReceiveProduct.Text;
             conDB.employee_return = employeeReturn.Text;
-            conDB.customer_receive_product = textEditCustomerReceiveProduct.Text;
+            conDB.customer_receive_product = customerReceiveProduct.Text;
 
         }
 
@@ -290,16 +322,47 @@ namespace A_Team_Clem.Modules
 
         private void cmbCustomerName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCustomerName.SelectedIndex != -1)
+            if (customerName.SelectedIndex != -1)
             {
-                richTextBoxAddress.Text = listCustomer[3][cmbCustomerName.SelectedIndex];
-                textEditCustomerClem.Text = listCustomer[1][cmbCustomerName.SelectedIndex];
-                textEditPhone.Text = listCustomer[4][cmbCustomerName.SelectedIndex];
+                address.Text = listCustomer[3][customerName.SelectedIndex];
+                customerClem.Text = listCustomer[1][customerName.SelectedIndex];
+                phone.Text = listCustomer[4][customerName.SelectedIndex];
             }
             else
             {
 
             }
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            customerName.Text = "";
+            address.Text = "";
+            phone.Text = "";
+            serial.Text = "";
+            productName.Text = "";
+            companyName.Text = "";
+            productType.Text = "";
+            dtProductEndDate.Text = "";
+            inDocumentNumber.Text = conDB.getNewIDDocumentNumber(clemType);
+            outDocumentNumber.Text = "";
+            inSerialClem.Text = "";
+            outSerialClem.Text = "";
+            customerClem.Text = "";
+            employeeReceiveClem.Text = "";
+            employeeClem.Text = "";
+            companyReceiveClem.Text = "";
+            companyReturn.Text = "";
+            employeeReceiveProduct.Text = "";
+            employeeReturn.Text = "";
+            customerReceiveProduct.Text = "";
+            status.Text = "";
+            radioButtonInWarranty.Checked = true;
+            textEditChargebacks.Text = "0";
+            symptom.Text = "";
+            equipment.Text = "";
+            detail.Text = "";
+            customerName.Focus();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace A_Team_Clem
         private void FRMMain_Load(object sender, EventArgs e)
         {
             addCustomerCustomerClem = new Modules.UCAddCustomerClem(this) { Dock = DockStyle.Fill };
-            customerReport = new Modules.UCReportCustomerClem() { Dock = DockStyle.Fill };
+            customerReport = new Modules.UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             addEmployeeClem = new Modules.UCAddEmployeeClem() { Dock = DockStyle.Fill };
             employeeReport = new Modules.UCReportEmployeeClem() { Dock = DockStyle.Fill };
             addProduct = new Modules.UCAddProduct(this) { Dock = DockStyle.Fill };
@@ -88,8 +88,7 @@ namespace A_Team_Clem
 
         private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            panelShowUserControl.Controls.Clear();
-            panelShowUserControl.Controls.Add(customerReport);
+            showCustomerClemReport();
         }
 
         private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -131,36 +130,49 @@ namespace A_Team_Clem
             addCustomerCustomerClem.loadAllListData();
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCustomerCustomerClem);
+            addCustomerCustomerClem.customerName.Focus();
+        }
+
+        public void showCustomerClemReport()
+        {
+            panelShowUserControl.Controls.Clear();
+            panelShowUserControl.Controls.Add(customerReport);
+            customerReport.customerName.Focus();
         }
 
         public void showAddCustomer()
         {
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCustomer);
+            addCustomer.Focus();
         }
 
         public void showAddProduct()
         {
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addProduct);
+            addProduct.nameTH.Focus();
         }
 
         public void showAddCompany()
         {
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCompany);
+            addCompany.nameTH.Focus();
         }
 
         public void showAddProductType()
         {
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addProductType);
+            addProductType.nameTH.Focus();
         }
 
         public void showAddEmployee()
         {
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addEmployee);
+            addEmployee.nameTH.Focus();
         }
 
         private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

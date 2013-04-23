@@ -232,7 +232,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl59;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit nameEng;
-        private DevExpress.XtraEditors.TextEdit nameTH;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton bottonAdd;
         private DevExpress.XtraEditors.LabelControl labelControlPage;
@@ -242,5 +241,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         public DevExpress.XtraEditors.MRUEdit value;
         private DevExpress.XtraEditors.SimpleButton cancel;
+        public DevExpress.XtraEditors.TextEdit nameTH;
     }
 }

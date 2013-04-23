@@ -36,14 +36,14 @@
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.employeeReceiveProduct = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditCompanyReturn = new DevExpress.XtraEditors.TextEdit();
+            this.companyReturn = new DevExpress.XtraEditors.TextEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.employeeClem = new DevExpress.XtraEditors.MRUEdit();
-            this.textEditCompanyReceiveClem = new DevExpress.XtraEditors.TextEdit();
+            this.companyReceiveClem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.textEditCustomerClem = new DevExpress.XtraEditors.TextEdit();
+            this.customerClem = new DevExpress.XtraEditors.TextEdit();
             this.employeeReceiveClem = new DevExpress.XtraEditors.MRUEdit();
             this.imgAddEmployee = new System.Windows.Forms.PictureBox();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
@@ -51,31 +51,33 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditCustomerReceiveProduct = new DevExpress.XtraEditors.MRUEdit();
+            this.customerReceiveProduct = new DevExpress.XtraEditors.MRUEdit();
+            this.imgAddCustomer2 = new System.Windows.Forms.PictureBox();
             this.employeeReturn = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.clear = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonAddClem = new DevExpress.XtraEditors.SimpleButton();
             this.status = new DevExpress.XtraEditors.MRUEdit();
             this.panelWarranty = new System.Windows.Forms.Panel();
             this.textEditChargebacks = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.richTextBoxDetail = new System.Windows.Forms.RichTextBox();
+            this.detail = new System.Windows.Forms.RichTextBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.radioButtonOutWarranty = new System.Windows.Forms.RadioButton();
-            this.richTextBoxEquipment = new System.Windows.Forms.RichTextBox();
+            this.equipment = new System.Windows.Forms.RichTextBox();
             this.radioButtonInWarranty = new System.Windows.Forms.RadioButton();
-            this.richTextBoxSymptom = new System.Windows.Forms.RichTextBox();
+            this.symptom = new System.Windows.Forms.RichTextBox();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.textEditInDocumentNumber = new DevExpress.XtraEditors.TextEdit();
-            this.textEditOutSerialClem = new DevExpress.XtraEditors.TextEdit();
-            this.textEditInSerialClem = new DevExpress.XtraEditors.TextEdit();
-            this.textEditOutDocumentNumber = new DevExpress.XtraEditors.TextEdit();
+            this.inDocumentNumber = new DevExpress.XtraEditors.TextEdit();
+            this.outSerialClem = new DevExpress.XtraEditors.TextEdit();
+            this.inSerialClem = new DevExpress.XtraEditors.TextEdit();
+            this.outDocumentNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
@@ -102,13 +104,12 @@
             this.imgAddCustomer = new System.Windows.Forms.PictureBox();
             this.labelControl60 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbCustomerName = new DevExpress.XtraEditors.MRUEdit();
-            this.richTextBoxAddress = new System.Windows.Forms.RichTextBox();
+            this.customerName = new DevExpress.XtraEditors.MRUEdit();
+            this.address = new System.Windows.Forms.RichTextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditPhone = new DevExpress.XtraEditors.TextEdit();
+            this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.imgAddCustomer2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -116,19 +117,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReceiveProduct.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCompanyReturn.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyReturn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeClem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCompanyReceiveClem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyReceiveClem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerClem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReceiveClem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerReceiveProduct.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerReceiveProduct.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReturn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -137,10 +139,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditChargebacks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditInDocumentNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOutSerialClem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditInSerialClem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOutDocumentNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outSerialClem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inSerialClem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddTypeProduct)).BeginInit();
@@ -155,9 +157,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControlPage
@@ -203,7 +204,7 @@
             this.panelControl4.Controls.Add(this.labelControl25);
             this.panelControl4.Controls.Add(this.employeeReceiveProduct);
             this.panelControl4.Controls.Add(this.labelControl27);
-            this.panelControl4.Controls.Add(this.textEditCompanyReturn);
+            this.panelControl4.Controls.Add(this.companyReturn);
             this.panelControl4.Location = new System.Drawing.Point(1, 154);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(372, 60);
@@ -246,21 +247,21 @@
             this.labelControl27.TabIndex = 1025;
             this.labelControl27.Text = "6. พนักงาน-ผู้รับของ";
             // 
-            // textEditCompanyReturn
+            // companyReturn
             // 
-            this.textEditCompanyReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditCompanyReturn.Location = new System.Drawing.Point(5, 28);
-            this.textEditCompanyReturn.Name = "textEditCompanyReturn";
-            this.textEditCompanyReturn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditCompanyReturn.Properties.Appearance.Options.UseFont = true;
-            this.textEditCompanyReturn.Size = new System.Drawing.Size(169, 26);
-            this.textEditCompanyReturn.TabIndex = 17;
+            this.companyReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.companyReturn.Location = new System.Drawing.Point(5, 28);
+            this.companyReturn.Name = "companyReturn";
+            this.companyReturn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.companyReturn.Properties.Appearance.Options.UseFont = true;
+            this.companyReturn.Size = new System.Drawing.Size(169, 26);
+            this.companyReturn.TabIndex = 17;
             // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.labelControl24);
             this.panelControl3.Controls.Add(this.employeeClem);
-            this.panelControl3.Controls.Add(this.textEditCompanyReceiveClem);
+            this.panelControl3.Controls.Add(this.companyReceiveClem);
             this.panelControl3.Controls.Add(this.labelControl28);
             this.panelControl3.Location = new System.Drawing.Point(1, 91);
             this.panelControl3.Name = "panelControl3";
@@ -294,15 +295,15 @@
             this.employeeClem.Size = new System.Drawing.Size(170, 26);
             this.employeeClem.TabIndex = 1;
             // 
-            // textEditCompanyReceiveClem
+            // companyReceiveClem
             // 
-            this.textEditCompanyReceiveClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditCompanyReceiveClem.Location = new System.Drawing.Point(199, 30);
-            this.textEditCompanyReceiveClem.Name = "textEditCompanyReceiveClem";
-            this.textEditCompanyReceiveClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditCompanyReceiveClem.Properties.Appearance.Options.UseFont = true;
-            this.textEditCompanyReceiveClem.Size = new System.Drawing.Size(169, 26);
-            this.textEditCompanyReceiveClem.TabIndex = 16;
+            this.companyReceiveClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.companyReceiveClem.Location = new System.Drawing.Point(199, 30);
+            this.companyReceiveClem.Name = "companyReceiveClem";
+            this.companyReceiveClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.companyReceiveClem.Properties.Appearance.Options.UseFont = true;
+            this.companyReceiveClem.Size = new System.Drawing.Size(169, 26);
+            this.companyReceiveClem.TabIndex = 16;
             // 
             // labelControl28
             // 
@@ -316,7 +317,7 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.textEditCustomerClem);
+            this.panelControl2.Controls.Add(this.customerClem);
             this.panelControl2.Controls.Add(this.employeeReceiveClem);
             this.panelControl2.Controls.Add(this.imgAddEmployee);
             this.panelControl2.Controls.Add(this.labelControl26);
@@ -327,16 +328,16 @@
             this.panelControl2.Size = new System.Drawing.Size(372, 60);
             this.panelControl2.TabIndex = 103;
             // 
-            // textEditCustomerClem
+            // customerClem
             // 
-            this.textEditCustomerClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditCustomerClem.Enabled = false;
-            this.textEditCustomerClem.Location = new System.Drawing.Point(5, 28);
-            this.textEditCustomerClem.Name = "textEditCustomerClem";
-            this.textEditCustomerClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditCustomerClem.Properties.Appearance.Options.UseFont = true;
-            this.textEditCustomerClem.Size = new System.Drawing.Size(169, 26);
-            this.textEditCustomerClem.TabIndex = 13;
+            this.customerClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.customerClem.Enabled = false;
+            this.customerClem.Location = new System.Drawing.Point(5, 28);
+            this.customerClem.Name = "customerClem";
+            this.customerClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.customerClem.Properties.Appearance.Options.UseFont = true;
+            this.customerClem.Size = new System.Drawing.Size(169, 26);
+            this.customerClem.TabIndex = 13;
             // 
             // employeeReceiveClem
             // 
@@ -413,7 +414,7 @@
             this.panelControl5.Appearance.Options.UseImage = true;
             this.panelControl5.Appearance.Options.UseTextOptions = true;
             this.panelControl5.Controls.Add(this.labelControl29);
-            this.panelControl5.Controls.Add(this.textEditCustomerReceiveProduct);
+            this.panelControl5.Controls.Add(this.customerReceiveProduct);
             this.panelControl5.Controls.Add(this.imgAddCustomer2);
             this.panelControl5.Controls.Add(this.employeeReturn);
             this.panelControl5.Controls.Add(this.labelControl30);
@@ -432,22 +433,35 @@
             this.labelControl29.TabIndex = 1026;
             this.labelControl29.Text = "7. พนักงาน-ผู้คืนของ";
             // 
-            // textEditCustomerReceiveProduct
+            // customerReceiveProduct
             // 
-            this.textEditCustomerReceiveProduct.AllowDrop = true;
-            this.textEditCustomerReceiveProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditCustomerReceiveProduct.Location = new System.Drawing.Point(199, 28);
-            this.textEditCustomerReceiveProduct.Name = "textEditCustomerReceiveProduct";
-            this.textEditCustomerReceiveProduct.Properties.AllowRemoveMRUItems = false;
-            this.textEditCustomerReceiveProduct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditCustomerReceiveProduct.Properties.Appearance.Options.UseFont = true;
-            this.textEditCustomerReceiveProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.customerReceiveProduct.AllowDrop = true;
+            this.customerReceiveProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.customerReceiveProduct.Location = new System.Drawing.Point(199, 28);
+            this.customerReceiveProduct.Name = "customerReceiveProduct";
+            this.customerReceiveProduct.Properties.AllowRemoveMRUItems = false;
+            this.customerReceiveProduct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.customerReceiveProduct.Properties.Appearance.Options.UseFont = true;
+            this.customerReceiveProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEditCustomerReceiveProduct.Properties.CaseSensitiveSearch = true;
-            this.textEditCustomerReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.textEditCustomerReceiveProduct.Properties.Sorted = true;
-            this.textEditCustomerReceiveProduct.Size = new System.Drawing.Size(170, 26);
-            this.textEditCustomerReceiveProduct.TabIndex = 20;
+            this.customerReceiveProduct.Properties.CaseSensitiveSearch = true;
+            this.customerReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.customerReceiveProduct.Properties.Sorted = true;
+            this.customerReceiveProduct.Size = new System.Drawing.Size(170, 26);
+            this.customerReceiveProduct.TabIndex = 20;
+            // 
+            // imgAddCustomer2
+            // 
+            this.imgAddCustomer2.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddCustomer2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddCustomer2.BackgroundImage")));
+            this.imgAddCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgAddCustomer2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAddCustomer2.Location = new System.Drawing.Point(179, 32);
+            this.imgAddCustomer2.Name = "imgAddCustomer2";
+            this.imgAddCustomer2.Size = new System.Drawing.Size(20, 16);
+            this.imgAddCustomer2.TabIndex = 1072;
+            this.imgAddCustomer2.TabStop = false;
+            this.imgAddCustomer2.Click += new System.EventHandler(this.imgAddCustomer_Click);
             // 
             // employeeReturn
             // 
@@ -479,16 +493,17 @@
             // groupControl3
             // 
             this.groupControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl3.Controls.Add(this.clear);
             this.groupControl3.Controls.Add(this.simpleButtonAddClem);
             this.groupControl3.Controls.Add(this.status);
             this.groupControl3.Controls.Add(this.panelWarranty);
-            this.groupControl3.Controls.Add(this.richTextBoxDetail);
+            this.groupControl3.Controls.Add(this.detail);
             this.groupControl3.Controls.Add(this.labelControl6);
             this.groupControl3.Controls.Add(this.labelControl13);
             this.groupControl3.Controls.Add(this.radioButtonOutWarranty);
-            this.groupControl3.Controls.Add(this.richTextBoxEquipment);
+            this.groupControl3.Controls.Add(this.equipment);
             this.groupControl3.Controls.Add(this.radioButtonInWarranty);
-            this.groupControl3.Controls.Add(this.richTextBoxSymptom);
+            this.groupControl3.Controls.Add(this.symptom);
             this.groupControl3.Controls.Add(this.labelControl19);
             this.groupControl3.Controls.Add(this.labelControl17);
             this.groupControl3.Controls.Add(this.labelControl14);
@@ -497,6 +512,18 @@
             this.groupControl3.Size = new System.Drawing.Size(331, 479);
             this.groupControl3.TabIndex = 107;
             this.groupControl3.Text = "ข้อมูลการซ่อม";
+            // 
+            // clear
+            // 
+            this.clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clear.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear.Appearance.Options.UseFont = true;
+            this.clear.Location = new System.Drawing.Point(143, 441);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(48, 33);
+            this.clear.TabIndex = 27;
+            this.clear.Text = "Clear";
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // simpleButtonAddClem
             // 
@@ -548,11 +575,12 @@
             // textEditChargebacks
             // 
             this.textEditChargebacks.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textEditChargebacks.EditValue = "0";
             this.textEditChargebacks.Location = new System.Drawing.Point(138, 5);
             this.textEditChargebacks.Name = "textEditChargebacks";
             this.textEditChargebacks.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textEditChargebacks.Properties.Appearance.Options.UseFont = true;
-            this.textEditChargebacks.Size = new System.Drawing.Size(148, 26);
+            this.textEditChargebacks.Size = new System.Drawing.Size(111, 26);
             this.textEditChargebacks.TabIndex = 23;
             // 
             // labelControl16
@@ -575,15 +603,15 @@
             this.labelControl15.TabIndex = 1012;
             this.labelControl15.Text = "เก็บเงินเพิ่ม";
             // 
-            // richTextBoxDetail
+            // detail
             // 
-            this.richTextBoxDetail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.richTextBoxDetail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.richTextBoxDetail.Location = new System.Drawing.Point(138, 340);
-            this.richTextBoxDetail.Name = "richTextBoxDetail";
-            this.richTextBoxDetail.Size = new System.Drawing.Size(188, 79);
-            this.richTextBoxDetail.TabIndex = 26;
-            this.richTextBoxDetail.Text = "";
+            this.detail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.detail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.detail.Location = new System.Drawing.Point(138, 340);
+            this.detail.Name = "detail";
+            this.detail.Size = new System.Drawing.Size(188, 79);
+            this.detail.TabIndex = 26;
+            this.detail.Text = "";
             // 
             // labelControl6
             // 
@@ -618,15 +646,15 @@
             this.radioButtonOutWarranty.UseVisualStyleBackColor = true;
             this.radioButtonOutWarranty.CheckedChanged += new System.EventHandler(this.radioButtonOutWarranty_CheckedChanged);
             // 
-            // richTextBoxEquipment
+            // equipment
             // 
-            this.richTextBoxEquipment.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.richTextBoxEquipment.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.richTextBoxEquipment.Location = new System.Drawing.Point(138, 249);
-            this.richTextBoxEquipment.Name = "richTextBoxEquipment";
-            this.richTextBoxEquipment.Size = new System.Drawing.Size(188, 79);
-            this.richTextBoxEquipment.TabIndex = 25;
-            this.richTextBoxEquipment.Text = "";
+            this.equipment.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.equipment.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.equipment.Location = new System.Drawing.Point(138, 249);
+            this.equipment.Name = "equipment";
+            this.equipment.Size = new System.Drawing.Size(188, 79);
+            this.equipment.TabIndex = 25;
+            this.equipment.Text = "";
             // 
             // radioButtonInWarranty
             // 
@@ -643,15 +671,15 @@
             this.radioButtonInWarranty.UseVisualStyleBackColor = true;
             this.radioButtonInWarranty.CheckedChanged += new System.EventHandler(this.radioButtonInWarranty_CheckedChanged);
             // 
-            // richTextBoxSymptom
+            // symptom
             // 
-            this.richTextBoxSymptom.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.richTextBoxSymptom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.richTextBoxSymptom.Location = new System.Drawing.Point(138, 156);
-            this.richTextBoxSymptom.Name = "richTextBoxSymptom";
-            this.richTextBoxSymptom.Size = new System.Drawing.Size(188, 79);
-            this.richTextBoxSymptom.TabIndex = 24;
-            this.richTextBoxSymptom.Text = "";
+            this.symptom.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.symptom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.symptom.Location = new System.Drawing.Point(138, 156);
+            this.symptom.Name = "symptom";
+            this.symptom.Size = new System.Drawing.Size(188, 79);
+            this.symptom.TabIndex = 24;
+            this.symptom.Text = "";
             // 
             // labelControl19
             // 
@@ -686,10 +714,10 @@
             // groupControl4
             // 
             this.groupControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupControl4.Controls.Add(this.textEditInDocumentNumber);
-            this.groupControl4.Controls.Add(this.textEditOutSerialClem);
-            this.groupControl4.Controls.Add(this.textEditInSerialClem);
-            this.groupControl4.Controls.Add(this.textEditOutDocumentNumber);
+            this.groupControl4.Controls.Add(this.inDocumentNumber);
+            this.groupControl4.Controls.Add(this.outSerialClem);
+            this.groupControl4.Controls.Add(this.inSerialClem);
+            this.groupControl4.Controls.Add(this.outDocumentNumber);
             this.groupControl4.Controls.Add(this.labelControl22);
             this.groupControl4.Controls.Add(this.labelControl21);
             this.groupControl4.Controls.Add(this.labelControl20);
@@ -700,47 +728,47 @@
             this.groupControl4.TabIndex = 101;
             this.groupControl4.Text = "ข้อมูลเลขที่ใบเคลม";
             // 
-            // textEditInDocumentNumber
+            // inDocumentNumber
             // 
-            this.textEditInDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditInDocumentNumber.EditValue = "560400001";
-            this.textEditInDocumentNumber.Enabled = false;
-            this.textEditInDocumentNumber.Location = new System.Drawing.Point(199, 24);
-            this.textEditInDocumentNumber.Name = "textEditInDocumentNumber";
-            this.textEditInDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditInDocumentNumber.Properties.Appearance.Options.UseFont = true;
-            this.textEditInDocumentNumber.Size = new System.Drawing.Size(169, 26);
-            this.textEditInDocumentNumber.TabIndex = 9;
+            this.inDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inDocumentNumber.EditValue = "560400001";
+            this.inDocumentNumber.Enabled = false;
+            this.inDocumentNumber.Location = new System.Drawing.Point(199, 24);
+            this.inDocumentNumber.Name = "inDocumentNumber";
+            this.inDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.inDocumentNumber.Properties.Appearance.Options.UseFont = true;
+            this.inDocumentNumber.Size = new System.Drawing.Size(169, 26);
+            this.inDocumentNumber.TabIndex = 9;
             // 
-            // textEditOutSerialClem
+            // outSerialClem
             // 
-            this.textEditOutSerialClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditOutSerialClem.Location = new System.Drawing.Point(199, 150);
-            this.textEditOutSerialClem.Name = "textEditOutSerialClem";
-            this.textEditOutSerialClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditOutSerialClem.Properties.Appearance.Options.UseFont = true;
-            this.textEditOutSerialClem.Size = new System.Drawing.Size(169, 26);
-            this.textEditOutSerialClem.TabIndex = 12;
+            this.outSerialClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.outSerialClem.Location = new System.Drawing.Point(199, 150);
+            this.outSerialClem.Name = "outSerialClem";
+            this.outSerialClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.outSerialClem.Properties.Appearance.Options.UseFont = true;
+            this.outSerialClem.Size = new System.Drawing.Size(169, 26);
+            this.outSerialClem.TabIndex = 12;
             // 
-            // textEditInSerialClem
+            // inSerialClem
             // 
-            this.textEditInSerialClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditInSerialClem.Location = new System.Drawing.Point(199, 108);
-            this.textEditInSerialClem.Name = "textEditInSerialClem";
-            this.textEditInSerialClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditInSerialClem.Properties.Appearance.Options.UseFont = true;
-            this.textEditInSerialClem.Size = new System.Drawing.Size(169, 26);
-            this.textEditInSerialClem.TabIndex = 11;
+            this.inSerialClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inSerialClem.Location = new System.Drawing.Point(199, 108);
+            this.inSerialClem.Name = "inSerialClem";
+            this.inSerialClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.inSerialClem.Properties.Appearance.Options.UseFont = true;
+            this.inSerialClem.Size = new System.Drawing.Size(169, 26);
+            this.inSerialClem.TabIndex = 11;
             // 
-            // textEditOutDocumentNumber
+            // outDocumentNumber
             // 
-            this.textEditOutDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditOutDocumentNumber.Location = new System.Drawing.Point(199, 66);
-            this.textEditOutDocumentNumber.Name = "textEditOutDocumentNumber";
-            this.textEditOutDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditOutDocumentNumber.Properties.Appearance.Options.UseFont = true;
-            this.textEditOutDocumentNumber.Size = new System.Drawing.Size(169, 26);
-            this.textEditOutDocumentNumber.TabIndex = 10;
+            this.outDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.outDocumentNumber.Location = new System.Drawing.Point(199, 66);
+            this.outDocumentNumber.Name = "outDocumentNumber";
+            this.outDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.outDocumentNumber.Properties.Appearance.Options.UseFont = true;
+            this.outDocumentNumber.Size = new System.Drawing.Size(169, 26);
+            this.outDocumentNumber.TabIndex = 10;
             // 
             // labelControl22
             // 
@@ -1025,11 +1053,11 @@
             this.groupControl1.Controls.Add(this.imgAddCustomer);
             this.groupControl1.Controls.Add(this.labelControl60);
             this.groupControl1.Controls.Add(this.labelControl59);
-            this.groupControl1.Controls.Add(this.cmbCustomerName);
-            this.groupControl1.Controls.Add(this.richTextBoxAddress);
+            this.groupControl1.Controls.Add(this.customerName);
+            this.groupControl1.Controls.Add(this.address);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textEditPhone);
+            this.groupControl1.Controls.Add(this.phone);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Location = new System.Drawing.Point(11, 5);
             this.groupControl1.LookAndFeel.SkinName = "DevExpress Dark Style";
@@ -1073,33 +1101,33 @@
             this.labelControl59.TabIndex = 1070;
             this.labelControl59.Text = "*";
             // 
-            // cmbCustomerName
+            // customerName
             // 
-            this.cmbCustomerName.AllowDrop = true;
-            this.cmbCustomerName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cmbCustomerName.Location = new System.Drawing.Point(132, 24);
-            this.cmbCustomerName.Name = "cmbCustomerName";
-            this.cmbCustomerName.Properties.AllowRemoveMRUItems = false;
-            this.cmbCustomerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.cmbCustomerName.Properties.Appearance.Options.UseFont = true;
-            this.cmbCustomerName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.customerName.AllowDrop = true;
+            this.customerName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.customerName.Location = new System.Drawing.Point(132, 24);
+            this.customerName.Name = "customerName";
+            this.customerName.Properties.AllowRemoveMRUItems = false;
+            this.customerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.customerName.Properties.Appearance.Options.UseFont = true;
+            this.customerName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbCustomerName.Properties.CaseSensitiveSearch = true;
-            this.cmbCustomerName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.cmbCustomerName.Properties.Sorted = true;
-            this.cmbCustomerName.Size = new System.Drawing.Size(188, 26);
-            this.cmbCustomerName.TabIndex = 1;
-            this.cmbCustomerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
+            this.customerName.Properties.CaseSensitiveSearch = true;
+            this.customerName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.customerName.Properties.Sorted = true;
+            this.customerName.Size = new System.Drawing.Size(188, 26);
+            this.customerName.TabIndex = 1;
+            this.customerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
             // 
-            // richTextBoxAddress
+            // address
             // 
-            this.richTextBoxAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.richTextBoxAddress.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.richTextBoxAddress.Location = new System.Drawing.Point(132, 79);
-            this.richTextBoxAddress.Name = "richTextBoxAddress";
-            this.richTextBoxAddress.Size = new System.Drawing.Size(188, 96);
-            this.richTextBoxAddress.TabIndex = 2;
-            this.richTextBoxAddress.Text = "";
+            this.address.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.address.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.address.Location = new System.Drawing.Point(132, 79);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(188, 96);
+            this.address.TabIndex = 2;
+            this.address.Text = "";
             // 
             // labelControl1
             // 
@@ -1121,15 +1149,15 @@
             this.labelControl2.TabIndex = 1068;
             this.labelControl2.Text = "ที่อยู่";
             // 
-            // textEditPhone
+            // phone
             // 
-            this.textEditPhone.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textEditPhone.Location = new System.Drawing.Point(132, 194);
-            this.textEditPhone.Name = "textEditPhone";
-            this.textEditPhone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEditPhone.Properties.Appearance.Options.UseFont = true;
-            this.textEditPhone.Size = new System.Drawing.Size(188, 26);
-            this.textEditPhone.TabIndex = 3;
+            this.phone.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phone.Location = new System.Drawing.Point(132, 194);
+            this.phone.Name = "phone";
+            this.phone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.phone.Properties.Appearance.Options.UseFont = true;
+            this.phone.Size = new System.Drawing.Size(188, 26);
+            this.phone.TabIndex = 3;
             // 
             // labelControl3
             // 
@@ -1140,19 +1168,6 @@
             this.labelControl3.Size = new System.Drawing.Size(58, 19);
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
-            // 
-            // imgAddCustomer2
-            // 
-            this.imgAddCustomer2.BackColor = System.Drawing.Color.Transparent;
-            this.imgAddCustomer2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddCustomer2.BackgroundImage")));
-            this.imgAddCustomer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgAddCustomer2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddCustomer2.Location = new System.Drawing.Point(179, 32);
-            this.imgAddCustomer2.Name = "imgAddCustomer2";
-            this.imgAddCustomer2.Size = new System.Drawing.Size(20, 16);
-            this.imgAddCustomer2.TabIndex = 1072;
-            this.imgAddCustomer2.TabStop = false;
-            this.imgAddCustomer2.Click += new System.EventHandler(this.imgAddCustomer_Click);
             // 
             // UCAddCustomerClem
             // 
@@ -1171,22 +1186,23 @@
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReceiveProduct.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCompanyReturn.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyReturn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeClem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCompanyReceiveClem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyReceiveClem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerClem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReceiveClem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerReceiveProduct.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerReceiveProduct.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReturn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
@@ -1198,10 +1214,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditInDocumentNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOutSerialClem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditInSerialClem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOutDocumentNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outSerialClem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inSerialClem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -1218,9 +1234,8 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCustomerName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1237,11 +1252,11 @@
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.LabelControl labelControl60;
         private DevExpress.XtraEditors.LabelControl labelControl59;
-        public DevExpress.XtraEditors.MRUEdit cmbCustomerName;
-        private System.Windows.Forms.RichTextBox richTextBoxAddress;
+        public DevExpress.XtraEditors.MRUEdit customerName;
+        private System.Windows.Forms.RichTextBox address;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEditPhone;
+        private DevExpress.XtraEditors.TextEdit phone;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         public DevExpress.XtraEditors.MRUEdit productName;
         private DevExpress.XtraEditors.TextEdit serial;
@@ -1259,25 +1274,25 @@
         private DevExpress.XtraEditors.TextEdit textEditChargebacks;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private System.Windows.Forms.RichTextBox richTextBoxDetail;
+        private System.Windows.Forms.RichTextBox detail;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private System.Windows.Forms.RadioButton radioButtonOutWarranty;
-        private System.Windows.Forms.RichTextBox richTextBoxEquipment;
+        private System.Windows.Forms.RichTextBox equipment;
         private System.Windows.Forms.RadioButton radioButtonInWarranty;
-        private System.Windows.Forms.RichTextBox richTextBoxSymptom;
+        private System.Windows.Forms.RichTextBox symptom;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.TextEdit textEditInDocumentNumber;
-        private DevExpress.XtraEditors.TextEdit textEditOutSerialClem;
-        private DevExpress.XtraEditors.TextEdit textEditInSerialClem;
-        private DevExpress.XtraEditors.TextEdit textEditOutDocumentNumber;
+        private DevExpress.XtraEditors.TextEdit inDocumentNumber;
+        private DevExpress.XtraEditors.TextEdit outSerialClem;
+        private DevExpress.XtraEditors.TextEdit inSerialClem;
+        private DevExpress.XtraEditors.TextEdit outDocumentNumber;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.TextEdit textEditCompanyReturn;
-        private DevExpress.XtraEditors.TextEdit textEditCustomerClem;
+        private DevExpress.XtraEditors.TextEdit companyReturn;
+        private DevExpress.XtraEditors.TextEdit customerClem;
         private DevExpress.XtraEditors.LabelControl labelControl29;
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private DevExpress.XtraEditors.LabelControl labelControl25;
@@ -1285,7 +1300,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraEditors.SimpleButton simpleButtonAddClem;
-        private DevExpress.XtraEditors.TextEdit textEditCompanyReceiveClem;
+        private DevExpress.XtraEditors.TextEdit companyReceiveClem;
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl3;
@@ -1306,8 +1321,9 @@
         private System.Windows.Forms.PictureBox imgAddCompany;
         private System.Windows.Forms.PictureBox imgAddProduct;
         private System.Windows.Forms.PictureBox imgAddEmployee;
-        public DevExpress.XtraEditors.MRUEdit textEditCustomerReceiveProduct;
+        public DevExpress.XtraEditors.MRUEdit customerReceiveProduct;
         private System.Windows.Forms.PictureBox imgAddCustomer2;
+        private DevExpress.XtraEditors.SimpleButton clear;
 
     }
 }

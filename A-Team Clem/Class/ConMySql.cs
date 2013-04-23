@@ -40,6 +40,7 @@ namespace A_Team_Clem
         public string detail = "";//'หมายเหตุ',
         public int in_document_number_id = 0;//'ลำดับ id ของเดือนปัจจุบัน',
         public DateTime in_document_number;//'เลขที่เอกสารภายใน',
+        public string in_document_number_string = "";//'เลขที่เอกสารภายใน',
         public string out_document_number = "";// 'เลขที่เอกสารภายนอก',
         public string in_serial_clem = "";//'เลขที่ใบรับเคลมภายใน',
         public string out_serial_clem = "";//'เลขที่ใบรับเคลมภายนอก',
@@ -398,14 +399,9 @@ namespace A_Team_Clem
             return list;
         }
 
-        public string getNewIDClemOfMonth(string clemType)
+        public int getNewIDClemOfMonth(string clemType)
         {
-            int newIDOFMonth = 1;
-            string NewID = "00001";
-            string yearThaiNow = convertDT.convertToThaiYear(DateTime.Now);
-            char[] charYear = yearThaiNow.ToCharArray();
-            string newYear = charYear[2].ToString() + charYear[3].ToString();
-            string monthNow = DateTime.Now.Month.ToString(formatMonth);
+            int NewID = 1;
             if (CheckConnect())
             {
                 try
@@ -416,20 +412,61 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        newIDOFMonth = int.Parse(dataReader["new_id"] + "");
+                        NewID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
                 }
                 catch
                 {
-                    NewID = newYear + monthNow + newIDOFMonth.ToString(formatIdNumber);
                     CloseConnection();
                     return NewID;
                 }
             }
             CloseConnection();
+            return NewID;
+        }
+
+        public string getNewIDDocumentNumber(string clemType)
+        {
+            int newIDOFMonth = getNewIDClemOfMonth(clem_type);
+            string NewID = "00001";
+            string yearThaiNow = convertDT.convertToThaiYear(DateTime.Now);
+            char[] charYear = yearThaiNow.ToCharArray();
+            string newYear = charYear[2].ToString() + charYear[3].ToString();
+            string monthNow = DateTime.Now.Month.ToString(formatMonth);
             NewID = newYear + monthNow + newIDOFMonth.ToString(formatIdNumber);
             return NewID;
+        }
+
+        public DataSet getListClem(string clemType)
+        {
+            DataSet ds = new DataSet();
+            if (CheckConnect())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand("get_list_clem", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@s_clem_type", clemType);
+                    cmd.Parameters.AddWithValue("@s_customer_name_th", name_th);
+                    cmd.Parameters.AddWithValue("@s_phone", phone);
+                    cmd.Parameters.AddWithValue("@s_serial", serial);
+                    cmd.Parameters.AddWithValue("@s_product_name_th", product_name_th);
+                    cmd.Parameters.AddWithValue("@s_in_document_number_string", in_document_number_string);
+                    cmd.Parameters.AddWithValue("@s_status", status);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(ds, "get_list_clem");
+                    ds.Tables["get_list_clem"].Columns.Add("No.", typeof(string));
+                    ds.Tables["get_list_clem"].Columns["No."].SetOrdinal(0);
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+            CloseConnection();
+            return ds;
         }
 
         #endregion
