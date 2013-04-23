@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Diagnostics;
+using DevExpress.XtraGrid.Columns;
+using System.IO;
 
 namespace A_Team_Clem.Modules
 {
@@ -23,6 +25,8 @@ namespace A_Team_Clem.Modules
         private FRMMain fRMMain;
         private ConMySql conDB;
         private ConvertDateTime convertDT;
+        private string strPathLayout = @"Files\save\UCReportCustomerClem.xml";
+        private Stream saveDefaultLayout;
 
         public void readData()
         {
@@ -36,6 +40,49 @@ namespace A_Team_Clem.Modules
 
         private void setDataGrid()
         {
+            gridView1.OptionsView.ShowFooter = true;
+            //gridView1.OptionsView.ShowGroupedColumns = true;
+
+
+            //set column width (autofit)
+            //            gridView1.BestFitColumns();
+            //            gridView1.BestFitMaxRowCount = -1;
+            gridView1.OptionsView.ColumnAutoWidth = false;
+            foreach (GridColumn col in gridView1.Columns)
+            {
+                //col.AppearanceHeader.TextOptions.WordWrap = WordWrap.Wrap;
+                col.BestFit();//ทำให้ column โชว์ชื่อเต็ม
+            }
+
+            //freeze panel
+            //gridView1.Columns["No."].Fixed = FixedStyle.Left;
+
+            //disable edit
+            gridView1.OptionsBehavior.Editable = false;
+
+            AutoHeightHelper helper = new AutoHeightHelper(gridView1);
+            helper.EnableColumnPanelAutoHeight();
+
+            saveLayout();
+        }
+
+        public void saveLayout()
+        {
+            //ตั้งให้ save แบบไม่ต้อง fillter
+            gridView1.OptionsLayout.StoreDataSettings = false;
+
+            saveDefaultLayout = new System.IO.MemoryStream();
+            gridView1.SaveLayoutToStream(saveDefaultLayout);
+            saveDefaultLayout.Seek(0, System.IO.SeekOrigin.Begin);
+
+            try
+            {
+                gridView1.RestoreLayoutFromXml(strPathLayout);
+            }
+            catch
+            {
+                gridView1.SaveLayoutToXml(strPathLayout);
+            }
         }
 
         public void getListClem()

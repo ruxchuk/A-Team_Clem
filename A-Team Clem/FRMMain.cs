@@ -199,5 +199,10 @@ namespace A_Team_Clem
         {
             showAddProductType();
         }
+
+        private void FRMMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            customerReport.saveLayout();
+        }
     }
 }

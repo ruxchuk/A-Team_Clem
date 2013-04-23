@@ -120,6 +120,7 @@
     <Compile Include="FRMSettingConDB.Designer.cs">
       <DependentUpon>FRMSettingConDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AutoHeightHelper.cs" />
     <Compile Include="Modules\UCAddCompany.cs">
       <SubType>UserControl</SubType>
     </Compile>
