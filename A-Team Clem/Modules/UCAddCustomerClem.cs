@@ -28,6 +28,8 @@ namespace A_Team_Clem.Modules
         public List<string>[] listProductType;
 
         private bool checkAddMRU = false;
+        public string typeSave = "add";
+        public int clem_id = 0;
 
         public UCAddCustomerClem(FRMMain mFRM)
         {
@@ -48,6 +50,51 @@ namespace A_Team_Clem.Modules
         public void loadInDocumentNumber()
         {
             inDocumentNumber.Text = conDB.getNewIDDocumentNumber(clemType);
+        }
+
+        public void getDataForEdit(int clemID)
+        {
+            typeSave = "edit";
+            clem_id = clemID;
+
+            DataSet ds = conDB.getListClem(clemType, clemID);
+            DataRow dr = ds.Tables["get_list_clem"].Rows[0];
+
+            customerName.Text = dr["customer_name_th"].ToString();
+            productType.Text = dr["product_type_name_th"].ToString();
+            companyName.Text = dr["company_name_th"].ToString();
+
+            productName.Text = dr["product_name"].ToString();
+            serial.Text = dr["serial"].ToString();
+            address.Text = dr["address"].ToString();
+            phone.Text = dr["phone"].ToString();
+            status.Text = dr["status"].ToString();
+            dtProductEndDate.DateTime = DateTime.Parse(dr["date_product"].ToString());
+            if (dr["status"].ToString() == "ในประกัน")
+            {
+                radioButtonInWarranty.Checked = true;
+            }
+            else
+            {
+                radioButtonOutWarranty.Checked = true;
+            }
+            textEditChargebacks.Text = dr["chargebacks"].ToString();
+            symptom.Text = dr["symptom"].ToString();
+            equipment.Text = dr["equipment"].ToString();
+            detail.Text = dr["detail"].ToString();
+            inDocumentNumber.Text = dr["in_document_number_str"].ToString();
+            outDocumentNumber.Text = dr["out_document_number"].ToString();
+            inSerialClem.Text = dr["in_serial_clem"].ToString();
+            outSerialClem.Text = dr["out_serial_clem"].ToString();
+            customerClem.Text = dr["customer_clem"].ToString();
+            employeeReceiveClem.Text = dr["employee_receive_clem"].ToString();
+            employeeClem.Text = dr["employee_clem"].ToString();
+            companyReceiveClem.Text = dr["company_receive_clem"].ToString();
+            companyReturn.Text = dr["company_return"].ToString();
+            employeeReceiveProduct.Text = dr["employee_receive_product"].ToString();
+            employeeReturn.Text = dr["employee_return"].ToString();
+            customerReceiveProduct.Text = dr["customer_receive_product"].ToString();
+            
         }
 
         public void loadAllListData()
@@ -268,10 +315,20 @@ namespace A_Team_Clem.Modules
             }
 
             readData();
-            bool resultAddClem = conDB.addClem();
+            bool resultAddClem;
+            if (typeSave == "add")
+            {
+                resultAddClem = conDB.addClem();
+            }
+            else
+            {
+                resultAddClem = conDB.updateClemProduct(clem_id);
+                Debug.WriteLine("updated");
+            }
             if (resultAddClem)
             {
-
+                clearData();
+                //
             }
             else
             {
@@ -343,7 +400,7 @@ namespace A_Team_Clem.Modules
             }
         }
 
-        private void clear_Click(object sender, EventArgs e)
+        public void clearData()
         {
             customerName.Text = "";
             address.Text = "";
@@ -374,9 +431,19 @@ namespace A_Team_Clem.Modules
             customerName.Focus();
         }
 
+        private void clear_Click(object sender, EventArgs e)
+        {
+            clearData();
+        }
+
         private void customerName_AddingMRUItem(object sender, DevExpress.XtraEditors.Controls.AddingMRUItemEventArgs e)
         {
             e.Cancel = checkAddMRU;
+        }
+
+        private void imgDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -438,7 +438,7 @@ namespace A_Team_Clem
             return NewID;
         }
 
-        public DataSet getListClem(string clemType)
+        public DataSet getListClem(string clemType, int clemID = 0)
         {
             DataSet ds = new DataSet();
             if (CheckConnect())
@@ -447,6 +447,7 @@ namespace A_Team_Clem
                 {
                     MySqlCommand cmd = new MySqlCommand("get_list_clem", connection);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@i_clem_id", clemID);
                     cmd.Parameters.AddWithValue("@s_clem_type", clemType);
                     cmd.Parameters.AddWithValue("@s_customer_name_th", name_th);
                     cmd.Parameters.AddWithValue("@s_phone", phone);
@@ -718,19 +719,60 @@ namespace A_Team_Clem
 
         #region Update
 
-        public string UpDate(string sql)
+        public bool updateClemProduct(int clemID)
         {
-            if (CheckConnect() == true)
+
+            if (CheckConnect())
             {
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 try
                 {
+                    MySqlCommand cmd = new MySqlCommand("update_clem_product", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@i_id", clemID);
+                    cmd.Parameters.AddWithValue("@i_customer_id", customer_id);
+                    cmd.Parameters.AddWithValue("@i_product_type_id", product_type_id);
+                    cmd.Parameters.AddWithValue("@i_company_id", company_id);
+                    cmd.Parameters.AddWithValue("@s_product_name", product_name);
+                    cmd.Parameters.AddWithValue("@s_serial", serial);
+                    cmd.Parameters.AddWithValue("@t_address", address);
+                    cmd.Parameters.AddWithValue("@s_phone", phone);
+                    cmd.Parameters.AddWithValue("@s_status", status);
+                    cmd.Parameters.AddWithValue("@dt_date_create", date_create);
+                    cmd.Parameters.AddWithValue("@dt_date_product", date_product);
+                    cmd.Parameters.AddWithValue("@dt_date_stamp", date_stamp);
+                    cmd.Parameters.AddWithValue("@s_warranty", warranty);
+                    cmd.Parameters.AddWithValue("@d_chargebacks", chargebacks);
+                    cmd.Parameters.AddWithValue("@t_symptom", symptom);
+                    cmd.Parameters.AddWithValue("@t_equipment", equipment);
+                    cmd.Parameters.AddWithValue("@t_detail", detail);
+                    cmd.Parameters.AddWithValue("@i_in_document_number_id", in_document_number_id);
+                    cmd.Parameters.AddWithValue("@dt_in_document_number", in_document_number);
+                    cmd.Parameters.AddWithValue("@s_out_document_number", out_document_number);
+                    cmd.Parameters.AddWithValue("@s_in_serial_clem", in_serial_clem);
+                    cmd.Parameters.AddWithValue("@s_out_serial_clem", out_serial_clem);
+                    cmd.Parameters.AddWithValue("@s_clem_type", clem_type);
+                    cmd.Parameters.AddWithValue("@s_customer_clem", customer_clem);
+                    cmd.Parameters.AddWithValue("@s_employee_receive_clem", employee_receive_clem);
+                    cmd.Parameters.AddWithValue("@s_employee_clem", employee_clem);
+                    cmd.Parameters.AddWithValue("@s_company_receive_clem", company_receive_clem);
+                    cmd.Parameters.AddWithValue("@s_company_return", company_return);
+                    cmd.Parameters.AddWithValue("@s_employee_receive_product", employee_receive_product);
+                    cmd.Parameters.AddWithValue("@s_employee_return", employee_return);
+                    cmd.Parameters.AddWithValue("@s_customer_receive_product", customer_receive_product);
                     cmd.ExecuteNonQuery();
                 }
-                catch { }
-                CloseConnection();
+                catch
+                {
+                    CloseConnection();
+                    return false;
+                }
             }
-            return sql;
+            else
+            {
+                return false;
+            }
+            CloseConnection();
+            return true;
         }
         
         #endregion

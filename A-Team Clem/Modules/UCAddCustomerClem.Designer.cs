@@ -57,8 +57,6 @@
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.status = new System.Windows.Forms.ComboBox();
-            this.clear = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonAddClem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panelWarranty = new System.Windows.Forms.Panel();
             this.textEditChargebacks = new DevExpress.XtraEditors.TextEdit();
@@ -111,6 +109,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.imgAdd = new System.Windows.Forms.PictureBox();
+            this.imgClear = new System.Windows.Forms.PictureBox();
+            this.imgDelete = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -159,6 +160,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControlPage
@@ -498,9 +502,10 @@
             // groupControl3
             // 
             this.groupControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl3.Controls.Add(this.imgDelete);
+            this.groupControl3.Controls.Add(this.imgClear);
             this.groupControl3.Controls.Add(this.status);
-            this.groupControl3.Controls.Add(this.clear);
-            this.groupControl3.Controls.Add(this.simpleButtonAddClem);
+            this.groupControl3.Controls.Add(this.imgAdd);
             this.groupControl3.Controls.Add(this.labelControl7);
             this.groupControl3.Controls.Add(this.panelWarranty);
             this.groupControl3.Controls.Add(this.detail);
@@ -533,30 +538,6 @@
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(184, 27);
             this.status.TabIndex = 1079;
-            // 
-            // clear
-            // 
-            this.clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clear.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear.Appearance.Options.UseFont = true;
-            this.clear.Location = new System.Drawing.Point(143, 441);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(48, 33);
-            this.clear.TabIndex = 27;
-            this.clear.Text = "Clear";
-            this.clear.Click += new System.EventHandler(this.clear_Click);
-            // 
-            // simpleButtonAddClem
-            // 
-            this.simpleButtonAddClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.simpleButtonAddClem.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButtonAddClem.Appearance.Options.UseFont = true;
-            this.simpleButtonAddClem.Location = new System.Drawing.Point(197, 441);
-            this.simpleButtonAddClem.Name = "simpleButtonAddClem";
-            this.simpleButtonAddClem.Size = new System.Drawing.Size(129, 33);
-            this.simpleButtonAddClem.TabIndex = 27;
-            this.simpleButtonAddClem.Text = "เพิ่มรายการเคลม";
-            this.simpleButtonAddClem.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
             // labelControl7
             // 
@@ -619,7 +600,7 @@
             this.detail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.detail.Location = new System.Drawing.Point(138, 340);
             this.detail.Name = "detail";
-            this.detail.Size = new System.Drawing.Size(188, 79);
+            this.detail.Size = new System.Drawing.Size(184, 79);
             this.detail.TabIndex = 26;
             this.detail.Text = "";
             // 
@@ -662,7 +643,7 @@
             this.equipment.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.equipment.Location = new System.Drawing.Point(138, 249);
             this.equipment.Name = "equipment";
-            this.equipment.Size = new System.Drawing.Size(188, 79);
+            this.equipment.Size = new System.Drawing.Size(184, 79);
             this.equipment.TabIndex = 25;
             this.equipment.Text = "";
             // 
@@ -687,7 +668,7 @@
             this.symptom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.symptom.Location = new System.Drawing.Point(138, 156);
             this.symptom.Name = "symptom";
-            this.symptom.Size = new System.Drawing.Size(188, 79);
+            this.symptom.Size = new System.Drawing.Size(184, 79);
             this.symptom.TabIndex = 24;
             this.symptom.Text = "";
             // 
@@ -1183,6 +1164,48 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
+            // imgAdd
+            // 
+            this.imgAdd.BackColor = System.Drawing.Color.Transparent;
+            this.imgAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAdd.BackgroundImage")));
+            this.imgAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAdd.Location = new System.Drawing.Point(270, 424);
+            this.imgAdd.Name = "imgAdd";
+            this.imgAdd.Size = new System.Drawing.Size(53, 49);
+            this.imgAdd.TabIndex = 1072;
+            this.imgAdd.TabStop = false;
+            this.imgAdd.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
+            // 
+            // imgClear
+            // 
+            this.imgClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgClear.BackgroundImage")));
+            this.imgClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgClear.Location = new System.Drawing.Point(201, 424);
+            this.imgClear.Name = "imgClear";
+            this.imgClear.Size = new System.Drawing.Size(53, 49);
+            this.imgClear.TabIndex = 1080;
+            this.imgClear.TabStop = false;
+            this.imgClear.Tag = "Clear";
+            this.imgClear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // imgDelete
+            // 
+            this.imgDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgDelete.BackgroundImage")));
+            this.imgDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgDelete.Location = new System.Drawing.Point(132, 424);
+            this.imgDelete.Name = "imgDelete";
+            this.imgDelete.Size = new System.Drawing.Size(53, 49);
+            this.imgDelete.TabIndex = 1080;
+            this.imgDelete.TabStop = false;
+            this.imgDelete.Tag = "Clear";
+            this.imgDelete.Visible = false;
+            this.imgDelete.Click += new System.EventHandler(this.imgDelete_Click);
+            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1249,6 +1272,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1312,7 +1338,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.LabelControl labelControl23;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonAddClem;
         private DevExpress.XtraEditors.TextEdit companyReceiveClem;
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.PanelControl panelControl4;
@@ -1335,9 +1360,11 @@
         private System.Windows.Forms.PictureBox imgAddEmployee;
         public DevExpress.XtraEditors.MRUEdit customerReceiveProduct;
         private System.Windows.Forms.PictureBox imgAddCustomer2;
-        private DevExpress.XtraEditors.SimpleButton clear;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private System.Windows.Forms.ComboBox status;
+        private System.Windows.Forms.PictureBox imgAdd;
+        private System.Windows.Forms.PictureBox imgDelete;
+        private System.Windows.Forms.PictureBox imgClear;
 
     }
 }

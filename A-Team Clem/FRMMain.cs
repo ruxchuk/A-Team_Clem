@@ -26,7 +26,7 @@ namespace A_Team_Clem
         }
 
         public UCAddCustomerClem addCustomerClem;
-        //public Modules.UCReportCustomerClem customerReport;
+        public UCReportCustomerClem customerReport;
         public UCAddEmployeeClem addEmployeeClem;
         public UCReportEmployeeClem employeeReport;
         public UCAddProduct addProduct;
@@ -47,7 +47,8 @@ namespace A_Team_Clem
 
         private void FRMMain_Load(object sender, EventArgs e)
         {
-            addCustomerClem = new UCAddCustomerClem(this) { Dock = DockStyle.Fill };
+            addCustomerClem = new UCAddCustomerClem(this) { Dock = DockStyle.Fill }; 
+            customerReport = new UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             addEmployeeClem = new UCAddEmployeeClem(this) { Dock = DockStyle.Fill };
             employeeReport = new UCReportEmployeeClem() { Dock = DockStyle.Fill };
             addProduct = new UCAddProduct(this) { Dock = DockStyle.Fill };
@@ -130,8 +131,12 @@ namespace A_Team_Clem
             Close();
         }
 
-        public void showAddCustomerClem()
+        public void showAddCustomerClem(string type = "add")
         {
+            if (type == "edit")
+            {
+                addCustomerClem.getDataForEdit(customerReport.clemID);
+            }
             addCustomerClem.loadAllListData();
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCustomerClem);
@@ -140,16 +145,16 @@ namespace A_Team_Clem
 
         public void showCustomerClemReport()
         {
-            splashScreenManager1.ShowWaitForm();
-            splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดรายงาน");
-            splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
+            //splashScreenManager1.ShowWaitForm();
+            //splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดรายงาน");
+            //splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
 
             panelShowUserControl.Controls.Clear();
-
-            UCReportCustomerClem customerReport = new UCReportCustomerClem(this) { Dock = DockStyle.Fill };
+            //customerReport.Dispose();
+            //customerReport = new UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             panelShowUserControl.Controls.Add(customerReport);
             customerReport.customerName.Focus();
-            splashScreenManager1.CloseWaitForm();
+            //splashScreenManager1.CloseWaitForm();
         }
 
         public void showAddEmployeeClem()
@@ -219,8 +224,6 @@ namespace A_Team_Clem
         {
             showAddProductType();
         }
-
-
 
     }
 }

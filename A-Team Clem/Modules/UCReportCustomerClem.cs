@@ -34,6 +34,8 @@ namespace A_Team_Clem.Modules
         private int curSizeY = 40;
         private bool checkAddMRU = false;
 
+        public int clemID = 0;
+
         public void readData()
         {
             conDB.name_th = customerName.Text;
@@ -203,6 +205,29 @@ namespace A_Team_Clem.Modules
         private void customerName_AddingMRUItem(object sender, DevExpress.XtraEditors.Controls.AddingMRUItemEventArgs e)
         {
             e.Cancel = checkAddMRU;
+        }
+
+        private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "No.")
+            {
+                e.DisplayText = (int.Parse(e.RowHandle.ToString()) + 1).ToString();
+            }
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            if (e.Clicks == 2)
+            {
+                try
+                {
+                    clemID = int.Parse(gridView1.GetFocusedRowCellValue("id").ToString());
+                    fRMMain.showAddCustomerClem("edit");
+                }
+                catch
+                {
+                }
+            }
         }
     }
 }
