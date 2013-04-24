@@ -32,6 +32,7 @@ namespace A_Team_Clem.Modules
         private int sizeY = 45;
         private int curSizeX = 40;
         private int curSizeY = 40;
+        private bool checkAddMRU = false;
 
         public void readData()
         {
@@ -51,6 +52,7 @@ namespace A_Team_Clem.Modules
             productName.Text = "";
             inDocumentNumber.Text = "";
             status.SelectedIndex = -1;
+            customerName.Focus();
         }
 
         private void setGridView()
@@ -147,6 +149,15 @@ namespace A_Team_Clem.Modules
             DataSet list = conDB.getListClem(fRMMain.addCustomerClem.clemType);
             gridControl1.DataSource = list.Tables["get_list_clem"];
             setGridView();
+            loadData();
+        }
+
+        private void loadData()
+        {
+            checkAddMRU = false;
+            customerName.Properties.Items.AddRange(fRMMain.addCustomerClem.listCustomer[1]);
+            productName.Properties.Items.AddRange(fRMMain.addCustomerClem.listProduct[1]);
+            checkAddMRU = true;
         }
 
         #region set mouse
@@ -185,7 +196,13 @@ namespace A_Team_Clem.Modules
 
         private void imgClear_Click(object sender, EventArgs e)
         {
+            imgSearch.Size = new Size(curSizeX, curSizeY);
             clearData();
+        }
+
+        private void customerName_AddingMRUItem(object sender, DevExpress.XtraEditors.Controls.AddingMRUItemEventArgs e)
+        {
+            e.Cancel = checkAddMRU;
         }
     }
 }

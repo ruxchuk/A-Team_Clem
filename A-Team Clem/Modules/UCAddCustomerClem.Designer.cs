@@ -165,7 +165,7 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.Location = new System.Drawing.Point(318, 15);
+            this.labelControlPage.Location = new System.Drawing.Point(323, 15);
             this.labelControlPage.Name = "labelControlPage";
             this.labelControlPage.Size = new System.Drawing.Size(417, 39);
             this.labelControlPage.TabIndex = 2;
@@ -236,6 +236,7 @@
             this.employeeReceiveProduct.Properties.Sorted = true;
             this.employeeReceiveProduct.Size = new System.Drawing.Size(170, 26);
             this.employeeReceiveProduct.TabIndex = 1;
+            this.employeeReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // labelControl27
             // 
@@ -294,6 +295,7 @@
             this.employeeClem.Properties.Sorted = true;
             this.employeeClem.Size = new System.Drawing.Size(170, 26);
             this.employeeClem.TabIndex = 1;
+            this.employeeClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // companyReceiveClem
             // 
@@ -355,6 +357,7 @@
             this.employeeReceiveClem.Properties.Sorted = true;
             this.employeeReceiveClem.Size = new System.Drawing.Size(170, 26);
             this.employeeReceiveClem.TabIndex = 1;
+            this.employeeReceiveClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // imgAddEmployee
             // 
@@ -449,6 +452,7 @@
             this.customerReceiveProduct.Properties.Sorted = true;
             this.customerReceiveProduct.Size = new System.Drawing.Size(170, 26);
             this.customerReceiveProduct.TabIndex = 20;
+            this.customerReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // imgAddCustomer2
             // 
@@ -479,6 +483,7 @@
             this.employeeReturn.Properties.Sorted = true;
             this.employeeReturn.Size = new System.Drawing.Size(170, 26);
             this.employeeReturn.TabIndex = 1;
+            this.employeeReturn.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // labelControl30
             // 
@@ -896,6 +901,7 @@
             this.productType.Properties.Sorted = true;
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 7;
+            this.productType.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // companyName
             // 
@@ -913,6 +919,7 @@
             this.companyName.Properties.Sorted = true;
             this.companyName.Size = new System.Drawing.Size(188, 26);
             this.companyName.TabIndex = 6;
+            this.companyName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // labelControl62
             // 
@@ -966,6 +973,7 @@
             this.productName.Properties.Sorted = true;
             this.productName.Size = new System.Drawing.Size(188, 26);
             this.productName.TabIndex = 5;
+            this.productName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // serial
             // 
@@ -1122,6 +1130,7 @@
             this.customerName.Properties.Sorted = true;
             this.customerName.Size = new System.Drawing.Size(188, 26);
             this.customerName.TabIndex = 1;
+            this.customerName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.customerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
             // 
             // address

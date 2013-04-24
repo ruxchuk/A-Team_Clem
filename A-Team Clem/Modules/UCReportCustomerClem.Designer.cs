@@ -64,11 +64,11 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.Location = new System.Drawing.Point(363, 15);
+            this.labelControlPage.Location = new System.Drawing.Point(298, 15);
             this.labelControlPage.Name = "labelControlPage";
-            this.labelControlPage.Size = new System.Drawing.Size(314, 39);
+            this.labelControlPage.Size = new System.Drawing.Size(445, 39);
             this.labelControlPage.TabIndex = 2;
-            this.labelControlPage.Text = "รายงานใบรับเคลมสินค้า";
+            this.labelControlPage.Text = "รายงานใบรับเคลม/ใบส่งเคมสินค้า";
             // 
             // groupControl1
             // 
@@ -258,6 +258,7 @@
             this.customerName.Properties.Sorted = true;
             this.customerName.Size = new System.Drawing.Size(188, 26);
             this.customerName.TabIndex = 1070;
+            this.customerName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             // 
             // labelControl1
             // 

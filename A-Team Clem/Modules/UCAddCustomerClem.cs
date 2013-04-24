@@ -18,7 +18,7 @@ namespace A_Team_Clem.Modules
         private ConvertDateTime convertDT;
         private FRMMain mainForm;
 
-        public string clemType = "ใบรับเคลม";
+        public string clemType = "ใบรับเคลม/ใบส่งเคลม";
 
         public List<string>[] listCustomer;
         public List<string>[] listPorductType;
@@ -26,6 +26,8 @@ namespace A_Team_Clem.Modules
         public List<string>[] listEmployee;
         public List<string>[] listProduct;
         public List<string>[] listProductType;
+
+        private bool checkAddMRU = false;
 
         public UCAddCustomerClem(FRMMain mFRM)
         {
@@ -50,12 +52,14 @@ namespace A_Team_Clem.Modules
 
         public void loadAllListData()
         {
+            checkAddMRU = false;
             getProductType(); 
             getCompany(); 
             getEmployee();
             getProduct();
             loadInDocumentNumber();
             getCustomer();
+            checkAddMRU = true;
         }
 
         private void getCustomer()
@@ -113,6 +117,8 @@ namespace A_Team_Clem.Modules
         }
         #endregion
 
+
+        #region validate data
         public bool validateForm()
         {
             if (customerName.Text == "")
@@ -251,15 +257,15 @@ namespace A_Team_Clem.Modules
             conDB.customer_receive_product = customerReceiveProduct.Text;
 
         }
+        #endregion
 
         private void simpleButtonAddClem_Click(object sender, EventArgs e)
         {
             bool resultValidateForm = validateForm();
-            //if (!resultValidateForm)
-            //{
-            //    MessageBox.Show("กรุณากรอกข้อมูลที่กำหนด");
-            //    return;
-            //}
+            if (!resultValidateForm)
+            {
+                return;
+            }
 
             readData();
             bool resultAddClem = conDB.addClem();
@@ -366,6 +372,11 @@ namespace A_Team_Clem.Modules
             equipment.Text = "";
             detail.Text = "";
             customerName.Focus();
+        }
+
+        private void customerName_AddingMRUItem(object sender, DevExpress.XtraEditors.Controls.AddingMRUItemEventArgs e)
+        {
+            e.Cancel = checkAddMRU;
         }
     }
 }

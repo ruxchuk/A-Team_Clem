@@ -169,7 +169,6 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "ใบส่งเคลม";
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.navBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {

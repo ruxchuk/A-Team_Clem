@@ -50,11 +50,7 @@
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.inDocumentNumber = new DevExpress.XtraEditors.TextEdit();
-            this.outSerialClem = new DevExpress.XtraEditors.TextEdit();
-            this.inSerialClem = new DevExpress.XtraEditors.TextEdit();
             this.outDocumentNumber = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -80,6 +76,7 @@
             this.status = new System.Windows.Forms.ComboBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.imgAddEmployee = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -93,8 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outSerialClem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inSerialClem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -107,10 +102,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.groupControl5);
             this.panelControl1.Controls.Add(this.groupControl3);
             this.panelControl1.Controls.Add(this.groupControl4);
@@ -122,6 +121,7 @@
             // 
             // groupControl5
             // 
+            this.groupControl5.Controls.Add(this.imgAddEmployee);
             this.groupControl5.Controls.Add(this.employeeReceiveProduct);
             this.groupControl5.Controls.Add(this.labelControl25);
             this.groupControl5.Controls.Add(this.companyReturn);
@@ -141,7 +141,7 @@
             // 
             this.employeeReceiveProduct.AllowDrop = true;
             this.employeeReceiveProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.employeeReceiveProduct.Location = new System.Drawing.Point(180, 185);
+            this.employeeReceiveProduct.Location = new System.Drawing.Point(172, 185);
             this.employeeReceiveProduct.Name = "employeeReceiveProduct";
             this.employeeReceiveProduct.Properties.AllowRemoveMRUItems = false;
             this.employeeReceiveProduct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -151,8 +151,8 @@
             this.employeeReceiveProduct.Properties.CaseSensitiveSearch = true;
             this.employeeReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.employeeReceiveProduct.Properties.Sorted = true;
-            this.employeeReceiveProduct.Size = new System.Drawing.Size(170, 26);
-            this.employeeReceiveProduct.TabIndex = 1;
+            this.employeeReceiveProduct.Size = new System.Drawing.Size(188, 26);
+            this.employeeReceiveProduct.TabIndex = 9;
             // 
             // labelControl25
             // 
@@ -167,12 +167,12 @@
             // companyReturn
             // 
             this.companyReturn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.companyReturn.Location = new System.Drawing.Point(181, 134);
+            this.companyReturn.Location = new System.Drawing.Point(172, 134);
             this.companyReturn.Name = "companyReturn";
             this.companyReturn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.companyReturn.Properties.Appearance.Options.UseFont = true;
-            this.companyReturn.Size = new System.Drawing.Size(169, 26);
-            this.companyReturn.TabIndex = 17;
+            this.companyReturn.Size = new System.Drawing.Size(188, 26);
+            this.companyReturn.TabIndex = 8;
             // 
             // labelControl27
             // 
@@ -198,7 +198,7 @@
             // 
             this.employeeClem.AllowDrop = true;
             this.employeeClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.employeeClem.Location = new System.Drawing.Point(181, 32);
+            this.employeeClem.Location = new System.Drawing.Point(201, 32);
             this.employeeClem.Name = "employeeClem";
             this.employeeClem.Properties.AllowRemoveMRUItems = false;
             this.employeeClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -208,18 +208,18 @@
             this.employeeClem.Properties.CaseSensitiveSearch = true;
             this.employeeClem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.employeeClem.Properties.Sorted = true;
-            this.employeeClem.Size = new System.Drawing.Size(170, 26);
-            this.employeeClem.TabIndex = 1;
+            this.employeeClem.Size = new System.Drawing.Size(159, 26);
+            this.employeeClem.TabIndex = 6;
             // 
             // companyReceiveClem
             // 
             this.companyReceiveClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.companyReceiveClem.Location = new System.Drawing.Point(181, 83);
+            this.companyReceiveClem.Location = new System.Drawing.Point(172, 83);
             this.companyReceiveClem.Name = "companyReceiveClem";
             this.companyReceiveClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.companyReceiveClem.Properties.Appearance.Options.UseFont = true;
-            this.companyReceiveClem.Size = new System.Drawing.Size(169, 26);
-            this.companyReceiveClem.TabIndex = 16;
+            this.companyReceiveClem.Size = new System.Drawing.Size(188, 26);
+            this.companyReceiveClem.TabIndex = 7;
             // 
             // labelControl28
             // 
@@ -244,9 +244,9 @@
             this.groupControl3.Controls.Add(this.labelControl19);
             this.groupControl3.Controls.Add(this.labelControl17);
             this.groupControl3.Controls.Add(this.labelControl14);
-            this.groupControl3.Location = new System.Drawing.Point(390, 212);
+            this.groupControl3.Location = new System.Drawing.Point(390, 141);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(417, 286);
+            this.groupControl3.Size = new System.Drawing.Size(417, 357);
             this.groupControl3.TabIndex = 107;
             this.groupControl3.Text = "ข้อมูลการซ่อม";
             // 
@@ -255,7 +255,7 @@
             this.clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clear.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clear.Appearance.Options.UseFont = true;
-            this.clear.Location = new System.Drawing.Point(226, 232);
+            this.clear.Location = new System.Drawing.Point(229, 302);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(48, 33);
             this.clear.TabIndex = 27;
@@ -266,7 +266,7 @@
             this.simpleButtonAddClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.simpleButtonAddClem.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButtonAddClem.Appearance.Options.UseFont = true;
-            this.simpleButtonAddClem.Location = new System.Drawing.Point(280, 232);
+            this.simpleButtonAddClem.Location = new System.Drawing.Point(283, 302);
             this.simpleButtonAddClem.Name = "simpleButtonAddClem";
             this.simpleButtonAddClem.Size = new System.Drawing.Size(129, 33);
             this.simpleButtonAddClem.TabIndex = 27;
@@ -276,34 +276,34 @@
             // detail
             // 
             this.detail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.detail.Location = new System.Drawing.Point(12, 184);
+            this.detail.Location = new System.Drawing.Point(5, 256);
             this.detail.Name = "detail";
             this.detail.Size = new System.Drawing.Size(188, 79);
-            this.detail.TabIndex = 26;
+            this.detail.TabIndex = 15;
             this.detail.Text = "";
             // 
             // equipment
             // 
             this.equipment.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.equipment.Location = new System.Drawing.Point(221, 65);
+            this.equipment.Location = new System.Drawing.Point(221, 137);
             this.equipment.Name = "equipment";
             this.equipment.Size = new System.Drawing.Size(188, 79);
-            this.equipment.TabIndex = 25;
+            this.equipment.TabIndex = 14;
             this.equipment.Text = "";
             // 
             // symptom
             // 
             this.symptom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.symptom.Location = new System.Drawing.Point(12, 64);
+            this.symptom.Location = new System.Drawing.Point(5, 136);
             this.symptom.Name = "symptom";
             this.symptom.Size = new System.Drawing.Size(188, 79);
-            this.symptom.TabIndex = 24;
+            this.symptom.TabIndex = 13;
             this.symptom.Text = "";
             // 
             // labelControl19
             // 
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl19.Location = new System.Drawing.Point(12, 159);
+            this.labelControl19.Location = new System.Drawing.Point(5, 231);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(62, 19);
             this.labelControl19.TabIndex = 1076;
@@ -312,7 +312,7 @@
             // labelControl17
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl17.Location = new System.Drawing.Point(221, 39);
+            this.labelControl17.Location = new System.Drawing.Point(221, 111);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(92, 19);
             this.labelControl17.TabIndex = 1075;
@@ -321,7 +321,7 @@
             // labelControl14
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl14.Location = new System.Drawing.Point(12, 39);
+            this.labelControl14.Location = new System.Drawing.Point(5, 111);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(66, 19);
             this.labelControl14.TabIndex = 1077;
@@ -330,16 +330,12 @@
             // groupControl4
             // 
             this.groupControl4.Controls.Add(this.inDocumentNumber);
-            this.groupControl4.Controls.Add(this.outSerialClem);
-            this.groupControl4.Controls.Add(this.inSerialClem);
             this.groupControl4.Controls.Add(this.outDocumentNumber);
-            this.groupControl4.Controls.Add(this.labelControl22);
-            this.groupControl4.Controls.Add(this.labelControl21);
             this.groupControl4.Controls.Add(this.labelControl20);
             this.groupControl4.Controls.Add(this.labelControl18);
             this.groupControl4.Location = new System.Drawing.Point(390, 5);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(417, 201);
+            this.groupControl4.Size = new System.Drawing.Size(417, 130);
             this.groupControl4.TabIndex = 101;
             this.groupControl4.Text = "ข้อมูลเลขที่ใบเคลม";
             // 
@@ -352,28 +348,8 @@
             this.inDocumentNumber.Name = "inDocumentNumber";
             this.inDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.inDocumentNumber.Properties.Appearance.Options.UseFont = true;
-            this.inDocumentNumber.Size = new System.Drawing.Size(169, 26);
-            this.inDocumentNumber.TabIndex = 9;
-            // 
-            // outSerialClem
-            // 
-            this.outSerialClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.outSerialClem.Location = new System.Drawing.Point(221, 166);
-            this.outSerialClem.Name = "outSerialClem";
-            this.outSerialClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.outSerialClem.Properties.Appearance.Options.UseFont = true;
-            this.outSerialClem.Size = new System.Drawing.Size(169, 26);
-            this.outSerialClem.TabIndex = 12;
-            // 
-            // inSerialClem
-            // 
-            this.inSerialClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inSerialClem.Location = new System.Drawing.Point(221, 124);
-            this.inSerialClem.Name = "inSerialClem";
-            this.inSerialClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.inSerialClem.Properties.Appearance.Options.UseFont = true;
-            this.inSerialClem.Size = new System.Drawing.Size(169, 26);
-            this.inSerialClem.TabIndex = 11;
+            this.inDocumentNumber.Size = new System.Drawing.Size(188, 26);
+            this.inDocumentNumber.TabIndex = 10;
             // 
             // outDocumentNumber
             // 
@@ -382,34 +358,14 @@
             this.outDocumentNumber.Name = "outDocumentNumber";
             this.outDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.outDocumentNumber.Properties.Appearance.Options.UseFont = true;
-            this.outDocumentNumber.Size = new System.Drawing.Size(169, 26);
-            this.outDocumentNumber.TabIndex = 10;
-            // 
-            // labelControl22
-            // 
-            this.labelControl22.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl22.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl22.Location = new System.Drawing.Point(27, 173);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(161, 19);
-            this.labelControl22.TabIndex = 1032;
-            this.labelControl22.Text = "เลขที่ใบรับเคลมภายนอก";
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl21.Location = new System.Drawing.Point(27, 131);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(149, 19);
-            this.labelControl21.TabIndex = 1033;
-            this.labelControl21.Text = "เลขที่ใบรับเคลมภายใน";
+            this.outDocumentNumber.Size = new System.Drawing.Size(188, 26);
+            this.outDocumentNumber.TabIndex = 11;
             // 
             // labelControl20
             // 
             this.labelControl20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl20.Location = new System.Drawing.Point(27, 89);
+            this.labelControl20.Location = new System.Drawing.Point(5, 89);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(141, 19);
             this.labelControl20.TabIndex = 1035;
@@ -419,7 +375,7 @@
             // 
             this.labelControl18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl18.Location = new System.Drawing.Point(27, 47);
+            this.labelControl18.Location = new System.Drawing.Point(5, 47);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(129, 19);
             this.labelControl18.TabIndex = 1034;
@@ -456,7 +412,7 @@
             this.imgAddTypeProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddTypeProduct.BackgroundImage")));
             this.imgAddTypeProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.imgAddTypeProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddTypeProduct.Location = new System.Drawing.Point(131, 173);
+            this.imgAddTypeProduct.Location = new System.Drawing.Point(140, 173);
             this.imgAddTypeProduct.Name = "imgAddTypeProduct";
             this.imgAddTypeProduct.Size = new System.Drawing.Size(30, 16);
             this.imgAddTypeProduct.TabIndex = 1072;
@@ -468,7 +424,7 @@
             this.imgAddCompany.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddCompany.BackgroundImage")));
             this.imgAddCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.imgAddCompany.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddCompany.Location = new System.Drawing.Point(131, 131);
+            this.imgAddCompany.Location = new System.Drawing.Point(140, 131);
             this.imgAddCompany.Name = "imgAddCompany";
             this.imgAddCompany.Size = new System.Drawing.Size(30, 16);
             this.imgAddCompany.TabIndex = 1072;
@@ -480,7 +436,7 @@
             this.imgAddProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddProduct.BackgroundImage")));
             this.imgAddProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.imgAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddProduct.Location = new System.Drawing.Point(131, 89);
+            this.imgAddProduct.Location = new System.Drawing.Point(140, 89);
             this.imgAddProduct.Name = "imgAddProduct";
             this.imgAddProduct.Size = new System.Drawing.Size(30, 16);
             this.imgAddProduct.TabIndex = 1072;
@@ -490,7 +446,7 @@
             // 
             this.productType.AllowDrop = true;
             this.productType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.productType.Location = new System.Drawing.Point(163, 166);
+            this.productType.Location = new System.Drawing.Point(172, 166);
             this.productType.Name = "productType";
             this.productType.Properties.AllowRemoveMRUItems = false;
             this.productType.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -501,13 +457,13 @@
             this.productType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productType.Properties.Sorted = true;
             this.productType.Size = new System.Drawing.Size(188, 26);
-            this.productType.TabIndex = 7;
+            this.productType.TabIndex = 4;
             // 
             // companyName
             // 
             this.companyName.AllowDrop = true;
             this.companyName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.companyName.Location = new System.Drawing.Point(163, 124);
+            this.companyName.Location = new System.Drawing.Point(172, 124);
             this.companyName.Name = "companyName";
             this.companyName.Properties.AllowRemoveMRUItems = false;
             this.companyName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -518,7 +474,7 @@
             this.companyName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.companyName.Properties.Sorted = true;
             this.companyName.Size = new System.Drawing.Size(188, 26);
-            this.companyName.TabIndex = 6;
+            this.companyName.TabIndex = 3;
             // 
             // labelControl62
             // 
@@ -535,7 +491,7 @@
             // 
             this.dtProductEndDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtProductEndDate.EditValue = null;
-            this.dtProductEndDate.Location = new System.Drawing.Point(163, 206);
+            this.dtProductEndDate.Location = new System.Drawing.Point(172, 206);
             this.dtProductEndDate.Name = "dtProductEndDate";
             this.dtProductEndDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.dtProductEndDate.Properties.Appearance.Options.UseFont = true;
@@ -544,7 +500,7 @@
             this.dtProductEndDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dtProductEndDate.Size = new System.Drawing.Size(188, 28);
-            this.dtProductEndDate.TabIndex = 8;
+            this.dtProductEndDate.TabIndex = 5;
             // 
             // labelControl12
             // 
@@ -560,7 +516,7 @@
             // 
             this.productName.AllowDrop = true;
             this.productName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.productName.Location = new System.Drawing.Point(163, 82);
+            this.productName.Location = new System.Drawing.Point(172, 82);
             this.productName.Name = "productName";
             this.productName.Properties.AllowRemoveMRUItems = false;
             this.productName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -571,17 +527,17 @@
             this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productName.Properties.Sorted = true;
             this.productName.Size = new System.Drawing.Size(188, 26);
-            this.productName.TabIndex = 5;
+            this.productName.TabIndex = 2;
             // 
             // serial
             // 
             this.serial.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.serial.Location = new System.Drawing.Point(163, 40);
+            this.serial.Location = new System.Drawing.Point(172, 40);
             this.serial.Name = "serial";
             this.serial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.serial.Properties.Appearance.Options.UseFont = true;
             this.serial.Size = new System.Drawing.Size(188, 26);
-            this.serial.TabIndex = 4;
+            this.serial.TabIndex = 1;
             // 
             // labelControl71
             // 
@@ -630,7 +586,7 @@
             this.labelControl67.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl67.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.labelControl67.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl67.Location = new System.Drawing.Point(103, 173);
+            this.labelControl67.Location = new System.Drawing.Point(79, 173);
             this.labelControl67.Name = "labelControl67";
             this.labelControl67.Size = new System.Drawing.Size(9, 19);
             this.labelControl67.TabIndex = 1080;
@@ -685,20 +641,19 @@
             this.status.FormattingEnabled = true;
             this.status.Items.AddRange(new object[] {
             "",
-            "รับเคลม",
             "ส่งเคลม",
             "สำเร็จ"});
-            this.status.Location = new System.Drawing.Point(221, 184);
+            this.status.Location = new System.Drawing.Point(5, 62);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(188, 27);
-            this.status.TabIndex = 1082;
+            this.status.TabIndex = 12;
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl7.Location = new System.Drawing.Point(271, 159);
+            this.labelControl7.Location = new System.Drawing.Point(55, 37);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(9, 19);
             this.labelControl7.TabIndex = 1080;
@@ -708,11 +663,23 @@
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl6.Location = new System.Drawing.Point(221, 159);
+            this.labelControl6.Location = new System.Drawing.Point(5, 34);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(44, 19);
             this.labelControl6.TabIndex = 1081;
             this.labelControl6.Text = "สถานะ";
+            // 
+            // imgAddEmployee
+            // 
+            this.imgAddEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddEmployee.BackgroundImage")));
+            this.imgAddEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgAddEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAddEmployee.Location = new System.Drawing.Point(170, 39);
+            this.imgAddEmployee.Name = "imgAddEmployee";
+            this.imgAddEmployee.Size = new System.Drawing.Size(30, 16);
+            this.imgAddEmployee.TabIndex = 1072;
+            this.imgAddEmployee.TabStop = false;
             // 
             // UCAddEmployeeClem
             // 
@@ -738,8 +705,6 @@
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outSerialClem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inSerialClem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -753,6 +718,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -781,11 +747,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.TextEdit inDocumentNumber;
-        private DevExpress.XtraEditors.TextEdit outSerialClem;
-        private DevExpress.XtraEditors.TextEdit inSerialClem;
         private DevExpress.XtraEditors.TextEdit outDocumentNumber;
-        private DevExpress.XtraEditors.LabelControl labelControl22;
-        private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.GroupControl groupControl2;
@@ -811,6 +773,7 @@
         private System.Windows.Forms.ComboBox status;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private System.Windows.Forms.PictureBox imgAddEmployee;
 
     }
 }
