@@ -169,6 +169,7 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "ใบส่งเคลม";
+            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.navBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -180,7 +181,7 @@
             // 
             // navBarItem3
             // 
-            this.navBarItem3.Caption = "เพิ่มใบรับเคลม";
+            this.navBarItem3.Caption = "เพิ่มใบส่งเคลม";
             this.navBarItem3.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.LargeImage")));
             this.navBarItem3.LargeImageIndex = 0;
             this.navBarItem3.Name = "navBarItem3";

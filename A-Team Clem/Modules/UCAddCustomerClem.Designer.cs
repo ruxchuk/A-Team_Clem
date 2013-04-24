@@ -165,11 +165,11 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.Location = new System.Drawing.Point(398, 15);
+            this.labelControlPage.Location = new System.Drawing.Point(318, 15);
             this.labelControlPage.Name = "labelControlPage";
-            this.labelControlPage.Size = new System.Drawing.Size(266, 39);
+            this.labelControlPage.Size = new System.Drawing.Size(417, 39);
             this.labelControlPage.TabIndex = 2;
-            this.labelControlPage.Text = "เพิ่มใบรับเคลมสินค้า";
+            this.labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
             // 
             // panelControl1
             // 
@@ -736,7 +736,7 @@
             // inDocumentNumber
             // 
             this.inDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inDocumentNumber.EditValue = "560400001";
+            this.inDocumentNumber.EditValue = "CA5604-00001";
             this.inDocumentNumber.Enabled = false;
             this.inDocumentNumber.Location = new System.Drawing.Point(199, 24);
             this.inDocumentNumber.Name = "inDocumentNumber";

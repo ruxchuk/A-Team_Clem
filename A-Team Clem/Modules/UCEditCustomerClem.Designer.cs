@@ -432,7 +432,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtProductEndDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dtProductEndDate.Size = new System.Drawing.Size(188, 20);
+            this.dtProductEndDate.Size = new System.Drawing.Size(188, 26);
             this.dtProductEndDate.TabIndex = 8;
             // 
             // labelControl12

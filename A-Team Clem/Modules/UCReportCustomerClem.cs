@@ -144,7 +144,7 @@ namespace A_Team_Clem.Modules
             //splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
 
             readData();
-            DataSet list = conDB.getListClem(fRMMain.addCustomerCustomerClem.clemType);
+            DataSet list = conDB.getListClem(fRMMain.addCustomerClem.clemType);
             gridControl1.DataSource = list.Tables["get_list_clem"];
             setGridView();
         }

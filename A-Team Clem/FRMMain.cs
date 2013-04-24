@@ -25,15 +25,15 @@ namespace A_Team_Clem
             conDB = new ConMySql();
         }
 
-        public Modules.UCAddCustomerClem addCustomerCustomerClem;
+        public UCAddCustomerClem addCustomerClem;
         //public Modules.UCReportCustomerClem customerReport;
-        public Modules.UCAddEmployeeClem addEmployeeClem;
-        public Modules.UCReportEmployeeClem employeeReport;
-        public Modules.UCAddProduct addProduct;
-        public Modules.UCAddCompany addCompany;
-        public Modules.UCAddEmployee addEmployee;
-        public Modules.UCAddCustomer addCustomer;
-        public Modules.UCAddProductType addProductType;
+        public UCAddEmployeeClem addEmployeeClem;
+        public UCReportEmployeeClem employeeReport;
+        public UCAddProduct addProduct;
+        public UCAddCompany addCompany;
+        public UCAddEmployee addEmployee;
+        public UCAddCustomer addCustomer;
+        public UCAddProductType addProductType;
 
 
         private string pathFolderSave = @"Files\save";
@@ -47,14 +47,14 @@ namespace A_Team_Clem
 
         private void FRMMain_Load(object sender, EventArgs e)
         {
-            addCustomerCustomerClem = new Modules.UCAddCustomerClem(this) { Dock = DockStyle.Fill };
-            addEmployeeClem = new Modules.UCAddEmployeeClem() { Dock = DockStyle.Fill };
-            employeeReport = new Modules.UCReportEmployeeClem() { Dock = DockStyle.Fill };
-            addProduct = new Modules.UCAddProduct(this) { Dock = DockStyle.Fill };
-            addCompany = new Modules.UCAddCompany(this) { Dock = DockStyle.Fill };
-            addEmployee = new Modules.UCAddEmployee(this) { Dock = DockStyle.Fill };
-            addCustomer = new Modules.UCAddCustomer(this) { Dock = DockStyle.Fill };
-            addProductType = new Modules.UCAddProductType(this) { Dock = DockStyle.Fill };
+            addCustomerClem = new UCAddCustomerClem(this) { Dock = DockStyle.Fill };
+            addEmployeeClem = new UCAddEmployeeClem(this) { Dock = DockStyle.Fill };
+            employeeReport = new UCReportEmployeeClem() { Dock = DockStyle.Fill };
+            addProduct = new UCAddProduct(this) { Dock = DockStyle.Fill };
+            addCompany = new UCAddCompany(this) { Dock = DockStyle.Fill };
+            addEmployee = new UCAddEmployee(this) { Dock = DockStyle.Fill };
+            addCustomer = new UCAddCustomer(this) { Dock = DockStyle.Fill };
+            addProductType = new UCAddProductType(this) { Dock = DockStyle.Fill };
         
             loadSkin();
             showAddCustomerClem();
@@ -99,8 +99,7 @@ namespace A_Team_Clem
 
         private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            panelShowUserControl.Controls.Clear();
-            panelShowUserControl.Controls.Add(addEmployeeClem);
+            showAddEmployeeClem();
         }
 
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -133,10 +132,10 @@ namespace A_Team_Clem
 
         public void showAddCustomerClem()
         {
-            addCustomerCustomerClem.loadAllListData();
+            addCustomerClem.loadAllListData();
             panelShowUserControl.Controls.Clear();
-            panelShowUserControl.Controls.Add(addCustomerCustomerClem);
-            addCustomerCustomerClem.customerName.Focus();
+            panelShowUserControl.Controls.Add(addCustomerClem);
+            addCustomerClem.customerName.Focus();
         }
 
         public void showCustomerClemReport()
@@ -151,6 +150,14 @@ namespace A_Team_Clem
             panelShowUserControl.Controls.Add(customerReport);
             customerReport.customerName.Focus();
             splashScreenManager1.CloseWaitForm();
+        }
+
+        public void showAddEmployeeClem()
+        {
+            addEmployeeClem.loadAllListData();
+            panelShowUserControl.Controls.Clear();
+            panelShowUserControl.Controls.Add(addEmployeeClem);
+            addEmployeeClem.serial.Focus();
         }
 
         public void showAddCustomer()
@@ -212,5 +219,8 @@ namespace A_Team_Clem
         {
             showAddProductType();
         }
+
+
+
     }
 }

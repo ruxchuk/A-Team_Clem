@@ -62,15 +62,15 @@ namespace A_Team_Clem.Modules
             else
             {
                 fRMMain.showAddCustomerClem();
-                fRMMain.addCustomerCustomerClem.productName.Text = nameTH.Text;
-                fRMMain.addCustomerCustomerClem.productName.Focus();
+                fRMMain.addCustomerClem.productName.Text = nameTH.Text;
+                fRMMain.addCustomerClem.productName.Focus();
             }
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
             fRMMain.showAddCustomerClem();
-            fRMMain.addCustomerCustomerClem.productName.Focus();
+            fRMMain.addCustomerClem.productName.Focus();
         }
     }
 }

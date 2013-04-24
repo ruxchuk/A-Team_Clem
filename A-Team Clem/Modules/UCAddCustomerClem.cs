@@ -16,8 +16,6 @@ namespace A_Team_Clem.Modules
     {
         private ConMySql conDB;
         private ConvertDateTime convertDT;
-        public int curCustomerID = 0;
-        public int curEmployeeID = 0;
         private FRMMain mainForm;
 
         public string clemType = "ใบรับเคลม";
@@ -33,8 +31,6 @@ namespace A_Team_Clem.Modules
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             InitializeComponent();
-            //DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("");
-            //panelControl5.Appearance.BackColor = Color.Red;
             mainForm = mFRM;
             conDB = new ConMySql();
             convertDT = new ConvertDateTime();
@@ -44,9 +40,9 @@ namespace A_Team_Clem.Modules
             dtProductEndDate.Properties.Mask.EditMask = mainForm.formatDate;
 
             Debug.WriteLine(conDB.getNewIDClemOfMonth(clemType));
-
         }
 
+        #region load data
         public void loadInDocumentNumber()
         {
             inDocumentNumber.Text = conDB.getNewIDDocumentNumber(clemType);
@@ -115,6 +111,7 @@ namespace A_Team_Clem.Modules
                 productName.Properties.Items.AddRange(listProduct[1]);
             }
         }
+        #endregion
 
         public bool validateForm()
         {
