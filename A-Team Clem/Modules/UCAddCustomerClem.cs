@@ -16,7 +16,7 @@ namespace A_Team_Clem.Modules
     {
         private ConMySql conDB;
         private ConvertDateTime convertDT;
-        private FRMMain mainForm;
+        private FRMMain fRMMain;
 
         public string clemType = "ใบรับเคลม/ใบส่งเคลม";
 
@@ -30,18 +30,19 @@ namespace A_Team_Clem.Modules
         private bool checkAddMRU = false;
         public string typeSave = "add";
         public int clem_id = 0;
+        public bool statusLoad = false;
 
         public UCAddCustomerClem(FRMMain mFRM)
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             InitializeComponent();
-            mainForm = mFRM;
+            fRMMain = mFRM;
             conDB = new ConMySql();
             convertDT = new ConvertDateTime();
 
             //set รูปแบบวันที่
-            dtProductEndDate.Properties.DisplayFormat.FormatString = mainForm.formatDate;
-            dtProductEndDate.Properties.Mask.EditMask = mainForm.formatDate;
+            dtProductEndDate.Properties.DisplayFormat.FormatString = fRMMain.formatDate;
+            dtProductEndDate.Properties.Mask.EditMask = fRMMain.formatDate;
 
             Debug.WriteLine(conDB.getNewIDClemOfMonth(clemType));
         }
@@ -56,7 +57,11 @@ namespace A_Team_Clem.Modules
         {
             typeSave = "edit";
             clem_id = clemID;
-
+            if (!statusLoad)
+            {
+                statusLoad = true;
+                return;
+            }
             DataSet ds = conDB.getListClem(clemType, clemID);
             DataRow dr = ds.Tables["get_list_clem"].Rows[0];
 
@@ -328,6 +333,7 @@ namespace A_Team_Clem.Modules
             if (resultAddClem)
             {
                 clearData();
+                fRMMain.typeOfClemProduct = "add";
                 //
             }
             else
@@ -363,27 +369,27 @@ namespace A_Team_Clem.Modules
 
         private void imgAddCustomer_Click(object sender, EventArgs e)
         {
-            mainForm.showAddCustomer();
+            fRMMain.showAddCustomer();
         }
 
         private void imgAddProduct_Click(object sender, EventArgs e)
         {
-            mainForm.showAddProduct();
+            fRMMain.showAddProduct();
         }
 
         private void imgAddCompany_Click(object sender, EventArgs e)
         {
-            mainForm.showAddCompany();
+            fRMMain.showAddCompany();
         }
 
         private void imgAddTypeProduct_Click(object sender, EventArgs e)
         {
-            mainForm.showAddProductType();
+            fRMMain.showAddProductType();
         }
 
         private void imgAddEmployee_Click(object sender, EventArgs e)
         {
-            mainForm.showAddEmployee();
+            fRMMain.showAddEmployee();
         }
 
         private void cmbCustomerName_SelectedIndexChanged(object sender, EventArgs e)

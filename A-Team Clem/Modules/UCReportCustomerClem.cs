@@ -222,7 +222,9 @@ namespace A_Team_Clem.Modules
                 try
                 {
                     clemID = int.Parse(gridView1.GetFocusedRowCellValue("id").ToString());
-                    fRMMain.showAddCustomerClem("edit");
+                    fRMMain.typeOfClemProduct = "edit";
+                    fRMMain.addCustomerClem.statusLoad = false;
+                    fRMMain.showAddCustomerClem();
                 }
                 catch
                 {

@@ -41,6 +41,7 @@ namespace A_Team_Clem
         private string strPathSkin = "";
         public string strSkinName = "";
         public string formatDate = "dd/MM/yyyy";
+        public string typeOfClemProduct = "add";
 
         private ConMySql conDB;
 
@@ -131,11 +132,16 @@ namespace A_Team_Clem
             Close();
         }
 
-        public void showAddCustomerClem(string type = "add")
+        public void showAddCustomerClem()
         {
-            if (type == "edit")
+            if (typeOfClemProduct == "edit")
             {
+                addCustomerClem.labelControlPage.Text = "แก้ไขใบรับเคลม/ใบส่งเคลมสินค้า";
                 addCustomerClem.getDataForEdit(customerReport.clemID);
+            }
+            else
+            {
+                addCustomerClem.labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
             }
             addCustomerClem.loadAllListData();
             panelShowUserControl.Controls.Clear();

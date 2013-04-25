@@ -56,7 +56,10 @@
             this.employeeReturn = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.imgDelete = new System.Windows.Forms.PictureBox();
+            this.imgClear = new System.Windows.Forms.PictureBox();
             this.status = new System.Windows.Forms.ComboBox();
+            this.imgAdd = new System.Windows.Forms.PictureBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panelWarranty = new System.Windows.Forms.Panel();
             this.textEditChargebacks = new DevExpress.XtraEditors.TextEdit();
@@ -109,9 +112,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.imgAdd = new System.Windows.Forms.PictureBox();
-            this.imgClear = new System.Windows.Forms.PictureBox();
-            this.imgDelete = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -136,6 +136,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeReturn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAdd)).BeginInit();
             this.panelWarranty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChargebacks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -160,9 +163,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControlPage
@@ -199,7 +199,7 @@
             this.groupControl5.Controls.Add(this.panelControl5);
             this.groupControl5.Location = new System.Drawing.Point(342, 206);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(373, 278);
+            this.groupControl5.Size = new System.Drawing.Size(373, 291);
             this.groupControl5.TabIndex = 102;
             this.groupControl5.Text = "ข้อมูลผู้ทำรายการ";
             // 
@@ -520,9 +520,38 @@
             this.groupControl3.Controls.Add(this.labelControl14);
             this.groupControl3.Location = new System.Drawing.Point(723, 5);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(331, 479);
+            this.groupControl3.Size = new System.Drawing.Size(331, 492);
             this.groupControl3.TabIndex = 107;
             this.groupControl3.Text = "ข้อมูลการซ่อม";
+            // 
+            // imgDelete
+            // 
+            this.imgDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgDelete.BackgroundImage")));
+            this.imgDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgDelete.Location = new System.Drawing.Point(132, 424);
+            this.imgDelete.Name = "imgDelete";
+            this.imgDelete.Size = new System.Drawing.Size(53, 49);
+            this.imgDelete.TabIndex = 1080;
+            this.imgDelete.TabStop = false;
+            this.imgDelete.Tag = "Clear";
+            this.imgDelete.Visible = false;
+            this.imgDelete.Click += new System.EventHandler(this.imgDelete_Click);
+            // 
+            // imgClear
+            // 
+            this.imgClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgClear.BackgroundImage")));
+            this.imgClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgClear.Location = new System.Drawing.Point(201, 424);
+            this.imgClear.Name = "imgClear";
+            this.imgClear.Size = new System.Drawing.Size(53, 49);
+            this.imgClear.TabIndex = 1080;
+            this.imgClear.TabStop = false;
+            this.imgClear.Tag = "Clear";
+            this.imgClear.Click += new System.EventHandler(this.clear_Click);
             // 
             // status
             // 
@@ -538,6 +567,19 @@
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(184, 27);
             this.status.TabIndex = 1079;
+            // 
+            // imgAdd
+            // 
+            this.imgAdd.BackColor = System.Drawing.Color.Transparent;
+            this.imgAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAdd.BackgroundImage")));
+            this.imgAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAdd.Location = new System.Drawing.Point(270, 424);
+            this.imgAdd.Name = "imgAdd";
+            this.imgAdd.Size = new System.Drawing.Size(53, 49);
+            this.imgAdd.TabIndex = 1072;
+            this.imgAdd.TabStop = false;
+            this.imgAdd.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
             // labelControl7
             // 
@@ -823,7 +865,7 @@
             this.groupControl2.Controls.Add(this.labelControl9);
             this.groupControl2.Location = new System.Drawing.Point(11, 252);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(325, 232);
+            this.groupControl2.Size = new System.Drawing.Size(325, 245);
             this.groupControl2.TabIndex = 100;
             this.groupControl2.Text = "ข้อมูลสินค้า";
             // 
@@ -1164,48 +1206,6 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
-            // imgAdd
-            // 
-            this.imgAdd.BackColor = System.Drawing.Color.Transparent;
-            this.imgAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAdd.BackgroundImage")));
-            this.imgAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAdd.Location = new System.Drawing.Point(270, 424);
-            this.imgAdd.Name = "imgAdd";
-            this.imgAdd.Size = new System.Drawing.Size(53, 49);
-            this.imgAdd.TabIndex = 1072;
-            this.imgAdd.TabStop = false;
-            this.imgAdd.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
-            // 
-            // imgClear
-            // 
-            this.imgClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgClear.BackgroundImage")));
-            this.imgClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgClear.Location = new System.Drawing.Point(201, 424);
-            this.imgClear.Name = "imgClear";
-            this.imgClear.Size = new System.Drawing.Size(53, 49);
-            this.imgClear.TabIndex = 1080;
-            this.imgClear.TabStop = false;
-            this.imgClear.Tag = "Clear";
-            this.imgClear.Click += new System.EventHandler(this.clear_Click);
-            // 
-            // imgDelete
-            // 
-            this.imgDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imgDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgDelete.BackgroundImage")));
-            this.imgDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDelete.Location = new System.Drawing.Point(132, 424);
-            this.imgDelete.Name = "imgDelete";
-            this.imgDelete.Size = new System.Drawing.Size(53, 49);
-            this.imgDelete.TabIndex = 1080;
-            this.imgDelete.TabStop = false;
-            this.imgDelete.Tag = "Clear";
-            this.imgDelete.Visible = false;
-            this.imgDelete.Click += new System.EventHandler(this.imgDelete_Click);
-            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1244,6 +1244,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAdd)).EndInit();
             this.panelWarranty.ResumeLayout(false);
             this.panelWarranty.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChargebacks.Properties)).EndInit();
@@ -1272,9 +1275,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1282,7 +1282,6 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.LabelControl labelControlPage;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
@@ -1365,6 +1364,7 @@
         private System.Windows.Forms.PictureBox imgAdd;
         private System.Windows.Forms.PictureBox imgDelete;
         private System.Windows.Forms.PictureBox imgClear;
+        public DevExpress.XtraEditors.LabelControl labelControlPage;
 
     }
 }
