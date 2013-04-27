@@ -430,11 +430,20 @@ namespace A_Team_Clem
         {
             int newIDOFMonth = getNewIDClemOfMonth(clem_type);
             string NewID = "00001";
+            string startWord = "";
+            if (clemType == "ใบรับเคลม/ใบส่งเคลม")
+            {
+                startWord = "CA";
+            }
+            else
+            {
+                startWord = "CB";
+            }
             string yearThaiNow = convertDT.convertToThaiYear(DateTime.Now);
             char[] charYear = yearThaiNow.ToCharArray();
             string newYear = charYear[2].ToString() + charYear[3].ToString();
             string monthNow = DateTime.Now.Month.ToString(formatMonth);
-            NewID = newYear + monthNow + newIDOFMonth.ToString(formatIdNumber);
+            NewID = startWord + newYear + monthNow + "-" + newIDOFMonth.ToString(formatIdNumber);
             return NewID;
         }
 
@@ -500,6 +509,7 @@ namespace A_Team_Clem
                     cmd.Parameters.AddWithValue("@t_detail", detail);
                     cmd.Parameters.AddWithValue("@i_in_document_number_id", in_document_number_id);
                     cmd.Parameters.AddWithValue("@dt_in_document_number", in_document_number);
+                    cmd.Parameters.AddWithValue("@s_in_document_number_string", in_document_number_string);
                     cmd.Parameters.AddWithValue("@s_out_document_number", out_document_number);
                     cmd.Parameters.AddWithValue("@s_in_serial_clem", in_serial_clem);
                     cmd.Parameters.AddWithValue("@s_out_serial_clem", out_serial_clem);

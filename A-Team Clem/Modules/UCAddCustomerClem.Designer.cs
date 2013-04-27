@@ -113,6 +113,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonCopy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -500,6 +502,8 @@
             // groupControl3
             // 
             this.groupControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl3.Controls.Add(this.buttonCopy);
+            this.groupControl3.Controls.Add(this.buttonCancel);
             this.groupControl3.Controls.Add(this.buttonPrint);
             this.groupControl3.Controls.Add(this.buttonDelete);
             this.groupControl3.Controls.Add(this.buttonClear);
@@ -532,7 +536,7 @@
             this.buttonPrint.Location = new System.Drawing.Point(138, 423);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(82, 32);
-            this.buttonPrint.TabIndex = 1081;
+            this.buttonPrint.TabIndex = 29;
             this.buttonPrint.UseVisualStyleBackColor = true;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
@@ -545,8 +549,9 @@
             this.buttonDelete.Location = new System.Drawing.Point(138, 460);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(82, 32);
-            this.buttonDelete.TabIndex = 1081;
+            this.buttonDelete.TabIndex = 30;
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonClear
@@ -558,7 +563,7 @@
             this.buttonClear.Location = new System.Drawing.Point(240, 460);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(82, 32);
-            this.buttonClear.TabIndex = 1081;
+            this.buttonClear.TabIndex = 28;
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
@@ -571,7 +576,7 @@
             this.buttonSave.Location = new System.Drawing.Point(240, 423);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(82, 32);
-            this.buttonSave.TabIndex = 1081;
+            this.buttonSave.TabIndex = 27;
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
@@ -773,7 +778,7 @@
             // inDocumentNumber
             // 
             this.inDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inDocumentNumber.EditValue = "CA5604-00001";
+            this.inDocumentNumber.EditValue = "";
             this.inDocumentNumber.Enabled = false;
             this.inDocumentNumber.Location = new System.Drawing.Point(199, 24);
             this.inDocumentNumber.Name = "inDocumentNumber";
@@ -1215,6 +1220,34 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.Location = new System.Drawing.Point(31, 460);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
+            this.buttonCancel.TabIndex = 29;
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
+            // buttonCopy
+            // 
+            this.buttonCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCopy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCopy.BackgroundImage")));
+            this.buttonCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCopy.Location = new System.Drawing.Point(31, 423);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(82, 32);
+            this.buttonCopy.TabIndex = 29;
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Visible = false;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1372,6 +1405,8 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonCopy;
 
     }
 }

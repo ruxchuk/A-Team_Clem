@@ -40,6 +40,7 @@ namespace A_Team_Clem.Modules
             conDB.product_name_th = productName.Text;
             conDB.in_document_number_string = inDocumentNumber.Text;
             conDB.status = status.Text;
+            conDB.clem_type = fRMMain.addCustomerClem.clemType;
         }
 
         private void clearData()
