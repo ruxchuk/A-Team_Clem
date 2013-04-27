@@ -20,7 +20,7 @@ namespace A_Team_Clem
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            ReportPrintTool pt = new ReportPrintTool(new XtraReport1());
+            ReportPrintTool pt = new ReportPrintTool(new MiniReport());
 
             // Get the Print Tool's printing system.
             PrintingSystemBase ps = pt.PrintingSystem;

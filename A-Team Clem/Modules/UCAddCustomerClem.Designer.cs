@@ -112,6 +112,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -502,6 +505,9 @@
             // groupControl3
             // 
             this.groupControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl3.Controls.Add(this.buttonDelete);
+            this.groupControl3.Controls.Add(this.buttonClear);
+            this.groupControl3.Controls.Add(this.buttonSave);
             this.groupControl3.Controls.Add(this.imgDelete);
             this.groupControl3.Controls.Add(this.imgClear);
             this.groupControl3.Controls.Add(this.status);
@@ -530,7 +536,7 @@
             this.imgDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgDelete.BackgroundImage")));
             this.imgDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgDelete.Location = new System.Drawing.Point(132, 424);
+            this.imgDelete.Location = new System.Drawing.Point(79, 285);
             this.imgDelete.Name = "imgDelete";
             this.imgDelete.Size = new System.Drawing.Size(53, 49);
             this.imgDelete.TabIndex = 1080;
@@ -545,7 +551,7 @@
             this.imgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgClear.BackgroundImage")));
             this.imgClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.imgClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgClear.Location = new System.Drawing.Point(201, 424);
+            this.imgClear.Location = new System.Drawing.Point(20, 299);
             this.imgClear.Name = "imgClear";
             this.imgClear.Size = new System.Drawing.Size(53, 49);
             this.imgClear.TabIndex = 1080;
@@ -574,7 +580,7 @@
             this.imgAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAdd.BackgroundImage")));
             this.imgAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAdd.Location = new System.Drawing.Point(270, 424);
+            this.imgAdd.Location = new System.Drawing.Point(11, 186);
             this.imgAdd.Name = "imgAdd";
             this.imgAdd.Size = new System.Drawing.Size(53, 49);
             this.imgAdd.TabIndex = 1072;
@@ -1206,6 +1212,39 @@
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSave.BackgroundImage")));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.Location = new System.Drawing.Point(244, 455);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(82, 32);
+            this.buttonSave.TabIndex = 1081;
+            this.buttonSave.UseVisualStyleBackColor = true;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
+            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.Location = new System.Drawing.Point(156, 455);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(82, 32);
+            this.buttonClear.TabIndex = 1081;
+            this.buttonClear.UseVisualStyleBackColor = true;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.Location = new System.Drawing.Point(68, 455);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(82, 32);
+            this.buttonDelete.TabIndex = 1081;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            // 
             // UCAddCustomerClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1365,6 +1404,9 @@
         private System.Windows.Forms.PictureBox imgDelete;
         private System.Windows.Forms.PictureBox imgClear;
         public DevExpress.XtraEditors.LabelControl labelControlPage;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonSave;
 
     }
 }

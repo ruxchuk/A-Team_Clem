@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace A_Team_Clem
 {
-    public partial class XtraReport1 : DevExpress.XtraReports.UI.XtraReport
+    public partial class MiniReport : DevExpress.XtraReports.UI.XtraReport
     {
-        public XtraReport1()
+        public MiniReport()
         {
             InitializeComponent();
         }

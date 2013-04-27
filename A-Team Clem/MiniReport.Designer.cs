@@ -1,6 +1,6 @@
 ﻿namespace A_Team_Clem
 {
-    partial class XtraReport1
+    partial class MiniReport
     {
         /// <summary>
         /// Required designer variable.
@@ -360,8 +360,8 @@
             this.xrTableCell9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseFont = false;
-            this.xrTableCell9.Text = "เลขที่เอกสาร:";
-            this.xrTableCell9.Weight = 1.5585587619055663D;
+            this.xrTableCell9.Text = "เลขที่เอกสาร";
+            this.xrTableCell9.Weight = 1.7332573312911346D;
             // 
             // xrTableCell10
             // 
@@ -369,7 +369,7 @@
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseFont = false;
             this.xrTableCell10.Text = "CA5604-00001";
-            this.xrTableCell10.Weight = 2.9696159959427955D;
+            this.xrTableCell10.Weight = 2.7949174265572272D;
             // 
             // xrTableRow8
             // 

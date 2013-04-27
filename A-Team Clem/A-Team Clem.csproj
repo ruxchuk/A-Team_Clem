@@ -137,7 +137,7 @@
     <Compile Include="FRMSettingConDB.Designer.cs">
       <DependentUpon>FRMSettingConDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\AutoHeightHelper.cs" />
+    <Compile Include="Class\AutoHeightHelper.cs" />
     <Compile Include="Modules\UCAddCompany.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,11 +219,11 @@
     <Compile Include="XtraForm3.Designer.cs">
       <DependentUpon>XtraForm3.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReport1.cs">
+    <Compile Include="MiniReport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XtraReport1.Designer.cs">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
+    <Compile Include="MiniReport.Designer.cs">
+      <DependentUpon>MiniReport.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FRMChooseSkin.resx">
       <DependentUpon>FRMChooseSkin.cs</DependentUpon>
@@ -284,8 +284,8 @@
     <EmbeddedResource Include="XtraForm3.resx">
       <DependentUpon>XtraForm3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XtraReport1.resx">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
+    <EmbeddedResource Include="MiniReport.resx">
+      <DependentUpon>MiniReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
