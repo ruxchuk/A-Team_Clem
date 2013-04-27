@@ -20,7 +20,7 @@ namespace A_Team_Clem
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
 
-            Application.Run(new XtraForm3());
+            Application.Run(new FRMMain());
         }
     }
 }

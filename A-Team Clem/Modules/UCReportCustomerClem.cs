@@ -28,10 +28,6 @@ namespace A_Team_Clem.Modules
         private ConvertDateTime convertDT;
         private string strPathLayout = @"Files\save\UCReportCustomerClem.xml";
         private Stream saveDefaultLayout;
-        private int sizeX = 47;
-        private int sizeY = 45;
-        private int curSizeX = 40;
-        private int curSizeY = 40;
         private bool checkAddMRU = false;
 
         public int clemID = 0;
@@ -162,44 +158,9 @@ namespace A_Team_Clem.Modules
             checkAddMRU = true;
         }
 
-        #region set mouse
-        private void imgSearch_MouseHover(object sender, EventArgs e)
-        {
-
-            imgSearch.Size = new Size(sizeX, sizeY);
-        }
-
-        private void imgSearch_MouseLeave(object sender, EventArgs e)
-        {
-
-            imgSearch.Size = new Size(curSizeX, curSizeY);
-        }
-
-        private void imgClear_MouseHover(object sender, EventArgs e)
-        {
-            imgClear.Size = new Size(sizeX, sizeY);
-        }
-
-        private void imgClear_MouseLeave(object sender, EventArgs e)
-        {
-            imgClear.Size = new Size(curSizeX, curSizeY);
-        }
-        #endregion
-
         private void UCReportCustomerClem_Load(object sender, EventArgs e)
         {
             getListClem();
-        }
-
-        private void imgSearch_Click(object sender, EventArgs e)
-        {
-            getListClem();
-        }
-
-        private void imgClear_Click(object sender, EventArgs e)
-        {
-            imgSearch.Size = new Size(curSizeX, curSizeY);
-            clearData();
         }
 
         private void customerName_AddingMRUItem(object sender, DevExpress.XtraEditors.Controls.AddingMRUItemEventArgs e)
@@ -229,6 +190,24 @@ namespace A_Team_Clem.Modules
                 catch
                 {
                 }
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            clearData();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            getListClem();
+        }
+
+        private void customerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                clearData();
             }
         }
     }

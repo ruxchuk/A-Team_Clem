@@ -437,19 +437,29 @@ namespace A_Team_Clem.Modules
             customerName.Focus();
         }
 
-        private void clear_Click(object sender, EventArgs e)
-        {
-            clearData();
-        }
-
         private void customerName_AddingMRUItem(object sender, DevExpress.XtraEditors.Controls.AddingMRUItemEventArgs e)
         {
             e.Cancel = checkAddMRU;
         }
 
-        private void imgDelete_Click(object sender, EventArgs e)
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            bool resultValidateForm = validateForm();
+            if (!resultValidateForm)
+            {
+                return;
+            }
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            clearData();
         }
     }
 }

@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCReportCustomerClem));
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.imgSearch = new System.Windows.Forms.PictureBox();
-            this.imgClear = new System.Windows.Forms.PictureBox();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.status = new System.Windows.Forms.ComboBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.productName = new DevExpress.XtraEditors.MRUEdit();
@@ -49,8 +50,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
@@ -74,8 +73,8 @@
             // 
             this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl1.Controls.Add(this.imgSearch);
-            this.groupControl1.Controls.Add(this.imgClear);
+            this.groupControl1.Controls.Add(this.buttonSearch);
+            this.groupControl1.Controls.Add(this.buttonClear);
             this.groupControl1.Controls.Add(this.status);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.productName);
@@ -91,40 +90,45 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 60);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1034, 101);
-            this.groupControl1.TabIndex = 4;
+            this.groupControl1.TabIndex = 99;
             this.groupControl1.Text = "ค้นหารายการ";
             // 
-            // imgSearch
+            // buttonPrint
             // 
-            this.imgSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imgSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgSearch.BackgroundImage")));
-            this.imgSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgSearch.Location = new System.Drawing.Point(986, 56);
-            this.imgSearch.Name = "imgSearch";
-            this.imgSearch.Size = new System.Drawing.Size(40, 40);
-            this.imgSearch.TabIndex = 1072;
-            this.imgSearch.TabStop = false;
-            this.imgSearch.Tag = "ค้นหา";
-            this.imgSearch.Click += new System.EventHandler(this.imgSearch_Click);
-            this.imgSearch.MouseLeave += new System.EventHandler(this.imgSearch_MouseLeave);
-            this.imgSearch.MouseHover += new System.EventHandler(this.imgSearch_MouseHover);
+            this.buttonPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPrint.BackgroundImage")));
+            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPrint.Location = new System.Drawing.Point(950, 167);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(82, 32);
+            this.buttonPrint.TabIndex = 1095;
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Visible = false;
             // 
-            // imgClear
+            // buttonSearch
             // 
-            this.imgClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imgClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgClear.BackgroundImage")));
-            this.imgClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgClear.Location = new System.Drawing.Point(934, 56);
-            this.imgClear.Name = "imgClear";
-            this.imgClear.Size = new System.Drawing.Size(40, 40);
-            this.imgClear.TabIndex = 1072;
-            this.imgClear.TabStop = false;
-            this.imgClear.Tag = "Clear";
-            this.imgClear.Click += new System.EventHandler(this.imgClear_Click);
-            this.imgClear.MouseLeave += new System.EventHandler(this.imgClear_MouseLeave);
-            this.imgClear.MouseHover += new System.EventHandler(this.imgClear_MouseHover);
+            this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.Location = new System.Drawing.Point(947, 25);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(82, 32);
+            this.buttonSearch.TabIndex = 7;
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
+            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.Location = new System.Drawing.Point(947, 63);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(82, 32);
+            this.buttonClear.TabIndex = 8;
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // status
             // 
@@ -141,7 +145,7 @@
             this.status.Location = new System.Drawing.Point(718, 60);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(169, 27);
-            this.status.TabIndex = 1093;
+            this.status.TabIndex = 6;
             // 
             // labelControl6
             // 
@@ -168,7 +172,7 @@
             this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productName.Properties.Sorted = true;
             this.productName.Size = new System.Drawing.Size(188, 26);
-            this.productName.TabIndex = 1089;
+            this.productName.TabIndex = 4;
             // 
             // labelControl4
             // 
@@ -190,7 +194,7 @@
             this.inDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.inDocumentNumber.Properties.Appearance.Options.UseFont = true;
             this.inDocumentNumber.Size = new System.Drawing.Size(169, 26);
-            this.inDocumentNumber.TabIndex = 1087;
+            this.inDocumentNumber.TabIndex = 5;
             // 
             // labelControl18
             // 
@@ -210,7 +214,7 @@
             this.serial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.serial.Properties.Appearance.Options.UseFont = true;
             this.serial.Size = new System.Drawing.Size(188, 26);
-            this.serial.TabIndex = 1085;
+            this.serial.TabIndex = 3;
             // 
             // labelControl11
             // 
@@ -230,7 +234,7 @@
             this.phone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.phone.Properties.Appearance.Options.UseFont = true;
             this.phone.Size = new System.Drawing.Size(188, 26);
-            this.phone.TabIndex = 1068;
+            this.phone.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -257,8 +261,9 @@
             this.customerName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.customerName.Properties.Sorted = true;
             this.customerName.Size = new System.Drawing.Size(188, 26);
-            this.customerName.TabIndex = 1070;
+            this.customerName.TabIndex = 1;
             this.customerName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.customerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerName_KeyDown);
             // 
             // labelControl1
             // 
@@ -279,7 +284,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1034, 337);
-            this.gridControl1.TabIndex = 5;
+            this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -296,6 +301,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControlPage);
@@ -306,8 +312,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgClear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
@@ -326,8 +330,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         public DevExpress.XtraEditors.MRUEdit customerName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.PictureBox imgClear;
-        private System.Windows.Forms.PictureBox imgSearch;
         private DevExpress.XtraEditors.TextEdit phone;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit serial;
@@ -340,5 +342,8 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ComboBox status;
+        private System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
