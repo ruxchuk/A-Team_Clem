@@ -199,11 +199,6 @@
       <DependentUpon>UCReportEmployeeClem.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
-    <Compile Include="PrintRibbonControllerResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WaitForm2.cs">
@@ -268,10 +263,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\UCReportEmployeeClem.resx">
       <DependentUpon>UCReportEmployeeClem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
