@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCReportCustomerClem));
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.buttonPrint = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.status = new System.Windows.Forms.ComboBox();
@@ -46,6 +45,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.customerName = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.buttonPrint = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -71,8 +71,8 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.buttonSearch);
             this.groupControl1.Controls.Add(this.buttonClear);
             this.groupControl1.Controls.Add(this.status);
@@ -92,19 +92,6 @@
             this.groupControl1.Size = new System.Drawing.Size(1034, 101);
             this.groupControl1.TabIndex = 99;
             this.groupControl1.Text = "ค้นหารายการ";
-            // 
-            // buttonPrint
-            // 
-            this.buttonPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPrint.BackgroundImage")));
-            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPrint.Location = new System.Drawing.Point(950, 167);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(82, 32);
-            this.buttonPrint.TabIndex = 1095;
-            this.buttonPrint.UseVisualStyleBackColor = true;
-            this.buttonPrint.Visible = false;
             // 
             // buttonSearch
             // 
@@ -275,11 +262,24 @@
             this.labelControl1.TabIndex = 1071;
             this.labelControl1.Text = "ชื่อลูกค้า";
             // 
+            // buttonPrint
+            // 
+            this.buttonPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPrint.BackgroundImage")));
+            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPrint.Location = new System.Drawing.Point(950, 167);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(82, 32);
+            this.buttonPrint.TabIndex = 1095;
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Visible = false;
+            // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.Location = new System.Drawing.Point(3, 167);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -330,20 +330,20 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         public DevExpress.XtraEditors.MRUEdit customerName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit phone;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit serial;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit inDocumentNumber;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         public DevExpress.XtraEditors.MRUEdit productName;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.ComboBox status;
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonClear;
+        public DevExpress.XtraEditors.TextEdit phone;
+        public DevExpress.XtraEditors.TextEdit serial;
+        public DevExpress.XtraEditors.TextEdit inDocumentNumber;
+        public System.Windows.Forms.ComboBox status;
     }
 }

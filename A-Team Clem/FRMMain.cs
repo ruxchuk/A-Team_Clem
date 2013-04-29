@@ -160,6 +160,17 @@ namespace A_Team_Clem
             //customerReport.Dispose();
             //customerReport = new UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             panelShowUserControl.Controls.Add(customerReport);
+            if (customerReport.customerName.Text == "" &&
+                customerReport.phone.Text == "" &&
+                customerReport.serial.Text == "" &&
+                customerReport.productName.Text == "" &&
+                customerReport.inDocumentNumber.Text == "" &&
+                customerReport.status.Text == ""
+                )
+            {
+                customerReport.getListClem();
+            }
+
             customerReport.customerName.Focus();
             //splashScreenManager1.CloseWaitForm();
         }

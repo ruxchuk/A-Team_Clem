@@ -57,7 +57,6 @@ namespace A_Team_Clem.Modules
         public void getDataForEdit(int clemID)
         {
             //clearData();
-            fRMMain.typeOfClemProduct = "edit";
             clem_id = clemID;
 
             conDB.name_th = "";
@@ -69,7 +68,6 @@ namespace A_Team_Clem.Modules
 
             DataSet ds = conDB.getListClem(clemType, clemID);
             DataRow dr = ds.Tables["get_list_clem"].Rows[0];
-
             customerName.Text = dr["customer_name_th"].ToString();
             productType.Text = dr["product_type_name_th"].ToString();
             companyName.Text = dr["company_name_th"].ToString();
@@ -95,12 +93,11 @@ namespace A_Team_Clem.Modules
             inDocumentNumberID = int.Parse(dr["in_document_number_id"].ToString());
 
             inDocumentNumber.Text = dr["in_document_number_str"].ToString();
-            Debug.WriteLine(inDocumentNumber.Text);
             outDocumentNumber.Text = dr["out_document_number"].ToString();
             inSerialClem.Text = dr["in_serial_clem"].ToString();
             outSerialClem.Text = dr["out_serial_clem"].ToString();
             customerClem.Text = dr["customer_name_th"].ToString();
-            employeeReceiveClem.Text = dr["employee_receive_product"].ToString();
+            employeeReceiveClem.Text = dr["employee_receive_clem"].ToString();
             employeeClem.Text = dr["employee_clem"].ToString();
             companyReceiveClem.Text = dr["company_receive_clem"].ToString();
             companyReturn.Text = dr["company_return"].ToString();

@@ -79,6 +79,7 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.inDocumentNumber = new System.Windows.Forms.Label();
             this.outSerialClem = new DevExpress.XtraEditors.TextEdit();
             this.inSerialClem = new DevExpress.XtraEditors.TextEdit();
             this.outDocumentNumber = new DevExpress.XtraEditors.TextEdit();
@@ -114,8 +115,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.inDocumentNumber = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -814,6 +813,17 @@
             this.groupControl4.TabIndex = 101;
             this.groupControl4.Text = "ข้อมูลเลขที่ใบเคลม";
             // 
+            // inDocumentNumber
+            // 
+            this.inDocumentNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.inDocumentNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.inDocumentNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inDocumentNumber.Location = new System.Drawing.Point(199, 26);
+            this.inDocumentNumber.Name = "inDocumentNumber";
+            this.inDocumentNumber.Size = new System.Drawing.Size(169, 26);
+            this.inDocumentNumber.TabIndex = 1036;
+            this.inDocumentNumber.Text = "CA5604-00001";
+            // 
             // outSerialClem
             // 
             this.outSerialClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1139,7 +1149,6 @@
             this.groupControl1.Controls.Add(this.labelControl60);
             this.groupControl1.Controls.Add(this.labelControl59);
             this.groupControl1.Controls.Add(this.customerName);
-            this.groupControl1.Controls.Add(this.richTextBox1);
             this.groupControl1.Controls.Add(this.address);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -1258,28 +1267,6 @@
             this.labelControl3.Size = new System.Drawing.Size(58, 19);
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
-            // 
-            // inDocumentNumber
-            // 
-            this.inDocumentNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.inDocumentNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.inDocumentNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inDocumentNumber.Location = new System.Drawing.Point(199, 26);
-            this.inDocumentNumber.Name = "inDocumentNumber";
-            this.inDocumentNumber.Size = new System.Drawing.Size(169, 26);
-            this.inDocumentNumber.TabIndex = 1036;
-            this.inDocumentNumber.Text = "CA5604-00001";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.richTextBox1.Location = new System.Drawing.Point(41, 92);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(188, 96);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.address_KeyDown);
             // 
             // UCAddCustomerClem
             // 
@@ -1438,7 +1425,6 @@
         public System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label customerClem;
         public System.Windows.Forms.Label inDocumentNumber;
-        private System.Windows.Forms.RichTextBox richTextBox1;
 
     }
 }

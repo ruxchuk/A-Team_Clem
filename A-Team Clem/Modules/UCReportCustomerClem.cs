@@ -195,9 +195,8 @@ namespace A_Team_Clem.Modules
                     fRMMain.addCustomerClem.buttonCopy.Visible = true;
                     fRMMain.addCustomerClem.buttonPrint.Visible = true;
                     fRMMain.addCustomerClem.buttonDelete.Visible = true;
-                    fRMMain.addCustomerClem.getDataForEdit(clemID);
-                    fRMMain.addCustomerClem.clem_id = clemID;
                     fRMMain.showAddCustomerClem();
+                    fRMMain.addCustomerClem.getDataForEdit(clemID);
                 }
                 catch
                 {
