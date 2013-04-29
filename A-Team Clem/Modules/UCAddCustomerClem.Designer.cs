@@ -56,6 +56,8 @@
             this.employeeReturn = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.buttonCopy = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
@@ -113,8 +115,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.phone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonCopy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -177,9 +177,9 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.groupControl5);
             this.panelControl1.Controls.Add(this.groupControl3);
             this.panelControl1.Controls.Add(this.groupControl4);
@@ -241,6 +241,7 @@
             this.employeeReceiveProduct.Size = new System.Drawing.Size(170, 26);
             this.employeeReceiveProduct.TabIndex = 1;
             this.employeeReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.employeeReceiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeReceiveProduct_KeyDown);
             // 
             // labelControl27
             // 
@@ -261,6 +262,7 @@
             this.companyReturn.Properties.Appearance.Options.UseFont = true;
             this.companyReturn.Size = new System.Drawing.Size(169, 26);
             this.companyReturn.TabIndex = 17;
+            this.companyReturn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyReturn_KeyDown);
             // 
             // panelControl3
             // 
@@ -300,6 +302,7 @@
             this.employeeClem.Size = new System.Drawing.Size(170, 26);
             this.employeeClem.TabIndex = 1;
             this.employeeClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.employeeClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeClem_KeyDown);
             // 
             // companyReceiveClem
             // 
@@ -310,6 +313,7 @@
             this.companyReceiveClem.Properties.Appearance.Options.UseFont = true;
             this.companyReceiveClem.Size = new System.Drawing.Size(169, 26);
             this.companyReceiveClem.TabIndex = 16;
+            this.companyReceiveClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyReceiveClem_KeyDown);
             // 
             // labelControl28
             // 
@@ -362,6 +366,7 @@
             this.employeeReceiveClem.Size = new System.Drawing.Size(170, 26);
             this.employeeReceiveClem.TabIndex = 1;
             this.employeeReceiveClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.employeeReceiveClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeReceiveClem_KeyDown);
             // 
             // imgAddEmployee
             // 
@@ -457,6 +462,7 @@
             this.customerReceiveProduct.Size = new System.Drawing.Size(170, 26);
             this.customerReceiveProduct.TabIndex = 20;
             this.customerReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.customerReceiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerReceiveProduct_KeyDown);
             // 
             // imgAddCustomer2
             // 
@@ -488,6 +494,7 @@
             this.employeeReturn.Size = new System.Drawing.Size(170, 26);
             this.employeeReturn.TabIndex = 1;
             this.employeeReturn.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.employeeReturn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeReturn_KeyDown);
             // 
             // labelControl30
             // 
@@ -527,6 +534,34 @@
             this.groupControl3.TabIndex = 107;
             this.groupControl3.Text = "ข้อมูลการซ่อม";
             // 
+            // buttonCopy
+            // 
+            this.buttonCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCopy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCopy.BackgroundImage")));
+            this.buttonCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCopy.Location = new System.Drawing.Point(31, 423);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(82, 32);
+            this.buttonCopy.TabIndex = 29;
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Visible = false;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.Location = new System.Drawing.Point(31, 460);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
+            this.buttonCancel.TabIndex = 29;
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
             // buttonPrint
             // 
             this.buttonPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -538,6 +573,7 @@
             this.buttonPrint.Size = new System.Drawing.Size(82, 32);
             this.buttonPrint.TabIndex = 29;
             this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Visible = false;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonDelete
@@ -594,6 +630,7 @@
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(184, 27);
             this.status.TabIndex = 1079;
+            this.status.KeyDown += new System.Windows.Forms.KeyEventHandler(this.status_KeyDown);
             // 
             // labelControl7
             // 
@@ -659,6 +696,7 @@
             this.detail.Size = new System.Drawing.Size(184, 79);
             this.detail.TabIndex = 26;
             this.detail.Text = "";
+            this.detail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // labelControl6
             // 
@@ -702,6 +740,7 @@
             this.equipment.Size = new System.Drawing.Size(184, 79);
             this.equipment.TabIndex = 25;
             this.equipment.Text = "";
+            this.equipment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.equipment_KeyDown);
             // 
             // radioButtonInWarranty
             // 
@@ -717,6 +756,7 @@
             this.radioButtonInWarranty.Text = "ในประกัน";
             this.radioButtonInWarranty.UseVisualStyleBackColor = true;
             this.radioButtonInWarranty.CheckedChanged += new System.EventHandler(this.radioButtonInWarranty_CheckedChanged);
+            this.radioButtonInWarranty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.radioButtonInWarranty_KeyDown);
             // 
             // symptom
             // 
@@ -727,6 +767,7 @@
             this.symptom.Size = new System.Drawing.Size(184, 79);
             this.symptom.TabIndex = 24;
             this.symptom.Text = "";
+            this.symptom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.symptom_KeyDown);
             // 
             // labelControl19
             // 
@@ -796,6 +837,7 @@
             this.outSerialClem.Properties.Appearance.Options.UseFont = true;
             this.outSerialClem.Size = new System.Drawing.Size(169, 26);
             this.outSerialClem.TabIndex = 12;
+            this.outSerialClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.outSerialClem_KeyDown);
             // 
             // inSerialClem
             // 
@@ -806,6 +848,7 @@
             this.inSerialClem.Properties.Appearance.Options.UseFont = true;
             this.inSerialClem.Size = new System.Drawing.Size(169, 26);
             this.inSerialClem.TabIndex = 11;
+            this.inSerialClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inSerialClem_KeyDown);
             // 
             // outDocumentNumber
             // 
@@ -816,6 +859,7 @@
             this.outDocumentNumber.Properties.Appearance.Options.UseFont = true;
             this.outDocumentNumber.Size = new System.Drawing.Size(169, 26);
             this.outDocumentNumber.TabIndex = 10;
+            this.outDocumentNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.outDocumentNumber_KeyDown);
             // 
             // labelControl22
             // 
@@ -939,6 +983,7 @@
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 7;
             this.productType.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.productType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productType_KeyDown);
             // 
             // companyName
             // 
@@ -957,6 +1002,7 @@
             this.companyName.Size = new System.Drawing.Size(188, 26);
             this.companyName.TabIndex = 6;
             this.companyName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.companyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyName_KeyDown);
             // 
             // labelControl62
             // 
@@ -983,6 +1029,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dtProductEndDate.Size = new System.Drawing.Size(188, 26);
             this.dtProductEndDate.TabIndex = 8;
+            this.dtProductEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtProductEndDate_KeyDown);
             // 
             // labelControl12
             // 
@@ -1011,6 +1058,7 @@
             this.productName.Size = new System.Drawing.Size(188, 26);
             this.productName.TabIndex = 5;
             this.productName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productName_KeyDown);
             // 
             // serial
             // 
@@ -1021,6 +1069,7 @@
             this.serial.Properties.Appearance.Options.UseFont = true;
             this.serial.Size = new System.Drawing.Size(188, 26);
             this.serial.TabIndex = 4;
+            this.serial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serial_KeyDown);
             // 
             // labelControl71
             // 
@@ -1169,6 +1218,7 @@
             this.customerName.TabIndex = 1;
             this.customerName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.customerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
+            this.customerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerName_KeyDown);
             // 
             // address
             // 
@@ -1179,6 +1229,7 @@
             this.address.Size = new System.Drawing.Size(188, 96);
             this.address.TabIndex = 2;
             this.address.Text = "";
+            this.address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.address_KeyDown);
             // 
             // labelControl1
             // 
@@ -1209,6 +1260,7 @@
             this.phone.Properties.Appearance.Options.UseFont = true;
             this.phone.Size = new System.Drawing.Size(188, 26);
             this.phone.TabIndex = 3;
+            this.phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phone_KeyDown);
             // 
             // labelControl3
             // 
@@ -1219,34 +1271,6 @@
             this.labelControl3.Size = new System.Drawing.Size(58, 19);
             this.labelControl3.TabIndex = 1067;
             this.labelControl3.Text = "เบอร์โทร";
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
-            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancel.Location = new System.Drawing.Point(31, 460);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
-            this.buttonCancel.TabIndex = 29;
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Visible = false;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonPrint_Click);
-            // 
-            // buttonCopy
-            // 
-            this.buttonCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonCopy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCopy.BackgroundImage")));
-            this.buttonCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCopy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCopy.Location = new System.Drawing.Point(31, 423);
-            this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(82, 32);
-            this.buttonCopy.TabIndex = 29;
-            this.buttonCopy.UseVisualStyleBackColor = true;
-            this.buttonCopy.Visible = false;
-            this.buttonCopy.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // UCAddCustomerClem
             // 

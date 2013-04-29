@@ -146,9 +146,12 @@ namespace A_Team_Clem.Modules
 
             readData();
             DataSet list = conDB.getListClem(fRMMain.addCustomerClem.clemType);
-            gridControl1.DataSource = list.Tables["get_list_clem"];
-            setGridView();
-            loadData();
+            if (list != null)
+            {
+                gridControl1.DataSource = list.Tables["get_list_clem"];
+                setGridView();
+                loadData();
+            }
         }
 
         private void loadData()

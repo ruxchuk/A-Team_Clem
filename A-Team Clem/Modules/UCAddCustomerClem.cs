@@ -228,10 +228,10 @@ namespace A_Team_Clem.Modules
         {
             if (customerName.SelectedIndex < 0)
             {
-                conDB.name_th = customerName.Text;
+                conDB.name_th = customerName.Text.Trim();
                 conDB.name_en = "";
-                conDB.address = address.Text;
-                conDB.phone = phone.Text;
+                conDB.address = address.Text.Trim();
+                conDB.phone = phone.Text.Trim();
                 conDB.email = "";
                 conDB.customer_date_create = convertDT.convert(DateTime.Now);
                 conDB.customer_date_stamp = convertDT.convert(DateTime.Now);
@@ -244,10 +244,11 @@ namespace A_Team_Clem.Modules
 
             if (productType.SelectedIndex < 0)
             {
-                conDB.product_type_name_th = productType.Text;
+                conDB.product_type_name_th = productType.Text.Trim();
                 conDB.product_type_name_en = "";
                 conDB.product_type_date_create = convertDT.convert(DateTime.Now);
                 conDB.product_type_date_stamp = convertDT.convert(DateTime.Now);
+                conDB.product_type_id = conDB.addProductType();
             }
             else
             {
@@ -256,23 +257,35 @@ namespace A_Team_Clem.Modules
 
             if (companyName.SelectedIndex < 0)
             {
-                conDB.company_name_th = companyName.Text;
+                conDB.company_name_th = companyName.Text.Trim();
                 conDB.company_name_en = "";
                 conDB.company_adddress = "";
                 conDB.company_phone = "";
                 conDB.company_email = "";
                 conDB.company_date_create = convertDT.convert(DateTime.Now);
                 conDB.company_date_stamp = convertDT.convert(DateTime.Now);
+                conDB.company_id = conDB.addCompany();
             }
             else
             {
                 conDB.company_id = int.Parse(listCompany[0][companyName.SelectedIndex]);
             }
 
-            conDB.product_name = productName.Text;
-            conDB.serial = serial.Text;
-            conDB.address = address.Text;
-            conDB.phone = phone.Text;
+            if (productName.SelectedIndex < 0)
+            {
+                conDB.product_name_th = productName.Text.Trim();
+                conDB.product_name_en = "";
+                conDB.product_price = 0;
+                conDB.product_value = "";
+                conDB.product_date_create = convertDT.convert(DateTime.Now);
+                conDB.product_date_stamp = convertDT.convert(DateTime.Now);
+                conDB.product_id = conDB.addProduct();
+            }
+
+            conDB.product_name = productName.Text.Trim();
+            conDB.serial = serial.Text.Trim();
+            conDB.address = address.Text.Trim();
+            conDB.phone = phone.Text.Trim();
             conDB.status = status.Text;
             conDB.date_create = convertDT.convert(DateTime.Now);
             conDB.date_product = convertDT.convert(dtProductEndDate.DateTime);
@@ -287,37 +300,37 @@ namespace A_Team_Clem.Modules
                 conDB.warranty = "นอกประกัน";
                 conDB.chargebacks = double.Parse(textEditChargebacks.Text);
             }
-            conDB.symptom = symptom.Text;
-            conDB.equipment = equipment.Text;
-            conDB.detail = detail.Text;
+            conDB.symptom = symptom.Text.Trim();
+            conDB.equipment = equipment.Text.Trim();
+            conDB.detail = detail.Text.Trim();
 
             conDB.in_document_number_id = conDB.getNewIDClemOfMonth(clemType);
             conDB.in_document_number = convertDT.convert(DateTime.Now);
             conDB.in_document_number_string = inDocumentNumber.Text;
 
-            conDB.out_document_number = outDocumentNumber.Text;
-            conDB.in_serial_clem = inSerialClem.Text;
-            conDB.out_serial_clem = outSerialClem.Text;
+            conDB.out_document_number = outDocumentNumber.Text.Trim();
+            conDB.in_serial_clem = inSerialClem.Text.Trim();
+            conDB.out_serial_clem = outSerialClem.Text.Trim();
             conDB.clem_type = clemType;
-            conDB.customer_clem = customerClem.Text;
-            conDB.employee_receive_clem = employeeReceiveClem.Text;
-            conDB.employee_clem = employeeClem.Text;
-            conDB.company_receive_clem = companyReceiveClem.Text;
-            conDB.company_return = companyReturn.Text;
-            conDB.employee_receive_product = employeeReceiveProduct.Text;
-            conDB.employee_return = employeeReturn.Text;
-            conDB.customer_receive_product = customerReceiveProduct.Text;
+            conDB.customer_clem = customerClem.Text.Trim();
+            conDB.employee_receive_clem = employeeReceiveClem.Text.Trim();
+            conDB.employee_clem = employeeClem.Text.Trim();
+            conDB.company_receive_clem = companyReceiveClem.Text.Trim();
+            conDB.company_return = companyReturn.Text.Trim();
+            conDB.employee_receive_product = employeeReceiveProduct.Text.Trim();
+            conDB.employee_return = employeeReturn.Text.Trim();
+            conDB.customer_receive_product = customerReceiveProduct.Text.Trim();
 
         }
         #endregion
 
         private void simpleButtonAddClem_Click(object sender, EventArgs e)
         {
-            bool resultValidateForm = validateForm();
-            if (!resultValidateForm)
-            {
-                return;
-            }
+            //bool resultValidateForm = validateForm();
+            //if (!resultValidateForm)
+            //{
+            //    return;
+            //}
 
             readData();
             bool resultAddClem;
@@ -460,6 +473,203 @@ namespace A_Team_Clem.Modules
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clearData();
+        }
+
+        private void customerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                address.Focus();
+            }
+        }
+
+        Keys oldKeyAddress;
+        private void address_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return && oldKeyAddress == Keys.Return)
+            {
+                phone.Focus();
+                oldKeyAddress = Keys.D1;
+            }
+            else
+                oldKeyAddress = e.KeyCode;
+        }
+
+        private void phone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                serial.Focus();
+            }
+        }
+
+        private void serial_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                productName.Focus();
+            }
+        }
+
+        private void productName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                companyName.Focus();
+            }
+        }
+
+        private void companyName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                productType.Focus();
+            }
+        }
+
+        private void productType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                dtProductEndDate.Focus();
+            }
+        }
+
+        private void dtProductEndDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                outDocumentNumber.Focus();
+            }
+        }
+
+        private void outDocumentNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                inSerialClem.Focus();
+            }
+        }
+
+        private void inSerialClem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                outSerialClem.Focus();
+            }
+        }
+
+        private void outSerialClem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                employeeReceiveClem.Focus();
+            }
+        }
+
+        private void employeeReceiveClem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                employeeClem.Focus();
+            }
+        }
+
+        private void employeeClem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                companyReceiveClem.Focus();
+            }
+        }
+
+        private void companyReceiveClem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                companyReturn.Focus();
+            }
+        }
+
+        private void companyReturn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                employeeReceiveProduct.Focus();
+            }
+        }
+
+        private void employeeReceiveProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                employeeReturn.Focus();
+            }
+        }
+
+        private void employeeReturn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                customerReceiveProduct.Focus();
+            }
+        }
+
+        private void customerReceiveProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                status.Focus();
+            }
+        }
+
+        private void status_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                radioButtonInWarranty.Focus();
+            }
+        }
+
+        private void radioButtonInWarranty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                symptom.Focus();
+            }
+        }
+
+        Keys oldKeySymptom;
+        private void symptom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return && oldKeySymptom == Keys.Return)
+            {
+                equipment.Focus();
+                oldKeySymptom = Keys.D0;
+            }
+            else oldKeySymptom = e.KeyCode;
+        }
+
+        Keys oldKeyEquipment;
+        private void equipment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return && oldKeyEquipment == Keys.Return)
+            {
+                detail.Focus();
+                oldKeyEquipment = Keys.D0;
+            }
+            else oldKeyEquipment = e.KeyCode;
+        }
+
+        Keys oldKeyDetail;
+        private void detail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return && oldKeyDetail == Keys.Return)
+            {
+                simpleButtonAddClem_Click(EventArgs.Empty, null);
+                oldKeyDetail = Keys.D0;
+            }
+            else oldKeyDetail = e.KeyCode;
         }
     }
 }
