@@ -62,8 +62,8 @@ namespace A_Team_Clem
             showAddCustomerClem();
 
 
-            panelShowUserControl.Appearance.BackColor = Color.Red;
-            panelShowUserControl.Appearance.BackColor2 = Color.Red;
+            panelShowUserControl.Appearance.BackColor = Color.Aqua;
+            panelShowUserControl.Appearance.BackColor2 = Color.Aqua;
             panelShowUserControl.Appearance.Options.UseBackColor = true;
 
             //panelShowUserControl.LookAndFeel.UseDefaultLookAndFeel = false;

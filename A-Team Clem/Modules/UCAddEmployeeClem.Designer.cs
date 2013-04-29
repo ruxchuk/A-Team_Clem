@@ -31,17 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAddEmployeeClem));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.imgAddEmployee = new System.Windows.Forms.PictureBox();
             this.employeeReceiveProduct = new DevExpress.XtraEditors.MRUEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.companyReturn = new DevExpress.XtraEditors.TextEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.employeeClem = new DevExpress.XtraEditors.MRUEdit();
             this.companyReceiveClem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.clear = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonAddClem = new DevExpress.XtraEditors.SimpleButton();
+            this.status = new System.Windows.Forms.ComboBox();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.detail = new System.Windows.Forms.RichTextBox();
             this.equipment = new System.Windows.Forms.RichTextBox();
             this.symptom = new System.Windows.Forms.RichTextBox();
@@ -72,15 +75,17 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.status = new System.Windows.Forms.ComboBox();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.imgAddEmployee = new System.Windows.Forms.PictureBox();
+            this.buttonCopy = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReceiveProduct.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyReturn.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeClem.Properties)).BeginInit();
@@ -102,14 +107,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.groupControl5);
             this.panelControl1.Controls.Add(this.groupControl3);
             this.panelControl1.Controls.Add(this.groupControl4);
@@ -137,6 +141,18 @@
             this.groupControl5.TabIndex = 102;
             this.groupControl5.Text = "ข้อมูลผู้ทำรายการ";
             // 
+            // imgAddEmployee
+            // 
+            this.imgAddEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.imgAddEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddEmployee.BackgroundImage")));
+            this.imgAddEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgAddEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAddEmployee.Location = new System.Drawing.Point(170, 39);
+            this.imgAddEmployee.Name = "imgAddEmployee";
+            this.imgAddEmployee.Size = new System.Drawing.Size(30, 16);
+            this.imgAddEmployee.TabIndex = 1072;
+            this.imgAddEmployee.TabStop = false;
+            // 
             // employeeReceiveProduct
             // 
             this.employeeReceiveProduct.AllowDrop = true;
@@ -150,7 +166,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.employeeReceiveProduct.Properties.CaseSensitiveSearch = true;
             this.employeeReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.employeeReceiveProduct.Properties.Sorted = true;
             this.employeeReceiveProduct.Size = new System.Drawing.Size(188, 26);
             this.employeeReceiveProduct.TabIndex = 9;
             // 
@@ -194,6 +209,17 @@
             this.labelControl24.TabIndex = 1024;
             this.labelControl24.Text = "1. พนักงาน-ผู้ส่งเคลม";
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl1.Location = new System.Drawing.Point(155, 39);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(9, 19);
+            this.labelControl1.TabIndex = 1087;
+            this.labelControl1.Text = "*";
+            // 
             // employeeClem
             // 
             this.employeeClem.AllowDrop = true;
@@ -207,7 +233,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.employeeClem.Properties.CaseSensitiveSearch = true;
             this.employeeClem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.employeeClem.Properties.Sorted = true;
             this.employeeClem.Size = new System.Drawing.Size(159, 26);
             this.employeeClem.TabIndex = 6;
             // 
@@ -233,11 +258,15 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.buttonCopy);
+            this.groupControl3.Controls.Add(this.buttonCancel);
+            this.groupControl3.Controls.Add(this.buttonPrint);
+            this.groupControl3.Controls.Add(this.buttonDelete);
+            this.groupControl3.Controls.Add(this.buttonClear);
+            this.groupControl3.Controls.Add(this.buttonSave);
             this.groupControl3.Controls.Add(this.status);
             this.groupControl3.Controls.Add(this.labelControl7);
             this.groupControl3.Controls.Add(this.labelControl6);
-            this.groupControl3.Controls.Add(this.clear);
-            this.groupControl3.Controls.Add(this.simpleButtonAddClem);
             this.groupControl3.Controls.Add(this.detail);
             this.groupControl3.Controls.Add(this.equipment);
             this.groupControl3.Controls.Add(this.symptom);
@@ -246,37 +275,49 @@
             this.groupControl3.Controls.Add(this.labelControl14);
             this.groupControl3.Location = new System.Drawing.Point(390, 141);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(417, 357);
+            this.groupControl3.Size = new System.Drawing.Size(417, 356);
             this.groupControl3.TabIndex = 107;
             this.groupControl3.Text = "ข้อมูลการซ่อม";
             // 
-            // clear
+            // status
             // 
-            this.clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clear.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear.Appearance.Options.UseFont = true;
-            this.clear.Location = new System.Drawing.Point(229, 302);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(48, 33);
-            this.clear.TabIndex = 27;
-            this.clear.Text = "Clear";
+            this.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.FormattingEnabled = true;
+            this.status.Items.AddRange(new object[] {
+            "",
+            "ส่งเคลม",
+            "สำเร็จ"});
+            this.status.Location = new System.Drawing.Point(221, 30);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(188, 27);
+            this.status.TabIndex = 12;
             // 
-            // simpleButtonAddClem
+            // labelControl7
             // 
-            this.simpleButtonAddClem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.simpleButtonAddClem.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButtonAddClem.Appearance.Options.UseFont = true;
-            this.simpleButtonAddClem.Location = new System.Drawing.Point(283, 302);
-            this.simpleButtonAddClem.Name = "simpleButtonAddClem";
-            this.simpleButtonAddClem.Size = new System.Drawing.Size(129, 33);
-            this.simpleButtonAddClem.TabIndex = 27;
-            this.simpleButtonAddClem.Text = "เพิ่มรายการเคลม";
-            this.simpleButtonAddClem.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl7.Location = new System.Drawing.Point(55, 37);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(9, 19);
+            this.labelControl7.TabIndex = 1080;
+            this.labelControl7.Text = "*";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl6.Location = new System.Drawing.Point(5, 34);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(44, 19);
+            this.labelControl6.TabIndex = 1081;
+            this.labelControl6.Text = "สถานะ";
             // 
             // detail
             // 
             this.detail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.detail.Location = new System.Drawing.Point(5, 256);
+            this.detail.Location = new System.Drawing.Point(5, 226);
             this.detail.Name = "detail";
             this.detail.Size = new System.Drawing.Size(188, 79);
             this.detail.TabIndex = 15;
@@ -285,7 +326,7 @@
             // equipment
             // 
             this.equipment.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.equipment.Location = new System.Drawing.Point(221, 137);
+            this.equipment.Location = new System.Drawing.Point(221, 105);
             this.equipment.Name = "equipment";
             this.equipment.Size = new System.Drawing.Size(188, 79);
             this.equipment.TabIndex = 14;
@@ -294,7 +335,7 @@
             // symptom
             // 
             this.symptom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.symptom.Location = new System.Drawing.Point(5, 136);
+            this.symptom.Location = new System.Drawing.Point(5, 104);
             this.symptom.Name = "symptom";
             this.symptom.Size = new System.Drawing.Size(188, 79);
             this.symptom.TabIndex = 13;
@@ -303,7 +344,7 @@
             // labelControl19
             // 
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl19.Location = new System.Drawing.Point(5, 231);
+            this.labelControl19.Location = new System.Drawing.Point(5, 201);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(62, 19);
             this.labelControl19.TabIndex = 1076;
@@ -312,7 +353,7 @@
             // labelControl17
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl17.Location = new System.Drawing.Point(221, 111);
+            this.labelControl17.Location = new System.Drawing.Point(221, 79);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(92, 19);
             this.labelControl17.TabIndex = 1075;
@@ -321,7 +362,7 @@
             // labelControl14
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl14.Location = new System.Drawing.Point(5, 111);
+            this.labelControl14.Location = new System.Drawing.Point(5, 79);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(66, 19);
             this.labelControl14.TabIndex = 1077;
@@ -455,7 +496,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.productType.Properties.CaseSensitiveSearch = true;
             this.productType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.productType.Properties.Sorted = true;
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 4;
             // 
@@ -472,7 +512,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.companyName.Properties.CaseSensitiveSearch = true;
             this.companyName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.companyName.Properties.Sorted = true;
             this.companyName.Size = new System.Drawing.Size(188, 26);
             this.companyName.TabIndex = 3;
             // 
@@ -525,7 +564,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.productName.Properties.CaseSensitiveSearch = true;
             this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.productName.Properties.Sorted = true;
             this.productName.Size = new System.Drawing.Size(188, 26);
             this.productName.TabIndex = 2;
             // 
@@ -617,69 +655,88 @@
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControlPage.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.labelControlPage.Location = new System.Drawing.Point(277, 15);
+            this.labelControlPage.Location = new System.Drawing.Point(278, 15);
             this.labelControlPage.Name = "labelControlPage";
             this.labelControlPage.Size = new System.Drawing.Size(267, 39);
             this.labelControlPage.TabIndex = 4;
             this.labelControlPage.Text = "เพิ่มใบส่งเคลมสินค้า";
             // 
-            // labelControl1
+            // buttonCopy
             // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl1.Location = new System.Drawing.Point(155, 39);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(9, 19);
-            this.labelControl1.TabIndex = 1087;
-            this.labelControl1.Text = "*";
+            this.buttonCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCopy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCopy.BackgroundImage")));
+            this.buttonCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCopy.Location = new System.Drawing.Point(221, 258);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(82, 32);
+            this.buttonCopy.TabIndex = 21;
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Visible = false;
             // 
-            // status
+            // buttonCancel
             // 
-            this.status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.status.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status.FormattingEnabled = true;
-            this.status.Items.AddRange(new object[] {
-            "",
-            "ส่งเคลม",
-            "สำเร็จ"});
-            this.status.Location = new System.Drawing.Point(5, 62);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(188, 27);
-            this.status.TabIndex = 12;
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.Location = new System.Drawing.Point(221, 306);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
+            this.buttonCancel.TabIndex = 1085;
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Visible = false;
             // 
-            // labelControl7
+            // buttonPrint
             // 
-            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl7.Location = new System.Drawing.Point(55, 37);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(9, 19);
-            this.labelControl7.TabIndex = 1080;
-            this.labelControl7.Text = "*";
+            this.buttonPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPrint.BackgroundImage")));
+            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPrint.Location = new System.Drawing.Point(221, 210);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(82, 32);
+            this.buttonPrint.TabIndex = 19;
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Visible = false;
             // 
-            // labelControl6
+            // buttonDelete
             // 
-            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl6.Location = new System.Drawing.Point(5, 34);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(44, 19);
-            this.labelControl6.TabIndex = 1081;
-            this.labelControl6.Text = "สถานะ";
+            this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.Location = new System.Drawing.Point(327, 306);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(82, 32);
+            this.buttonDelete.TabIndex = 18;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
             // 
-            // imgAddEmployee
+            // buttonClear
             // 
-            this.imgAddEmployee.BackColor = System.Drawing.Color.Transparent;
-            this.imgAddEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgAddEmployee.BackgroundImage")));
-            this.imgAddEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgAddEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAddEmployee.Location = new System.Drawing.Point(170, 39);
-            this.imgAddEmployee.Name = "imgAddEmployee";
-            this.imgAddEmployee.Size = new System.Drawing.Size(30, 16);
-            this.imgAddEmployee.TabIndex = 1072;
-            this.imgAddEmployee.TabStop = false;
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
+            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.Location = new System.Drawing.Point(327, 258);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(82, 32);
+            this.buttonClear.TabIndex = 17;
+            this.buttonClear.UseVisualStyleBackColor = true;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSave.BackgroundImage")));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.Location = new System.Drawing.Point(327, 210);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(82, 32);
+            this.buttonSave.TabIndex = 16;
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
             // UCAddEmployeeClem
             // 
@@ -688,12 +745,13 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControlPage);
             this.Name = "UCAddEmployeeClem";
-            this.Size = new System.Drawing.Size(820, 562);
+            this.Size = new System.Drawing.Size(822, 562);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             this.groupControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeReceiveProduct.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyReturn.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeClem.Properties)).EndInit();
@@ -718,7 +776,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAddEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,8 +794,6 @@
         private DevExpress.XtraEditors.TextEdit companyReceiveClem;
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.SimpleButton clear;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonAddClem;
         private System.Windows.Forms.RichTextBox detail;
         private System.Windows.Forms.RichTextBox equipment;
         private System.Windows.Forms.RichTextBox symptom;
@@ -774,6 +829,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private System.Windows.Forms.PictureBox imgAddEmployee;
+        public System.Windows.Forms.Button buttonCopy;
+        public System.Windows.Forms.Button buttonCancel;
+        public System.Windows.Forms.Button buttonPrint;
+        public System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonSave;
 
     }
 }

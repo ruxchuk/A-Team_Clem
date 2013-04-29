@@ -993,6 +993,7 @@
             this.productName.Size = new System.Drawing.Size(188, 26);
             this.productName.TabIndex = 6;
             this.productName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.productName.SelectedIndexChanged += new System.EventHandler(this.productName_SelectedIndexChanged);
             this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyName_KeyDown);
             // 
             // companyName
@@ -1011,6 +1012,7 @@
             this.companyName.Size = new System.Drawing.Size(188, 26);
             this.companyName.TabIndex = 6;
             this.companyName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.companyName.SelectedIndexChanged += new System.EventHandler(this.companyName_SelectedIndexChanged);
             this.companyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyName_KeyDown);
             // 
             // serial

@@ -243,22 +243,16 @@ namespace A_Team_Clem.Modules
                 conDB.customer_date_stamp = convertDT.convert(DateTime.Now);
                 conDB.customer_id = conDB.addCustomer();
             }
-            else
-            {
-                conDB.customer_id = int.Parse(listCustomer[0][customerName.SelectedIndex]) + 1;
-            }
 
-            if (productType.SelectedIndex < 0)
+            if (productName.SelectedText == "")
             {
-                conDB.product_type_name_th = productType.Text.Trim();
-                conDB.product_type_name_en = "";
-                conDB.product_type_date_create = convertDT.convert(DateTime.Now);
-                conDB.product_type_date_stamp = convertDT.convert(DateTime.Now);
-                conDB.product_type_id = conDB.addProductType();
-            }
-            else
-            {
-                conDB.product_type_id = int.Parse(listPorductType[0][productType.SelectedIndex]) + 1;
+                conDB.product_name_th = productName.Text.Trim();
+                conDB.product_name_en = "";
+                conDB.product_price = 0;
+                conDB.product_value = "";
+                conDB.product_date_create = convertDT.convert(DateTime.Now);
+                conDB.product_date_stamp = convertDT.convert(DateTime.Now);
+                conDB.product_id = conDB.addProduct();
             }
 
             if (companyName.SelectedIndex < 0)
@@ -272,20 +266,14 @@ namespace A_Team_Clem.Modules
                 conDB.company_date_stamp = convertDT.convert(DateTime.Now);
                 conDB.company_id = conDB.addCompany();
             }
-            else
-            {
-                conDB.company_id = int.Parse(listCompany[0][companyName.SelectedIndex]) + 1;
-            }
 
-            if (productName.SelectedText == "")
+            if (productType.SelectedIndex < 0)
             {
-                conDB.product_name_th = productName.Text.Trim();
-                conDB.product_name_en = "";
-                conDB.product_price = 0;
-                conDB.product_value = "";
-                conDB.product_date_create = convertDT.convert(DateTime.Now);
-                conDB.product_date_stamp = convertDT.convert(DateTime.Now);
-                conDB.product_id = conDB.addProduct();
+                conDB.product_type_name_th = productType.Text.Trim();
+                conDB.product_type_name_en = "";
+                conDB.product_type_date_create = convertDT.convert(DateTime.Now);
+                conDB.product_type_date_stamp = convertDT.convert(DateTime.Now);
+                conDB.product_type_id = conDB.addProductType();
             }
 
             conDB.product_name = productName.Text.Trim();
@@ -417,20 +405,6 @@ namespace A_Team_Clem.Modules
         private void imgAddEmployee_Click(object sender, EventArgs e)
         {
             fRMMain.showAddEmployee();
-        }
-
-        private void cmbCustomerName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (customerName.SelectedIndex != -1)
-            {
-                address.Text = listCustomer[3][customerName.SelectedIndex];
-                customerClem.Text = listCustomer[1][customerName.SelectedIndex];
-                phone.Text = listCustomer[4][customerName.SelectedIndex];
-            }
-            else
-            {
-
-            }
         }
 
         public void clearData()
@@ -736,5 +710,64 @@ namespace A_Team_Clem.Modules
             buttonDelete.Visible = false;
             customerName.Focus();
         }
+
+        //ค้นหา ID จาก ชื่อใน List
+        public int searchIDFromList(List<string> arrData, List<string> arrID, string strSearch)
+        {
+            for (int i = 0; i < arrData.Count; i++)
+            {
+                if (strSearch == arrData[i])
+                {
+                    return int.Parse(arrID[i]);
+                }
+            }
+            return -1;
+        }
+
+        private void cmbCustomerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (customerName.SelectedIndex != -1)
+            {
+                conDB.customer_id = searchIDFromList(listCustomer[1], listCustomer[0], customerName.Text);
+                for (int i = 0; i < listCustomer[0].Count; i++)
+                {
+                    if (int.Parse(listCustomer[0][i]) == conDB.customer_id)
+                    {
+                        address.Text = listCustomer[3][i];
+                        customerClem.Text = listCustomer[1][i];
+                        phone.Text = listCustomer[4][i];
+                    }
+                }
+            }
+            else
+            {
+                conDB.customer_id = -1;
+            }
+        }
+
+        private void productName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (productName.SelectedIndex != -1)
+            {
+                conDB.product_id = searchIDFromList(listProduct[1], listProduct[0], productName.Text);
+            }
+            else
+            {
+                conDB.product_id = -1;
+            }
+        }
+
+        private void companyName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (companyName.SelectedIndex != -1)
+            {
+                conDB.company_id = searchIDFromList(listCompany[1], listCompany[0], companyName.Text);
+            }
+            else
+            {
+                conDB.company_id = -1;
+            }
+        }  
     }
 }

@@ -175,7 +175,6 @@
             // 
             this.inDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inDocumentNumber.EditValue = "";
-            this.inDocumentNumber.Enabled = false;
             this.inDocumentNumber.Location = new System.Drawing.Point(718, 25);
             this.inDocumentNumber.Name = "inDocumentNumber";
             this.inDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
