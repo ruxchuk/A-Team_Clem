@@ -305,6 +305,8 @@
             this.panelShowUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelShowUserControl.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelShowUserControl.Appearance.Options.UseBackColor = true;
             this.panelShowUserControl.Location = new System.Drawing.Point(5, 5);
             this.panelShowUserControl.Name = "panelShowUserControl";
             this.panelShowUserControl.Size = new System.Drawing.Size(1058, 590);
@@ -458,6 +460,8 @@
             // 
             // FRMMain
             // 
+            this.Appearance.BackColor = System.Drawing.Color.LightGray;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 662);

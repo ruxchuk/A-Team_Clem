@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Diagnostics;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraEditors.Mask;
 
 namespace A_Team_Clem.Modules
 {
@@ -45,7 +46,8 @@ namespace A_Team_Clem.Modules
             dtProductEndDate.Properties.DisplayFormat.FormatString = fRMMain.formatDate;
             dtProductEndDate.Properties.Mask.EditMask = fRMMain.formatDate;
 
-            Debug.WriteLine(conDB.getNewIDClemOfMonth(clemType));
+            textEditChargebacks.Properties.Mask.MaskType = MaskType.Numeric;
+            textEditChargebacks.Properties.Mask.EditMask = "n";
         }
 
         #region load data
@@ -243,7 +245,7 @@ namespace A_Team_Clem.Modules
             }
             else
             {
-                conDB.customer_id = int.Parse(listCustomer[0][customerName.SelectedIndex]);
+                conDB.customer_id = int.Parse(listCustomer[0][customerName.SelectedIndex]) + 1;
             }
 
             if (productType.SelectedIndex < 0)
@@ -256,7 +258,7 @@ namespace A_Team_Clem.Modules
             }
             else
             {
-                conDB.product_type_id = int.Parse(listPorductType[0][productType.SelectedIndex]);
+                conDB.product_type_id = int.Parse(listPorductType[0][productType.SelectedIndex]) + 1;
             }
 
             if (companyName.SelectedIndex < 0)
@@ -272,10 +274,10 @@ namespace A_Team_Clem.Modules
             }
             else
             {
-                conDB.company_id = int.Parse(listCompany[0][companyName.SelectedIndex]);
+                conDB.company_id = int.Parse(listCompany[0][companyName.SelectedIndex]) + 1;
             }
 
-            if (productName.SelectedIndex < 0)
+            if (productName.SelectedText == "")
             {
                 conDB.product_name_th = productName.Text.Trim();
                 conDB.product_name_en = "";
@@ -342,7 +344,7 @@ namespace A_Team_Clem.Modules
             {
                 return;
             }
-
+            fRMMain.showWaitingForm("กำลังทำการบันทึกข้อมูล");
             readData();
             bool resultAddClem;
             if (fRMMain.typeOfClemProduct == "add")
@@ -354,6 +356,7 @@ namespace A_Team_Clem.Modules
                 resultAddClem = conDB.updateClemProduct(clem_id);
                 Debug.WriteLine("updated");
             }
+            fRMMain.closeWaitingForm();
             if (resultAddClem)
             {
                 clearData();
@@ -668,6 +671,14 @@ namespace A_Team_Clem.Modules
             }
         }
 
+        private void textEditChargebacks_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                symptom.Focus();
+            }
+        }
+
         Keys oldKeySymptom;
         private void symptom_KeyDown(object sender, KeyEventArgs e)
         {
@@ -700,7 +711,7 @@ namespace A_Team_Clem.Modules
             }
             else oldKeyDetail = e.KeyCode;
         }
-#endregion
+        #endregion
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -718,11 +729,12 @@ namespace A_Team_Clem.Modules
         {
             fRMMain.typeOfClemProduct = "add";
             labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
+            inDocumentNumber.Text = conDB.getNewIDDocumentNumber(clemType);
             buttonCancel.Visible = false;
             buttonCopy.Visible = false;
             buttonPrint.Visible = false;
             buttonDelete.Visible = false;
-
+            customerName.Focus();
         }
     }
 }

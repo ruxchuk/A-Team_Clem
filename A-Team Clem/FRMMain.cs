@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using System.IO;
 using System.Diagnostics;
 using A_Team_Clem.Modules;
+using DevExpress.LookAndFeel;
 
 namespace A_Team_Clem
 {
@@ -19,9 +20,6 @@ namespace A_Team_Clem
             InitializeComponent();
             strPathSkin = pathFolderSave + "\\" + skinFileName;
             showWaitingForm("กำลังทำการเปิดโปรแกรม");
-            //splashScreenManager1.ShowWaitForm();
-            //splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดโปรแกรม");
-            //splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
             conDB = new ConMySql();
         }
 
@@ -45,7 +43,6 @@ namespace A_Team_Clem
 
         private ConMySql conDB;
 
-
         private void FRMMain_Load(object sender, EventArgs e)
         {
             addCustomerClem = new UCAddCustomerClem(this) { Dock = DockStyle.Fill }; 
@@ -63,6 +60,14 @@ namespace A_Team_Clem
 
             closeWaitingForm();
             showAddCustomerClem();
+
+
+            panelShowUserControl.Appearance.BackColor = Color.Red;
+            panelShowUserControl.Appearance.BackColor2 = Color.Red;
+            panelShowUserControl.Appearance.Options.UseBackColor = true;
+
+            //panelShowUserControl.LookAndFeel.UseDefaultLookAndFeel = false;
+            //panelShowUserControl.LookAndFeel.Style = LookAndFeelStyle.Flat;
         }
 
         private void loadSkin()

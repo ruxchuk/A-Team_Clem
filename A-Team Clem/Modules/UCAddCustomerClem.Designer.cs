@@ -92,12 +92,12 @@
             this.imgAddCompany = new System.Windows.Forms.PictureBox();
             this.imgAddProduct = new System.Windows.Forms.PictureBox();
             this.productType = new DevExpress.XtraEditors.MRUEdit();
+            this.productName = new DevExpress.XtraEditors.MRUEdit();
             this.companyName = new DevExpress.XtraEditors.MRUEdit();
+            this.serial = new DevExpress.XtraEditors.TextEdit();
             this.labelControl62 = new DevExpress.XtraEditors.LabelControl();
             this.dtProductEndDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.productName = new DevExpress.XtraEditors.MRUEdit();
-            this.serial = new DevExpress.XtraEditors.TextEdit();
             this.labelControl71 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -151,11 +151,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCustomer)).BeginInit();
@@ -167,6 +167,7 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlPage.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.labelControlPage.Location = new System.Drawing.Point(323, 15);
             this.labelControlPage.Name = "labelControlPage";
             this.labelControlPage.Size = new System.Drawing.Size(417, 39);
@@ -235,7 +236,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.employeeReceiveProduct.Properties.CaseSensitiveSearch = true;
             this.employeeReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.employeeReceiveProduct.Properties.Sorted = true;
             this.employeeReceiveProduct.Size = new System.Drawing.Size(170, 26);
             this.employeeReceiveProduct.TabIndex = 1;
             this.employeeReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
@@ -296,7 +296,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.employeeClem.Properties.CaseSensitiveSearch = true;
             this.employeeClem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.employeeClem.Properties.Sorted = true;
             this.employeeClem.Size = new System.Drawing.Size(170, 26);
             this.employeeClem.TabIndex = 1;
             this.employeeClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
@@ -359,7 +358,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.employeeReceiveClem.Properties.CaseSensitiveSearch = true;
             this.employeeReceiveClem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.employeeReceiveClem.Properties.Sorted = true;
             this.employeeReceiveClem.Size = new System.Drawing.Size(170, 26);
             this.employeeReceiveClem.TabIndex = 1;
             this.employeeReceiveClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
@@ -455,7 +453,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.customerReceiveProduct.Properties.CaseSensitiveSearch = true;
             this.customerReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.customerReceiveProduct.Properties.Sorted = true;
             this.customerReceiveProduct.Size = new System.Drawing.Size(170, 26);
             this.customerReceiveProduct.TabIndex = 20;
             this.customerReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
@@ -487,7 +484,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.employeeReturn.Properties.CaseSensitiveSearch = true;
             this.employeeReturn.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.employeeReturn.Properties.Sorted = true;
             this.employeeReturn.Size = new System.Drawing.Size(170, 26);
             this.employeeReturn.TabIndex = 1;
             this.employeeReturn.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
@@ -647,9 +643,9 @@
             this.panelWarranty.Controls.Add(this.labelControl16);
             this.panelWarranty.Controls.Add(this.labelControl15);
             this.panelWarranty.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.panelWarranty.Location = new System.Drawing.Point(0, 104);
+            this.panelWarranty.Location = new System.Drawing.Point(4, 104);
             this.panelWarranty.Name = "panelWarranty";
-            this.panelWarranty.Size = new System.Drawing.Size(331, 46);
+            this.panelWarranty.Size = new System.Drawing.Size(325, 46);
             this.panelWarranty.TabIndex = 1078;
             this.panelWarranty.Visible = false;
             // 
@@ -657,18 +653,19 @@
             // 
             this.textEditChargebacks.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textEditChargebacks.EditValue = "0";
-            this.textEditChargebacks.Location = new System.Drawing.Point(138, 5);
+            this.textEditChargebacks.Location = new System.Drawing.Point(135, 5);
             this.textEditChargebacks.Name = "textEditChargebacks";
             this.textEditChargebacks.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textEditChargebacks.Properties.Appearance.Options.UseFont = true;
             this.textEditChargebacks.Size = new System.Drawing.Size(111, 26);
             this.textEditChargebacks.TabIndex = 23;
+            this.textEditChargebacks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEditChargebacks_KeyDown);
             // 
             // labelControl16
             // 
             this.labelControl16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl16.Location = new System.Drawing.Point(288, 12);
+            this.labelControl16.Location = new System.Drawing.Point(284, 11);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(34, 19);
             this.labelControl16.TabIndex = 1007;
@@ -678,7 +675,7 @@
             // 
             this.labelControl15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl15.Location = new System.Drawing.Point(5, 12);
+            this.labelControl15.Location = new System.Drawing.Point(1, 12);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(73, 19);
             this.labelControl15.TabIndex = 1012;
@@ -904,12 +901,12 @@
             this.groupControl2.Controls.Add(this.imgAddCompany);
             this.groupControl2.Controls.Add(this.imgAddProduct);
             this.groupControl2.Controls.Add(this.productType);
+            this.groupControl2.Controls.Add(this.productName);
             this.groupControl2.Controls.Add(this.companyName);
+            this.groupControl2.Controls.Add(this.serial);
             this.groupControl2.Controls.Add(this.labelControl62);
             this.groupControl2.Controls.Add(this.dtProductEndDate);
             this.groupControl2.Controls.Add(this.labelControl12);
-            this.groupControl2.Controls.Add(this.productName);
-            this.groupControl2.Controls.Add(this.serial);
             this.groupControl2.Controls.Add(this.labelControl71);
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl4);
@@ -975,11 +972,28 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.productType.Properties.CaseSensitiveSearch = true;
             this.productType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.productType.Properties.Sorted = true;
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 7;
             this.productType.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.productType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productType_KeyDown);
+            // 
+            // productName
+            // 
+            this.productName.AllowDrop = true;
+            this.productName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.productName.Location = new System.Drawing.Point(132, 66);
+            this.productName.Name = "productName";
+            this.productName.Properties.AllowRemoveMRUItems = false;
+            this.productName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.productName.Properties.Appearance.Options.UseFont = true;
+            this.productName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.productName.Properties.CaseSensitiveSearch = true;
+            this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.productName.Size = new System.Drawing.Size(188, 26);
+            this.productName.TabIndex = 6;
+            this.productName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyName_KeyDown);
             // 
             // companyName
             // 
@@ -994,11 +1008,21 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.companyName.Properties.CaseSensitiveSearch = true;
             this.companyName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.companyName.Properties.Sorted = true;
             this.companyName.Size = new System.Drawing.Size(188, 26);
             this.companyName.TabIndex = 6;
             this.companyName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.companyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyName_KeyDown);
+            // 
+            // serial
+            // 
+            this.serial.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.serial.Location = new System.Drawing.Point(132, 24);
+            this.serial.Name = "serial";
+            this.serial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.serial.Properties.Appearance.Options.UseFont = true;
+            this.serial.Size = new System.Drawing.Size(188, 26);
+            this.serial.TabIndex = 4;
+            this.serial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phone_KeyDown);
             // 
             // labelControl62
             // 
@@ -1036,36 +1060,6 @@
             this.labelControl12.Size = new System.Drawing.Size(86, 19);
             this.labelControl12.TabIndex = 1086;
             this.labelControl12.Text = "วันที่หมดอายุ";
-            // 
-            // productName
-            // 
-            this.productName.AllowDrop = true;
-            this.productName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.productName.Location = new System.Drawing.Point(132, 66);
-            this.productName.Name = "productName";
-            this.productName.Properties.AllowRemoveMRUItems = false;
-            this.productName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.productName.Properties.Appearance.Options.UseFont = true;
-            this.productName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.productName.Properties.CaseSensitiveSearch = true;
-            this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.productName.Properties.Sorted = true;
-            this.productName.Size = new System.Drawing.Size(188, 26);
-            this.productName.TabIndex = 5;
-            this.productName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
-            this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productName_KeyDown);
-            // 
-            // serial
-            // 
-            this.serial.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.serial.Location = new System.Drawing.Point(132, 24);
-            this.serial.Name = "serial";
-            this.serial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.serial.Properties.Appearance.Options.UseFont = true;
-            this.serial.Size = new System.Drawing.Size(188, 26);
-            this.serial.TabIndex = 4;
-            this.serial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.serial_KeyDown);
             // 
             // labelControl71
             // 
@@ -1209,7 +1203,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.customerName.Properties.CaseSensitiveSearch = true;
             this.customerName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.customerName.Properties.Sorted = true;
             this.customerName.Size = new System.Drawing.Size(188, 26);
             this.customerName.TabIndex = 1;
             this.customerName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
@@ -1321,11 +1314,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgAddCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAddProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductEndDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -1333,7 +1326,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1353,8 +1345,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit phone;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        public DevExpress.XtraEditors.MRUEdit productName;
-        private DevExpress.XtraEditors.TextEdit serial;
         private DevExpress.XtraEditors.LabelControl labelControl71;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -1425,6 +1415,8 @@
         public System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label customerClem;
         public System.Windows.Forms.Label inDocumentNumber;
+        private DevExpress.XtraEditors.TextEdit serial;
+        public DevExpress.XtraEditors.MRUEdit productName;
 
     }
 }
