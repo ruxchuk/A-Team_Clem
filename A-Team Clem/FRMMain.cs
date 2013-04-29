@@ -137,10 +137,11 @@ namespace A_Team_Clem
             if (typeOfClemProduct == "edit")
             {
                 addCustomerClem.labelControlPage.Text = "แก้ไขใบรับเคลม/ใบส่งเคลมสินค้า";
-                addCustomerClem.getDataForEdit(customerReport.clemID);
+                //addCustomerClem.getDataForEdit(customerReport.clemID);
             }
             else
             {
+                addCustomerClem.loadInDocumentNumber();
                 addCustomerClem.labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
             }
             addCustomerClem.loadAllListData();

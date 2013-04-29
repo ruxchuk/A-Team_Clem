@@ -404,8 +404,8 @@ namespace A_Team_Clem
             int NewID = 1;
             if (CheckConnect())
             {
-                try
-                {
+                //try
+                //{
                     MySqlCommand cmd = new MySqlCommand("get_new_id_of_month", connection);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@s_clem_type", clemType);
@@ -415,12 +415,12 @@ namespace A_Team_Clem
                         NewID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
-                }
-                catch
-                {
-                    CloseConnection();
-                    return NewID;
-                }
+                //}
+                //catch
+                //{
+                //    CloseConnection();
+                //    return NewID;
+                //}
             }
             CloseConnection();
             return NewID;
@@ -428,7 +428,7 @@ namespace A_Team_Clem
 
         public string getNewIDDocumentNumber(string clemType)
         {
-            int newIDOFMonth = getNewIDClemOfMonth(clem_type);
+            int newIDOFMonth = getNewIDClemOfMonth(clemType);
             string NewID = "00001";
             string startWord = "";
             if (clemType == "ใบรับเคลม/ใบส่งเคลม")

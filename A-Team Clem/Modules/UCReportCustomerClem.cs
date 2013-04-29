@@ -188,7 +188,15 @@ namespace A_Team_Clem.Modules
                 {
                     clemID = int.Parse(gridView1.GetFocusedRowCellValue("id").ToString());
                     fRMMain.typeOfClemProduct = "edit";
-                    fRMMain.addCustomerClem.statusLoad = false;
+                    //fRMMain.addCustomerClem.statusLoad = false;
+                    fRMMain.addCustomerClem.Dispose();
+                    fRMMain.addCustomerClem = new UCAddCustomerClem(fRMMain);
+                    fRMMain.addCustomerClem.buttonCancel.Visible = true;
+                    fRMMain.addCustomerClem.buttonCopy.Visible = true;
+                    fRMMain.addCustomerClem.buttonPrint.Visible = true;
+                    fRMMain.addCustomerClem.buttonDelete.Visible = true;
+                    fRMMain.addCustomerClem.getDataForEdit(clemID);
+                    fRMMain.addCustomerClem.clem_id = clemID;
                     fRMMain.showAddCustomerClem();
                 }
                 catch

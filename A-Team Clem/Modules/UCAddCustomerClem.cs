@@ -9,6 +9,8 @@ using DevExpress.XtraEditors;
 using System.Threading;
 using System.Globalization;
 using System.Diagnostics;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraPrinting;
 
 namespace A_Team_Clem.Modules
 {
@@ -28,9 +30,8 @@ namespace A_Team_Clem.Modules
         public List<string>[] listProductType;
 
         private bool checkAddMRU = false;
-        public string typeSave = "add";
         public int clem_id = 0;
-        public bool statusLoad = false;
+        public int inDocumentNumberID = 0;
 
         public UCAddCustomerClem(FRMMain mFRM)
         {
@@ -55,13 +56,17 @@ namespace A_Team_Clem.Modules
 
         public void getDataForEdit(int clemID)
         {
-            typeSave = "edit";
+            //clearData();
+            fRMMain.typeOfClemProduct = "edit";
             clem_id = clemID;
-            if (!statusLoad)
-            {
-                statusLoad = true;
-                return;
-            }
+
+            conDB.name_th = "";
+            conDB.phone = "";
+            conDB.serial = "";
+            conDB.product_name_th = "";
+            conDB.in_document_number_string = "";
+            conDB.status = "";
+
             DataSet ds = conDB.getListClem(clemType, clemID);
             DataRow dr = ds.Tables["get_list_clem"].Rows[0];
 
@@ -87,19 +92,22 @@ namespace A_Team_Clem.Modules
             symptom.Text = dr["symptom"].ToString();
             equipment.Text = dr["equipment"].ToString();
             detail.Text = dr["detail"].ToString();
+            inDocumentNumberID = int.Parse(dr["in_document_number_id"].ToString());
+
             inDocumentNumber.Text = dr["in_document_number_str"].ToString();
+            Debug.WriteLine(inDocumentNumber.Text);
             outDocumentNumber.Text = dr["out_document_number"].ToString();
             inSerialClem.Text = dr["in_serial_clem"].ToString();
             outSerialClem.Text = dr["out_serial_clem"].ToString();
-            customerClem.Text = dr["customer_clem"].ToString();
-            employeeReceiveClem.Text = dr["employee_receive_clem"].ToString();
+            customerClem.Text = dr["customer_name_th"].ToString();
+            employeeReceiveClem.Text = dr["employee_receive_product"].ToString();
             employeeClem.Text = dr["employee_clem"].ToString();
             companyReceiveClem.Text = dr["company_receive_clem"].ToString();
             companyReturn.Text = dr["company_return"].ToString();
             employeeReceiveProduct.Text = dr["employee_receive_product"].ToString();
             employeeReturn.Text = dr["employee_return"].ToString();
             customerReceiveProduct.Text = dr["customer_receive_product"].ToString();
-            
+            customerName.Focus();
         }
 
         public void loadAllListData()
@@ -109,7 +117,6 @@ namespace A_Team_Clem.Modules
             getCompany(); 
             getEmployee();
             getProduct();
-            loadInDocumentNumber();
             getCustomer();
             checkAddMRU = true;
         }
@@ -304,7 +311,14 @@ namespace A_Team_Clem.Modules
             conDB.equipment = equipment.Text.Trim();
             conDB.detail = detail.Text.Trim();
 
-            conDB.in_document_number_id = conDB.getNewIDClemOfMonth(clemType);
+            if (fRMMain.typeOfClemProduct == "add")
+            {
+                conDB.in_document_number_id = conDB.getNewIDClemOfMonth(clemType);
+            }
+            else
+            {
+                conDB.in_document_number_id = conDB.getNewIDClemOfMonth(clemType);
+            }
             conDB.in_document_number = convertDT.convert(DateTime.Now);
             conDB.in_document_number_string = inDocumentNumber.Text;
 
@@ -326,15 +340,15 @@ namespace A_Team_Clem.Modules
 
         private void simpleButtonAddClem_Click(object sender, EventArgs e)
         {
-            //bool resultValidateForm = validateForm();
-            //if (!resultValidateForm)
-            //{
-            //    return;
-            //}
+            bool resultValidateForm = validateForm();
+            if (!resultValidateForm)
+            {
+                return;
+            }
 
             readData();
             bool resultAddClem;
-            if (typeSave == "add")
+            if (fRMMain.typeOfClemProduct == "add")
             {
                 resultAddClem = conDB.addClem();
             }
@@ -463,6 +477,22 @@ namespace A_Team_Clem.Modules
                 return;
             }
 
+            ReportPrintTool pt = new ReportPrintTool(new MiniReport());
+
+            // Get the Print Tool's printing system.
+            PrintingSystemBase ps = pt.PrintingSystem;
+
+            // Show a report's Print Preview.
+            pt.ShowPreviewDialog();
+
+            // Zoom the print preview, so that it fits the entire page.
+            ps.ExecCommand(PrintingSystemCommand.ViewWholePage);
+
+            // Invoke the Hand tool.
+            ps.ExecCommand(PrintingSystemCommand.HandTool, new object[] { true });
+
+            // Hide the Hand tool.
+            ps.ExecCommand(PrintingSystemCommand.HandTool, new object[] { false });
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -475,6 +505,8 @@ namespace A_Team_Clem.Modules
             clearData();
         }
 
+
+        #region keydown enter
         private void customerName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return)
@@ -670,6 +702,30 @@ namespace A_Team_Clem.Modules
                 oldKeyDetail = Keys.D0;
             }
             else oldKeyDetail = e.KeyCode;
+        }
+#endregion
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            fRMMain.typeOfClemProduct = "add";
+            labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
+            clem_id = 0;
+            clearData();
+            buttonCancel.Visible = false;
+            buttonCopy.Visible = false;
+            buttonPrint.Visible = false;
+            buttonDelete.Visible = false;
+        }
+
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            fRMMain.typeOfClemProduct = "add";
+            labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
+            buttonCancel.Visible = false;
+            buttonCopy.Visible = false;
+            buttonPrint.Visible = false;
+            buttonDelete.Visible = false;
+
         }
     }
 }
