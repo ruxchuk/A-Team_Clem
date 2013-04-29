@@ -70,10 +70,13 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::A_Team_Clem.WaitForm2), true, true);
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::A_Team_Clem.WaitForm2), false, true);
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelShowUserControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl12
@@ -90,8 +93,8 @@
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.AllowSelectedLink = true;
-            this.navBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.navBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.navBarControl1.Appearance.ItemDisabled.Options.UseTextOptions = true;
             this.navBarControl1.Appearance.ItemDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.navBarControl1.Appearance.ItemDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -299,12 +302,12 @@
             // 
             // panelShowUserControl
             // 
-            this.panelShowUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelShowUserControl.Location = new System.Drawing.Point(136, 57);
+            this.panelShowUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelShowUserControl.Location = new System.Drawing.Point(5, 5);
             this.panelShowUserControl.Name = "panelShowUserControl";
-            this.panelShowUserControl.Size = new System.Drawing.Size(1063, 600);
+            this.panelShowUserControl.Size = new System.Drawing.Size(1058, 590);
             this.panelShowUserControl.TabIndex = 11;
             // 
             // openFileDialog1
@@ -419,14 +422,14 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1204, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1209, 51);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 662);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1204, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1209, 0);
             // 
             // barDockControlLeft
             // 
@@ -439,22 +442,33 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1204, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1209, 51);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 611);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.panelShowUserControl);
+            this.panelControl1.Location = new System.Drawing.Point(141, 57);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1068, 600);
+            this.panelControl1.TabIndex = 11;
             // 
             // FRMMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 662);
-            this.Controls.Add(this.panelShowUserControl);
+            this.ClientSize = new System.Drawing.Size(1209, 662);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.LookAndFeel.SkinName = "Office 2010 Blue";
-            this.MinimumSize = new System.Drawing.Size(1220, 700);
+            this.MinimumSize = new System.Drawing.Size(1225, 700);
             this.Name = "FRMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMMain";
@@ -462,6 +476,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelShowUserControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -508,6 +524,7 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupProductType;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
 
 

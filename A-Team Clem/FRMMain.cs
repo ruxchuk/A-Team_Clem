@@ -18,10 +18,10 @@ namespace A_Team_Clem
         {
             InitializeComponent();
             strPathSkin = pathFolderSave + "\\" + skinFileName;
-
-            splashScreenManager1.ShowWaitForm();
-            splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดโปรแกรม");
-            splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
+            showWaitingForm("กำลังทำการเปิดโปรแกรม");
+            //splashScreenManager1.ShowWaitForm();
+            //splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดโปรแกรม");
+            //splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
             conDB = new ConMySql();
         }
 
@@ -59,9 +59,10 @@ namespace A_Team_Clem
             addProductType = new UCAddProductType(this) { Dock = DockStyle.Fill };
         
             loadSkin();
-            showAddCustomerClem();
 
-            splashScreenManager1.CloseWaitForm();
+
+            closeWaitingForm();
+            showAddCustomerClem();
         }
 
         private void loadSkin()
@@ -87,6 +88,18 @@ namespace A_Team_Clem
                 stW.Close();
             }
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(strSkinName);
+        }
+
+        public void showWaitingForm(string message)
+        {
+            splashScreenManager1.ShowWaitForm();
+            splashScreenManager1.SetWaitFormCaption(message);
+            splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
+        }
+
+        public void closeWaitingForm()
+        {
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -134,6 +147,7 @@ namespace A_Team_Clem
 
         public void showAddCustomerClem()
         {
+            showWaitingForm("กำลังทำการโหลดข้อมูล");
             if (typeOfClemProduct == "edit")
             {
                 addCustomerClem.labelControlPage.Text = "แก้ไขใบรับเคลม/ใบส่งเคลมสินค้า";
@@ -148,17 +162,14 @@ namespace A_Team_Clem
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCustomerClem);
             addCustomerClem.customerName.Focus();
+            closeWaitingForm();
         }
 
         public void showCustomerClemReport()
         {
-            //splashScreenManager1.ShowWaitForm();
-            //splashScreenManager1.SetWaitFormCaption("กำลังทำการเปิดรายงาน");
-            //splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
+            showWaitingForm("กำลังทำการเปิดรายงาน");
 
             panelShowUserControl.Controls.Clear();
-            //customerReport.Dispose();
-            //customerReport = new UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             panelShowUserControl.Controls.Add(customerReport);
             if (customerReport.customerName.Text == "" &&
                 customerReport.phone.Text == "" &&
@@ -172,7 +183,7 @@ namespace A_Team_Clem
             }
 
             customerReport.customerName.Focus();
-            //splashScreenManager1.CloseWaitForm();
+            closeWaitingForm();
         }
 
         public void showAddEmployeeClem()

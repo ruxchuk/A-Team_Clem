@@ -140,10 +140,6 @@ namespace A_Team_Clem.Modules
 
         public void getListClem()
         {
-            //splashScreenManager1.ShowWaitForm();
-            //splashScreenManager1.SetWaitFormCaption("กำลังทำการค้นหา");
-            //splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
-
             readData();
             DataSet list = conDB.getListClem(fRMMain.addCustomerClem.clemType);
             if (list != null)
@@ -152,6 +148,7 @@ namespace A_Team_Clem.Modules
                 setGridView();
                 loadData();
             }
+            customerName.Focus();
         }
 
         private void loadData()
@@ -211,7 +208,9 @@ namespace A_Team_Clem.Modules
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            fRMMain.showWaitingForm("กำลังทำการค้นหา");
             getListClem();
+            fRMMain.closeWaitingForm();
         }
 
         private void customerName_KeyDown(object sender, KeyEventArgs e)
