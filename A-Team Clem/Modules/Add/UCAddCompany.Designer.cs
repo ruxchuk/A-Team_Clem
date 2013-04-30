@@ -137,7 +137,7 @@
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Location = new System.Drawing.Point(3, 54);
+            this.groupControl1.Location = new System.Drawing.Point(3, 60);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(540, 247);
             this.groupControl1.TabIndex = 22;
@@ -226,7 +226,7 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.Location = new System.Drawing.Point(206, 9);
+            this.labelControlPage.Location = new System.Drawing.Point(206, 15);
             this.labelControlPage.Name = "labelControlPage";
             this.labelControlPage.Size = new System.Drawing.Size(134, 39);
             this.labelControlPage.TabIndex = 21;

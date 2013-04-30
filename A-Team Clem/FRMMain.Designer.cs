@@ -171,7 +171,6 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "ใบส่งเคลม";
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.navBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -221,6 +220,7 @@
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "บริษัท";
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
@@ -238,6 +238,7 @@
             // 
             this.navBarItem8.Caption = "รายชื่อบริษัท";
             this.navBarItem8.Name = "navBarItem8";
+            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
             // 
             // navBarGroup5
             // 

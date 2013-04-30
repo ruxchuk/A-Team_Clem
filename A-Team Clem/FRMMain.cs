@@ -33,6 +33,7 @@ namespace A_Team_Clem
         public UCAddEmployee addEmployee;
         public UCAddCustomer addCustomer;
         public UCAddProductType addProductType;
+        public UCListCompany pageListCompany;
 
 
         private string pathFolderSave = @"Files\save";
@@ -58,6 +59,8 @@ namespace A_Team_Clem
             addEmployee = new UCAddEmployee(this) { Dock = DockStyle.Fill };
             addCustomer = new UCAddCustomer(this) { Dock = DockStyle.Fill };
             addProductType = new UCAddProductType(this) { Dock = DockStyle.Fill };
+
+            pageListCompany = new UCListCompany(this) { Dock = DockStyle.Fill };
         
 
 
@@ -147,6 +150,9 @@ namespace A_Team_Clem
                     break;
                 case "UCReportEmployeeClem":
                     showEmployeeClemReport();
+                    break;
+                case "UCListCompany":
+                    showListCompany();
                     break;
                 default:
                     break;
@@ -340,6 +346,21 @@ namespace A_Team_Clem
             closeWaitingForm();
         }
 
+        public void showListCompany()
+        {
+            oldPage = curPage;
+            curPage = "UCListCompany";
+
+            panelShowUserControl.Controls.Clear();
+            panelShowUserControl.Controls.Add(pageListCompany);
+            pageListCompany.nameTH.Focus();
+        }
+
+
+
+
+
+
         private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             showAddCustomer();
@@ -363,6 +384,11 @@ namespace A_Team_Clem
         private void navBarItem13_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             showAddProductType();
+        }
+
+        private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            showListCompany();
         }
 
     }
