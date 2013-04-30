@@ -38,13 +38,13 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.email = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.email = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
@@ -59,7 +59,7 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.Location = new System.Drawing.Point(249, 9);
+            this.labelControlPage.Location = new System.Drawing.Point(249, 15);
             this.labelControlPage.Name = "labelControlPage";
             this.labelControlPage.Size = new System.Drawing.Size(163, 39);
             this.labelControlPage.TabIndex = 1099;
@@ -77,7 +77,7 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(3, 167);
+            this.gridControl1.Location = new System.Drawing.Point(3, 173);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(654, 208);
@@ -119,7 +119,7 @@
             this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
             this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDelete.Location = new System.Drawing.Point(482, 168);
+            this.buttonDelete.Location = new System.Drawing.Point(482, 173);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(82, 32);
             this.buttonDelete.TabIndex = 1103;
@@ -148,11 +148,47 @@
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.buttonSearch);
             this.groupControl1.Controls.Add(this.buttonClear);
-            this.groupControl1.Location = new System.Drawing.Point(3, 54);
+            this.groupControl1.Location = new System.Drawing.Point(3, 56);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(654, 107);
             this.groupControl1.TabIndex = 1100;
             this.groupControl1.Text = "ค้นหารายการ";
+            // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(305, 68);
+            this.email.Name = "email";
+            this.email.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.email.Properties.Appearance.Options.UseFont = true;
+            this.email.Size = new System.Drawing.Size(152, 26);
+            this.email.TabIndex = 1079;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(71, 68);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Size = new System.Drawing.Size(152, 26);
+            this.textEdit1.TabIndex = 1078;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl2.Location = new System.Drawing.Point(5, 75);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(30, 19);
+            this.labelControl2.TabIndex = 1080;
+            this.labelControl2.Text = "ที่อยู่";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.labelControl4.Location = new System.Drawing.Point(241, 75);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(38, 19);
+            this.labelControl4.TabIndex = 1080;
+            this.labelControl4.Text = "email";
             // 
             // buttonSearch
             // 
@@ -187,48 +223,12 @@
             this.buttonPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPrint.BackgroundImage")));
             this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPrint.Location = new System.Drawing.Point(570, 168);
+            this.buttonPrint.Location = new System.Drawing.Point(570, 173);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(82, 32);
             this.buttonPrint.TabIndex = 1102;
             this.buttonPrint.UseVisualStyleBackColor = false;
             this.buttonPrint.Visible = false;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl2.Location = new System.Drawing.Point(5, 75);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(30, 19);
-            this.labelControl2.TabIndex = 1080;
-            this.labelControl2.Text = "ที่อยู่";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl4.Location = new System.Drawing.Point(241, 75);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(38, 19);
-            this.labelControl4.TabIndex = 1080;
-            this.labelControl4.Text = "email";
-            // 
-            // email
-            // 
-            this.email.Location = new System.Drawing.Point(305, 68);
-            this.email.Name = "email";
-            this.email.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.email.Properties.Appearance.Options.UseFont = true;
-            this.email.Size = new System.Drawing.Size(152, 26);
-            this.email.TabIndex = 1079;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(71, 68);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(152, 26);
-            this.textEdit1.TabIndex = 1078;
             // 
             // UCListCustomer
             // 
