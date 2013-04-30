@@ -158,6 +158,19 @@ namespace A_Team_Clem
             splashScreenManager1.CloseWaitForm();
         }
 
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FRMChooseSkin skin = new FRMChooseSkin(this, strSkinName, strPathSkin);
+            skin.ShowDialog();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Debug.WriteLine(conDB.pathFileDB);
+            FRMSettingConDB settingDB = new FRMSettingConDB(conDB.pathFileDB);
+            settingDB.ShowDialog();
+        }
+
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {            
             showAddCustomerClem();
@@ -176,19 +189,6 @@ namespace A_Team_Clem
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             showEmployeeClemReport();
-        }
-
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FRMChooseSkin skin = new FRMChooseSkin(this, strSkinName, strPathSkin);
-            skin.ShowDialog();
-        }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Debug.WriteLine(conDB.pathFileDB);
-            FRMSettingConDB settingDB = new FRMSettingConDB(conDB.pathFileDB);
-            settingDB.ShowDialog();
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -325,8 +325,18 @@ namespace A_Team_Clem
             curPage = "UCReportEmployeeClem";
             showWaitingForm("กำลังทำการโหลดข้อมูล");
 
+            if (employeeReport.serial.Text == "" &&
+                 employeeReport.productName.Text == "" &&
+                 employeeReport.inDocumentNumber.Text == "" &&
+                 employeeReport.status.Text == ""
+                 )
+            {
+                employeeReport.getListClem();
+            }
+
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(employeeReport);
+            employeeReport.serial.Focus();
             closeWaitingForm();
         }
 

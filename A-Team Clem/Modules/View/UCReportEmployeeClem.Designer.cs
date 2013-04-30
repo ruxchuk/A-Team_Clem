@@ -41,10 +41,6 @@
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.serial = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.phone = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.customerName = new DevExpress.XtraEditors.MRUEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.buttonPrint = new System.Windows.Forms.Button();
@@ -54,8 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -84,10 +78,6 @@
             this.groupControl1.Controls.Add(this.labelControl18);
             this.groupControl1.Controls.Add(this.serial);
             this.groupControl1.Controls.Add(this.labelControl11);
-            this.groupControl1.Controls.Add(this.phone);
-            this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.customerName);
-            this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(3, 60);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1034, 101);
@@ -101,7 +91,7 @@
             this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
             this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearch.Location = new System.Drawing.Point(947, 25);
+            this.buttonSearch.Location = new System.Drawing.Point(947, 64);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(82, 32);
             this.buttonSearch.TabIndex = 7;
@@ -115,7 +105,7 @@
             this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
             this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClear.Location = new System.Drawing.Point(947, 63);
+            this.buttonClear.Location = new System.Drawing.Point(859, 63);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(82, 32);
             this.buttonClear.TabIndex = 8;
@@ -131,19 +121,18 @@
             this.status.FormattingEnabled = true;
             this.status.Items.AddRange(new object[] {
             "",
-            "รับเคลม",
             "ส่งเคลม",
             "สำเร็จ"});
-            this.status.Location = new System.Drawing.Point(718, 60);
+            this.status.Location = new System.Drawing.Point(839, 30);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(169, 27);
+            this.status.Size = new System.Drawing.Size(141, 27);
             this.status.TabIndex = 6;
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl6.Location = new System.Drawing.Point(585, 68);
+            this.labelControl6.Location = new System.Drawing.Point(789, 38);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(44, 19);
             this.labelControl6.TabIndex = 1092;
@@ -153,7 +142,7 @@
             // 
             this.productName.AllowDrop = true;
             this.productName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.productName.Location = new System.Drawing.Point(374, 61);
+            this.productName.Location = new System.Drawing.Point(303, 31);
             this.productName.Name = "productName";
             this.productName.Properties.AllowRemoveMRUItems = false;
             this.productName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -163,14 +152,14 @@
             this.productName.Properties.CaseSensitiveSearch = true;
             this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productName.Properties.Sorted = true;
-            this.productName.Size = new System.Drawing.Size(188, 26);
+            this.productName.Size = new System.Drawing.Size(141, 26);
             this.productName.TabIndex = 4;
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl4.Location = new System.Drawing.Point(310, 68);
+            this.labelControl4.Location = new System.Drawing.Point(239, 38);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(58, 19);
             this.labelControl4.TabIndex = 1090;
@@ -180,18 +169,18 @@
             // 
             this.inDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inDocumentNumber.EditValue = "";
-            this.inDocumentNumber.Location = new System.Drawing.Point(718, 25);
+            this.inDocumentNumber.Location = new System.Drawing.Point(616, 30);
             this.inDocumentNumber.Name = "inDocumentNumber";
             this.inDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.inDocumentNumber.Properties.Appearance.Options.UseFont = true;
-            this.inDocumentNumber.Size = new System.Drawing.Size(169, 26);
+            this.inDocumentNumber.Size = new System.Drawing.Size(141, 26);
             this.inDocumentNumber.TabIndex = 5;
             // 
             // labelControl18
             // 
             this.labelControl18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl18.Location = new System.Drawing.Point(583, 32);
+            this.labelControl18.Location = new System.Drawing.Point(481, 38);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(129, 19);
             this.labelControl18.TabIndex = 1088;
@@ -200,69 +189,22 @@
             // serial
             // 
             this.serial.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.serial.Location = new System.Drawing.Point(374, 25);
+            this.serial.Location = new System.Drawing.Point(54, 31);
             this.serial.Name = "serial";
             this.serial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.serial.Properties.Appearance.Options.UseFont = true;
-            this.serial.Size = new System.Drawing.Size(188, 26);
+            this.serial.Size = new System.Drawing.Size(141, 26);
             this.serial.TabIndex = 3;
             // 
             // labelControl11
             // 
             this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl11.Location = new System.Drawing.Point(310, 32);
+            this.labelControl11.Location = new System.Drawing.Point(9, 38);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(39, 19);
             this.labelControl11.TabIndex = 1086;
             this.labelControl11.Text = "Serial";
-            // 
-            // phone
-            // 
-            this.phone.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.phone.Location = new System.Drawing.Point(87, 61);
-            this.phone.Name = "phone";
-            this.phone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.phone.Properties.Appearance.Options.UseFont = true;
-            this.phone.Size = new System.Drawing.Size(188, 26);
-            this.phone.TabIndex = 2;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl3.Location = new System.Drawing.Point(23, 68);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(58, 19);
-            this.labelControl3.TabIndex = 1069;
-            this.labelControl3.Text = "เบอร์โทร";
-            // 
-            // customerName
-            // 
-            this.customerName.AllowDrop = true;
-            this.customerName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.customerName.Location = new System.Drawing.Point(86, 25);
-            this.customerName.Name = "customerName";
-            this.customerName.Properties.AllowRemoveMRUItems = false;
-            this.customerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.customerName.Properties.Appearance.Options.UseFont = true;
-            this.customerName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.customerName.Properties.CaseSensitiveSearch = true;
-            this.customerName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.customerName.Properties.Sorted = true;
-            this.customerName.Size = new System.Drawing.Size(188, 26);
-            this.customerName.TabIndex = 1;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.labelControl1.Location = new System.Drawing.Point(23, 32);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(57, 19);
-            this.labelControl1.TabIndex = 1071;
-            this.labelControl1.Text = "ชื่อลูกค้า";
             // 
             // gridControl1
             // 
@@ -335,8 +277,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serial.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -358,10 +298,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl18;
         public DevExpress.XtraEditors.TextEdit serial;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        public DevExpress.XtraEditors.TextEdit phone;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        public DevExpress.XtraEditors.MRUEdit customerName;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Button buttonPrint;

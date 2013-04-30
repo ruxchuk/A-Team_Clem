@@ -33,8 +33,8 @@ namespace A_Team_Clem.Modules
 
         public void readData()
         {
-            conDB.name_th = customerName.Text;
-            conDB.phone = phone.Text;
+            //conDB.name_th = customerName.Text;
+            //conDB.phone = phone.Text;
             conDB.serial = serial.Text;
             conDB.product_name_th = productName.Text;
             conDB.in_document_number_string = inDocumentNumber.Text;
@@ -44,13 +44,13 @@ namespace A_Team_Clem.Modules
 
         private void clearData()
         {
-            customerName.Text = "";
-            phone.Text = "";
+            //customerName.Text = "";
+            //phone.Text = "";
             serial.Text = "";
             productName.Text = "";
             inDocumentNumber.Text = "";
             status.SelectedIndex = -1;
-            customerName.Focus();
+            serial.Focus();
         }
 
         private void setGridView()
@@ -157,13 +157,13 @@ namespace A_Team_Clem.Modules
                 setGridView();
                 loadData();
             }
-            customerName.Focus();
+            serial.Focus();
         }
 
         private void loadData()
         {
             checkAddMRU = false;
-            customerName.Properties.Items.AddRange(fRMMain.addCustomerClem.listCustomer[1]);
+            //customerName.Properties.Items.AddRange(fRMMain.addCustomerClem.listCustomer[1]);
             productName.Properties.Items.AddRange(fRMMain.addCustomerClem.listProduct[1]);
             checkAddMRU = true;
         }
