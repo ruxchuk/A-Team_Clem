@@ -138,58 +138,58 @@
       <DependentUpon>FRMSettingConDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\AutoHeightHelper.cs" />
-    <Compile Include="Modules\UCAddCompany.cs">
+    <Compile Include="Modules\Add\UCAddCompany.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCAddCompany.Designer.cs">
+    <Compile Include="Modules\Add\UCAddCompany.Designer.cs">
       <DependentUpon>UCAddCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCAddCustomer.cs">
+    <Compile Include="Modules\Add\UCAddCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCAddCustomer.Designer.cs">
+    <Compile Include="Modules\Add\UCAddCustomer.Designer.cs">
       <DependentUpon>UCAddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCAddEmployee.cs">
+    <Compile Include="Modules\Add\UCAddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCAddEmployee.Designer.cs">
+    <Compile Include="Modules\Add\UCAddEmployee.Designer.cs">
       <DependentUpon>UCAddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCAddProduct.cs">
+    <Compile Include="Modules\Add\UCAddProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCAddProduct.Designer.cs">
+    <Compile Include="Modules\Add\UCAddProduct.Designer.cs">
       <DependentUpon>UCAddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCAddProductType.cs">
+    <Compile Include="Modules\Add\UCAddProductType.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCAddProductType.Designer.cs">
+    <Compile Include="Modules\Add\UCAddProductType.Designer.cs">
       <DependentUpon>UCAddProductType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCAddCustomerClem.cs">
+    <Compile Include="Modules\Add\UCAddCustomerClem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCAddCustomerClem.Designer.cs">
+    <Compile Include="Modules\Add\UCAddCustomerClem.Designer.cs">
       <DependentUpon>UCAddCustomerClem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCAddEmployeeClem.cs">
+    <Compile Include="Modules\Add\UCAddEmployeeClem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCAddEmployeeClem.Designer.cs">
+    <Compile Include="Modules\Add\UCAddEmployeeClem.Designer.cs">
       <DependentUpon>UCAddEmployeeClem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCReportCustomerClem.cs">
+    <Compile Include="Modules\View\UCReportCustomerClem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCReportCustomerClem.Designer.cs">
+    <Compile Include="Modules\View\UCReportCustomerClem.Designer.cs">
       <DependentUpon>UCReportCustomerClem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCReportEmployeeClem.cs">
+    <Compile Include="Modules\View\UCReportEmployeeClem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\UCReportEmployeeClem.Designer.cs">
+    <Compile Include="Modules\View\UCReportEmployeeClem.Designer.cs">
       <DependentUpon>UCReportEmployeeClem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -227,31 +227,31 @@
     <EmbeddedResource Include="FRMSettingConDB.resx">
       <DependentUpon>FRMSettingConDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCAddCompany.resx">
+    <EmbeddedResource Include="Modules\Add\UCAddCompany.resx">
       <DependentUpon>UCAddCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCAddCustomer.resx">
+    <EmbeddedResource Include="Modules\Add\UCAddCustomer.resx">
       <DependentUpon>UCAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCAddEmployee.resx">
+    <EmbeddedResource Include="Modules\Add\UCAddEmployee.resx">
       <DependentUpon>UCAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCAddProduct.resx">
+    <EmbeddedResource Include="Modules\Add\UCAddProduct.resx">
       <DependentUpon>UCAddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCAddProductType.resx">
+    <EmbeddedResource Include="Modules\Add\UCAddProductType.resx">
       <DependentUpon>UCAddProductType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCAddCustomerClem.resx">
+    <EmbeddedResource Include="Modules\Add\UCAddCustomerClem.resx">
       <DependentUpon>UCAddCustomerClem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCAddEmployeeClem.resx">
+    <EmbeddedResource Include="Modules\Add\UCAddEmployeeClem.resx">
       <DependentUpon>UCAddEmployeeClem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCReportCustomerClem.resx">
+    <EmbeddedResource Include="Modules\View\UCReportCustomerClem.resx">
       <DependentUpon>UCReportCustomerClem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCReportEmployeeClem.resx">
+    <EmbeddedResource Include="Modules\View\UCReportEmployeeClem.resx">
       <DependentUpon>UCReportEmployeeClem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

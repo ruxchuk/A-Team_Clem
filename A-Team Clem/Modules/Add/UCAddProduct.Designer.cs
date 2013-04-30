@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAddProduct));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.value = new DevExpress.XtraEditors.MRUEdit();
             this.buttonClear = new System.Windows.Forms.Button();
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -43,17 +44,18 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.value = new DevExpress.XtraEditors.MRUEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.price.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.groupControl1.Appearance.Options.UseBackColor = true;
             this.groupControl1.Controls.Add(this.buttonCancel);
             this.groupControl1.Controls.Add(this.value);
             this.groupControl1.Controls.Add(this.buttonClear);
@@ -86,6 +88,28 @@
             this.buttonCancel.TabIndex = 1091;
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.cancel_Click);
+            // 
+            // value
+            // 
+            this.value.AllowDrop = true;
+            this.value.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.value.Location = new System.Drawing.Point(365, 84);
+            this.value.Name = "value";
+            this.value.Properties.AllowRemoveMRUItems = false;
+            this.value.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.value.Properties.Appearance.Options.UseFont = true;
+            this.value.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.value.Properties.CaseSensitiveSearch = true;
+            this.value.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.value.Properties.Items.AddRange(new object[] {
+            "กล่อง",
+            "ชิ้น",
+            "อัน"});
+            this.value.Properties.Sorted = true;
+            this.value.Size = new System.Drawing.Size(152, 26);
+            this.value.TabIndex = 1079;
+            this.value.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // buttonClear
             // 
@@ -211,30 +235,10 @@
             this.labelControlPage.TabIndex = 21;
             this.labelControlPage.Text = "เพิ่มสินค้า";
             // 
-            // value
-            // 
-            this.value.AllowDrop = true;
-            this.value.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.value.Location = new System.Drawing.Point(365, 84);
-            this.value.Name = "value";
-            this.value.Properties.AllowRemoveMRUItems = false;
-            this.value.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.value.Properties.Appearance.Options.UseFont = true;
-            this.value.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.value.Properties.CaseSensitiveSearch = true;
-            this.value.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.value.Properties.Items.AddRange(new object[] {
-            "กล่อง",
-            "ชิ้น",
-            "อัน"});
-            this.value.Properties.Sorted = true;
-            this.value.Size = new System.Drawing.Size(152, 26);
-            this.value.TabIndex = 1079;
-            this.value.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
-            // 
             // UCAddProduct
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl1);
@@ -244,10 +248,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.price.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.value.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

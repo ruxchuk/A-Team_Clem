@@ -652,7 +652,7 @@
             this.panelWarranty.Location = new System.Drawing.Point(4, 104);
             this.panelWarranty.Name = "panelWarranty";
             this.panelWarranty.Size = new System.Drawing.Size(325, 46);
-            this.panelWarranty.TabIndex = 1078;
+            this.panelWarranty.TabIndex = 4;
             this.panelWarranty.Visible = false;
             // 
             // textEditChargebacks
@@ -664,7 +664,7 @@
             this.textEditChargebacks.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textEditChargebacks.Properties.Appearance.Options.UseFont = true;
             this.textEditChargebacks.Size = new System.Drawing.Size(111, 26);
-            this.textEditChargebacks.TabIndex = 1;
+            this.textEditChargebacks.TabIndex = 4;
             this.textEditChargebacks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl16
@@ -730,6 +730,7 @@
             this.radioButtonOutWarranty.Text = "นอกประกัน";
             this.radioButtonOutWarranty.UseVisualStyleBackColor = true;
             this.radioButtonOutWarranty.Click += new System.EventHandler(this.radioButtonOutWarranty_CheckedChanged);
+            this.radioButtonOutWarranty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // equipment
             // 

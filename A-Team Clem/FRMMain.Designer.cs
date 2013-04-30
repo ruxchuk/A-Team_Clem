@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMMain));
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -56,7 +55,7 @@
             this.panelShowUserControl = new DevExpress.XtraEditors.PanelControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
@@ -133,11 +132,10 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 57);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 135;
-            this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
             this.navBarControl1.Size = new System.Drawing.Size(135, 600);
+            this.navBarControl1.StoreDefaultPaintStyleName = true;
             this.navBarControl1.TabIndex = 9;
             this.navBarControl1.Text = "navBarControl1";
-            this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinExplorerBarViewInfoRegistrator("Office 2010 Blue");
             // 
             // navBarGroup1
             // 
@@ -306,7 +304,7 @@
             this.panelShowUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelShowUserControl.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelShowUserControl.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.panelShowUserControl.Appearance.Options.UseBackColor = true;
             this.panelShowUserControl.Location = new System.Drawing.Point(5, 5);
             this.panelShowUserControl.Name = "panelShowUserControl";
@@ -461,7 +459,7 @@
             // 
             // FRMMain
             // 
-            this.Appearance.BackColor = System.Drawing.Color.LightGray;
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -472,7 +470,6 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.LookAndFeel.SkinName = "Office 2010 Blue";
             this.MinimumSize = new System.Drawing.Size(1225, 700);
             this.Name = "FRMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
