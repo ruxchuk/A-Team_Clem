@@ -180,6 +180,18 @@
     <Compile Include="Modules\Add\UCAddEmployeeClem.Designer.cs">
       <DependentUpon>UCAddEmployeeClem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\View\UCListEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\View\UCListEmployee.Designer.cs">
+      <DependentUpon>UCListEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\View\UCListProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\View\UCListProduct.Designer.cs">
+      <DependentUpon>UCListProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\View\UCListProductType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Add\UCAddEmployeeClem.resx">
       <DependentUpon>UCAddEmployeeClem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\View\UCListEmployee.resx">
+      <DependentUpon>UCListEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\View\UCListProduct.resx">
+      <DependentUpon>UCListProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\View\UCListProductType.resx">
       <DependentUpon>UCListProductType.cs</DependentUpon>

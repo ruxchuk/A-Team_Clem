@@ -220,7 +220,6 @@
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "บริษัท";
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Large;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
