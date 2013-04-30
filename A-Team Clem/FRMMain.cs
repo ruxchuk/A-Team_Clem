@@ -152,6 +152,51 @@ namespace A_Team_Clem
             }
         }
 
+        //public void focusInputCustomerClem()
+        //{
+        //    switch (oldPage)
+        //    {
+        //        case "UCAddCompany":
+        //            addCustomerClem.companyName.Focus();
+        //            break;
+        //        case "UCAddCustomer":
+        //            addCustomerClem.customerName.Focus();
+        //            break;
+        //        case "UCAddEmployee":
+        //            addCustomerClem.employeeClem.Focus();
+        //            break;
+        //        case "UCAddProduct":
+        //            addCustomerClem.productName.Focus();
+        //            break;
+        //        case "UCAddProductType":
+        //            addCustomerClem.productType.Focus();
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
+
+        //public void focusInputEmployeeClem()
+        //{
+        //    switch (oldPage)
+        //    {
+        //        case "UCAddCompany":
+        //            addEmployeeClem.companyName.Focus();
+        //            break;
+        //        case "UCAddEmployee":
+        //            addEmployeeClem.employeeClem.Focus();
+        //            break;
+        //        case "UCAddProduct":
+        //            addEmployeeClem.productName.Focus();
+        //            break;
+        //        case "UCAddProductType":
+        //            addEmployeeClem.productType.Focus();
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
+
         public void closeWaitingForm()
         {
             splashScreenManager1.CloseWaitForm();
@@ -248,7 +293,7 @@ namespace A_Team_Clem
         public void showAddEmployeeClem()
         {
             oldPage = curPage;
-            curPage = "UCAddEmployee";
+            curPage = "UCAddEmployeeClem";
 
             addEmployeeClem.loadAllListData();
             panelShowUserControl.Controls.Clear();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAddCompany));
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
             this.richTextBoxAddress = new System.Windows.Forms.RichTextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -36,13 +37,14 @@
             this.nameEng = new DevExpress.XtraEditors.TextEdit();
             this.nameTH = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.email = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTH.Properties)).BeginInit();
@@ -69,6 +71,7 @@
             this.richTextBoxAddress.Size = new System.Drawing.Size(152, 96);
             this.richTextBoxAddress.TabIndex = 3;
             this.richTextBoxAddress.Text = "";
+            this.richTextBoxAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // labelControl1
             // 
@@ -96,6 +99,7 @@
             this.phone.Properties.Appearance.Options.UseFont = true;
             this.phone.Size = new System.Drawing.Size(152, 26);
             this.phone.TabIndex = 4;
+            this.phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // nameEng
             // 
@@ -105,6 +109,7 @@
             this.nameEng.Properties.Appearance.Options.UseFont = true;
             this.nameEng.Size = new System.Drawing.Size(152, 26);
             this.nameEng.TabIndex = 2;
+            this.nameEng.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // nameTH
             // 
@@ -114,10 +119,13 @@
             this.nameTH.Properties.Appearance.Options.UseFont = true;
             this.nameTH.Size = new System.Drawing.Size(152, 26);
             this.nameTH.TabIndex = 1;
+            this.nameTH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.cancel);
+            this.groupControl1.Controls.Add(this.buttonCancel);
+            this.groupControl1.Controls.Add(this.buttonClear);
+            this.groupControl1.Controls.Add(this.buttonSave);
             this.groupControl1.Controls.Add(this.labelControl59);
             this.groupControl1.Controls.Add(this.richTextBoxAddress);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -129,12 +137,53 @@
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.buttonAdd);
             this.groupControl1.Location = new System.Drawing.Point(3, 54);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(540, 247);
             this.groupControl1.TabIndex = 22;
             this.groupControl1.Text = "ข้อมูลบริษัท";
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.Location = new System.Drawing.Point(278, 208);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
+            this.buttonCancel.TabIndex = 1082;
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.cancel_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
+            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.Location = new System.Drawing.Point(366, 208);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(82, 32);
+            this.buttonClear.TabIndex = 1081;
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSave.BackgroundImage")));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.Location = new System.Drawing.Point(454, 208);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(82, 32);
+            this.buttonSave.TabIndex = 1080;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
             // email
             // 
@@ -144,6 +193,7 @@
             this.email.Properties.Appearance.Options.UseFont = true;
             this.email.Size = new System.Drawing.Size(152, 26);
             this.email.TabIndex = 5;
+            this.email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl5
             // 
@@ -159,7 +209,7 @@
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.labelControl4.Location = new System.Drawing.Point(278, 93);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(37, 19);
+            this.labelControl4.Size = new System.Drawing.Size(38, 19);
             this.labelControl4.TabIndex = 1075;
             this.labelControl4.Text = "email";
             // 
@@ -172,17 +222,6 @@
             this.labelControl3.TabIndex = 1075;
             this.labelControl3.Text = "เบอร์โทร";
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Appearance.Options.UseFont = true;
-            this.buttonAdd.Location = new System.Drawing.Point(385, 209);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(69, 33);
-            this.buttonAdd.TabIndex = 6;
-            this.buttonAdd.Text = "เพิ่ม";
-            this.buttonAdd.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
-            // 
             // labelControlPage
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -192,17 +231,6 @@
             this.labelControlPage.Size = new System.Drawing.Size(134, 39);
             this.labelControlPage.TabIndex = 21;
             this.labelControlPage.Text = "เพิ่มบริษัท";
-            // 
-            // cancel
-            // 
-            this.cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Appearance.Options.UseFont = true;
-            this.cancel.Location = new System.Drawing.Point(460, 209);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(69, 33);
-            this.cancel.TabIndex = 1079;
-            this.cancel.Text = "ยกเลิก";
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // UCAddCompany
             // 
@@ -238,9 +266,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.LabelControl labelControlPage;
-        private DevExpress.XtraEditors.SimpleButton cancel;
         public DevExpress.XtraEditors.TextEdit nameTH;
+        public System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

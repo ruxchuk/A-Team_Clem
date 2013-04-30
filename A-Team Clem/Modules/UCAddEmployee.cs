@@ -57,6 +57,17 @@ namespace A_Team_Clem.Modules
             conDB.employee_date_stamp = convertDT.convert(DateTime.Now);
         }
 
+        private void clearData()
+        {
+            nameTH.Text = "";
+            nameEng.Text = "";
+            nickname.Text = "";
+            richTextBoxAddress.Text = "";
+            phone.Text = "";
+            dtStart.DateTime = DateTime.Now;
+            nameTH.Focus();
+        }
+
         private void add_Click(object sender, EventArgs e)
         {
             if (!validateForm())
@@ -69,19 +80,61 @@ namespace A_Team_Clem.Modules
             if (employeeID == 0)
             {
                 MessageBox.Show("ชื่อพนักงาน \"" + nameTH.Text + "\" มีการเพิ่มเข้ามาแล้ว\nกรุณาตรวจสอบ");
+                nameTH.Focus();
             }
             else
             {
-                fRMMain.showAddCustomerClem();
-                fRMMain.addCustomerClem.employeeReceiveClem.Text = nameTH.Text;
-                fRMMain.addCustomerClem.employeeReceiveClem.Focus();
+                clearData();
+                if (fRMMain.oldPage == "UCAddCustomerClem")
+                {
+                    fRMMain.addCustomerClem.employeeClem.Text = nameTH.Text;
+                    fRMMain.addCustomerClem.employeeClem.Focus();
+                }
+                else if (fRMMain.oldPage == "UCAddEmployeeClem")
+                {
+                    fRMMain.addEmployeeClem.employeeClem.Text = nameTH.Text;
+                    fRMMain.addEmployeeClem.employeeClem.Focus();
+                }
+                fRMMain.changPage();
             }
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
-            fRMMain.showAddCustomerClem();
-            fRMMain.addCustomerClem.employeeReceiveClem.Focus();
+            if (fRMMain.oldPage == "UCAddCustomerClem")
+            {
+                fRMMain.addCustomerClem.employeeClem.Focus();
+            }
+            else if (fRMMain.oldPage == "UCAddEmployeeClem")
+            {
+                fRMMain.addEmployeeClem.employeeClem.Focus();
+            }
+            fRMMain.changPage();
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            clearData();
+        }
+
+        private void keyDownNextTab(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                SendKeys.Send("{Tab}");
+            }
+        }
+
+        Keys oldKeyDown;
+        private void detail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return && oldKeyDown == Keys.Return)
+            {
+                SendKeys.Send("{Tab}");
+                oldKeyDown = Keys.D0;
+            }
+            else
+                oldKeyDown = e.KeyCode;
         }
     }
 }

@@ -180,12 +180,6 @@
     <Compile Include="Modules\UCAddEmployeeClem.Designer.cs">
       <DependentUpon>UCAddEmployeeClem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\UCEditCustomerClem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modules\UCEditCustomerClem.Designer.cs">
-      <DependentUpon>UCEditCustomerClem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modules\UCReportCustomerClem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,9 +247,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\UCAddEmployeeClem.resx">
       <DependentUpon>UCAddEmployeeClem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\UCEditCustomerClem.resx">
-      <DependentUpon>UCEditCustomerClem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\UCReportCustomerClem.resx">
       <DependentUpon>UCReportCustomerClem.cs</DependentUpon>

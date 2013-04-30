@@ -84,6 +84,7 @@ namespace A_Team_Clem
         public string employee_nickname = "";
         public string employee_ddress = "";
         public string employee_phone = "";
+        public string employee_email = "";
         public DateTime employee_date_start;
         public DateTime employee_date_create;
         public DateTime employee_date_stamp;
@@ -628,6 +629,7 @@ namespace A_Team_Clem
                     cmd.Parameters.AddWithValue("@s_nickname", employee_nickname);
                     cmd.Parameters.AddWithValue("@t_address", employee_ddress);
                     cmd.Parameters.AddWithValue("@s_phone", employee_phone);
+                    cmd.Parameters.AddWithValue("@s_email", employee_email);
                     cmd.Parameters.AddWithValue("@dt_date_start", employee_date_start);
                     cmd.Parameters.AddWithValue("@dt_date_create", employee_date_create);
                     cmd.Parameters.AddWithValue("@dt_date_stamp", employee_date_stamp);

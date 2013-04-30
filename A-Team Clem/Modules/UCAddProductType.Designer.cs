@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAddProductType));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.nameEng = new DevExpress.XtraEditors.TextEdit();
             this.nameTH = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nameEng.Properties)).BeginInit();
@@ -45,18 +47,61 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.buttonCancel);
+            this.groupControl1.Controls.Add(this.buttonClear);
+            this.groupControl1.Controls.Add(this.buttonSave);
             this.groupControl1.Controls.Add(this.labelControl59);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.nameEng);
             this.groupControl1.Controls.Add(this.nameTH);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.cancel);
-            this.groupControl1.Controls.Add(this.buttonAdd);
             this.groupControl1.Location = new System.Drawing.Point(3, 54);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(416, 188);
+            this.groupControl1.Size = new System.Drawing.Size(416, 172);
             this.groupControl1.TabIndex = 24;
             this.groupControl1.Text = "ข้อมูลชนิดสินค้า";
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.Location = new System.Drawing.Point(153, 135);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
+            this.buttonCancel.TabIndex = 1094;
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.cancel_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
+            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.Location = new System.Drawing.Point(241, 135);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(82, 32);
+            this.buttonClear.TabIndex = 1093;
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSave.BackgroundImage")));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.Location = new System.Drawing.Point(329, 135);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(82, 32);
+            this.buttonSave.TabIndex = 1092;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelControl59
             // 
@@ -85,6 +130,7 @@
             this.nameEng.Properties.Appearance.Options.UseFont = true;
             this.nameEng.Size = new System.Drawing.Size(152, 26);
             this.nameEng.TabIndex = 2;
+            this.nameEng.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // nameTH
             // 
@@ -94,6 +140,7 @@
             this.nameTH.Properties.Appearance.Options.UseFont = true;
             this.nameTH.Size = new System.Drawing.Size(152, 26);
             this.nameTH.TabIndex = 1;
+            this.nameTH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl5
             // 
@@ -103,17 +150,6 @@
             this.labelControl5.Size = new System.Drawing.Size(52, 19);
             this.labelControl5.TabIndex = 1075;
             this.labelControl5.Text = "ชื่อ Eng";
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Appearance.Options.UseFont = true;
-            this.buttonAdd.Location = new System.Drawing.Point(267, 150);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(69, 33);
-            this.buttonAdd.TabIndex = 6;
-            this.buttonAdd.Text = "เพิ่ม";
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelControlPage
             // 
@@ -125,17 +161,6 @@
             this.labelControlPage.TabIndex = 23;
             this.labelControlPage.Text = "เพิ่มชนิดสินค้า";
             // 
-            // cancel
-            // 
-            this.cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Appearance.Options.UseFont = true;
-            this.cancel.Location = new System.Drawing.Point(342, 150);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(69, 33);
-            this.cancel.TabIndex = 6;
-            this.cancel.Text = "ยกเลิก";
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
-            // 
             // UCAddProductType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,7 +168,7 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControlPage);
             this.Name = "UCAddProductType";
-            this.Size = new System.Drawing.Size(423, 248);
+            this.Size = new System.Drawing.Size(423, 229);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -161,9 +186,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit nameEng;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.LabelControl labelControlPage;
-        private DevExpress.XtraEditors.SimpleButton cancel;
         public DevExpress.XtraEditors.TextEdit nameTH;
+        public System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonSave;
     }
 }
