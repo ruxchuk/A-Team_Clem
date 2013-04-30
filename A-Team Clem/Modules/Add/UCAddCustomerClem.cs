@@ -298,7 +298,7 @@ namespace A_Team_Clem.Modules
             conDB.equipment = equipment.Text.Trim();
             conDB.detail = detail.Text.Trim();
 
-            if (fRMMain.typeOfClemProduct == "add")
+            if (fRMMain.typeOfCustomerClem == "add")
             {
                 conDB.in_document_number_id = conDB.getNewIDClemOfMonth(clemType);
             }
@@ -335,20 +335,19 @@ namespace A_Team_Clem.Modules
             fRMMain.showWaitingForm("กำลังทำการบันทึกข้อมูล");
             readData();
             bool resultAddClem;
-            if (fRMMain.typeOfClemProduct == "add")
+            if (fRMMain.typeOfCustomerClem == "add")
             {
                 resultAddClem = conDB.addClem();
             }
             else
             {
                 resultAddClem = conDB.updateClemProduct(clem_id);
-                Debug.WriteLine("updated");
             }
             fRMMain.closeWaitingForm();
             if (resultAddClem)
             {
                 clearData();
-                fRMMain.typeOfClemProduct = "add";
+                fRMMain.typeOfCustomerClem = "add";
                 //
             }
             else
@@ -451,10 +450,12 @@ namespace A_Team_Clem.Modules
                 return;
             }
 
+            fRMMain.showWaitingForm("กำลังทำการเปิดหน้าปริ้น");
             ReportPrintTool pt = new ReportPrintTool(new MiniReport());
 
             // Get the Print Tool's printing system.
             PrintingSystemBase ps = pt.PrintingSystem;
+            fRMMain.closeWaitingForm();
 
             // Show a report's Print Preview.
             pt.ShowPreviewDialog();
@@ -502,7 +503,7 @@ namespace A_Team_Clem.Modules
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            fRMMain.typeOfClemProduct = "add";
+            fRMMain.typeOfCustomerClem = "add";
             labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
             clem_id = 0;
             clearData();
@@ -514,7 +515,7 @@ namespace A_Team_Clem.Modules
 
         private void buttonCopy_Click(object sender, EventArgs e)
         {
-            fRMMain.typeOfClemProduct = "add";
+            fRMMain.typeOfCustomerClem = "add";
             labelControlPage.Text = "เพิ่มใบรับเคลม/ใบส่งเคลมสินค้า";
             inDocumentNumber.Text = conDB.getNewIDDocumentNumber(clemType);
             buttonCancel.Visible = false;

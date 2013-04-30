@@ -66,9 +66,9 @@
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControlPage.Location = new System.Drawing.Point(363, 15);
             this.labelControlPage.Name = "labelControlPage";
-            this.labelControlPage.Size = new System.Drawing.Size(314, 39);
+            this.labelControlPage.Size = new System.Drawing.Size(315, 39);
             this.labelControlPage.TabIndex = 3;
-            this.labelControlPage.Text = "รายงานใบรับเคลมสินค้า";
+            this.labelControlPage.Text = "รายงานใบส่งเคลมสินค้า";
             // 
             // groupControl1
             // 
@@ -106,6 +106,7 @@
             this.buttonSearch.Size = new System.Drawing.Size(82, 32);
             this.buttonSearch.TabIndex = 7;
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonClear
             // 
@@ -119,6 +120,7 @@
             this.buttonClear.Size = new System.Drawing.Size(82, 32);
             this.buttonClear.TabIndex = 8;
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // status
             // 
@@ -281,6 +283,8 @@
             this.gridView1.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
             // 
             // buttonPrint
             // 
@@ -316,14 +320,15 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelControlPage);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.labelControlPage);
             this.Controls.Add(this.gridControl1);
             this.MinimumSize = new System.Drawing.Size(1040, 507);
             this.Name = "UCReportEmployeeClem";
             this.Size = new System.Drawing.Size(1040, 507);
+            this.Load += new System.EventHandler(this.UCReportCustomerClem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

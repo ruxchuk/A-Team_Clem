@@ -297,6 +297,7 @@
             this.buttonCopy.TabIndex = 21;
             this.buttonCopy.UseVisualStyleBackColor = false;
             this.buttonCopy.Visible = false;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
             // 
             // buttonCancel
             // 
@@ -311,6 +312,7 @@
             this.buttonCancel.TabIndex = 1085;
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonPrint
             // 
@@ -325,6 +327,7 @@
             this.buttonPrint.TabIndex = 19;
             this.buttonPrint.UseVisualStyleBackColor = false;
             this.buttonPrint.Visible = false;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonDelete
             // 
@@ -352,6 +355,7 @@
             this.buttonClear.Size = new System.Drawing.Size(82, 32);
             this.buttonClear.TabIndex = 17;
             this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonSave
             // 
@@ -612,6 +616,7 @@
             this.companyName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.companyName.Size = new System.Drawing.Size(188, 26);
             this.companyName.TabIndex = 3;
+            this.companyName.SelectedIndexChanged += new System.EventHandler(this.companyName_SelectedIndexChanged);
             this.companyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl62
@@ -666,6 +671,7 @@
             this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productName.Size = new System.Drawing.Size(188, 26);
             this.productName.TabIndex = 2;
+            this.productName.SelectedIndexChanged += new System.EventHandler(this.productName_SelectedIndexChanged);
             this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // serial
@@ -756,19 +762,18 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.labelControlPage.Location = new System.Drawing.Point(278, 15);
             this.labelControlPage.Name = "labelControlPage";
             this.labelControlPage.Size = new System.Drawing.Size(267, 39);
-            this.labelControlPage.TabIndex = 4;
+            this.labelControlPage.TabIndex = 7;
             this.labelControlPage.Text = "เพิ่มใบส่งเคลมสินค้า";
             // 
             // UCAddEmployeeClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControlPage);
+            this.Controls.Add(this.panelControl1);
             this.Name = "UCAddEmployeeClem";
             this.Size = new System.Drawing.Size(822, 562);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -847,7 +852,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl67;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControlPage;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         public DevExpress.XtraEditors.TextEdit serial;
         private System.Windows.Forms.ComboBox status;
@@ -860,6 +864,7 @@
         public System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonSave;
+        public DevExpress.XtraEditors.LabelControl labelControlPage;
 
     }
 }

@@ -206,12 +206,6 @@
     <Compile Include="XtraForm1.Designer.cs">
       <DependentUpon>XtraForm1.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraForm3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XtraForm3.Designer.cs">
-      <DependentUpon>XtraForm3.cs</DependentUpon>
-    </Compile>
     <Compile Include="MiniReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -270,9 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XtraForm3.resx">
-      <DependentUpon>XtraForm3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MiniReport.resx">
       <DependentUpon>MiniReport.cs</DependentUpon>

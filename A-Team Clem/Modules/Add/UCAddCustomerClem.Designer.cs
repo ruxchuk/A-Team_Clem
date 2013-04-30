@@ -167,7 +167,6 @@
             // 
             this.labelControlPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControlPage.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlPage.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.labelControlPage.Location = new System.Drawing.Point(323, 15);
             this.labelControlPage.Name = "labelControlPage";
             this.labelControlPage.Size = new System.Drawing.Size(417, 39);
@@ -1335,6 +1334,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phone.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

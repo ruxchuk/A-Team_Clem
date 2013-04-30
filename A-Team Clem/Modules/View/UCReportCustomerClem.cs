@@ -92,6 +92,8 @@ namespace A_Team_Clem.Modules
             gridView1.Columns["date_stamp"].DisplayFormat.FormatType = FormatType.DateTime;
             gridView1.Columns["date_stamp"].DisplayFormat.FormatString = fRMMain.formatDate;
 
+            gridView1.Columns["in_document_number_id"].Visible = false;
+
 
             gridView1.OptionsView.ShowFooter = true;
             //gridView1.OptionsView.ShowGroupedColumns = true;
@@ -184,7 +186,7 @@ namespace A_Team_Clem.Modules
                 try
                 {
                     clemID = int.Parse(gridView1.GetFocusedRowCellValue("id").ToString());
-                    fRMMain.typeOfClemProduct = "edit";
+                    fRMMain.typeOfCustomerClem = "edit";
                     //fRMMain.addCustomerClem.statusLoad = false;
                     fRMMain.addCustomerClem.Dispose();
                     fRMMain.addCustomerClem = new UCAddCustomerClem(fRMMain);

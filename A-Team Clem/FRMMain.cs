@@ -19,6 +19,7 @@ namespace A_Team_Clem
         {
             InitializeComponent();
             strPathSkin = pathFolderSave + "\\" + skinFileName;
+            loadSkin();
             showWaitingForm("กำลังทำการเปิดโปรแกรม");
             conDB = new ConMySql();
         }
@@ -39,7 +40,8 @@ namespace A_Team_Clem
         private string strPathSkin = "";
         public string strSkinName = "";
         public string formatDate = "dd/MM/yyyy";
-        public string typeOfClemProduct = "add";
+        public string typeOfCustomerClem = "add";
+        public string typeOfEmployeeClem = "add";
 
         private ConMySql conDB;
         public string curPage = "";
@@ -50,14 +52,13 @@ namespace A_Team_Clem
             addCustomerClem = new UCAddCustomerClem(this) { Dock = DockStyle.Fill }; 
             customerReport = new UCReportCustomerClem(this) { Dock = DockStyle.Fill };
             addEmployeeClem = new UCAddEmployeeClem(this) { Dock = DockStyle.Fill };
-            employeeReport = new UCReportEmployeeClem() { Dock = DockStyle.Fill };
+            employeeReport = new UCReportEmployeeClem(this) { Dock = DockStyle.Fill };
             addProduct = new UCAddProduct(this) { Dock = DockStyle.Fill };
             addCompany = new UCAddCompany(this) { Dock = DockStyle.Fill };
             addEmployee = new UCAddEmployee(this) { Dock = DockStyle.Fill };
             addCustomer = new UCAddCustomer(this) { Dock = DockStyle.Fill };
             addProductType = new UCAddProductType(this) { Dock = DockStyle.Fill };
         
-            loadSkin();
 
 
             closeWaitingForm();
@@ -152,51 +153,6 @@ namespace A_Team_Clem
             }
         }
 
-        //public void focusInputCustomerClem()
-        //{
-        //    switch (oldPage)
-        //    {
-        //        case "UCAddCompany":
-        //            addCustomerClem.companyName.Focus();
-        //            break;
-        //        case "UCAddCustomer":
-        //            addCustomerClem.customerName.Focus();
-        //            break;
-        //        case "UCAddEmployee":
-        //            addCustomerClem.employeeClem.Focus();
-        //            break;
-        //        case "UCAddProduct":
-        //            addCustomerClem.productName.Focus();
-        //            break;
-        //        case "UCAddProductType":
-        //            addCustomerClem.productType.Focus();
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
-
-        //public void focusInputEmployeeClem()
-        //{
-        //    switch (oldPage)
-        //    {
-        //        case "UCAddCompany":
-        //            addEmployeeClem.companyName.Focus();
-        //            break;
-        //        case "UCAddEmployee":
-        //            addEmployeeClem.employeeClem.Focus();
-        //            break;
-        //        case "UCAddProduct":
-        //            addEmployeeClem.productName.Focus();
-        //            break;
-        //        case "UCAddProductType":
-        //            addEmployeeClem.productType.Focus();
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
-
         public void closeWaitingForm()
         {
             splashScreenManager1.CloseWaitForm();
@@ -219,7 +175,7 @@ namespace A_Team_Clem
 
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            
+            showEmployeeClemReport();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -249,7 +205,7 @@ namespace A_Team_Clem
             oldPage = curPage;
             curPage = "UCAddCustomerClem";
             showWaitingForm("กำลังทำการโหลดข้อมูล");
-            if (typeOfClemProduct == "edit")
+            if (typeOfCustomerClem == "edit")
             {
                 addCustomerClem.labelControlPage.Text = "แก้ไขใบรับเคลม/ใบส่งเคลมสินค้า";
                 //addCustomerClem.getDataForEdit(customerReport.clemID);
@@ -295,10 +251,22 @@ namespace A_Team_Clem
             oldPage = curPage;
             curPage = "UCAddEmployeeClem";
 
+            showWaitingForm("กำลังทำการโหลดข้อมูล");
+
+            if (typeOfEmployeeClem == "edit")
+            {
+                addEmployeeClem.labelControlPage.Text = "แก้ไขใบส่งเคลมสินค้า";
+            }
+            else
+            {
+                addEmployeeClem.loadInDocumentNumber();
+                addEmployeeClem.labelControlPage.Text = "เพิ่มใบส่งเคลมสินค้า";
+            }
             addEmployeeClem.loadAllListData();
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addEmployeeClem);
             addEmployeeClem.serial.Focus();
+            closeWaitingForm();
         }
 
         public void showAddCustomer()
@@ -355,9 +323,11 @@ namespace A_Team_Clem
         {
             oldPage = curPage;
             curPage = "UCReportEmployeeClem";
+            showWaitingForm("กำลังทำการโหลดข้อมูล");
 
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(employeeReport);
+            closeWaitingForm();
         }
 
         private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
