@@ -42,6 +42,12 @@
             this.companyReceiveClem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.buttonCopy = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.status = new System.Windows.Forms.ComboBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -75,12 +81,6 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
-            this.buttonCopy = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonPrint = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -138,7 +138,7 @@
             this.groupControl5.Location = new System.Drawing.Point(11, 265);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(373, 232);
-            this.groupControl5.TabIndex = 102;
+            this.groupControl5.TabIndex = 101;
             this.groupControl5.Text = "ข้อมูลผู้ทำรายการ";
             // 
             // imgAddEmployee
@@ -152,6 +152,7 @@
             this.imgAddEmployee.Size = new System.Drawing.Size(30, 16);
             this.imgAddEmployee.TabIndex = 1072;
             this.imgAddEmployee.TabStop = false;
+            this.imgAddEmployee.Click += new System.EventHandler(this.imgAddEmployee_Click);
             // 
             // employeeReceiveProduct
             // 
@@ -168,6 +169,7 @@
             this.employeeReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.employeeReceiveProduct.Size = new System.Drawing.Size(188, 26);
             this.employeeReceiveProduct.TabIndex = 9;
+            this.employeeReceiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl25
             // 
@@ -188,6 +190,7 @@
             this.companyReturn.Properties.Appearance.Options.UseFont = true;
             this.companyReturn.Size = new System.Drawing.Size(188, 26);
             this.companyReturn.TabIndex = 8;
+            this.companyReturn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl27
             // 
@@ -235,6 +238,7 @@
             this.employeeClem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.employeeClem.Size = new System.Drawing.Size(159, 26);
             this.employeeClem.TabIndex = 6;
+            this.employeeClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // companyReceiveClem
             // 
@@ -245,6 +249,7 @@
             this.companyReceiveClem.Properties.Appearance.Options.UseFont = true;
             this.companyReceiveClem.Size = new System.Drawing.Size(188, 26);
             this.companyReceiveClem.TabIndex = 7;
+            this.companyReceiveClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl28
             // 
@@ -276,8 +281,85 @@
             this.groupControl3.Location = new System.Drawing.Point(390, 141);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(417, 356);
-            this.groupControl3.TabIndex = 107;
+            this.groupControl3.TabIndex = 103;
             this.groupControl3.Text = "ข้อมูลการซ่อม";
+            // 
+            // buttonCopy
+            // 
+            this.buttonCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCopy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCopy.BackgroundImage")));
+            this.buttonCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCopy.Location = new System.Drawing.Point(221, 258);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(82, 32);
+            this.buttonCopy.TabIndex = 21;
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Visible = false;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
+            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.Location = new System.Drawing.Point(221, 306);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
+            this.buttonCancel.TabIndex = 1085;
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Visible = false;
+            // 
+            // buttonPrint
+            // 
+            this.buttonPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPrint.BackgroundImage")));
+            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPrint.Location = new System.Drawing.Point(221, 210);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(82, 32);
+            this.buttonPrint.TabIndex = 19;
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Visible = false;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.Location = new System.Drawing.Point(327, 306);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(82, 32);
+            this.buttonDelete.TabIndex = 18;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
+            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClear.Location = new System.Drawing.Point(327, 258);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(82, 32);
+            this.buttonClear.TabIndex = 17;
+            this.buttonClear.UseVisualStyleBackColor = true;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSave.BackgroundImage")));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.Location = new System.Drawing.Point(327, 210);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(82, 32);
+            this.buttonSave.TabIndex = 16;
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
             // status
             // 
@@ -292,6 +374,7 @@
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(188, 27);
             this.status.TabIndex = 12;
+            this.status.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl7
             // 
@@ -322,6 +405,7 @@
             this.detail.Size = new System.Drawing.Size(188, 79);
             this.detail.TabIndex = 15;
             this.detail.Text = "";
+            this.detail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // equipment
             // 
@@ -331,6 +415,7 @@
             this.equipment.Size = new System.Drawing.Size(188, 79);
             this.equipment.TabIndex = 14;
             this.equipment.Text = "";
+            this.equipment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // symptom
             // 
@@ -340,6 +425,7 @@
             this.symptom.Size = new System.Drawing.Size(188, 79);
             this.symptom.TabIndex = 13;
             this.symptom.Text = "";
+            this.symptom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // labelControl19
             // 
@@ -377,7 +463,7 @@
             this.groupControl4.Location = new System.Drawing.Point(390, 5);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(417, 130);
-            this.groupControl4.TabIndex = 101;
+            this.groupControl4.TabIndex = 102;
             this.groupControl4.Text = "ข้อมูลเลขที่ใบเคลม";
             // 
             // inDocumentNumber
@@ -401,6 +487,7 @@
             this.outDocumentNumber.Properties.Appearance.Options.UseFont = true;
             this.outDocumentNumber.Size = new System.Drawing.Size(188, 26);
             this.outDocumentNumber.TabIndex = 11;
+            this.outDocumentNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl20
             // 
@@ -458,6 +545,7 @@
             this.imgAddTypeProduct.Size = new System.Drawing.Size(30, 16);
             this.imgAddTypeProduct.TabIndex = 1072;
             this.imgAddTypeProduct.TabStop = false;
+            this.imgAddTypeProduct.Click += new System.EventHandler(this.imgAddTypeProduct_Click);
             // 
             // imgAddCompany
             // 
@@ -470,6 +558,7 @@
             this.imgAddCompany.Size = new System.Drawing.Size(30, 16);
             this.imgAddCompany.TabIndex = 1072;
             this.imgAddCompany.TabStop = false;
+            this.imgAddCompany.Click += new System.EventHandler(this.imgAddCompany_Click);
             // 
             // imgAddProduct
             // 
@@ -482,6 +571,7 @@
             this.imgAddProduct.Size = new System.Drawing.Size(30, 16);
             this.imgAddProduct.TabIndex = 1072;
             this.imgAddProduct.TabStop = false;
+            this.imgAddProduct.Click += new System.EventHandler(this.imgAddProduct_Click);
             // 
             // productType
             // 
@@ -498,6 +588,7 @@
             this.productType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 4;
+            this.productType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // companyName
             // 
@@ -514,6 +605,7 @@
             this.companyName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.companyName.Size = new System.Drawing.Size(188, 26);
             this.companyName.TabIndex = 3;
+            this.companyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl62
             // 
@@ -540,6 +632,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dtProductEndDate.Size = new System.Drawing.Size(188, 28);
             this.dtProductEndDate.TabIndex = 5;
+            this.dtProductEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl12
             // 
@@ -566,6 +659,7 @@
             this.productName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productName.Size = new System.Drawing.Size(188, 26);
             this.productName.TabIndex = 2;
+            this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // serial
             // 
@@ -576,6 +670,7 @@
             this.serial.Properties.Appearance.Options.UseFont = true;
             this.serial.Size = new System.Drawing.Size(188, 26);
             this.serial.TabIndex = 1;
+            this.serial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl71
             // 
@@ -660,83 +755,6 @@
             this.labelControlPage.Size = new System.Drawing.Size(267, 39);
             this.labelControlPage.TabIndex = 4;
             this.labelControlPage.Text = "เพิ่มใบส่งเคลมสินค้า";
-            // 
-            // buttonCopy
-            // 
-            this.buttonCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonCopy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCopy.BackgroundImage")));
-            this.buttonCopy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCopy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCopy.Location = new System.Drawing.Point(221, 258);
-            this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(82, 32);
-            this.buttonCopy.TabIndex = 21;
-            this.buttonCopy.UseVisualStyleBackColor = true;
-            this.buttonCopy.Visible = false;
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCancel.BackgroundImage")));
-            this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCancel.Location = new System.Drawing.Point(221, 306);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(82, 32);
-            this.buttonCancel.TabIndex = 1085;
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Visible = false;
-            // 
-            // buttonPrint
-            // 
-            this.buttonPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPrint.BackgroundImage")));
-            this.buttonPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPrint.Location = new System.Drawing.Point(221, 210);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(82, 32);
-            this.buttonPrint.TabIndex = 19;
-            this.buttonPrint.UseVisualStyleBackColor = true;
-            this.buttonPrint.Visible = false;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
-            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDelete.Location = new System.Drawing.Point(327, 306);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(82, 32);
-            this.buttonDelete.TabIndex = 18;
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Visible = false;
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
-            this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClear.Location = new System.Drawing.Point(327, 258);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(82, 32);
-            this.buttonClear.TabIndex = 17;
-            this.buttonClear.UseVisualStyleBackColor = true;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSave.BackgroundImage")));
-            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSave.Location = new System.Drawing.Point(327, 210);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(82, 32);
-            this.buttonSave.TabIndex = 16;
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.simpleButtonAddClem_Click);
             // 
             // UCAddEmployeeClem
             // 

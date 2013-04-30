@@ -237,9 +237,9 @@
             this.employeeReceiveProduct.Properties.CaseSensitiveSearch = true;
             this.employeeReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.employeeReceiveProduct.Size = new System.Drawing.Size(170, 26);
-            this.employeeReceiveProduct.TabIndex = 1;
+            this.employeeReceiveProduct.TabIndex = 5;
             this.employeeReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
-            this.employeeReceiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeReceiveProduct_KeyDown);
+            this.employeeReceiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl27
             // 
@@ -259,8 +259,8 @@
             this.companyReturn.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.companyReturn.Properties.Appearance.Options.UseFont = true;
             this.companyReturn.Size = new System.Drawing.Size(169, 26);
-            this.companyReturn.TabIndex = 17;
-            this.companyReturn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyReturn_KeyDown);
+            this.companyReturn.TabIndex = 4;
+            this.companyReturn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // panelControl3
             // 
@@ -297,9 +297,9 @@
             this.employeeClem.Properties.CaseSensitiveSearch = true;
             this.employeeClem.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.employeeClem.Size = new System.Drawing.Size(170, 26);
-            this.employeeClem.TabIndex = 1;
+            this.employeeClem.TabIndex = 2;
             this.employeeClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
-            this.employeeClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeClem_KeyDown);
+            this.employeeClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // companyReceiveClem
             // 
@@ -309,8 +309,8 @@
             this.companyReceiveClem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.companyReceiveClem.Properties.Appearance.Options.UseFont = true;
             this.companyReceiveClem.Size = new System.Drawing.Size(169, 26);
-            this.companyReceiveClem.TabIndex = 16;
-            this.companyReceiveClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyReceiveClem_KeyDown);
+            this.companyReceiveClem.TabIndex = 3;
+            this.companyReceiveClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl28
             // 
@@ -361,7 +361,7 @@
             this.employeeReceiveClem.Size = new System.Drawing.Size(170, 26);
             this.employeeReceiveClem.TabIndex = 1;
             this.employeeReceiveClem.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
-            this.employeeReceiveClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeReceiveClem_KeyDown);
+            this.employeeReceiveClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // imgAddEmployee
             // 
@@ -454,9 +454,9 @@
             this.customerReceiveProduct.Properties.CaseSensitiveSearch = true;
             this.customerReceiveProduct.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.customerReceiveProduct.Size = new System.Drawing.Size(170, 26);
-            this.customerReceiveProduct.TabIndex = 20;
+            this.customerReceiveProduct.TabIndex = 7;
             this.customerReceiveProduct.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
-            this.customerReceiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerReceiveProduct_KeyDown);
+            this.customerReceiveProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // imgAddCustomer2
             // 
@@ -485,9 +485,9 @@
             this.employeeReturn.Properties.CaseSensitiveSearch = true;
             this.employeeReturn.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.employeeReturn.Size = new System.Drawing.Size(170, 26);
-            this.employeeReturn.TabIndex = 1;
+            this.employeeReturn.TabIndex = 6;
             this.employeeReturn.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
-            this.employeeReturn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.employeeReturn_KeyDown);
+            this.employeeReturn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl30
             // 
@@ -622,8 +622,8 @@
             this.status.Location = new System.Drawing.Point(138, 35);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(184, 27);
-            this.status.TabIndex = 1079;
-            this.status.KeyDown += new System.Windows.Forms.KeyEventHandler(this.status_KeyDown);
+            this.status.TabIndex = 1;
+            this.status.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl7
             // 
@@ -658,8 +658,8 @@
             this.textEditChargebacks.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.textEditChargebacks.Properties.Appearance.Options.UseFont = true;
             this.textEditChargebacks.Size = new System.Drawing.Size(111, 26);
-            this.textEditChargebacks.TabIndex = 23;
-            this.textEditChargebacks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEditChargebacks_KeyDown);
+            this.textEditChargebacks.TabIndex = 1;
+            this.textEditChargebacks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl16
             // 
@@ -720,7 +720,7 @@
             this.radioButtonOutWarranty.Location = new System.Drawing.Point(227, 69);
             this.radioButtonOutWarranty.Name = "radioButtonOutWarranty";
             this.radioButtonOutWarranty.Size = new System.Drawing.Size(99, 23);
-            this.radioButtonOutWarranty.TabIndex = 22;
+            this.radioButtonOutWarranty.TabIndex = 3;
             this.radioButtonOutWarranty.Text = "นอกประกัน";
             this.radioButtonOutWarranty.UseVisualStyleBackColor = true;
             this.radioButtonOutWarranty.Click += new System.EventHandler(this.radioButtonOutWarranty_CheckedChanged);
@@ -732,9 +732,9 @@
             this.equipment.Location = new System.Drawing.Point(138, 249);
             this.equipment.Name = "equipment";
             this.equipment.Size = new System.Drawing.Size(184, 79);
-            this.equipment.TabIndex = 25;
+            this.equipment.TabIndex = 7;
             this.equipment.Text = "";
-            this.equipment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.equipment_KeyDown);
+            this.equipment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // radioButtonInWarranty
             // 
@@ -745,12 +745,12 @@
             this.radioButtonInWarranty.Location = new System.Drawing.Point(138, 69);
             this.radioButtonInWarranty.Name = "radioButtonInWarranty";
             this.radioButtonInWarranty.Size = new System.Drawing.Size(87, 23);
-            this.radioButtonInWarranty.TabIndex = 21;
+            this.radioButtonInWarranty.TabIndex = 2;
             this.radioButtonInWarranty.TabStop = true;
             this.radioButtonInWarranty.Text = "ในประกัน";
             this.radioButtonInWarranty.UseVisualStyleBackColor = true;
             this.radioButtonInWarranty.CheckedChanged += new System.EventHandler(this.radioButtonInWarranty_CheckedChanged);
-            this.radioButtonInWarranty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.radioButtonInWarranty_KeyDown);
+            this.radioButtonInWarranty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // symptom
             // 
@@ -759,9 +759,9 @@
             this.symptom.Location = new System.Drawing.Point(138, 156);
             this.symptom.Name = "symptom";
             this.symptom.Size = new System.Drawing.Size(184, 79);
-            this.symptom.TabIndex = 24;
+            this.symptom.TabIndex = 5;
             this.symptom.Text = "";
-            this.symptom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.symptom_KeyDown);
+            this.symptom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // labelControl19
             // 
@@ -830,7 +830,7 @@
             this.outSerialClem.Properties.Appearance.Options.UseFont = true;
             this.outSerialClem.Size = new System.Drawing.Size(169, 26);
             this.outSerialClem.TabIndex = 12;
-            this.outSerialClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.outSerialClem_KeyDown);
+            this.outSerialClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // inSerialClem
             // 
@@ -841,7 +841,7 @@
             this.inSerialClem.Properties.Appearance.Options.UseFont = true;
             this.inSerialClem.Size = new System.Drawing.Size(169, 26);
             this.inSerialClem.TabIndex = 11;
-            this.inSerialClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inSerialClem_KeyDown);
+            this.inSerialClem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // outDocumentNumber
             // 
@@ -852,7 +852,7 @@
             this.outDocumentNumber.Properties.Appearance.Options.UseFont = true;
             this.outDocumentNumber.Size = new System.Drawing.Size(169, 26);
             this.outDocumentNumber.TabIndex = 10;
-            this.outDocumentNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.outDocumentNumber_KeyDown);
+            this.outDocumentNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl22
             // 
@@ -975,7 +975,7 @@
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 7;
             this.productType.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
-            this.productType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productType_KeyDown);
+            this.productType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // productName
             // 
@@ -994,7 +994,7 @@
             this.productName.TabIndex = 6;
             this.productName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.productName.SelectedIndexChanged += new System.EventHandler(this.productName_SelectedIndexChanged);
-            this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyName_KeyDown);
+            this.productName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // companyName
             // 
@@ -1013,7 +1013,7 @@
             this.companyName.TabIndex = 6;
             this.companyName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.companyName.SelectedIndexChanged += new System.EventHandler(this.companyName_SelectedIndexChanged);
-            this.companyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.companyName_KeyDown);
+            this.companyName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // serial
             // 
@@ -1024,7 +1024,7 @@
             this.serial.Properties.Appearance.Options.UseFont = true;
             this.serial.Size = new System.Drawing.Size(188, 26);
             this.serial.TabIndex = 4;
-            this.serial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phone_KeyDown);
+            this.serial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl62
             // 
@@ -1051,7 +1051,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dtProductEndDate.Size = new System.Drawing.Size(188, 26);
             this.dtProductEndDate.TabIndex = 8;
-            this.dtProductEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtProductEndDate_KeyDown);
+            this.dtProductEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl12
             // 
@@ -1209,7 +1209,7 @@
             this.customerName.TabIndex = 1;
             this.customerName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.customerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
-            this.customerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerName_KeyDown);
+            this.customerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // address
             // 
@@ -1220,7 +1220,7 @@
             this.address.Size = new System.Drawing.Size(188, 96);
             this.address.TabIndex = 2;
             this.address.Text = "";
-            this.address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.address_KeyDown);
+            this.address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.detail_KeyDown);
             // 
             // labelControl1
             // 
@@ -1251,7 +1251,7 @@
             this.phone.Properties.Appearance.Options.UseFont = true;
             this.phone.Size = new System.Drawing.Size(188, 26);
             this.phone.TabIndex = 3;
-            this.phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phone_KeyDown);
+            this.phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // labelControl3
             // 

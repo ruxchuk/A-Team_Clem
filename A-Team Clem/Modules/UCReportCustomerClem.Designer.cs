@@ -95,6 +95,7 @@
             // 
             // buttonSearch
             // 
+            this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
             this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -107,6 +108,7 @@
             // 
             // buttonClear
             // 
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClear.BackgroundImage")));
             this.buttonClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;

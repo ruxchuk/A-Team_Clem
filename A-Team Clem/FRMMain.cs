@@ -42,6 +42,8 @@ namespace A_Team_Clem
         public string typeOfClemProduct = "add";
 
         private ConMySql conDB;
+        public string curPage = "";
+        public string oldPage = "";
 
         private void FRMMain_Load(object sender, EventArgs e)
         {
@@ -102,6 +104,54 @@ namespace A_Team_Clem
             splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
         }
 
+        public void changPage(string goTo = "back")
+        {
+            if (goTo == "back")
+            {
+                selectPage(oldPage);
+            }
+            else
+            {
+                selectPage(curPage);
+            }
+        }
+
+        public void selectPage(string page)
+        {
+            switch (page)
+            {
+                case "UCAddCompany":
+                    showAddCompany();
+                    break;
+                case "UCAddCustomer":
+                    showAddCustomer();
+                    break;
+                case "UCAddCustomerClem":
+                    showAddCustomerClem();
+                    break;
+                case "UCAddEmployee":
+                    showAddEmployee();
+                    break;
+                case "UCAddEmployeeClem":
+                    showAddEmployeeClem();
+                    break;
+                case "UCAddProduct":
+                    showAddProduct();
+                    break;
+                case "UCAddProductType":
+                    showAddProductType();
+                    break;
+                case "UCReportCustomerClem":
+                    showCustomerClemReport();
+                    break;
+                case "UCReportEmployeeClem":
+                    showEmployeeClemReport();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public void closeWaitingForm()
         {
             splashScreenManager1.CloseWaitForm();
@@ -124,8 +174,7 @@ namespace A_Team_Clem
 
         private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            panelShowUserControl.Controls.Clear();
-            panelShowUserControl.Controls.Add(employeeReport);
+            
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -152,6 +201,8 @@ namespace A_Team_Clem
 
         public void showAddCustomerClem()
         {
+            oldPage = curPage;
+            curPage = "UCAddCustomerClem";
             showWaitingForm("กำลังทำการโหลดข้อมูล");
             if (typeOfClemProduct == "edit")
             {
@@ -172,6 +223,9 @@ namespace A_Team_Clem
 
         public void showCustomerClemReport()
         {
+            oldPage = curPage;
+            curPage = "UCReportCustomerClem";
+
             showWaitingForm("กำลังทำการเปิดรายงาน");
 
             panelShowUserControl.Controls.Clear();
@@ -193,6 +247,9 @@ namespace A_Team_Clem
 
         public void showAddEmployeeClem()
         {
+            oldPage = curPage;
+            curPage = "UCAddEmployee";
+
             addEmployeeClem.loadAllListData();
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addEmployeeClem);
@@ -201,6 +258,9 @@ namespace A_Team_Clem
 
         public void showAddCustomer()
         {
+            oldPage = curPage;
+            curPage = "UCAddCustomer";
+
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCustomer);
             addCustomer.Focus();
@@ -208,6 +268,9 @@ namespace A_Team_Clem
 
         public void showAddProduct()
         {
+            oldPage = curPage;
+            curPage = "UCAddProduct";
+
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addProduct);
             addProduct.nameTH.Focus();
@@ -215,6 +278,9 @@ namespace A_Team_Clem
 
         public void showAddCompany()
         {
+            oldPage = curPage;
+            curPage = "UCAddCompany";
+
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addCompany);
             addCompany.nameTH.Focus();
@@ -222,6 +288,9 @@ namespace A_Team_Clem
 
         public void showAddProductType()
         {
+            oldPage = curPage;
+            curPage = "UCAddProductType";
+
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addProductType);
             addProductType.nameTH.Focus();
@@ -229,9 +298,21 @@ namespace A_Team_Clem
 
         public void showAddEmployee()
         {
+            oldPage = curPage;
+            curPage = "UCAddEmployee";
+
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(addEmployee);
             addEmployee.nameTH.Focus();
+        }
+
+        public void showEmployeeClemReport()
+        {
+            oldPage = curPage;
+            curPage = "UCReportEmployeeClem";
+
+            panelShowUserControl.Controls.Clear();
+            panelShowUserControl.Controls.Add(employeeReport);
         }
 
         private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

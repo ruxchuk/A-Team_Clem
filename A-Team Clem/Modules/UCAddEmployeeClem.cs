@@ -247,5 +247,46 @@ namespace A_Team_Clem.Modules
                 MessageBox.Show("การเพิ่มข้อมูลผิดพลาด");
             }
         }
+
+        private void keyDownNextTab(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                SendKeys.Send("{Tab}");
+            }
+        }
+
+        Keys oldKeyDown;
+        private void detail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return && oldKeyDown == Keys.Return)
+            {
+                SendKeys.Send("{Tab}");
+                oldKeyDown = Keys.D0;
+            }
+            else
+                oldKeyDown = e.KeyCode;
+        }
+
+        private void imgAddProduct_Click(object sender, EventArgs e)
+        {
+            fRMMain.showAddProduct();
+        }
+
+        private void imgAddCompany_Click(object sender, EventArgs e)
+        {
+            fRMMain.showAddCompany();
+        }
+
+        private void imgAddTypeProduct_Click(object sender, EventArgs e)
+        {
+            fRMMain.showAddProductType();
+        }
+
+        private void imgAddEmployee_Click(object sender, EventArgs e)
+        {
+            fRMMain.showAddEmployee();
+        }
+
     }
 }

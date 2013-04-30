@@ -480,212 +480,25 @@ namespace A_Team_Clem.Modules
         }
 
 
-        #region keydown enter
-        private void customerName_KeyDown(object sender, KeyEventArgs e)
+        private void keyDownNextTab(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return)
             {
-                address.Focus();
+                SendKeys.Send("{Tab}");
             }
         }
 
-        Keys oldKeyAddress;
-        private void address_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return && oldKeyAddress == Keys.Return)
-            {
-                phone.Focus();
-                oldKeyAddress = Keys.D1;
-            }
-            else
-                oldKeyAddress = e.KeyCode;
-        }
-
-        private void phone_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                serial.Focus();
-            }
-        }
-
-        private void serial_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                productName.Focus();
-            }
-        }
-
-        private void productName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                companyName.Focus();
-            }
-        }
-
-        private void companyName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                productType.Focus();
-            }
-        }
-
-        private void productType_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                dtProductEndDate.Focus();
-            }
-        }
-
-        private void dtProductEndDate_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                outDocumentNumber.Focus();
-            }
-        }
-
-        private void outDocumentNumber_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                inSerialClem.Focus();
-            }
-        }
-
-        private void inSerialClem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                outSerialClem.Focus();
-            }
-        }
-
-        private void outSerialClem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                employeeReceiveClem.Focus();
-            }
-        }
-
-        private void employeeReceiveClem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                employeeClem.Focus();
-            }
-        }
-
-        private void employeeClem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                companyReceiveClem.Focus();
-            }
-        }
-
-        private void companyReceiveClem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                companyReturn.Focus();
-            }
-        }
-
-        private void companyReturn_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                employeeReceiveProduct.Focus();
-            }
-        }
-
-        private void employeeReceiveProduct_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                employeeReturn.Focus();
-            }
-        }
-
-        private void employeeReturn_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                customerReceiveProduct.Focus();
-            }
-        }
-
-        private void customerReceiveProduct_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                status.Focus();
-            }
-        }
-
-        private void status_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                radioButtonInWarranty.Focus();
-            }
-        }
-
-        private void radioButtonInWarranty_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                symptom.Focus();
-            }
-        }
-
-        private void textEditChargebacks_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return)
-            {
-                symptom.Focus();
-            }
-        }
-
-        Keys oldKeySymptom;
-        private void symptom_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return && oldKeySymptom == Keys.Return)
-            {
-                equipment.Focus();
-                oldKeySymptom = Keys.D0;
-            }
-            else oldKeySymptom = e.KeyCode;
-        }
-
-        Keys oldKeyEquipment;
-        private void equipment_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Return && oldKeyEquipment == Keys.Return)
-            {
-                detail.Focus();
-                oldKeyEquipment = Keys.D0;
-            }
-            else oldKeyEquipment = e.KeyCode;
-        }
-
-        Keys oldKeyDetail;
+        Keys oldKeyDown;
         private void detail_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Return && oldKeyDetail == Keys.Return)
+            if (e.KeyCode == Keys.Return && oldKeyDown == Keys.Return)
             {
-                simpleButtonAddClem_Click(EventArgs.Empty, null);
-                oldKeyDetail = Keys.D0;
+                SendKeys.Send("{Tab}");
+                oldKeyDown = Keys.D0;
             }
-            else oldKeyDetail = e.KeyCode;
+            else
+                oldKeyDown = e.KeyCode;
         }
-        #endregion
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
