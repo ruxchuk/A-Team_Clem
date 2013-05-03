@@ -263,6 +263,8 @@ namespace A_Team_Clem
                     MySqlCommand cmd = new MySqlCommand("get_company", connection);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@i_company_id", companyID);
+                    cmd.Parameters.AddWithValue("@s_name_th", company_name_th);
+                    cmd.Parameters.AddWithValue("@s_phone", company_phone);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {

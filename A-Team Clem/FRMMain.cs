@@ -61,16 +61,14 @@ namespace A_Team_Clem
             addProductType = new UCAddProductType(this) { Dock = DockStyle.Fill };
 
             pageListCompany = new UCListCompany(this) { Dock = DockStyle.Fill };
-        
 
-
-            closeWaitingForm();
-            showAddCustomerClem();
 
 
             panelShowUserControl.Appearance.BackColor = Color.Aqua;
             panelShowUserControl.Appearance.BackColor2 = Color.Aqua;
             panelShowUserControl.Appearance.Options.UseBackColor = true;
+            closeWaitingForm();
+            showAddCustomerClem();
 
             //panelShowUserControl.LookAndFeel.UseDefaultLookAndFeel = false;
             //panelShowUserControl.LookAndFeel.Style = LookAndFeelStyle.Flat;
@@ -107,6 +105,12 @@ namespace A_Team_Clem
             splashScreenManager1.SetWaitFormCaption(message);
             splashScreenManager1.SetWaitFormDescription("กรุณารอสักครู่");
         }
+
+        public void closeWaitingForm()
+        {
+            splashScreenManager1.CloseWaitForm();
+        }
+
 
         public void changPage(string goTo = "back")
         {
@@ -157,11 +161,6 @@ namespace A_Team_Clem
                 default:
                     break;
             }
-        }
-
-        public void closeWaitingForm()
-        {
-            splashScreenManager1.CloseWaitForm();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -350,7 +349,7 @@ namespace A_Team_Clem
         {
             oldPage = curPage;
             curPage = "UCListCompany";
-
+            pageListCompany.getListCompany();
             panelShowUserControl.Controls.Clear();
             panelShowUserControl.Controls.Add(pageListCompany);
             pageListCompany.nameTH.Focus();

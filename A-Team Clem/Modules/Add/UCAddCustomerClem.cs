@@ -144,6 +144,8 @@ namespace A_Team_Clem.Modules
         private void getCompany()
         {
             listCompany = null;
+            conDB.company_name_th = "";
+            conDB.company_phone = "";
             listCompany = conDB.getCompany();
             if (listCompany != null)
             {
