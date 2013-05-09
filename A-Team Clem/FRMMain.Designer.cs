@@ -472,6 +472,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1225, 700);
             this.Name = "FRMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
