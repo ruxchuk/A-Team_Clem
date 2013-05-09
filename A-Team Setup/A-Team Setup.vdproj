@@ -2190,7 +2190,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:A-Team Setup"
         "ProductCode" = "8:{2C1E1131-1307-481D-900B-0AA693A88313}"
-        "PackageCode" = "8:{C8F9BA03-399C-45D7-B56F-7E4C6FE9C375}"
+        "PackageCode" = "8:{A990C8F9-A41C-44F1-9823-99364D36A7F6}"
         "UpgradeCode" = "8:{BBC6271D-07D2-41EA-AD31-FA5CC9AF4DD1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -2314,7 +2314,7 @@
             {
             "Name" = "8:A-Team Clem"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:โปรแกรมบันทึกการเคลมสินค้า"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
@@ -2328,7 +2328,7 @@
             {
             "Name" = "8:A-Team Clem"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:โปรแกรมบันทึกการเคลมสินค้า"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"

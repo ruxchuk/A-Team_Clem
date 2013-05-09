@@ -451,9 +451,33 @@ namespace A_Team_Clem.Modules
             {
                 return;
             }
+            MiniReport mini = new MiniReport();
+
+            mini.dateTimeThai.Text = "";
+            mini.inDocumentNumber.Text = inDocumentNumber.Text;
+            mini.customerName.Text = customerName.Text;
+            mini.address.Text = address.Text;
+            mini.phone.Text = phone.Text;
+            mini.productName.Text = productName.Text;
+            mini.company.Text = companyName.Text;
+            mini.productType.Text = productType.Text;
+            mini.dtProductEndDate.Text = dtProductEndDate.Text;
+            if (radioButtonInWarranty.Checked)
+            {
+                mini.warranty.Text = "ในประกัน";
+            mini.chargebacks.Text = "0";
+            }
+            else
+            {
+                mini.warranty.Text = "นอกประกัน";
+                mini.chargebacks.Text = textEditChargebacks.Text;
+            }
+            mini.symptom.Text = symptom.Text.Trim() == "" ? "-" : symptom.Text.Trim();
+            mini.equipment.Text = equipment.Text.Trim() == "" ? "-" : equipment.Text.Trim();
+            mini.detail2.Text = detail.Text.Trim() == "" ? "-" : detail.Text.Trim();
 
             fRMMain.showWaitingForm("กำลังทำการเปิดหน้าปริ้น");
-            ReportPrintTool pt = new ReportPrintTool(new MiniReport());
+            ReportPrintTool pt = new ReportPrintTool(mini);
 
             // Get the Print Tool's printing system.
             PrintingSystemBase ps = pt.PrintingSystem;

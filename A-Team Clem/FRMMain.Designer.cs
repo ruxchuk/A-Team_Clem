@@ -476,7 +476,7 @@
             this.MinimumSize = new System.Drawing.Size(1225, 700);
             this.Name = "FRMMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FRMMain";
+            this.Text = "โปรแกรมบันทึกการเคลมสินค้า";
             this.Load += new System.EventHandler(this.FRMMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelShowUserControl)).EndInit();
