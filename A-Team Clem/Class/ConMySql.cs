@@ -221,9 +221,29 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("get_customer", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_customer_id", customerID);
+                    string sql = @"
+                        SELECT
+                          `id`,
+                          `name_th`,
+                          `name_en`,
+                          `address`,
+                          `phone`,
+                          `email`,
+                          `date_create`,
+                          `date_stamp`,
+                          `publish`
+                        FROM `customer`
+                        WHERE 1
+                        AND IF (" + customerID + @"=0, 1, id = " + customerID + @")
+                        AND publish = 1
+                        ORDER BY id
+                        ;
+                    ";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("get_customer", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@i_customer_id", customerID);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
