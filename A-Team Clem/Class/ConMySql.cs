@@ -338,9 +338,20 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("get_product", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_product_id", productID);
+                    string sql = @"
+                        SELECT
+                          *
+                        FROM `product`
+                        WHERE 1
+                        AND IF (" + productID + @" = 0, 1, id = " + productID + @")
+                        AND publish = 1
+                        ORDER BY id
+                        ;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("get_product", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@i_product_id", productID);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
@@ -376,9 +387,20 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("get_employee", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_employee_id", employeeID);
+                    string sql = @"
+                        SELECT 
+	                        *
+                        FROM `employee` 
+                        WHERE 1
+                        AND IF (" + employeeID + @"  = 0, 1, id = " + employeeID + @" )
+                        AND publish = 1
+                        ORDER BY id
+                        ;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("get_employee", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@i_employee_id", employeeID);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
