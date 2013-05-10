@@ -187,27 +187,6 @@ namespace A_Team_Clem
 
         #region Select
 
-        public void getBillClem(string clemType)
-        {
-            if (CheckConnect() == true)
-            {
-
-                string sql = "";
-                //MySqlCommand cmd = new MySqlCommand("get_bill_clem", connection); 
-                MySqlCommand cmd = new MySqlCommand(sql, connection); 
-                //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue(@"s_clem_type", clemType);
-                MySqlDataReader dataReader = cmd.ExecuteReader();
-                int countData = 0;
-                while (dataReader.Read())
-                {
-                    countData++;
-                }
-                CloseConnection();
-                dataReader.Close();
-            }
-        }
-
         //get รายชื่อลูกค้า
         public List<string>[] getCustomer(int customerID = 0)
         {
