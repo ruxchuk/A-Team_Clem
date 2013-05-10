@@ -261,11 +261,24 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("get_company", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_company_id", companyID);
-                    cmd.Parameters.AddWithValue("@s_name_th", company_name_th);
-                    cmd.Parameters.AddWithValue("@s_phone", company_phone);
+                    string sql = @"
+                        SELECT
+                          *
+                        FROM `company`
+                        WHERE 1
+                        AND IF (" + companyID + @" = 0, 1, id = " + companyID + @")
+                        AND IF ('" + company_name_th + @"'  = '', 1, `company_name_th` LIKE CONCAT('%', '" + company_name_th + @"' , '%'))
+                        AND IF ('" + company_phone + @"' = '', 1, phone LIKE CONCAT('%', '" + company_phone + @"', '%'))
+                        AND publish = 1
+                        ORDER BY id
+                        ;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("get_company", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@i_company_id", companyID);
+                    //cmd.Parameters.AddWithValue("@s_name_th", company_name_th);
+                    //cmd.Parameters.AddWithValue("@s_phone", company_phone);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
