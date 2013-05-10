@@ -302,20 +302,9 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    string sql = @"
-                        SELECT
-                          *
-                        FROM `product_type`
-                        WHERE 1
-                        AND IF (" + productTypeID + @" = 0, 1, id = " + productTypeID + @")
-                        AND publish = 1
-                        ORDER BY id
-                        ;
-                    ";
-                    MySqlCommand cmd = new MySqlCommand(sql, connection);
-                    //MySqlCommand cmd = new MySqlCommand("get_product_type", connection);
-                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@i_product_type_id", productTypeID);
+                    MySqlCommand cmd = new MySqlCommand("get_product_type", connection);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@i_product_type_id", productTypeID);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
