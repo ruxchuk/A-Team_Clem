@@ -410,9 +410,35 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("get_new_id_of_month", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@s_clem_type", clemType);
+                    string sql = @"
+                        DECLARE new_id INT ;
+
+                        SET new_id = 
+                        (
+	                        SELECT
+		                        `in_document_number_id`
+	                        FROM `clem_product`
+	                        WHERE 1
+	                        AND YEAR(`in_document_number`) = YEAR(NOW())
+	                        AND MONTH(`in_document_number`) = MONTH(NOW())
+	                        AND `clem_type` = '" + clemType + @"'
+	                        #AND publish = 1
+	                        ORDER BY `id` DESC
+	                        LIMIT 1
+                        )
+                        ;
+
+                        IF new_id IS NULL 
+                        THEN 
+	                        SET new_id = 1;
+                        ELSE SET new_id = new_id + 1;
+                        END IF ;
+                        SELECT new_id;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("get_new_id_of_month", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@s_clem_type", clemType);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
