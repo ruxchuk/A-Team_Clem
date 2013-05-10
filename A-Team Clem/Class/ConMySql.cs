@@ -616,39 +616,111 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("add_clem_product", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_customer_id", customer_id);
-                    cmd.Parameters.AddWithValue("@i_product_type_id", product_type_id);
-                    cmd.Parameters.AddWithValue("@i_company_id", company_id);
-                    cmd.Parameters.AddWithValue("@s_product_name", product_name);
-                    cmd.Parameters.AddWithValue("@s_serial", serial);
-                    cmd.Parameters.AddWithValue("@t_address", address);
-                    cmd.Parameters.AddWithValue("@s_phone", phone);
-                    cmd.Parameters.AddWithValue("@s_status", status);
-                    cmd.Parameters.AddWithValue("@dt_date_create", date_create);
-                    cmd.Parameters.AddWithValue("@dt_date_product", date_product);
-                    cmd.Parameters.AddWithValue("@dt_date_stamp", date_stamp);
-                    cmd.Parameters.AddWithValue("@s_warranty", warranty);
-                    cmd.Parameters.AddWithValue("@d_chargebacks", chargebacks);
-                    cmd.Parameters.AddWithValue("@t_symptom", symptom);
-                    cmd.Parameters.AddWithValue("@t_equipment", equipment);
-                    cmd.Parameters.AddWithValue("@t_detail", detail);
-                    cmd.Parameters.AddWithValue("@i_in_document_number_id", in_document_number_id);
-                    cmd.Parameters.AddWithValue("@dt_in_document_number", in_document_number);
-                    cmd.Parameters.AddWithValue("@s_in_document_number_string", in_document_number_string);
-                    cmd.Parameters.AddWithValue("@s_out_document_number", out_document_number);
-                    cmd.Parameters.AddWithValue("@s_in_serial_clem", in_serial_clem);
-                    cmd.Parameters.AddWithValue("@s_out_serial_clem", out_serial_clem);
-                    cmd.Parameters.AddWithValue("@s_clem_type", clem_type);
-                    cmd.Parameters.AddWithValue("@s_customer_clem", customer_clem);
-                    cmd.Parameters.AddWithValue("@s_employee_receive_clem", employee_receive_clem);
-                    cmd.Parameters.AddWithValue("@s_employee_clem", employee_clem);
-                    cmd.Parameters.AddWithValue("@s_company_receive_clem", company_receive_clem);
-                    cmd.Parameters.AddWithValue("@s_company_return", company_return);
-                    cmd.Parameters.AddWithValue("@s_employee_receive_product", employee_receive_product);
-                    cmd.Parameters.AddWithValue("@s_employee_return", employee_return);
-                    cmd.Parameters.AddWithValue("@s_customer_receive_product", customer_receive_product);
+                    string sql = @"
+                        DECLARE new_id INT ;
+                        INSERT INTO clem_product (
+	                        customer_id,
+	                        product_type_id,
+	                        company_id,
+	                        product_name,
+	                        serial,
+	                        address,
+	                        phone,
+	                        status,
+	                        date_create,
+	                        date_product,
+	                        date_stamp,
+	                        warranty,
+	                        chargebacks,
+	                        symptom,
+	                        equipment,
+	                        detail,
+	                        in_document_number_id,
+	                        in_document_number,
+	                        in_document_number_str,
+	                        out_document_number,
+	                        in_serial_clem,
+	                        out_serial_clem,
+	                        clem_type,
+	                        customer_clem,
+	                        employee_receive_clem,
+	                        employee_clem,
+	                        company_receive_clem,
+	                        company_return,
+	                        employee_receive_product,
+	                        employee_return,
+	                        customer_receive_product
+                        )
+                        VALUES (
+	                        " + customer_id + @",
+	                        " + product_type_id + @", 
+	                        " + company_id + @", 
+	                        '" + product_name + @"', 
+	                        '" + serial + @"',
+	                        '" + address + @"' ,
+	                        '" + phone + @"', 
+	                        '" + status + @"', 
+	                        '" + date_create + @"', 
+	                        '" + date_product + @"', 
+	                        '" + date_stamp + @"', 
+	                        '" + warranty + @"', 
+	                        '" + chargebacks + @"', 
+	                        '" + symptom + @"', 
+	                        '" + equipment + @"', 
+	                        '" + detail + @"', 
+	                        " + in_document_number_id + @" ,
+	                        '" + in_document_number + @"',
+	                        '" + in_document_number_string + @"',
+	                        '" + out_document_number + @"', 
+	                        '" + in_serial_clem + @"', 
+	                        '" + out_serial_clem + @"', 
+	                        '" + clem_type + @"', 
+	                        '" + customer_clem + @"', 
+	                        '" + employee_receive_clem + @"',
+	                        '" + employee_clem + @"', 
+	                        '" + company_receive_clem + @"', 
+	                        '" + company_return + @"', 
+	                        '" + employee_receive_product + @"',
+	                        '" + employee_return + @"', 
+	                        '" + customer_receive_product + @"'
+                        );
+                        SET new_id = LAST_INSERT_ID();
+                    ";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("add_clem_product", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@i_customer_id", customer_id);
+                    //cmd.Parameters.AddWithValue("@i_product_type_id", product_type_id);
+                    //cmd.Parameters.AddWithValue("@i_company_id", company_id);
+                    //cmd.Parameters.AddWithValue("@s_product_name", product_name);
+                    //cmd.Parameters.AddWithValue("@s_serial", serial);
+                    //cmd.Parameters.AddWithValue("@t_address", address);
+                    //cmd.Parameters.AddWithValue("@s_phone", phone);
+                    //cmd.Parameters.AddWithValue("@s_status", status);
+                    //cmd.Parameters.AddWithValue("@dt_date_create", date_create);
+                    //cmd.Parameters.AddWithValue("@dt_date_product", date_product);
+                    //cmd.Parameters.AddWithValue("@dt_date_stamp", date_stamp);
+                    //cmd.Parameters.AddWithValue("@s_warranty", warranty);
+                    //cmd.Parameters.AddWithValue("@d_chargebacks", chargebacks);
+                    //cmd.Parameters.AddWithValue("@t_symptom", symptom);
+                    //cmd.Parameters.AddWithValue("@t_equipment", equipment);
+                    //cmd.Parameters.AddWithValue("@t_detail", detail);
+                    //cmd.Parameters.AddWithValue("@i_in_document_number_id", in_document_number_id);
+                    //cmd.Parameters.AddWithValue("@dt_in_document_number", in_document_number);
+                    //cmd.Parameters.AddWithValue("@s_in_document_number_string", in_document_number_string);
+                    //cmd.Parameters.AddWithValue("@s_out_document_number", out_document_number);
+                    //cmd.Parameters.AddWithValue("@s_in_serial_clem", in_serial_clem);
+                    //cmd.Parameters.AddWithValue("@s_out_serial_clem", out_serial_clem);
+                    //cmd.Parameters.AddWithValue("@s_clem_type", clem_type);
+                    //cmd.Parameters.AddWithValue("@s_customer_clem", customer_clem);
+                    //cmd.Parameters.AddWithValue("@s_employee_receive_clem", employee_receive_clem);
+                    //cmd.Parameters.AddWithValue("@s_employee_clem", employee_clem);
+                    //cmd.Parameters.AddWithValue("@s_company_receive_clem", company_receive_clem);
+                    //cmd.Parameters.AddWithValue("@s_company_return", company_return);
+                    //cmd.Parameters.AddWithValue("@s_employee_receive_product", employee_receive_product);
+                    //cmd.Parameters.AddWithValue("@s_employee_return", employee_return);
+                    //cmd.Parameters.AddWithValue("@s_customer_receive_product", customer_receive_product);
                     cmd.ExecuteNonQuery();
                 }
                 catch
@@ -672,15 +744,58 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("add_customer", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@s_name_th", name_th);
-                    cmd.Parameters.AddWithValue("@s_name_en", name_en);
-                    cmd.Parameters.AddWithValue("@t_address", address);
-                    cmd.Parameters.AddWithValue("@s_phone", phone);
-                    cmd.Parameters.AddWithValue("@s_email", email);
-                    cmd.Parameters.AddWithValue("@dt_date_create", customer_date_create);
-                    cmd.Parameters.AddWithValue("@dt_date_stamp", customer_date_stamp);
+                    string sql = @"
+                        DECLARE new_id INT ;
+
+                        SET new_id = 
+                        (SELECT 
+                          id
+                        FROM
+                          `customer` 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1 
+                        );
+
+                        IF new_id IS NULL 
+                        THEN 
+                        INSERT INTO `customer` (
+                          `name_th`,
+                          `name_en`,
+                          `address`,
+                          `phone`,
+                          `email`,
+                          `date_create`,
+                          `date_stamp`
+                        ) 
+                        VALUES (
+	                        '" + name_th + @"',
+	                        '" + name_en + @"',
+	                        '" + address + @"',
+	                        '" + phone + @"',
+	                        '" + email + @"',
+	                        '" + date_create + @"',
+	                        '" + date_stamp + @"'
+                        ) 
+                        ;
+
+                        SET new_id = LAST_INSERT_ID();
+                        ELSE SET new_id = 0;
+                        END IF ;
+                        SELECT new_id;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("add_customer", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@s_name_th", name_th);
+                    //cmd.Parameters.AddWithValue("@s_name_en", name_en);
+                    //cmd.Parameters.AddWithValue("@t_address", address);
+                    //cmd.Parameters.AddWithValue("@s_phone", phone);
+                    //cmd.Parameters.AddWithValue("@s_email", email);
+                    //cmd.Parameters.AddWithValue("@dt_date_create", customer_date_create);
+                    //cmd.Parameters.AddWithValue("@dt_date_stamp", customer_date_stamp);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
@@ -710,15 +825,58 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("add_company", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@s_company_name_th", company_name_th);
-                    cmd.Parameters.AddWithValue("@s_company_name_en", company_name_en);
-                    cmd.Parameters.AddWithValue("@t_address", company_adddress);
-                    cmd.Parameters.AddWithValue("@s_phone", company_phone);
-                    cmd.Parameters.AddWithValue("@s_email", company_email);
-                    cmd.Parameters.AddWithValue("@dt_date_create", company_date_create);
-                    cmd.Parameters.AddWithValue("@dt_date_stamp", company_date_stamp);
+                    string sql = @"
+                        DECLARE new_id INT ;
+
+                        SET new_id = (
+	                        SELECT 
+		                        id
+	                        FROM `company` 
+	                        WHERE 1
+	                        AND publish = 1
+	                        AND company_name_th = '" + company_name_th + @"'
+	                        ORDER BY id DESC 
+	                        LIMIT 1 
+                        )
+                        ;
+
+                        IF new_id IS NULL
+                        THEN
+                        INSERT INTO `company` (
+                          `company_name_th`,
+                          `company_name_en`,
+                          `address`,
+                          `phone`,
+                          `email`,
+                          `date_create`,
+                          `date_stamp`
+                        )
+                        VALUES
+                        (
+	                        '" + company_name_th + @"',
+	                        '" + company_name_en + @"',
+	                        '" + company_adddress + @"',
+	                        '" + company_phone + @"',
+	                        '" + company_email + @"',
+	                        '" + company_date_create + @"',
+	                        '" + company_date_stamp + @"'
+                        )
+                        ;
+                        SET new_id = LAST_INSERT_ID();
+                        ELSE SET new_id = 0;
+                        END IF ;
+                        SELECT new_id;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("add_company", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@s_company_name_th", company_name_th);
+                    //cmd.Parameters.AddWithValue("@s_company_name_en", company_name_en);
+                    //cmd.Parameters.AddWithValue("@t_address", company_adddress);
+                    //cmd.Parameters.AddWithValue("@s_phone", company_phone);
+                    //cmd.Parameters.AddWithValue("@s_email", company_email);
+                    //cmd.Parameters.AddWithValue("@dt_date_create", company_date_create);
+                    //cmd.Parameters.AddWithValue("@dt_date_stamp", company_date_stamp);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
@@ -748,17 +906,65 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("add_employee", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@s_name_th", employee_name_th);
-                    cmd.Parameters.AddWithValue("@s_name_en", employee_name_en);
-                    cmd.Parameters.AddWithValue("@s_nickname", employee_nickname);
-                    cmd.Parameters.AddWithValue("@t_address", employee_ddress);
-                    cmd.Parameters.AddWithValue("@s_phone", employee_phone);
-                    cmd.Parameters.AddWithValue("@s_email", employee_email);
-                    cmd.Parameters.AddWithValue("@dt_date_start", employee_date_start);
-                    cmd.Parameters.AddWithValue("@dt_date_create", employee_date_create);
-                    cmd.Parameters.AddWithValue("@dt_date_stamp", employee_date_stamp);
+                    string sql = @"
+                        DECLARE new_id INT ;
+                        SET new_id = 
+                        (SELECT 
+                          id
+                        FROM
+                          `employee` 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + employee_name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1 
+                        );
+
+                        IF new_id IS NULL 
+                        THEN 
+                        INSERT INTO `employee` (
+                          `name_th`,
+	                        `name_en`,
+	                        `nickname`,
+	                        `address`,
+	                        `phone`,
+	                        `email`,
+	                        `date_start`,
+	                        `date_create`,
+	                        `date_stamp`
+                        ) 
+                        VALUES
+                        (
+	                        '" + employee_name_th + @"',
+	                        '" + employee_name_en + @"',
+	                        '" + employee_nickname + @"',
+	                        '" + employee_ddress + @"',
+	                        '" + employee_phone + @"',
+	                        '" + employee_email + @"',
+	                        '" + employee_date_start + @"',
+	                        '" + employee_date_create + @"',
+	                        '" + employee_date_stamp + @"'
+                        ) 
+                        ;
+
+                        SET new_id = LAST_INSERT_ID();
+                        ELSE SET new_id = 0;
+                        END IF ;
+                        SELECT new_id;
+                        ";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("add_employee", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@s_name_th", employee_name_th);
+                    //cmd.Parameters.AddWithValue("@s_name_en", employee_name_en);
+                    //cmd.Parameters.AddWithValue("@s_nickname", employee_nickname);
+                    //cmd.Parameters.AddWithValue("@t_address", employee_ddress);
+                    //cmd.Parameters.AddWithValue("@s_phone", employee_phone);
+                    //cmd.Parameters.AddWithValue("@s_email", employee_email);
+                    //cmd.Parameters.AddWithValue("@dt_date_start", employee_date_start);
+                    //cmd.Parameters.AddWithValue("@dt_date_create", employee_date_create);
+                    //cmd.Parameters.AddWithValue("@dt_date_stamp", employee_date_stamp);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
@@ -788,14 +994,56 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("add_product", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@s_name_th", product_name_th);
-                    cmd.Parameters.AddWithValue("@s_name_en", product_name_en);
-                    cmd.Parameters.AddWithValue("@d_price", product_price);
-                    cmd.Parameters.AddWithValue("@s_value", product_value);
-                    cmd.Parameters.AddWithValue("@dt_date_create", product_date_create);
-                    cmd.Parameters.AddWithValue("@dt_date_stamp", product_date_stamp);
+                    string sql = @"
+                        DECLARE new_id INT ;
+  
+                        SET new_id = 
+                        (SELECT 
+                          id
+                        FROM
+                          `product` 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + product_name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1 
+                        );
+
+                        IF new_id IS NULL 
+                        THEN 
+                        INSERT INTO `product` (
+                          `name_th`,
+                          `name_en`,
+                          `price`,
+                          `value`,
+                          `date_create`,
+                          `date_stamp`
+                        ) 
+                        VALUES
+                        (
+	                        '" + product_name_th + @"',
+	                        '" + product_name_en + @"',
+	                        '" + product_price + @"',
+	                        '" + product_value + @"',
+	                        '" + product_type_date_create + @"',
+	                        '" + product_type_date_stamp + @"'
+                        ) 
+                        ;
+                        SET new_id = LAST_INSERT_ID();
+                        ELSE SET new_id = 0;
+                        END IF ;
+                        SELECT new_id;
+                    ";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("add_product", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@s_name_th", product_name_th);
+                    //cmd.Parameters.AddWithValue("@s_name_en", product_name_en);
+                    //cmd.Parameters.AddWithValue("@d_price", product_price);
+                    //cmd.Parameters.AddWithValue("@s_value", product_value);
+                    //cmd.Parameters.AddWithValue("@dt_date_create", product_date_create);
+                    //cmd.Parameters.AddWithValue("@dt_date_stamp", product_date_stamp);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
@@ -825,12 +1073,49 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("add_product_type", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@s_name_th", product_type_name_th);
-                    cmd.Parameters.AddWithValue("@s_name_en", product_type_name_en);
-                    cmd.Parameters.AddWithValue("@dt_date_create", product_type_date_create);
-                    cmd.Parameters.AddWithValue("@dt_date_stamp", product_type_date_stamp);
+                    string sql = @"
+                        DECLARE new_id INT ;
+
+                        SET new_id = 
+                        (SELECT 
+                          id
+                        FROM
+                          `product_type` 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + product_type_name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1 
+                        );
+
+                        IF new_id IS NULL 
+                        THEN 
+                        INSERT INTO `product_type` (
+                          `name_th`,
+                          `name_en`,
+                          `date_create`,
+                          `date_stamp`
+                        ) 
+                        VALUES
+                        (
+	                        '" + product_type_name_th + @"',
+	                        '" + product_type_name_en + @"',
+	                        '" + product_type_date_create + @"',
+	                        '" + product_type_date_stamp + @"'
+                        ) ;
+
+                        SET new_id = LAST_INSERT_ID();
+                        ELSE SET new_id = 0;
+                        END IF ;
+                        SELECT new_id;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("add_product_type", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@s_name_th", product_type_name_th);
+                    //cmd.Parameters.AddWithValue("@s_name_en", product_type_name_en);
+                    //cmd.Parameters.AddWithValue("@dt_date_create", product_type_date_create);
+                    //cmd.Parameters.AddWithValue("@dt_date_stamp", product_type_date_stamp);
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
