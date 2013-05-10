@@ -192,10 +192,11 @@ namespace A_Team_Clem
             if (CheckConnect() == true)
             {
 
-                
-                MySqlCommand cmd = new MySqlCommand("get_bill_clem", connection); 
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"s_clem_type", clemType);
+                string sql = "";
+                //MySqlCommand cmd = new MySqlCommand("get_bill_clem", connection); 
+                MySqlCommand cmd = new MySqlCommand(sql, connection); 
+                //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue(@"s_clem_type", clemType);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 int countData = 0;
                 while (dataReader.Read())
@@ -457,16 +458,67 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("get_list_clem", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_clem_id", clemID);
-                    cmd.Parameters.AddWithValue("@s_clem_type", clemType);
-                    cmd.Parameters.AddWithValue("@s_customer_name_th", name_th);
-                    cmd.Parameters.AddWithValue("@s_phone", phone);
-                    cmd.Parameters.AddWithValue("@s_serial", serial);
-                    cmd.Parameters.AddWithValue("@s_product_name_th", product_name_th);
-                    cmd.Parameters.AddWithValue("@s_in_document_number_string", in_document_number_string);
-                    cmd.Parameters.AddWithValue("@s_status", status);
+                    string sql = @"
+                        SELECT 
+                          a.`id`,
+                          c.`name_th` AS customer_name_th,
+                          IF(a.`address`='', '-', a.`address`) AS address,
+                          a.`phone`,
+	                        IF(a.`serial`='', '-', a.`serial`) AS serial,
+                          a.`status`,
+                          a.`product_name`,
+                          b.`company_name_th`,
+                          d.`name_th` AS product_type_name_th,
+                          a.`date_product`,
+                          a.`chargebacks`,
+                          a.`in_document_number_id`,
+                          a.`in_document_number_str`,
+                          a.`out_document_number`,
+                          a.`in_serial_clem`,
+                          a.`out_serial_clem`,
+                          a.`customer_clem`,
+                          a.`employee_receive_clem`,
+                          a.`employee_clem`,
+                          a.`company_receive_clem`,
+                          a.`company_return`,
+                          a.`employee_receive_product`,
+                          a.`employee_return`,
+                          a.`customer_receive_product`,
+                          a.`warranty`,
+                          a.`symptom`,
+                          a.`equipment`,
+                          a.`detail`,
+	                        a.date_create,
+                          a.`date_stamp`
+                        FROM
+                          `clem_product` a
+	                        INNER JOIN `company` b ON (a.`company_id` = b.`id` AND b.publish = 1)
+	                        LEFT JOIN `customer` c ON (a.`customer_id` = c.`id` AND c.publish = 1)
+	                        INNER JOIN `product_type` d ON (a.`product_type_id` = d.`id` AND d.publish = 1)
+                        WHERE 1 
+	                        AND a.clem_type = '" + clemType + @"'
+	                        AND IF('" + name_th + @"' != "",c.name_th LIKE CONCAT('%','" + name_th + @"','%'), 1)
+	                        AND IF('" + phone + @"' != "",c.phone LIKE CONCAT('%','" + phone + @"','%'), 1)
+	                        AND IF('" + serial + @"' != "",a.serial LIKE CONCAT('%','" + serial + @"','%'), 1)
+	                        AND IF('" + product_name_th + @"' != "",a.product_name LIKE CONCAT('%','" + product_name_th + @"','%'), 1)
+	                        AND IF('" + in_document_number_string + @"' != "",a.in_document_number_str LIKE CONCAT('%','" + in_document_number_string + @"','%'), 1)
+	                        AND IF('" + status + @"' != "",a.`status` LIKE CONCAT('%','" + status + @"','%'), 1)
+	                        AND IF (" + clemID + @" = 0, 1, a.id = " + clemID + @")
+                        ORDER BY a.`id` DESC
+                        ;
+                    ";
+                    Debug.WriteLine(sql);
+                    //MySqlCommand cmd = new MySqlCommand("get_list_clem", connection);                    
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@i_clem_id", clemID);
+                    //cmd.Parameters.AddWithValue("@s_clem_type", clemType);
+                    //cmd.Parameters.AddWithValue("@s_customer_name_th", name_th);
+                    //cmd.Parameters.AddWithValue("@s_phone", phone);
+                    //cmd.Parameters.AddWithValue("@s_serial", serial);
+                    //cmd.Parameters.AddWithValue("@s_product_name_th", product_name_th);
+                    //cmd.Parameters.AddWithValue("@s_in_document_number_string", in_document_number_string);
+                    //cmd.Parameters.AddWithValue("@s_status", status);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(ds, "get_list_clem");
