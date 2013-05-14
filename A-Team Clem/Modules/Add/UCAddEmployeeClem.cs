@@ -336,21 +336,26 @@ namespace A_Team_Clem.Modules
             bool resultAddClem;
             if (fRMMain.typeOfEmployeeClem == "add")
             {
-                resultAddClem = conDB.addClem();
+                int clemID = conDB.addClem(); 
+                fRMMain.closeWaitingForm();
+                if (clemID == 0)
+                {
+                    MessageBox.Show("การเพิ่มข้อมูลผิดพลาด");
+                }
+                else
+                {
+                    fRMMain.typeOfEmployeeClem = "edit";
+                    getDataForEdit(clemID);
+                }
             }
             else
             {
-                resultAddClem = conDB.updateClemProduct(clem_id);
-            }
-            fRMMain.closeWaitingForm();
-            if (resultAddClem)
-            {
-                clearData();
-                fRMMain.typeOfEmployeeClem = "add";
-            }
-            else
-            {
-                MessageBox.Show("การเพิ่มข้อมูลผิดพลาด");
+                resultAddClem = conDB.updateClemProduct(clem_id); 
+                fRMMain.closeWaitingForm();
+                if (!resultAddClem)
+                {
+                    MessageBox.Show("การแก้ไขข้อมูลผิดพลาด");
+                }
             }
         }
 
@@ -485,6 +490,18 @@ namespace A_Team_Clem.Modules
             // Hide the Hand tool.
             ps.ExecCommand(PrintingSystemCommand.HandTool, new object[] { false });
 
+        }
+
+        private void productType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (productType.SelectedIndex != -1)
+            {
+                conDB.product_type_id = searchIDFromList(listPorductType[1], listPorductType[0], productType.Text);
+            }
+            else
+            {
+                conDB.product_type_id = -1;
+            }
         }
 
 

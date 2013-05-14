@@ -981,6 +981,7 @@
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 7;
             this.productType.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
+            this.productType.SelectedIndexChanged += new System.EventHandler(this.productType_SelectedIndexChanged);
             this.productType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // productName

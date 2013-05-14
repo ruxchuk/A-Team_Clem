@@ -24,7 +24,6 @@ namespace A_Team_Clem.Modules
         public string clemType = "ใบรับเคลม/ใบส่งเคลม";
 
         public List<string>[] listCustomer;
-        public List<string>[] listPorductType;
         public List<string>[] listCompany;
         public List<string>[] listEmployee;
         public List<string>[] listProduct;
@@ -124,7 +123,7 @@ namespace A_Team_Clem.Modules
         {
             listCustomer = null;
             listCustomer = conDB.getCustomer();
-            if (listPorductType != null)
+            if (listCustomer != null)
             {
                 customerName.Properties.Items.AddRange(listCustomer[1]);
                 customerReceiveProduct.Properties.Items.AddRange(listCustomer[1]);
@@ -133,11 +132,11 @@ namespace A_Team_Clem.Modules
 
         private void getProductType()
         {
-            listPorductType = null;
-            listPorductType = conDB.getProductType();
-            if (listPorductType != null)
+            listProductType = null;
+            listProductType = conDB.getProductType();
+            if (listProductType != null)
             {
-                productType.Properties.Items.AddRange(listPorductType[1]);
+                productType.Properties.Items.AddRange(listProductType[1]);
             }
         }
 
@@ -336,24 +335,34 @@ namespace A_Team_Clem.Modules
             }
             fRMMain.showWaitingForm("กำลังทำการบันทึกข้อมูล");
             readData();
-            bool resultAddClem;
+            bool resultAddClem = false;
             if (fRMMain.typeOfCustomerClem == "add")
             {
-                resultAddClem = conDB.addClem();
+                int clemID = conDB.addClem();
+                fRMMain.closeWaitingForm();
+                if (clemID == 0)
+                {
+                    MessageBox.Show("การเพิ่มข้อมูลผิดพลาด");
+                }
+                else
+                {
+                    fRMMain.typeOfCustomerClem = "edit";
+                    getDataForEdit(clemID);
+
+                    buttonCancel.Visible = true;
+                    buttonCopy.Visible = true;
+                    buttonPrint.Visible = true;
+                    buttonDelete.Visible = true;
+                }
             }
             else
             {
                 resultAddClem = conDB.updateClemProduct(clem_id);
-            }
-            fRMMain.closeWaitingForm();
-            if (resultAddClem)
-            {
-                clearData();
-                fRMMain.typeOfCustomerClem = "add";
-            }
-            else
-            {
-                MessageBox.Show("การเพิ่มข้อมูลผิดพลาด");
+                fRMMain.closeWaitingForm();
+                if (!resultAddClem)
+                {
+                    MessageBox.Show("การแก้ไขข้อมูลผิดพลาด");
+                }
             }
         }
 
@@ -613,6 +622,19 @@ namespace A_Team_Clem.Modules
         private void customerName_TextChanged(object sender, EventArgs e)
         {
             customerClem.Text = customerName.Text;
+        }
+
+        private void productType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (productType.SelectedIndex != -1)
+            {
+                conDB.product_type_id = searchIDFromList(listProductType[1], listProductType[0], productType.Text);
+                Debug.WriteLine(conDB.product_type_id);
+            }
+            else
+            {
+                conDB.product_type_id = -1;
+            }
         }  
     }
 }

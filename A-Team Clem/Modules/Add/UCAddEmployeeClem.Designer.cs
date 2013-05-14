@@ -599,6 +599,7 @@
             this.productType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.productType.Size = new System.Drawing.Size(188, 26);
             this.productType.TabIndex = 4;
+            this.productType.SelectedIndexChanged += new System.EventHandler(this.productType_SelectedIndexChanged);
             this.productType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // companyName
