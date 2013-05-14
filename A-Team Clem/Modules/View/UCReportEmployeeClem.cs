@@ -199,7 +199,7 @@ namespace A_Team_Clem.Modules
                     fRMMain.addEmployeeClem = new UCAddEmployeeClem(fRMMain);
                     fRMMain.addEmployeeClem.buttonCancel.Visible = true;
                     fRMMain.addEmployeeClem.buttonCopy.Visible = true;
-                    fRMMain.addEmployeeClem.buttonPrint.Visible = true;
+                    //fRMMain.addEmployeeClem.buttonPrint.Visible = true;
                     fRMMain.addEmployeeClem.buttonDelete.Visible = true;
                     fRMMain.showAddEmployeeClem();
                     fRMMain.addEmployeeClem.getDataForEdit(clemID);

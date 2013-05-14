@@ -305,7 +305,7 @@ namespace A_Team_Clem.Modules
             }
             else
             {
-                conDB.in_document_number_id = conDB.getNewIDClemOfMonth(clemType);
+                conDB.in_document_number_id = inDocumentNumberID;
             }
             conDB.in_document_number = convertDT.convert(DateTime.Now);
             conDB.in_document_number_string = inDocumentNumber.Text;

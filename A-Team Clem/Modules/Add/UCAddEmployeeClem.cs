@@ -346,6 +346,10 @@ namespace A_Team_Clem.Modules
                 {
                     fRMMain.typeOfEmployeeClem = "edit";
                     getDataForEdit(clemID);
+                    buttonCancel.Visible = true;
+                    buttonCopy.Visible = true;
+                    //buttonPrint.Visible = true;
+                    buttonDelete.Visible = true;
                 }
             }
             else

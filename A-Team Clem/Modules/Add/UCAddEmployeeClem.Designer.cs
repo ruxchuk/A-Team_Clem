@@ -58,7 +58,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.inDocumentNumber = new DevExpress.XtraEditors.TextEdit();
             this.outDocumentNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
@@ -81,6 +80,7 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControlPage = new DevExpress.XtraEditors.LabelControl();
+            this.inDocumentNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -94,7 +94,6 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outDocumentNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -477,18 +476,6 @@
             this.groupControl4.TabIndex = 102;
             this.groupControl4.Text = "ข้อมูลเลขที่ใบเคลม";
             // 
-            // inDocumentNumber
-            // 
-            this.inDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inDocumentNumber.EditValue = "CB5604-00001";
-            this.inDocumentNumber.Enabled = false;
-            this.inDocumentNumber.Location = new System.Drawing.Point(221, 40);
-            this.inDocumentNumber.Name = "inDocumentNumber";
-            this.inDocumentNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.inDocumentNumber.Properties.Appearance.Options.UseFont = true;
-            this.inDocumentNumber.Size = new System.Drawing.Size(188, 26);
-            this.inDocumentNumber.TabIndex = 10;
-            // 
             // outDocumentNumber
             // 
             this.outDocumentNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -769,6 +756,17 @@
             this.labelControlPage.TabIndex = 7;
             this.labelControlPage.Text = "เพิ่มใบส่งเคลมสินค้า";
             // 
+            // inDocumentNumber
+            // 
+            this.inDocumentNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.inDocumentNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.inDocumentNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inDocumentNumber.Location = new System.Drawing.Point(221, 40);
+            this.inDocumentNumber.Name = "inDocumentNumber";
+            this.inDocumentNumber.Size = new System.Drawing.Size(188, 26);
+            this.inDocumentNumber.TabIndex = 1037;
+            this.inDocumentNumber.Text = "CB5604-00001";
+            // 
             // UCAddEmployeeClem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -793,7 +791,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outDocumentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -832,7 +829,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.TextEdit inDocumentNumber;
         private DevExpress.XtraEditors.TextEdit outDocumentNumber;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.LabelControl labelControl18;
@@ -866,6 +862,7 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonSave;
         public DevExpress.XtraEditors.LabelControl labelControlPage;
+        public System.Windows.Forms.Label inDocumentNumber;
 
     }
 }
