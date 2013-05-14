@@ -33,5 +33,12 @@ namespace A_Team_Clem
             dt = DateTime.Parse(dt.ToString("dddd dd MMMM yyyy", new CultureInfo("th-TH")));
             return dt;
         }
+
+        public string convertToString(DateTime dt)
+        {
+            string newStrDT = "";
+            newStrDT += dt.Year + "/" + dt.Month + "/" + dt.Day + " " + dt.Hour + ":" + dt.Minute + ":" + dt.Second;
+            return newStrDT;
+        }
     }
 }

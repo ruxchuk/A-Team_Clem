@@ -203,16 +203,16 @@ namespace A_Team_Clem
                 {
                     string sql = @"
                         SELECT
-                          `id`,
-                          `name_th`,
-                          `name_en`,
-                          `address`,
-                          `phone`,
-                          `email`,
-                          `date_create`,
-                          `date_stamp`,
-                          `publish`
-                        FROM `customer`
+                          id,
+                          name_th,
+                          name_en,
+                          address,
+                          phone,
+                          email,
+                          date_create,
+                          date_stamp,
+                          publish
+                        FROM customer
                         WHERE 1
                         AND IF (" + customerID + @"=0, 1, id = " + customerID + @")
                         AND publish = 1
@@ -264,10 +264,10 @@ namespace A_Team_Clem
                     string sql = @"
                         SELECT
                           *
-                        FROM `company`
+                        FROM company
                         WHERE 1
                         AND IF (" + companyID + @" = 0, 1, id = " + companyID + @")
-                        AND IF ('" + company_name_th + @"'  = '', 1, `company_name_th` LIKE CONCAT('%', '" + company_name_th + @"' , '%'))
+                        AND IF ('" + company_name_th + @"'  = '', 1, company_name_th LIKE CONCAT('%', '" + company_name_th + @"' , '%'))
                         AND IF ('" + company_phone + @"' = '', 1, phone LIKE CONCAT('%', '" + company_phone + @"', '%'))
                         AND publish = 1
                         ORDER BY id
@@ -318,7 +318,7 @@ namespace A_Team_Clem
                     string sql = @"
                         SELECT
                           *
-                        FROM `product_type`
+                        FROM product_type
                         WHERE 1
                         AND IF (" + productTypeID + @" = 0, 1, id = " + productTypeID + @")
                         AND publish = 1
@@ -366,7 +366,7 @@ namespace A_Team_Clem
                     string sql = @"
                         SELECT
                           *
-                        FROM `product`
+                        FROM product
                         WHERE 1
                         AND IF (" + productID + @" = 0, 1, id = " + productID + @")
                         AND publish = 1
@@ -415,7 +415,7 @@ namespace A_Team_Clem
                     string sql = @"
                         SELECT 
 	                        *
-                        FROM `employee` 
+                        FROM employee 
                         WHERE 1
                         AND IF (" + employeeID + @"  = 0, 1, id = " + employeeID + @" )
                         AND publish = 1
@@ -463,14 +463,14 @@ namespace A_Team_Clem
 //                        SET new_id = 
 //                        (
 //	                        SELECT
-//		                        `in_document_number_id`
-//	                        FROM `clem_product`
+//		                        in_document_number_id
+//	                        FROM clem_product
 //	                        WHERE 1
-//	                        AND YEAR(`in_document_number`) = YEAR(NOW())
-//	                        AND MONTH(`in_document_number`) = MONTH(NOW())
-//	                        AND `clem_type` = '" + clemType + @"'
+//	                        AND YEAR(in_document_number) = YEAR(NOW())
+//	                        AND MONTH(in_document_number) = MONTH(NOW())
+//	                        AND clem_type = '" + clemType + @"'
 //	                        #AND publish = 1
-//	                        ORDER BY `id` DESC
+//	                        ORDER BY id DESC
 //	                        LIMIT 1
 //                        )
 //                        ;
@@ -484,14 +484,14 @@ namespace A_Team_Clem
 //                    ";
                     string sql = @"
                         SELECT
-		                    `in_document_number_id` AS new_id
-	                    FROM `clem_product`
+		                    in_document_number_id AS new_id
+	                    FROM clem_product
 	                    WHERE 1
-	                    AND YEAR(`in_document_number`) = YEAR(NOW())
-	                    AND MONTH(`in_document_number`) = MONTH(NOW())
-	                    AND `clem_type` = '" + clemType + @"'
+	                    AND YEAR(in_document_number) = YEAR(NOW())
+	                    AND MONTH(in_document_number) = MONTH(NOW())
+	                    AND clem_type = '" + clemType + @"'
 	                    #AND publish = 1
-	                    ORDER BY `id` DESC
+	                    ORDER BY id DESC
 	                    LIMIT 1
                     ";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
@@ -550,51 +550,53 @@ namespace A_Team_Clem
                 {
                     string sql = @"
                         SELECT 
-                          a.`id`,
-                          c.`name_th` AS customer_name_th,
-                          IF(a.`address`='', '-', a.`address`) AS address,
-                          a.`phone`,
-	                        IF(a.`serial`='', '-', a.`serial`) AS serial,
-                          a.`status`,
-                          a.`product_name`,
-                          b.`company_name_th`,
-                          d.`name_th` AS product_type_name_th,
-                          a.`date_product`,
-                          a.`chargebacks`,
-                          a.`in_document_number_id`,
-                          a.`in_document_number_str`,
-                          a.`out_document_number`,
-                          a.`in_serial_clem`,
-                          a.`out_serial_clem`,
-                          a.`customer_clem`,
-                          a.`employee_receive_clem`,
-                          a.`employee_clem`,
-                          a.`company_receive_clem`,
-                          a.`company_return`,
-                          a.`employee_receive_product`,
-                          a.`employee_return`,
-                          a.`customer_receive_product`,
-                          a.`warranty`,
-                          a.`symptom`,
-                          a.`equipment`,
-                          a.`detail`,
-	                        a.date_create,
-                          a.`date_stamp`
+                          a.id,
+                          c.name_th AS customer_name_th,
+                          IF(a.address='', '-', a.address) AS address,
+                          a.phone,
+	                        IF(a.serial='', '-', a.serial) AS serial,
+                          a.status,
+                          a.product_name,
+                          b.company_name_th,
+                          d.name_th AS product_type_name_th,
+                          a.date_product,
+                          a.chargebacks,
+                          a.in_document_number_id,
+                          a.in_document_number_str,
+                          a.out_document_number,
+                          a.in_serial_clem,
+                          a.out_serial_clem,
+                          a.customer_clem,
+                          a.employee_receive_clem,
+                          a.employee_clem,
+                          a.company_receive_clem,
+                          a.company_return,
+                          a.employee_receive_product,
+                          a.employee_return,
+                          a.customer_receive_product,
+                          a.warranty,
+                          a.symptom,
+                          a.equipment,
+                          a.detail,
+	                      a.date_create,
+                          a.date_stamp
                         FROM
-                          `clem_product` a
-	                        INNER JOIN `company` b ON (a.`company_id` = b.`id` AND b.publish = 1)
-	                        LEFT JOIN `customer` c ON (a.`customer_id` = c.`id` AND c.publish = 1)
-	                        INNER JOIN `product_type` d ON (a.`product_type_id` = d.`id` AND d.publish = 1)
+                          clem_product a
+	                        INNER JOIN company b ON (a.company_id = b.id AND b.publish = 1)
+	                        LEFT JOIN customer c ON (a.customer_id = c.id AND c.publish = 1)
+	                        INNER JOIN product_type d ON (a.product_type_id = d.id AND d.publish = 1)
                         WHERE 1 
-	                        AND a.clem_type = '" + clemType + @"'
-	                        AND IF('" + name_th + @"' != "",c.name_th LIKE CONCAT('%','" + name_th + @"','%'), 1)
-	                        AND IF('" + phone + @"' != "",c.phone LIKE CONCAT('%','" + phone + @"','%'), 1)
-	                        AND IF('" + serial + @"' != "",a.serial LIKE CONCAT('%','" + serial + @"','%'), 1)
-	                        AND IF('" + product_name_th + @"' != "",a.product_name LIKE CONCAT('%','" + product_name_th + @"','%'), 1)
-	                        AND IF('" + in_document_number_string + @"' != "",a.in_document_number_str LIKE CONCAT('%','" + in_document_number_string + @"','%'), 1)
-	                        AND IF('" + status + @"' != "",a.`status` LIKE CONCAT('%','" + status + @"','%'), 1)
-	                        AND IF (" + clemID + @" = 0, 1, a.id = " + clemID + @")
-                        ORDER BY a.`id` DESC
+	                        AND a.clem_type = '" + clemType + @"'	                        
+                    ";
+                    sql += name_th != "" ? " AND c.name_th LIKE '%" + name_th + @"%'" : "";
+                    sql += phone != "" ? " AND c.phone LIKE '%" + phone + @"%'" : "";
+                    sql += serial != "" ? " AND c.serial LIKE '%" + serial + @"%'" : "";
+                    sql += product_name_th != "" ? " AND c.product_name LIKE '%" + product_name_th + @"%'" : "";
+                    sql += in_document_number_string != "" ? " AND c.in_document_number_str LIKE '%" + in_document_number_string + @"%'" : "";
+                    sql += status != "" ? " AND c.status LIKE '%" + status + @"%'" : "";
+                    sql += clemID != 0 ? " AND a.id =" + clemID.ToString() : "";
+                    sql += @"	                        
+                        ORDER BY a.id DESC
                         ;
                     ";
                     Debug.WriteLine(sql);
@@ -678,16 +680,16 @@ namespace A_Team_Clem
 	                        '" + address + @"' ,
 	                        '" + phone + @"', 
 	                        '" + status + @"', 
-	                        '" + date_create + @"', 
-	                        '" + date_product + @"', 
-	                        '" + date_stamp + @"', 
+	                        '" + convertDT.convertToString(date_create) + @"', 
+	                        '" + convertDT.convertToString(date_product) + @"', 
+	                        '" + convertDT.convertToString(date_stamp) + @"', 
 	                        '" + warranty + @"', 
 	                        '" + chargebacks + @"', 
 	                        '" + symptom + @"', 
 	                        '" + equipment + @"', 
 	                        '" + detail + @"', 
 	                        " + in_document_number_id + @" ,
-	                        '" + in_document_number + @"',
+	                        '" + convertDT.convertToString(in_document_number) + @"',
 	                        '" + in_document_number_string + @"',
 	                        '" + out_document_number + @"', 
 	                        '" + in_serial_clem + @"', 
@@ -770,7 +772,7 @@ namespace A_Team_Clem
                         (SELECT 
                           id
                         FROM
-                          `customer` 
+                          customer 
                         WHERE 1 
                           AND publish = 1 
                           AND name_th = '" + name_th + @"'
@@ -780,14 +782,14 @@ namespace A_Team_Clem
 
                         IF new_id IS NULL 
                         THEN 
-                        INSERT INTO `customer` (
-                          `name_th`,
-                          `name_en`,
-                          `address`,
-                          `phone`,
-                          `email`,
-                          `date_create`,
-                          `date_stamp`
+                        INSERT INTO customer (
+                          name_th,
+                          name_en,
+                          address,
+                          phone,
+                          email,
+                          date_create,
+                          date_stamp
                         ) 
                         VALUES (
 	                        '" + name_th + @"',
@@ -810,7 +812,7 @@ namespace A_Team_Clem
                         SELECT 
                           id
                         FROM
-                          `customer` 
+                          customer 
                         WHERE 1 
                           AND publish = 1 
                           AND name_th = '" + name_th + @"'
@@ -833,18 +835,18 @@ namespace A_Team_Clem
                     {
                         customerID = int.Parse(dataReader["id"] + "");
                     }
-
+                    dataReader.Close();
                     if (customerID == 0)
                     {
                         sql = @"
-                            INSERT INTO `customer` (
-                              `name_th`,
-                              `name_en`,
-                              `address`,
-                              `phone`,
-                              `email`,
-                              `date_create`,
-                              `date_stamp`
+                            INSERT INTO customer (
+                              name_th,
+                              name_en,
+                              address,
+                              phone,
+                              email,
+                              date_create,
+                              date_stamp
                             ) 
                             VALUES (
 	                            '" + name_th + @"',
@@ -852,20 +854,21 @@ namespace A_Team_Clem
 	                            '" + address + @"',
 	                            '" + phone + @"',
 	                            '" + email + @"',
-	                            '" + date_create + @"',
-	                            '" + date_stamp + @"'
+	                            '" + convertDT.convertToString(customer_date_create) + @"',
+	                            '" + convertDT.convertToString(customer_date_stamp) + @"'
                             ) 
                             ;
-                        "; 
+                        ";
                         cmd = new MySqlCommand(sql, connection);
                         cmd.ExecuteNonQuery();
                         customerID = (int)cmd.LastInsertedId;
+
+                        Debug.WriteLine(sql);
                     }
                     else
                     {
                         customerID = 0;
                     }
-                    dataReader.Close();
                 }
                 catch
                 {
@@ -895,7 +898,7 @@ namespace A_Team_Clem
                         SET new_id = (
 	                        SELECT 
 		                        id
-	                        FROM `company` 
+	                        FROM company 
 	                        WHERE 1
 	                        AND publish = 1
 	                        AND company_name_th = '" + company_name_th + @"'
@@ -906,14 +909,14 @@ namespace A_Team_Clem
 
                         IF new_id IS NULL
                         THEN
-                        INSERT INTO `company` (
-                          `company_name_th`,
-                          `company_name_en`,
-                          `address`,
-                          `phone`,
-                          `email`,
-                          `date_create`,
-                          `date_stamp`
+                        INSERT INTO company (
+                          company_name_th,
+                          company_name_en,
+                          address,
+                          phone,
+                          email,
+                          date_create,
+                          date_stamp
                         )
                         VALUES
                         (
@@ -934,7 +937,7 @@ namespace A_Team_Clem
                     string sql = @"
                         SELECT 
 		                    id
-	                    FROM `company` 
+	                    FROM company 
 	                    WHERE 1
 	                    AND publish = 1
 	                    AND company_name_th = '" + company_name_th + @"'
@@ -956,17 +959,18 @@ namespace A_Team_Clem
                     {
                         companyID = int.Parse(dataReader["id"] + "");
                     }
+                    dataReader.Close();
                     if (companyID == 0)
                     {
                         sql = @"
-                            INSERT INTO `company` (
-                              `company_name_th`,
-                              `company_name_en`,
-                              `address`,
-                              `phone`,
-                              `email`,
-                              `date_create`,
-                              `date_stamp`
+                            INSERT INTO company (
+                              company_name_th,
+                              company_name_en,
+                              address,
+                              phone,
+                              email,
+                              date_create,
+                              date_stamp
                             )
                             VALUES
                             (
@@ -975,8 +979,8 @@ namespace A_Team_Clem
 	                            '" + company_adddress + @"',
 	                            '" + company_phone + @"',
 	                            '" + company_email + @"',
-	                            '" + company_date_create + @"',
-	                            '" + company_date_stamp + @"'
+	                            '" + convertDT.convertToString(company_date_create) + @"',
+	                            '" + convertDT.convertToString(company_date_stamp) + @"'
                             )
                         ";
                         cmd = new MySqlCommand(sql, connection);
@@ -987,7 +991,6 @@ namespace A_Team_Clem
                     {
                         companyID = 0;
                     }
-                    dataReader.Close();
                 }
                 catch
                 {
@@ -1017,7 +1020,7 @@ namespace A_Team_Clem
                         (SELECT 
                           id
                         FROM
-                          `employee` 
+                          employee 
                         WHERE 1 
                           AND publish = 1 
                           AND name_th = '" + employee_name_th + @"'
@@ -1027,16 +1030,16 @@ namespace A_Team_Clem
 
                         IF new_id IS NULL 
                         THEN 
-                        INSERT INTO `employee` (
-                          `name_th`,
-	                        `name_en`,
-	                        `nickname`,
-	                        `address`,
-	                        `phone`,
-	                        `email`,
-	                        `date_start`,
-	                        `date_create`,
-	                        `date_stamp`
+                        INSERT INTO employee (
+                          name_th,
+	                        name_en,
+	                        nickname,
+	                        address,
+	                        phone,
+	                        email,
+	                        date_start,
+	                        date_create,
+	                        date_stamp
                         ) 
                         VALUES
                         (
@@ -1062,7 +1065,7 @@ namespace A_Team_Clem
                         SELECT 
                           id
                         FROM
-                          `employee` 
+                          employee 
                         WHERE 1 
                           AND publish = 1 
                           AND name_th = '" + employee_name_th + @"'
@@ -1086,20 +1089,20 @@ namespace A_Team_Clem
                     {
                         employeeID = int.Parse(dataReader["id"] + "");
                     }
-
+                    dataReader.Close();
                     if (employeeID == 0)
                     {
                         sql = @"
-                            INSERT INTO `employee` (
-                              `name_th`,
-	                            `name_en`,
-	                            `nickname`,
-	                            `address`,
-	                            `phone`,
-	                            `email`,
-	                            `date_start`,
-	                            `date_create`,
-	                            `date_stamp`
+                            INSERT INTO employee (
+                              name_th,
+	                            name_en,
+	                            nickname,
+	                            address,
+	                            phone,
+	                            email,
+	                            date_start,
+	                            date_create,
+	                            date_stamp
                             ) 
                             VALUES
                             (
@@ -1109,9 +1112,9 @@ namespace A_Team_Clem
 	                            '" + employee_adress + @"',
 	                            '" + employee_phone + @"',
 	                            '" + employee_email + @"',
-	                            '" + employee_date_start + @"',
-	                            '" + employee_date_create + @"',
-	                            '" + employee_date_stamp + @"'
+	                            '" + convertDT.convertToString(employee_date_start) + @"',
+	                            '" + convertDT.convertToString(employee_date_create) + @"',
+	                            '" + convertDT.convertToString(employee_date_stamp) + @"'
                             ) 
                         ";
                         cmd = new MySqlCommand(sql, connection);
@@ -1122,7 +1125,6 @@ namespace A_Team_Clem
                     {
                         employeeID = 0;
                     }
-                    dataReader.Close();
                 }
                 catch
                 {
@@ -1153,7 +1155,7 @@ namespace A_Team_Clem
                         (SELECT 
                           id
                         FROM
-                          `product` 
+                          product 
                         WHERE 1 
                           AND publish = 1 
                           AND name_th = '" + product_name_th + @"'
@@ -1163,13 +1165,13 @@ namespace A_Team_Clem
 
                         IF new_id IS NULL 
                         THEN 
-                        INSERT INTO `product` (
-                          `name_th`,
-                          `name_en`,
-                          `price`,
-                          `value`,
-                          `date_create`,
-                          `date_stamp`
+                        INSERT INTO product (
+                          name_th,
+                          name_en,
+                          price,
+                          value,
+                          date_create,
+                          date_stamp
                         ) 
                         VALUES
                         (
@@ -1190,7 +1192,7 @@ namespace A_Team_Clem
                         SELECT 
                           id
                         FROM
-                          `product` 
+                          product 
                         WHERE 1 
                           AND publish = 1 
                           AND name_th = '" + product_name_th + @"'
@@ -1210,16 +1212,17 @@ namespace A_Team_Clem
                     {
                         productID = int.Parse(dataReader["id"] + "");
                     }
+                    dataReader.Close();
                     if (productID == 0)
                     {
                         sql = @"
-                            INSERT INTO `product` (
-                              `name_th`,
-                              `name_en`,
-                              `price`,
-                              `value`,
-                              `date_create`,
-                              `date_stamp`
+                            INSERT INTO product (
+                              name_th,
+                              name_en,
+                              price,
+                              value,
+                              date_create,
+                              date_stamp
                             ) 
                             VALUES
                             (
@@ -1227,8 +1230,8 @@ namespace A_Team_Clem
 	                            '" + product_name_en + @"',
 	                            '" + product_price + @"',
 	                            '" + product_value + @"',
-	                            '" + product_type_date_create + @"',
-	                            '" + product_type_date_stamp + @"'
+	                            '" + convertDT.convertToString(product_type_date_create) + @"',
+	                            '" + convertDT.convertToString(product_type_date_stamp) + @"'
                             )
                         ";
                         cmd = new MySqlCommand(sql, connection);
@@ -1239,7 +1242,6 @@ namespace A_Team_Clem
                     {
                         productID = 0;
                     }
-                    dataReader.Close();
                 }
                 catch
                 {
@@ -1263,14 +1265,14 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    string sql = @"
+                    /*string sql = @"
                         DECLARE new_id INT ;
 
                         SET new_id = 
                         (SELECT 
                           id
                         FROM
-                          `product_type` 
+                          product_type 
                         WHERE 1 
                           AND publish = 1 
                           AND name_th = '" + product_type_name_th + @"'
@@ -1280,11 +1282,11 @@ namespace A_Team_Clem
 
                         IF new_id IS NULL 
                         THEN 
-                        INSERT INTO `product_type` (
-                          `name_th`,
-                          `name_en`,
-                          `date_create`,
-                          `date_stamp`
+                        INSERT INTO product_type (
+                          name_th,
+                          name_en,
+                          date_create,
+                          date_stamp
                         ) 
                         VALUES
                         (
@@ -1298,6 +1300,17 @@ namespace A_Team_Clem
                         ELSE SET new_id = 0;
                         END IF ;
                         SELECT new_id;
+                    ";*/
+                    string sql = @"
+                        SELECT 
+                          id
+                        FROM
+                          product_type 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + product_type_name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1
                     ";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     //MySqlCommand cmd = new MySqlCommand("add_product_type", connection);
@@ -1309,9 +1322,34 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        productTypeID = int.Parse(dataReader["new_id"] + "");
+                        productTypeID = int.Parse(dataReader["id"] + "");
                     }
                     dataReader.Close();
+                    if (productTypeID == 0)
+                    {
+                        sql = @"
+                            INSERT INTO product_type (
+                              name_th,
+                              name_en,
+                              date_create,
+                              date_stamp
+                            ) 
+                            VALUES
+                            (
+	                            '" + product_type_name_th + @"',
+	                            '" + product_type_name_en + @"',
+	                            '" + convertDT.convertToString(product_type_date_create) + @"',
+	                            '" + convertDT.convertToString(product_type_date_stamp) + @"'
+                            )
+                        ";
+                        cmd = new MySqlCommand(sql, connection);
+                        cmd.ExecuteNonQuery();
+                        productTypeID = (int)cmd.LastInsertedId;
+                    }
+                    else
+                    {
+                        productTypeID = 0;
+                    }
                 }
                 catch
                 {
@@ -1339,39 +1377,75 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand("update_clem_product", connection);
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@i_id", clemID);
-                    cmd.Parameters.AddWithValue("@i_customer_id", customer_id);
-                    cmd.Parameters.AddWithValue("@i_product_type_id", product_type_id);
-                    cmd.Parameters.AddWithValue("@i_company_id", company_id);
-                    cmd.Parameters.AddWithValue("@s_product_name", product_name);
-                    cmd.Parameters.AddWithValue("@s_serial", serial);
-                    cmd.Parameters.AddWithValue("@t_address", address);
-                    cmd.Parameters.AddWithValue("@s_phone", phone);
-                    cmd.Parameters.AddWithValue("@s_status", status);
-                    cmd.Parameters.AddWithValue("@dt_date_create", date_create);
-                    cmd.Parameters.AddWithValue("@dt_date_product", date_product);
-                    cmd.Parameters.AddWithValue("@dt_date_stamp", date_stamp);
-                    cmd.Parameters.AddWithValue("@s_warranty", warranty);
-                    cmd.Parameters.AddWithValue("@d_chargebacks", chargebacks);
-                    cmd.Parameters.AddWithValue("@t_symptom", symptom);
-                    cmd.Parameters.AddWithValue("@t_equipment", equipment);
-                    cmd.Parameters.AddWithValue("@t_detail", detail);
-                    cmd.Parameters.AddWithValue("@i_in_document_number_id", in_document_number_id);
-                    cmd.Parameters.AddWithValue("@dt_in_document_number", in_document_number);
-                    cmd.Parameters.AddWithValue("@s_out_document_number", out_document_number);
-                    cmd.Parameters.AddWithValue("@s_in_serial_clem", in_serial_clem);
-                    cmd.Parameters.AddWithValue("@s_out_serial_clem", out_serial_clem);
-                    cmd.Parameters.AddWithValue("@s_clem_type", clem_type);
-                    cmd.Parameters.AddWithValue("@s_customer_clem", customer_clem);
-                    cmd.Parameters.AddWithValue("@s_employee_receive_clem", employee_receive_clem);
-                    cmd.Parameters.AddWithValue("@s_employee_clem", employee_clem);
-                    cmd.Parameters.AddWithValue("@s_company_receive_clem", company_receive_clem);
-                    cmd.Parameters.AddWithValue("@s_company_return", company_return);
-                    cmd.Parameters.AddWithValue("@s_employee_receive_product", employee_receive_product);
-                    cmd.Parameters.AddWithValue("@s_employee_return", employee_return);
-                    cmd.Parameters.AddWithValue("@s_customer_receive_product", customer_receive_product);
+                    string sql = @"
+                        UPDATE clem_product SET 
+	                        customer_id = " + customer_id + @",
+	                        product_type_id = " + product_type_id + @",
+	                        company_id = " + company_id + @",
+	                        product_name = '" + product_name + @"',
+	                        serial = '" + serial + @"',
+	                        address = '" + address + @"',
+	                        phone = '" + phone + @"',
+	                        status = '" + status + @"',
+	                        date_create = '" + convertDT.convertToString(date_create) + @"',
+	                        date_product = '" + convertDT.convertToString(date_product) + @"',
+	                        date_stamp = '" + convertDT.convertToString(date_stamp) + @"',
+	                        warranty = '" + warranty + @"',
+	                        chargebacks = " + chargebacks + @",
+	                        symptom = '" + symptom + @"',
+	                        equipment = '" + equipment + @"',
+	                        detail = '" + detail + @"',
+	                        in_document_number_id = " + in_document_number_id + @",
+	                        in_document_number = '" + convertDT.convertToString(in_document_number) + @"',
+	                        out_document_number = '" + out_document_number + @"',
+	                        in_serial_clem = '" + in_serial_clem + @"',
+	                        out_serial_clem = '" + out_serial_clem + @"',
+	                        clem_type = '" + clem_type + @"',
+	                        customer_clem = '" + customer_clem + @"',
+	                        employee_receive_clem = '" + employee_receive_clem + @"',
+	                        employee_clem = '" + employee_clem + @"',
+	                        company_receive_clem = '" + company_receive_clem + @"',
+	                        company_return = '" + company_return + @"',
+	                        employee_receive_product = '" + employee_receive_product + @"',
+	                        employee_return = '" + employee_return + @"',
+	                        customer_receive_product = '" + customer_receive_product + @"'
+                        WHERE id = " + clemID + @"
+                        ;
+                    ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    //MySqlCommand cmd = new MySqlCommand("update_clem_product", connection);
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@i_id", clemID);
+                    //cmd.Parameters.AddWithValue("@i_customer_id", customer_id);
+                    //cmd.Parameters.AddWithValue("@i_product_type_id", product_type_id);
+                    //cmd.Parameters.AddWithValue("@i_company_id", company_id);
+                    //cmd.Parameters.AddWithValue("@s_product_name", product_name);
+                    //cmd.Parameters.AddWithValue("@s_serial", serial);
+                    //cmd.Parameters.AddWithValue("@t_address", address);
+                    //cmd.Parameters.AddWithValue("@s_phone", phone);
+                    //cmd.Parameters.AddWithValue("@s_status", status);
+                    //cmd.Parameters.AddWithValue("@dt_date_create", date_create);
+                    //cmd.Parameters.AddWithValue("@dt_date_product", date_product);
+                    //cmd.Parameters.AddWithValue("@dt_date_stamp", date_stamp);
+                    //cmd.Parameters.AddWithValue("@s_warranty", warranty);
+                    //cmd.Parameters.AddWithValue("@d_chargebacks", chargebacks);
+                    //cmd.Parameters.AddWithValue("@t_symptom", symptom);
+                    //cmd.Parameters.AddWithValue("@t_equipment", equipment);
+                    //cmd.Parameters.AddWithValue("@t_detail", detail);
+                    //cmd.Parameters.AddWithValue("@i_in_document_number_id", in_document_number_id);
+                    //cmd.Parameters.AddWithValue("@dt_in_document_number", in_document_number);
+                    //cmd.Parameters.AddWithValue("@s_out_document_number", out_document_number);
+                    //cmd.Parameters.AddWithValue("@s_in_serial_clem", in_serial_clem);
+                    //cmd.Parameters.AddWithValue("@s_out_serial_clem", out_serial_clem);
+                    //cmd.Parameters.AddWithValue("@s_clem_type", clem_type);
+                    //cmd.Parameters.AddWithValue("@s_customer_clem", customer_clem);
+                    //cmd.Parameters.AddWithValue("@s_employee_receive_clem", employee_receive_clem);
+                    //cmd.Parameters.AddWithValue("@s_employee_clem", employee_clem);
+                    //cmd.Parameters.AddWithValue("@s_company_receive_clem", company_receive_clem);
+                    //cmd.Parameters.AddWithValue("@s_company_return", company_return);
+                    //cmd.Parameters.AddWithValue("@s_employee_receive_product", employee_receive_product);
+                    //cmd.Parameters.AddWithValue("@s_employee_return", employee_return);
+                    //cmd.Parameters.AddWithValue("@s_customer_receive_product", customer_receive_product);
                     cmd.ExecuteNonQuery();
                 }
                 catch
