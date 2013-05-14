@@ -50,7 +50,7 @@ namespace A_Team_Clem.Modules
             conDB.employee_name_th = nameTH.Text;
             conDB.employee_name_en = nameEng.Text;
             conDB.employee_nickname = nickname.Text;
-            conDB.employee_ddress = richTextBoxAddress.Text;
+            conDB.employee_adress = richTextBoxAddress.Text;
             conDB.employee_phone = phone.Text;
             conDB.employee_date_start = convertDT.convert(dtStart.DateTime);
             conDB.employee_date_create = convertDT.convert(DateTime.Now);

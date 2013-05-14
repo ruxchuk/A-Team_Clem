@@ -82,7 +82,7 @@ namespace A_Team_Clem
         public string employee_name_th = "";
         public string employee_name_en = "";
         public string employee_nickname = "";
-        public string employee_ddress = "";
+        public string employee_adress = "";
         public string employee_phone = "";
         public string employee_email = "";
         public DateTime employee_date_start;
@@ -131,6 +131,7 @@ namespace A_Team_Clem
             password = readFile.pwd;
             server = readFile.hostName;
             dataBaseName = readFile.dataBaseName;
+            port = readFile.port;
             string connectionString = "SERVER=" + server + ";" + "DATABASE=" +
                    dataBaseName + ";" + "UID=" + userName + ";" + "PASSWORD=" + password + ";Charset=utf8;";
             connection = new MySqlConnection(connectionString);
@@ -456,30 +457,42 @@ namespace A_Team_Clem
             {
                 try
                 {
+//                    string sql = @"
+//                        DECLARE new_id INT ;
+//
+//                        SET new_id = 
+//                        (
+//	                        SELECT
+//		                        `in_document_number_id`
+//	                        FROM `clem_product`
+//	                        WHERE 1
+//	                        AND YEAR(`in_document_number`) = YEAR(NOW())
+//	                        AND MONTH(`in_document_number`) = MONTH(NOW())
+//	                        AND `clem_type` = '" + clemType + @"'
+//	                        #AND publish = 1
+//	                        ORDER BY `id` DESC
+//	                        LIMIT 1
+//                        )
+//                        ;
+//
+//                        IF new_id IS NULL 
+//                        THEN 
+//	                        SET new_id = 1;
+//                        ELSE SET new_id = new_id + 1;
+//                        END IF ;
+//                        SELECT new_id;
+//                    ";
                     string sql = @"
-                        DECLARE new_id INT ;
-
-                        SET new_id = 
-                        (
-	                        SELECT
-		                        `in_document_number_id`
-	                        FROM `clem_product`
-	                        WHERE 1
-	                        AND YEAR(`in_document_number`) = YEAR(NOW())
-	                        AND MONTH(`in_document_number`) = MONTH(NOW())
-	                        AND `clem_type` = '" + clemType + @"'
-	                        #AND publish = 1
-	                        ORDER BY `id` DESC
-	                        LIMIT 1
-                        )
-                        ;
-
-                        IF new_id IS NULL 
-                        THEN 
-	                        SET new_id = 1;
-                        ELSE SET new_id = new_id + 1;
-                        END IF ;
-                        SELECT new_id;
+                        SELECT
+		                    `in_document_number_id` AS new_id
+	                    FROM `clem_product`
+	                    WHERE 1
+	                    AND YEAR(`in_document_number`) = YEAR(NOW())
+	                    AND MONTH(`in_document_number`) = MONTH(NOW())
+	                    AND `clem_type` = '" + clemType + @"'
+	                    #AND publish = 1
+	                    ORDER BY `id` DESC
+	                    LIMIT 1
                     ";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     //MySqlCommand cmd = new MySqlCommand("get_new_id_of_month", connection);
@@ -491,6 +504,11 @@ namespace A_Team_Clem
                         NewID = int.Parse(dataReader["new_id"] + "");
                     }
                     dataReader.Close();
+                    if (NewID != 1)
+                    {
+                        NewID++;
+                    }
+                    Debug.WriteLine(NewID);
                 }
                 catch
                 {
@@ -617,7 +635,7 @@ namespace A_Team_Clem
                 try
                 {
                     string sql = @"
-                        DECLARE new_id INT ;
+                        #DECLARE new_id INT ;
                         INSERT INTO clem_product (
 	                        customer_id,
 	                        product_type_id,
@@ -684,7 +702,7 @@ namespace A_Team_Clem
 	                        '" + employee_return + @"', 
 	                        '" + customer_receive_product + @"'
                         );
-                        SET new_id = LAST_INSERT_ID();
+                        #SET new_id = LAST_INSERT_ID();
                     ";
 
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
@@ -722,6 +740,7 @@ namespace A_Team_Clem
                     //cmd.Parameters.AddWithValue("@s_employee_return", employee_return);
                     //cmd.Parameters.AddWithValue("@s_customer_receive_product", customer_receive_product);
                     cmd.ExecuteNonQuery();
+                    long newID = cmd.LastInsertedId;
                 }
                 catch
                 {
@@ -744,7 +763,7 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    string sql = @"
+                    /*string sql = @"
                         DECLARE new_id INT ;
 
                         SET new_id = 
@@ -786,6 +805,19 @@ namespace A_Team_Clem
                         END IF ;
                         SELECT new_id;
                     ";
+                    Debug.WriteLine(sql);*/
+                    string sql = @"
+                        SELECT 
+                          id
+                        FROM
+                          `customer` 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1 
+                    ";
+
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     //MySqlCommand cmd = new MySqlCommand("add_customer", connection);
                     //cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -799,7 +831,39 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        customerID = int.Parse(dataReader["new_id"] + "");
+                        customerID = int.Parse(dataReader["id"] + "");
+                    }
+
+                    if (customerID == 0)
+                    {
+                        sql = @"
+                            INSERT INTO `customer` (
+                              `name_th`,
+                              `name_en`,
+                              `address`,
+                              `phone`,
+                              `email`,
+                              `date_create`,
+                              `date_stamp`
+                            ) 
+                            VALUES (
+	                            '" + name_th + @"',
+	                            '" + name_en + @"',
+	                            '" + address + @"',
+	                            '" + phone + @"',
+	                            '" + email + @"',
+	                            '" + date_create + @"',
+	                            '" + date_stamp + @"'
+                            ) 
+                            ;
+                        "; 
+                        cmd = new MySqlCommand(sql, connection);
+                        cmd.ExecuteNonQuery();
+                        customerID = (int)cmd.LastInsertedId;
+                    }
+                    else
+                    {
+                        customerID = 0;
                     }
                     dataReader.Close();
                 }
@@ -825,7 +889,7 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    string sql = @"
+                    /*string sql = @"
                         DECLARE new_id INT ;
 
                         SET new_id = (
@@ -866,6 +930,16 @@ namespace A_Team_Clem
                         ELSE SET new_id = 0;
                         END IF ;
                         SELECT new_id;
+                    ";*/
+                    string sql = @"
+                        SELECT 
+		                    id
+	                    FROM `company` 
+	                    WHERE 1
+	                    AND publish = 1
+	                    AND company_name_th = '" + company_name_th + @"'
+	                    ORDER BY id DESC 
+	                    LIMIT 1 
                     ";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     //MySqlCommand cmd = new MySqlCommand("add_company", connection);
@@ -880,7 +954,38 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        companyID = int.Parse(dataReader["new_id"] + "");
+                        companyID = int.Parse(dataReader["id"] + "");
+                    }
+                    if (companyID == 0)
+                    {
+                        sql = @"
+                            INSERT INTO `company` (
+                              `company_name_th`,
+                              `company_name_en`,
+                              `address`,
+                              `phone`,
+                              `email`,
+                              `date_create`,
+                              `date_stamp`
+                            )
+                            VALUES
+                            (
+	                            '" + company_name_th + @"',
+	                            '" + company_name_en + @"',
+	                            '" + company_adddress + @"',
+	                            '" + company_phone + @"',
+	                            '" + company_email + @"',
+	                            '" + company_date_create + @"',
+	                            '" + company_date_stamp + @"'
+                            )
+                        ";
+                        cmd = new MySqlCommand(sql, connection);
+                        cmd.ExecuteNonQuery();
+                        companyID = (int)cmd.LastInsertedId;
+                    }
+                    else
+                    {
+                        companyID = 0;
                     }
                     dataReader.Close();
                 }
@@ -906,7 +1011,7 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    string sql = @"
+                    /*string sql = @"
                         DECLARE new_id INT ;
                         SET new_id = 
                         (SELECT 
@@ -938,7 +1043,7 @@ namespace A_Team_Clem
 	                        '" + employee_name_th + @"',
 	                        '" + employee_name_en + @"',
 	                        '" + employee_nickname + @"',
-	                        '" + employee_ddress + @"',
+	                        '" + employee_adress + @"',
 	                        '" + employee_phone + @"',
 	                        '" + employee_email + @"',
 	                        '" + employee_date_start + @"',
@@ -952,7 +1057,18 @@ namespace A_Team_Clem
                         END IF ;
                         SELECT new_id;
                         ";
-
+                    */
+                    string sql = @"
+                        SELECT 
+                          id
+                        FROM
+                          `employee` 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + employee_name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1
+                    ";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     //MySqlCommand cmd = new MySqlCommand("add_employee", connection);
                     //cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -968,7 +1084,43 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        employeeID = int.Parse(dataReader["new_id"] + "");
+                        employeeID = int.Parse(dataReader["id"] + "");
+                    }
+
+                    if (employeeID == 0)
+                    {
+                        sql = @"
+                            INSERT INTO `employee` (
+                              `name_th`,
+	                            `name_en`,
+	                            `nickname`,
+	                            `address`,
+	                            `phone`,
+	                            `email`,
+	                            `date_start`,
+	                            `date_create`,
+	                            `date_stamp`
+                            ) 
+                            VALUES
+                            (
+	                            '" + employee_name_th + @"',
+	                            '" + employee_name_en + @"',
+	                            '" + employee_nickname + @"',
+	                            '" + employee_adress + @"',
+	                            '" + employee_phone + @"',
+	                            '" + employee_email + @"',
+	                            '" + employee_date_start + @"',
+	                            '" + employee_date_create + @"',
+	                            '" + employee_date_stamp + @"'
+                            ) 
+                        ";
+                        cmd = new MySqlCommand(sql, connection);
+                        cmd.ExecuteNonQuery();
+                        employeeID = (int)cmd.LastInsertedId;
+                    }
+                    else
+                    {
+                        employeeID = 0;
                     }
                     dataReader.Close();
                 }
@@ -994,7 +1146,7 @@ namespace A_Team_Clem
             {
                 try
                 {
-                    string sql = @"
+                    /*string sql = @"
                         DECLARE new_id INT ;
   
                         SET new_id = 
@@ -1033,8 +1185,17 @@ namespace A_Team_Clem
                         ELSE SET new_id = 0;
                         END IF ;
                         SELECT new_id;
-                    ";
-
+                    ";*/
+                    string sql = @"
+                        SELECT 
+                          id
+                        FROM
+                          `product` 
+                        WHERE 1 
+                          AND publish = 1 
+                          AND name_th = '" + product_name_th + @"'
+                        ORDER BY id DESC 
+                        LIMIT 1 ";
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     //MySqlCommand cmd = new MySqlCommand("add_product", connection);
                     //cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -1047,7 +1208,36 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        productID = int.Parse(dataReader["new_id"] + "");
+                        productID = int.Parse(dataReader["id"] + "");
+                    }
+                    if (productID == 0)
+                    {
+                        sql = @"
+                            INSERT INTO `product` (
+                              `name_th`,
+                              `name_en`,
+                              `price`,
+                              `value`,
+                              `date_create`,
+                              `date_stamp`
+                            ) 
+                            VALUES
+                            (
+	                            '" + product_name_th + @"',
+	                            '" + product_name_en + @"',
+	                            '" + product_price + @"',
+	                            '" + product_value + @"',
+	                            '" + product_type_date_create + @"',
+	                            '" + product_type_date_stamp + @"'
+                            )
+                        ";
+                        cmd = new MySqlCommand(sql, connection);
+                        cmd.ExecuteNonQuery();
+                        productID = (int)cmd.LastInsertedId;
+                    }
+                    else
+                    {
+                        productID = 0;
                     }
                     dataReader.Close();
                 }
