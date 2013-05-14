@@ -452,7 +452,7 @@ namespace A_Team_Clem
 
         public int getNewIDClemOfMonth(string clemType)
         {
-            int NewID = 1;
+            int NewID = 0;
             if (CheckConnect())
             {
                 try
@@ -484,7 +484,7 @@ namespace A_Team_Clem
 //                    ";
                     string sql = @"
                         SELECT
-		                    in_document_number_id AS new_id
+		                    in_document_number_id
 	                    FROM clem_product
 	                    WHERE 1
 	                    AND YEAR(in_document_number) = YEAR(NOW())
@@ -501,13 +501,10 @@ namespace A_Team_Clem
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        NewID = int.Parse(dataReader["new_id"] + "");
+                        NewID = int.Parse(dataReader["in_document_number_id"] + "");
                     }
                     dataReader.Close();
-                    if (NewID != 1)
-                    {
-                        NewID++;
-                    }
+                    NewID++;                    
                     Debug.WriteLine(NewID);
                 }
                 catch

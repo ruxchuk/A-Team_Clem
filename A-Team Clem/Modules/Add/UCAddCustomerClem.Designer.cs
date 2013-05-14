@@ -1215,6 +1215,7 @@
             this.customerName.TabIndex = 1;
             this.customerName.AddingMRUItem += new DevExpress.XtraEditors.Controls.AddingMRUItemEventHandler(this.customerName_AddingMRUItem);
             this.customerName.SelectedIndexChanged += new System.EventHandler(this.cmbCustomerName_SelectedIndexChanged);
+            this.customerName.TextChanged += new System.EventHandler(this.customerName_TextChanged);
             this.customerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownNextTab);
             // 
             // address

@@ -350,7 +350,6 @@ namespace A_Team_Clem.Modules
             {
                 clearData();
                 fRMMain.typeOfCustomerClem = "add";
-                //
             }
             else
             {
@@ -575,7 +574,6 @@ namespace A_Team_Clem.Modules
                     if (int.Parse(listCustomer[0][i]) == conDB.customer_id)
                     {
                         address.Text = listCustomer[3][i];
-                        customerClem.Text = listCustomer[1][i];
                         phone.Text = listCustomer[4][i];
                     }
                 }
@@ -583,6 +581,8 @@ namespace A_Team_Clem.Modules
             else
             {
                 conDB.customer_id = -1;
+                address.Text = "";
+                phone.Text = "";
             }
         }
 
@@ -608,6 +608,11 @@ namespace A_Team_Clem.Modules
             {
                 conDB.company_id = -1;
             }
+        }
+
+        private void customerName_TextChanged(object sender, EventArgs e)
+        {
+            customerClem.Text = customerName.Text;
         }  
     }
 }
